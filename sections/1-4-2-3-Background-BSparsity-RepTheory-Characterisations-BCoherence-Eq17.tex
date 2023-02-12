@@ -1,0 +1,8 @@
+Block-coherence measures the global coherence properties of the dictionary, in other words, quantifies the \emph{inter-block} coherence through:
+\begin{equation}
+\label{eq:Eldar-Block-coherence} 
+M^{Eldar}_{Inter}\myparanthese{\myPhi} \myeq \displaystyle\max_{k,k' \neq k} \frac1d \mynorm{\myPhi ^T \mybracket{k} \myPhi \mybracket{k'}}_{2 \to 2},
+\end{equation}
+where, $\forall k,\myPhi[k] \ssin \mathbb{R}^{m \stimes d}$, and $d$ is the size of all equally-sized blocks, i.e., $d_1 \seq \cdots \seq d_K \seq d$.
+For a typical matrix $\boldsymbol{A}$, the $\ell_{2 {\to} 2}$ operator-norm, i.e., $\Vert \boldsymbol{A} \Vert_{2 {\to} 2} {\myeq} \max_{\Vert \boldsymbol{a} \Vert_2 \leq 1} \Vert\boldsymbol{A} \boldsymbol{a} \Vert_{2}$, is equal to its maximum singular value. 
+For $d \seq 1$, the block-coherence is equivalent to the conventional MCC, i.e., $M^{Eldar}_{Inter}(\myPhi) {\equiv}M(\myPhi)$.

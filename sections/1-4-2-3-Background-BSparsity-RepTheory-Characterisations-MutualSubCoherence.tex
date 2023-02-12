@@ -1,0 +1,10 @@
+In a related work, mutual subspace coherence has been introduced by Ganesh et al. as a measure of inter-block coherence, which measures the smallest angle between any two subspaces that do not intersect with each other, i.e., disjoint subspaces \cite{Ganesh2009}:
+\begin{equation*}
+\label{eq:MSubC} 
+M_S\myparanthese{\myPhi} \myeq \displaystyle\max_{i,j \neq i} \displaystyle\max_{\substack{\boldsymbol{x} \in S_i \\ \boldsymbol{y} \in S_j}} \frac{\myabs{\boldsymbol{x}^T \boldsymbol{y}}}{\mynorm{\boldsymbol{x}}_2 \mynorm{\boldsymbol{y}}_2},
+\end{equation*}
+where, $S_i \seq span(\myPhi[i]) \ssin \mathbb{R}^{d}$, under the assumption of linearly independent columns of each block, i.e., non-redundant blocks.
+
+In another work, the concept of mutual subspace coherence has been used for establishing recovery conditions with more relaxed assumption of redundant blocks, where, the columns of each block can be linearly dependent \cite{Elhamifar2011,Elhamifar2012b}.
+When the blocks are non-redundant and orthonormal, the inter-block coherence proposed by Eldar et al. is equivalent to mutual subspace coherence, i.e., $M^{Eldar}_{Inter}(\myPhi) {\equiv} M_S(\myPhi)$ \cite{Elhamifar2012b}.
+For $d$ equal to $1$, the mutual subspace coherence is equivalent to the conventional MCC, i.e., $M_S(\myPhi) {\equiv} M(\myPhi)$ \cite{Elhamifar2012b}.

@@ -1,0 +1,97 @@
+\begin{proof}
+Starting from the relation between $M(\myPhi)$ and $M_{q,p}(\myPhi)$ proposed in Property \ref{prp:BMIC-MIC} (Block-MCC$_{q,p}$ bounds, page \pageref{prp:BMIC-MIC}), the aim is to build the $d_{max}$ times of the numerator of the condition of the Block-ERC based on Block-MCC$_{q,p}$ in Theorem \ref{th:BERC-BMIC}, i.e., $d_{max} \spl M_{q,p}^{-1}(\myPhi) \min_{k} \, \min \{1 , d_k^{1/q \sm 1/p} \}$, which is comparable with the conventional sparsity level.
+First, we investigate the required condition on $M(\myPhi)$ for a dictionary with full column rank blocks.
+Using the first part of Property \ref{prp:BMIC-MIC} (Block-MCC$_{q,p}$ bounds, page \pageref{prp:BMIC-MIC}) with conditions $M(\myPhi) \sless d_{max}^{1/q \sm 2} (d_{max} \sm 1)^{-1/2}$ and $q \sgeq p \sgeq 1$, and then multiplying by the positive coefficient $\min_{k} \, \min \{1 , d_k^{1/q \sm 1/p} \}$ and summing to $d_{max}$, for $q \sgeq p \sgeq 1$ we get:
+\begin{gather*}
+\begin{aligned}
+M_{q,p}^{-1}\myparanthese{\myPhi} &\geq 
+\frac{1- d_{max}^{2 - \frac1q} \myparanthese{d_{max} - 1}^\frac12 M \myparanthese{\myPhi}}{d_{max}^{\frac32 - \frac1p} \, M\myparanthese{\myPhi}}, \\
+M_{q,p}^{-1}\myparanthese{\myPhi} \displaystyle\min_{k} \, \min \mybrace{1 , d_k^{\frac1q - \frac1p}} &\geq 
+\frac{1- d_{max}^{2 - \frac1q} \myparanthese{d_{max} - 1}^\frac12 M \myparanthese{\myPhi}}{d_{max}^{\frac32 - \frac1p} \, M\myparanthese{\myPhi}} \displaystyle\min_{k} \, \min \mybrace{1 , d_k^{\frac1q - \frac1p}}, \\
+d_{max} + M_{q,p}^{-1}\myparanthese{\myPhi} \displaystyle\min_{k} \, \min \mybrace{1 , d_k^{\frac1q - \frac1p}} &\geq 
+d_{max} + \frac{1- d_{max}^{2 - \frac1q} \myparanthese{d_{max} - 1}^\frac12 M \myparanthese{\myPhi}}{d_{max}^{\frac32 - \frac1p} \, M\myparanthese{\myPhi}} \displaystyle\min_{k} \, \min \mybrace{1 , d_k^{\frac1q - \frac1p}}.
+\end{aligned}
+\end{gather*}
+But, $\forall q \sgeq p$, we have $\min_{k} \, \min \{1 , d_k^{1/q \sm 1/p} \} \seq d_{max}^{1/q \sm 1/p}$, which leads to the following inequality:
+%We used the lower-bound to establish the conditions in the worst case.
+\begin{gather*}
+\begin{aligned}
+q \geq p \geq 1, \qquad
+d_{max} + d_{max}^{\frac1q - \frac1p} M_{q,p}^{-1}\myparanthese{\myPhi} &\geq 
+d_{max} + \frac{1- d_{max}^{2 - \frac1q} \myparanthese{d_{max} - 1}^\frac12 M \myparanthese{\myPhi}}{d_{max}^{\frac32 - \frac1p} \, M\myparanthese{\myPhi} } d_{max}^{\frac1q - \frac1p} \\
+&= d_{max} \mycolor{-} d_{max}^{\frac12} \, \myparanthese{d_{max} - 1}^{\frac12} + d_{max}^{\frac1q - \frac32} \, M^{-1}\myparanthese{\myPhi}.
+\end{aligned}
+\end{gather*}
+\myhl{The above right-hand side expression under the following condition would be greater than or equal to $1 + M^{-1}(\myPhi)$:}
+\begin{gather*}
+\mycolor{\begin{aligned}
+d_{max} - d_{max}^{\frac12} \, \myparanthese{d_{max} - 1}^{\frac12} + d_{max}^{\frac1q - \frac32} \, M^{-1}\myparanthese{\myPhi} \geq 1 + M^{-1}\myparanthese{\myPhi}, \\
+\Rightarrow M\myparanthese{\myPhi} \leq \frac{1 - d_{max} ^{\frac1q - \frac32}}{\myparanthese{d_{max} - 1}^{\frac12} \mybracket{\myparanthese{d_{max} - 1}^{\frac12} - d_{max} ^ \frac12}}.
+\end{aligned}}
+\end{gather*}
+
+\myhl{Therefore, considering another condition of the utilised property, i.e., $M(\myPhi) \sless d_{max}^{1/q \sm 2} (d_{max} \sm 1)^{-1/2}$ in Property {\ref{prp:BMIC-MIC}} (Block-MCC$_{q,p}$ bounds, page {\pageref{prp:BMIC-MIC}}), the following upper-bound condition on $M(\myPhi)$ ensures that the proposed $\myBSLqpTxt$ would be greater than or equal to the conventional SL, i.e., $d_{max} \spl M_{q,p}^{-1}(\myPhi) \min_{k} \, \min \{1 , d_k^{1/q \sm 1/p} \} \sgeq 1 \spl M^{-1}(\myPhi)$:}
+\begin{gather*}
+\mycolor{\begin{aligned}
+q \geq p \geq 1, \qquad M\myparanthese{\myPhi} &\leq
+\min \mybrace{\frac{d_{max} ^{\frac1q - 2}}{\myparanthese{d_{max} - 1}^{\frac12}} , \frac{1 - d_{max} ^{\frac1q - \frac32}}{\myparanthese{d_{max} - 1}^{\frac12} \mybracket{\myparanthese{d_{max} - 1}^{\frac12} - d_{max} ^ \frac12}}}.
+%\min \mybrace{\frac{d_{max} ^{\frac1q - 2}}{\myparanthese{d_{max} - 1}^{\frac12}} , \frac{1 - d_{max} ^{\frac1q - \frac32}}{d_{max} - d_{max} ^ \frac12 \myparanthese{d_{max} - 1}^{\frac12} - 1}}.
+%&= \frac{1 - d_{max} ^{\frac1q - \frac32}}{d_{max} - d_{max} ^ \frac12 \myparanthese{d_{max} - 1}^{\frac12} - 1}.
+\end{aligned}}
+\end{gather*}
+%yields from the condition mentioned in the Property for general dictionaries.
+\myhl{But, the above second argument of the $\min$ operator $\forall q, d_{max}$ is negative.
+Therefore, although in practice the numerical simulations approve that the proposed sparsity level for general dictionaries with full column rank blocks is higher than the conventional one, in theory due to utilising the most pessimistic bounds, its supremacy cannot be proved.} 
+
+\myhl{Now, suppose that the dictionary $\myPhi$ has intra-block orthonormality, which is the case in the Property {\ref{prp:DontKnow1}} (SL v.s. $\myBSLqpTxt$, page {\pageref{prp:DontKnow1}}).
+Using the second part of Property {\ref{prp:BMIC-MIC}} (Block-MCC$_{q,p}$ bounds, page {\pageref{prp:BMIC-MIC}}) as the following first line, multiplying by $\min_{k} \, \min \{1 , d_k^{1/q \sm 1/p} \}$ and summing to $d_{max}$, 
+% to make the $d_{max}$ times of the numerator of the condition of the Block-ERC based on Block-MCC$_{q,p}$ in Theorem \ref{th:BERC-BMIC}, 
+$\forall (q , p , q' , p') \ssin \mathbb{R}^4_{\sg 0}$ we get:} 
+\begin{gather*}
+\mycolor{\begin{aligned}
+M_{q,p}^{-1}\myparanthese{\myPhi} &\geq 
+\frac{d_{max} \, M^{-1}\myparanthese{\myPhi}}{\displaystyle\max_{k,k' \neq k} d_{k}^{\frac12 - \frac1p} \, d_{k'}^{\frac1q + \frac12} \, \max \mybrace{1 , d_k^{\frac1p - \frac{1}{p'}}} \, \max \mybrace{1 , d_{k'}^{\frac{1}{q'} - \frac1q}} \, \max \mybrace{1 , d_k^{\frac{1}{p'} -\frac12}} \, \max \mybrace{1 , d_{k'}^{\frac{1}{2} - \frac{1}{q'}}}}, \\ 
+M_{q,p}^{-1}\myparanthese{\myPhi} \displaystyle\min_{k} \, \min \mybrace{1 , d_k^{\frac1q - \frac1p}} &\geq 
+\frac{d_{max} \, M^{-1}\myparanthese{\myPhi}}{\displaystyle\max_{k,k' \neq k} d_{k}^{\frac12 - \frac1p} \, d_{k'}^{\frac1q + \frac12} \, \max \mybrace{1 , d_k^{\frac1p - \frac{1}{p'}}} \, \max \mybrace{1 , d_{k'}^{\frac{1}{q'} - \frac1q}} \, \max \mybrace{1 , d_k^{\frac{1}{p'} -\frac12}} \, \max \mybrace{1 , d_{k'}^{\frac{1}{2} - \frac{1}{q'}}}} \displaystyle\min_{k} \, \min \mybrace{1 , d_k^{\frac1q - \frac1p}}, \\ 
+d_{max} + M_{q,p}^{-1}\myparanthese{\myPhi} \displaystyle\min_{k} \, \min \mybrace{1 , d_k^{\frac1q - \frac1p}} &\geq 
+d_{max} + \frac{d_{max} \, M^{-1}\myparanthese{\myPhi}}{\displaystyle\max_{k,k' \neq k} d_{k}^{\frac12 - \frac1p} \, d_{k'}^{\frac1q + \frac12} \, \max \mybrace{1 , d_k^{\frac1p - \frac{1}{p'}}} \, \max \mybrace{1 , d_{k'}^{\frac{1}{q'} - \frac1q}} \, \max \mybrace{1 , d_k^{\frac{1}{p'} -\frac12}} \, \max \mybrace{1 , d_{k'}^{\frac{1}{2} - \frac{1}{q'}}}} \displaystyle\min_{k} \, \min \mybrace{1 , d_k^{\frac1q - \frac1p}}.
+\end{aligned}}
+\end{gather*}
+
+\iffalse
+From Property \ref{lm:FractionBound}, we know that the fraction $\Vert \boldsymbol{x} \Vert_{\boldsymbol{w};p,1}/ \Vert\boldsymbol{x} \Vert_{\boldsymbol{w};q,1}$ is lower-bounded by $\min_k d_k^{1/q \sm 1/p} \min \{1 , d_k^{1/p \sm 1/q} \}$, 
+
+$\begin{cases}
+\begin{aligned}
+&\min_k d_k^{1/q \sm 1/p} \min \{1 , d_k^{1/p \sm 1/q} \}, \quad &&\text{if }q \sgeq 1 \\
+&1, \quad &&\text{if }q \sless 1
+\end{aligned}
+\end{cases}
+$, 
+
+$\forall p \sgeq 1$, and $\forall q \sgeq 1$, which leads to the following inequality.
+%We used the lower-bound to establish the conditions in the worst case.
+\begin{gather*}
+\begin{aligned}
+d_{max} + M_{q,p}^{-1}\myparanthese{\myPhi} \frac{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};p,1}}{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};q,1}} &\geq 
+%\begin{cases}
+d_{max} + d_{max}^{\frac1p - \frac32} \, M^{-1}\myparanthese{\myPhi} \displaystyle\min_k d_k^{\frac1q - \frac1p} \min \mybrace{1 , d_k^{\frac1p - \frac1q}} \\ %, & \qquad \text{for \ }q \geq 1\\
+%d_{max} + d_{max}^{\frac1p - \frac1q - \frac12} \, M^{-1}\myparanthese{\myPhi}, & \qquad \text{for \ }q < 1\\
+%\end{cases}, \\
+&\geq 1 + M^{-1}\myparanthese{\myPhi}.
+\end{aligned}
+\end{gather*}
+
+The above last inequality yields from the condition mentioned in the Property for a dictionary with intra-block orthonormality.
+\fi
+\myhl{The above right-hand side expression under the following condition and $\forall (q , p , q' , p') \ssin \mathbb{R}^4_{\sg 0}$ would be greater than or equal to $1 + M^{-1}(\myPhi)$:} 
+\begin{gather*}
+\mycolor{\begin{aligned}
+d_{max} + \frac{d_{max} \, M^{-1}\myparanthese{\myPhi}}{\displaystyle\max_{k,k' \neq k} d_{k}^{\frac12 - \frac1p} \, d_{k'}^{\frac1q + \frac12} \, \max \mybrace{1 , d_k^{\frac1p - \frac{1}{p'}}} \, \max \mybrace{1 , d_{k'}^{\frac{1}{q'} - \frac1q}} \, \max \mybrace{1 , d_k^{\frac{1}{p'} -\frac12}} \, \max \mybrace{1 , d_{k'}^{\frac{1}{2} - \frac{1}{q'}}}} \displaystyle\min_{k} \, \min \mybrace{1 , d_k^{\frac1q - \frac1p}} 
+\geq 1 + M^{-1}\myparanthese{\myPhi}, \\
+\Rightarrow 
+M\myparanthese{\myPhi} \leq
+\frac{1 - \frac{d_{max} \, \displaystyle\min_{k} \, \min \mybrace{1 , d_k^{\frac1q - \frac1p}}}{\displaystyle\max_{k,k' \neq k} d_{k}^{\frac12 - \frac1p} \, d_{k'}^{\frac1q + \frac12} \, \max \mybrace{1 , d_k^{\frac1p - \frac{1}{p'}}} \, \max \mybrace{1 , d_{k'}^{\frac{1}{q'} - \frac1q}} \, \max \mybrace{1 , d_k^{\frac{1}{p'} -\frac12}} \, \max \mybrace{1 , d_{k'}^{\frac{1}{2} - \frac{1}{q'}}}}}{d_{max} - 1}.
+\end{aligned}}
+\end{gather*}
+\end{proof}

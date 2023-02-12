@@ -1,0 +1,25 @@
+In order to investigate the impact of multi-modality, i.e., the integration of the complementary information of EEG and MEG modalities, we need to think of a strategy to combine the mono-modalities.
+
+Suppose that the odd rows of USLE related to EEG generative model is represented as $\boldsymbol{y}_{\boldsymbol{\mathrm{EEG}}}^{O} \seq \myPhi_{\boldsymbol{\mathrm{EEG}}}^{O} \mybetaz$, and similarly the even rows of USLE related to MEG model as $\boldsymbol{y}_{\boldsymbol{\mathrm{MEG}}}^{E} \seq \myPhi_{\boldsymbol{\mathrm{MEG}}}^{E} \mybetaz$.
+Then, by concatenating the odd rows and even rows of EEG and MEG generative models, respectively, the EEG and MEG multi-modal model is as follows:
+\begin{equation}
+\label{eq:multimodal-model} 
+\begin{bmatrix}
+\boldsymbol{y}_{\boldsymbol{\mathrm{EEG}}}^{O} \\
+\boldsymbol{y}_{\boldsymbol{\mathrm{MEG}}}^{E}
+\end{bmatrix} 
+=
+\begin{bmatrix}
+\myPhi_{\boldsymbol{\mathrm{EEG}}}^{O} \\
+\myPhi_{\boldsymbol{\mathrm{MEG}}}^{E}
+\end{bmatrix}
+\mybetaz.
+\end{equation}
+
+There are three reasons behind the mentioned strategy of integration of mono-modalities.
+\paragraph{1) Fixed number of sensors}
+\input{sections/4-2-1-1-Multimodality-LF-Model-SensorNb}
+\paragraph{2) Minimal change in sensors position}
+\input{sections/4-2-1-2-Multimodality-LF-Model-SensorPos}
+\paragraph{3) Uniform sub-sampling in sensor space}
+\input{sections/4-2-1-3-Multimodality-LF-Model-SensorSample}

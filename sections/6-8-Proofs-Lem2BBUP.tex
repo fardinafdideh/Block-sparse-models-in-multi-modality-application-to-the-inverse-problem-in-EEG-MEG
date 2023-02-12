@@ -1,0 +1,178 @@
+\begin{proof}
+The following proof generalises the corresponding proofs in \cite{Elad2001,Elad2002a,Eldar2009b,Eldar2010b} and \cite{Eldar2010}.
+Without loss of generality, assume that the non-zero signal $\boldsymbol{y}$ is normalized to have unit squared Euclidean norm, i.e., $\Vert\boldsymbol{y}\Vert_2^2 \seq \boldsymbol{y}^T \boldsymbol{y} \seq 1$, \myhl{and suppose that $p$ is H{\"o}lder conjugate to $p'$, i.e., $1/p \spl 1/p' \seq 1$ {\cite{Golub2013}}.}
+Then,
+\begin{equation}
+\label{eq:DontKnow3} 
+\begin{aligned}
+\forall (p , p') \in \mathbb{R}^2_{\geq 1}, \forall q \in \mathbb{R}_{> 0}, \forall r \in \mathbb{R}_{\geq 0}, \qquad
+1 &= \displaystyle\sum_{k,k'=1}^K \mybetao^T \mybracket{k} \myPhiOne^T\mybracket{k} \myPhiTwo \mybracket{k'} \mybetaTwo \mybracket{k'} \\
+&\leq \displaystyle\sum_{k,k'=1}^K \mynorm{\mybetao \mybracket{k}}_p \mynorm{\myPhiOne^T \mybracket{k} \myPhiTwo \mybracket{k'} \mybetaTwo \mybracket{k'}}_{p'} \\
+&\leq d_{max} \overbar{M}_{q,p'}\myparanthese{\myPhiOne, \myPhiTwo} \displaystyle\sum_{k,k'=1}^K d_k^{\frac{1}{p'}} \mynorm{\mybetao \mybracket{k}}_p \, d_{k'}^{-\frac{1}{q}}\mynorm{\mybetaTwo \mybracket{k'}}_q \\
+&= d_{max} \overbar{M}_{q,p'}\myparanthese{\myPhiOne , \myPhiTwo} \displaystyle\sum_{k=1}^K d_k^{\frac{1}{p'}} \mynorm{\mybetao \mybracket{k}}_p \displaystyle\sum_{k'=1}^K d_{k'}^{-\frac{1}{q}}\mynorm{\mybetaTwo \mybracket{k'}}_q \\
+&= d_{max} \overbar{M}_{q,p'}\myparanthese{\myPhiOne , \myPhiTwo} \displaystyle\sum_{k=1}^{\mynorm{\mybetao}_{r,0}} d_k^{\frac{1}{p'}} \mynorm{\mybetao \mybracket{k}}_p \displaystyle\sum_{k'=1}^{\mynorm{\mybetaTwo}_{r,0}} d_{k'}^{-\frac{1}{q}} \mynorm{\mybetaTwo \mybracket{k'}}_q.
+\end{aligned}
+\end{equation}
+%using Remark \ref{Rmrk:Holder-variant}, the above first inequality is deduced.
+For vectors $\boldsymbol{a}$ and $\boldsymbol{b}$ we have $\boldsymbol{a}^T \boldsymbol{b} \sleq \sum_i \vert a_i b_i \vert$, and using H{\"o}lder's inequality \cite{Golub2013}, i.e., $\sum_i \myabs{a_i b_i} \sleq \Vert \boldsymbol{a} \Vert_p \Vert \boldsymbol{b} \Vert_{p'}$, where, $\forall (p , p') \ssin \mathbb{R}^2_{\sgeq 1} : 1/p \spl 1/p' \seq 1$, we have $\boldsymbol{a}^T \boldsymbol{b} \sleq \Vert\boldsymbol{a} \Vert_p \Vert \boldsymbol{b} \Vert_{p'}$, which results the above first inequality.
+Considering the definition of basic Block-MCC$_{q,p}$, i.e., $\overbar{M}_{q,p'}(\myPhiOne , \myPhiTwo) \seq  
+\max_{k,k'} d_{k}^{-1/{p'}} \, d_{k'}^{1/q}/d_{max} \Vert \myPhiOne^T [k] \myPhiTwo^{ } [k'] \Vert_{q \to p'}$, where $p' \seq p / (p \sm 1)$, we have $\Vert \myPhiOne^T [k] \myPhiTwo^{ } [k'] \boldsymbol{x} \Vert_{p'} \sleq \overbar{M}_{q,p'} (\myPhiOne, \myPhiTwo) d_{max} d_k^{1/p'} d_{k'}^{-1/q} \Vert \boldsymbol{x} \Vert_q$, which produces the above third line with second inequality.
+The above last equality follows from summation only over non-zero blocks for any $r \sgeq 0$.
+
+Before finding the upper-bound for the above last inequality (\ref{eq:DontKnow3}), it should be taken into account that according to the Parseval's theorem, we have
+$\Vert \boldsymbol{y} \Vert_2^2 \seq \Vert\mybetao \Vert_2^2 \seq \Vert \mybetaTwo \Vert_2^2 \seq 1$, which will be used in the following optimisation problem.
+Therefore, in order to upper-bound the inequality (\ref{eq:DontKnow3}), it is sufficient to solve the following optimisation problem:
+\iffalse
+\begin{equation*}
+\begin{aligned}
+\max_{k,k'} &\displaystyle\sum_{k=1}^{\mynorm{\mybetao}_{r,0}} d_k^{\frac{1}{p'}} \myparanthese{\displaystyle\sum_{j=1}^{d_k} \beta_{1_j}^p \mybracket{k}}^\frac1p
+\displaystyle\sum_{k'=1}^{\mynorm{\mybetaTwo}_{r,0}} d_{k'}^{-\frac{1}{q}} \myparanthese{\displaystyle\sum_{j=1}^{d_{k'}} \beta_{2_j}^q \mybracket{k'}}^\frac1q \\
+& s.t. \quad
+\begin{aligned}
+& \displaystyle\sum_{k=1}^{\mynorm{\mybetao}_{r,0}} \displaystyle\sum_{j=1}^{d_k} \beta_{1_j}^2 \mybracket{k} = 
+\displaystyle\sum_{k'=1}^{\mynorm{\mybetaTwo}_{r,0}} \displaystyle\sum_{j=1}^{d_{k'}} \beta_{2_j}^2 \mybracket{k'} = 1 \\
+&and \quad \beta_{1_j} \mybracket{k},\beta_{2_j}\mybracket{k'} > 0.
+\end{aligned}
+\end{aligned}
+\end{equation*}
+\fi
+\begin{equation}
+\label{eq:main-opt} 
+\begin{aligned}
+\forall (q , p , p') \in \mathbb{R}^3_{\geq 1}, \forall r \in \mathbb{R}_{\geq 0}, \qquad
+\max_{k,k'} &\displaystyle\sum_{k=1}^{\mynorm{\mybetao}_{r,0}} d_k^{\frac{1}{p'}} \myparanthese{\displaystyle\sum_{j=1}^{d_k} \mycolor{\myabs{\beta_{1_j}\mybracket{k}}} ^p }^\frac1p \,
+\displaystyle\sum_{k'=1}^{\mynorm{\mybetaTwo}_{r,0}} d_{k'}^{-\frac{1}{q}} \myparanthese{\displaystyle\sum_{j=1}^{d_{k'}} \mycolor{\myabs{\beta_{2_j} \mybracket{k'}}} ^q }^\frac1q \\
+& s.t. \quad
+\begin{aligned}
+& \displaystyle\sum_{k=1}^{\mynorm{\mybetao}_{r,0}} \displaystyle\sum_{j=1}^{d_k} \beta_{1_j}^2 \mybracket{k} = 
+\displaystyle\sum_{k'=1}^{\mynorm{\mybetaTwo}_{r,0}} \displaystyle\sum_{j=1}^{d_{k'}} \beta_{2_j}^2 \mybracket{k'} = 1.
+%&and \quad \beta_{1_j} \mybracket{k},\beta_{2_j}\mybracket{k'} > 0.
+\end{aligned}
+\end{aligned}
+\end{equation}
+Although the equation (\ref{eq:DontKnow3}) holds true for $\forall q \ssin \mathbb{R}_{\sg 0}$, we are going to upper-bound the (\ref{eq:DontKnow3}) for $\forall q \ssin \mathbb{R}_{\sgeq 1}$, as it is mentioned in (\ref{eq:main-opt}).
+\myhl{On the other hand, since during the procedure of finding the upper-bound, the derivative of the $q$ and $p$ norms of a vector should be computed, we solve ({\ref{eq:main-opt}}) in two parts: 1) $\forall (q , p) \ssin \mathbb{R}^2_{\sg 1}$ (differentiable $q$ and $p$ norms), and 2) $q \seq p \seq 1$ (following the related proof in {\cite{Elad2002a}}, page 3).}
+
+Above optimisation problem is separable, so we need to maximise $\forall (q , p) \ssin \mathbb{R}^2_{\sg 1}$, $\sum_{k=1}^{\Vert\mybetao \Vert_{r,0}} d_k^{1/p'}(\sum_{j=1}^{d_k} \mycolor{\vert \beta_{1_j} [k] \vert} ^p)^{1/p}$ subject to $\sum_{k=1}^{\Vert\mybetao \Vert_{r,0}} \sum_{j=1}^{d_k} \beta_{1_j}^2 [k] \seq 1$, 
+%$\beta_{1_j} [k] \sg 0$ 
+and $\sum_{k'=1}^{\Vert\mybetaTwo \Vert_{r,0}} d_{k'}^{-1/q} (\sum_{j=1}^{d_{k'}} \mycolor{\vert \beta_{2_j}[k'] \vert} ^q )^{1/q}$ subject to $\sum_{k'=1}^{\Vert\mybetaTwo \Vert_{r,0}} \sum_{j=1}^{d_{k'}} \beta_{2_j}^2 [k'] \seq 1$, 
+%$\beta_{2_j} [k'] \sg 0$, 
+separately.
+In order to solve two mentioned problems, first we need to form the Lagrangian function.
+Then, for the first problem we have:
+\iffalse
+\begin{gather*}
+\mathcal{L} \myparanthese{\mybetao , \lambda} =
+\displaystyle\sum_{k=1}^{\mynorm{\mybetao}_{r,0}} d_k^{\frac{1}{p'}} \myparanthese{\displaystyle\sum_{j=1}^{d_k} \beta_{1_j}^p \mybracket{k}}^\frac1p + \lambda \myparanthese{1 - \displaystyle\sum_{k=1}^{\mynorm{\mybetao}_{r,0}} \displaystyle\sum_{j=1}^{d_k} \beta_{1_j}^2 \mybracket{k}},
+\end{gather*}
+\fi
+\begin{gather*}
+\mathcal{L} \myparanthese{\mybetao , \lambda} =
+\displaystyle\sum_{k=1}^{\mynorm{\mybetao}_{r,0}} d_k^{\frac{1}{p'}} \myparanthese{\displaystyle\sum_{j=1}^{d_k} \mycolor{\myabs{\beta_{1_j} \mybracket{k}}} ^p}^\frac1p + \lambda \myparanthese{1 - \displaystyle\sum_{k=1}^{\mynorm{\mybetao}_{r,0}} \displaystyle\sum_{j=1}^{d_k} \beta_{1_j}^2 \mybracket{k}},
+\end{gather*}
+then we need to compute its critical point.
+Considering that $(|f|)' \seq f' \, f / |f| $, where $f'$ is derivative of $f$ with respect to $x$, i.e. $d \, f(x) / d \, x$, we have:
+\begin{gather*}
+\begin{aligned}
+& \frac{\partial \mathcal{L}}{\partial \beta_{1_j} \mybracket{k}} = 
+d_k^{\frac{1}{p'}} \mycolor{\beta_{1_j} \mybracket{k} \myabs{\beta_{1_j} \mybracket{k}}^{p-2}} \myparanthese{\displaystyle\sum_{j=1}^{d_k} \mycolor{\myabs{\beta_{1_j} \mybracket{k}}} ^p}^{\frac1p - 1} - 
+2 \lambda \beta_{1_j} \mybracket{k} = 0 \\
+&\Rightarrow \mycolor{\myabs{\beta_{1_j} \mybracket{k}} \in
+\mybrace{0 , \myparanthese{\frac{2 \lambda}{d_k^{\frac{1}{p'}}\mynorm{\mybetao \mybracket{k}}_p^{1-p}}}^{\frac{1}{p-2}}}.}
+\end{aligned}
+\end{gather*}
+From the above last equality it can be derived that all the absolute value of the coefficients in a block $k$ has the same value. 
+On the other hand, all the identical elements cannot be zero, because it leads to $\Vert \mybetao [k]\Vert_{r,0} \seq 0 $, but from the last line of (\ref{eq:DontKnow3}), only non-zero blocks are selected for optimisation.
+Therefore, it reduces to:
+\begin{equation*}
+\mycolor{\myabs{\beta_{1_j} \mybracket{k}}} =
+\frac{1}{2 \lambda}.
+\end{equation*}
+Next, applying the unit-energy constraint of the coefficients, we get:
+\begin{equation*}
+\begin{aligned}
+&1 = \displaystyle\sum_{k=1}^{\mynorm{\mybetao}_{r,0}} \displaystyle\sum_{j=1}^{d_k} \beta_{1_j}^2 \mybracket{k} =
+\frac{d_k \mynorm{\mybetao}_{r,0}}{4 \lambda^2} \\
+& \Rightarrow \lambda = \frac{d_k^{\frac12} \mynorm{\mybetao}^{\frac12}_{r,0}}{2} 
+\Rightarrow \mycolor{\myabs{\beta_{1_j} \mybracket{k}}} = \myparanthese{d_k \mynorm{\mybetao}_{r,0}}^ \frac{-1}{2}.
+\end{aligned}
+\end{equation*}
+%It can be seen that, although the constraint of $\beta_{1_j} [k] \sg 0$ is not explicitly included in the Lagrangian function, but from the final closed form solution this constraint can be verified.
+Therefore, $\sum_{k=1}^{\Vert\mybetao \Vert_{r,0}} d_k^{1/p'} (\sum_{j=1}^{d_k} \mycolor{\vert \beta_{1_j} [k] \vert} ^p)^{1/p}$ is upper-bounded by $\Vert\mybetao \Vert_{r,0}^{-1/2} \sum_{k=1}^{\Vert\mybetao \Vert_{r,0}} d_k^{1/2}$, which is again upper-bounded by $\Vert\mybetao \Vert_{r,0}^{1/2} d_{max}^{1/2}$.
+Similarly, for the second problem it can be proved that $\sum_{k'=1}^{\Vert\mybetaTwo \Vert_{r,0}} d_{k'}^{-1/q} (\sum_{j=1}^{d_{k'}} \mycolor{\vert \beta_{2_j} [k'] \vert} ^q)^{1/q}$ is upper-bounded by $\Vert\mybetaTwo \Vert_{r,0}^{-1/2} \sum_{k'=1}^{\Vert\mybetaTwo \Vert_{r,0}} d_{k'}^{-1/2}$, which is upper-bounded by $\Vert\mybetaTwo \Vert_{r,0}^{1/2} d_{\mycolor{min}}^{-1/2}$.
+Substituting the recently mentioned upper-bounds into (\ref{eq:DontKnow3}), we get:
+\begin{equation*}
+\begin{aligned}
+\forall (q , p) \in \mathbb{R}^2_{> 1}, \forall r \in \mathbb{R}_{\geq 0}, \qquad
+1 &\leq 
+\mycolor{d_{min}^{-\frac12} d_{max}^{\frac32}}
+%\frac{d^{\frac1q + \frac{1}{p}}}{d^{\frac1q - \frac{1}{p'}}} 
+\overbar{M}_{q,p'}\myparanthese{\myPhiOne , \myPhiTwo} \myparanthese{\mynorm{\mybetao}_{r,0} \mynorm{\mybetaTwo}_{r,0}}^{\frac12} \\
+&\mycolor{\leq
+d_{min}^{-\frac12} d_{max}^{\frac32} \overbar{M}_{q,p'}\myparanthese{\myPhiOne , \myPhiTwo} \frac{\mynorm{\mybetao}_{r,0} + \mynorm{\mybetaTwo}_{r,0}}{2}.}
+\end{aligned}
+\end{equation*}
+
+The proof is completed in the above equation by replacing $p'$ by $p/(p \sm 1)$, according to the condition of the H{\"o}lder's inequality \cite{Golub2013}, and using the inequality of arithmetic-geometric means, i.e., $\sqrt{ab} \sleq (a \spl b)/2$.
+
+\myhl{Now, consider the case where $q \seq p \seq 1$. 
+Then, the optimisation problem in ({\ref{eq:main-opt}}) becomes:}
+\begin{equation*}
+\label{eq:main-opt-qp11} 
+\mycolor{\begin{aligned}
+\forall r \in \mathbb{R}_{\geq 0}, \qquad
+\max_{k,k'}
+&\displaystyle\sum_{k=1}^{\mynorm{\mybetao}_{r,0}} \displaystyle\sum_{j=1}^{d_k} \myabs{\beta_{1_j}\mybracket{k}}  \,
+\displaystyle\sum_{k'=1}^{\mynorm{\mybetaTwo}_{r,0}} d_{k'}^{-1} \displaystyle\sum_{j=1}^{d_{k'}} \myabs{\beta_{2_j} \mybracket{k'} }  \\
+&s.t. \quad
+%\begin{aligned}
+\displaystyle\sum_{k=1}^{\mynorm{\mybetao}_{r,0}} \displaystyle\sum_{j=1}^{d_k} \beta_{1_j}^2 \mybracket{k} = 
+\displaystyle\sum_{k'=1}^{\mynorm{\mybetaTwo}_{r,0}} \displaystyle\sum_{j=1}^{d_{k'}} \beta_{2_j}^2 \mybracket{k'} = 1,
+%&and \quad \beta_{1_j} \mybracket{k},\beta_{2_j}\mybracket{k'} > 0.
+%\end{aligned}
+\end{aligned}}
+\end{equation*}
+\myhl{which is equivalent to}
+\begin{equation*}
+\label{eq:main-opt-qp11} 
+\mycolor{\begin{aligned}
+\forall r \in \mathbb{R}_{\geq 0}, \qquad
+\max_{k,k'}
+&\displaystyle\sum_{k=1}^{\mynorm{\mybetao}_{r,0}} \displaystyle\sum_{j=1}^{d_k} \beta_{1_j}\mybracket{k}  \,
+\displaystyle\sum_{k'=1}^{\mynorm{\mybetaTwo}_{r,0}} d_{k'}^{-1} \displaystyle\sum_{j=1}^{d_{k'}} \beta_{2_j} \mybracket{k'}  \\
+&s.t. \quad
+\begin{aligned}
+& \displaystyle\sum_{k=1}^{\mynorm{\mybetao}_{r,0}} \displaystyle\sum_{j=1}^{d_k} \beta_{1_j}^2 \mybracket{k} = 
+\displaystyle\sum_{k'=1}^{\mynorm{\mybetaTwo}_{r,0}} \displaystyle\sum_{j=1}^{d_{k'}} \beta_{2_j}^2 \mybracket{k'} = 1 \\
+&and \quad \beta_{1_j} \mybracket{k},\beta_{2_j}\mybracket{k'} > 0.
+\end{aligned}
+\end{aligned}}
+\end{equation*}
+\myhl{The above optimisation problem is separable, so we need to maximise $\sum_{k=1}^{\Vert\mybetao \Vert_{r,0}} \sum_{j=1}^{d_k} \beta_{1_j} [k]$ subject to $\sum_{k=1}^{\Vert\mybetao \Vert_{r,0}} \sum_{j=1}^{d_k} \beta_{1_j}^2 [k] \seq 1$, $\beta_{1_j} [k] \sg 0$ 
+and $\sum_{k'=1}^{\Vert\mybetaTwo \Vert_{r,0}} d_{k'}^{-1} \sum_{j=1}^{d_{k'}} \beta_{2_j}[k']$ subject to $\sum_{k'=1}^{\Vert\mybetaTwo \Vert_{r,0}} \sum_{j=1}^{d_{k'}} \beta_{2_j}^2 [k'] \seq 1$, $\beta_{2_j} [k'] \sg 0$, separately.
+But, in order to solve these problems (following the related proof in {\cite{Elad2002a}}, page 3), let us consider the following Lagrangian function, in which the positivity constraint is not enforced explicitly:}
+\begin{gather*}
+\mycolor{\begin{aligned}
+&\mathcal{L} \myparanthese{\mybetao , \lambda} =
+\displaystyle\sum_{k=1}^{\mynorm{\mybetao}_{r,0}} \displaystyle\sum_{j=1}^{d_k} \beta_{1_j} \mybracket{k} + \lambda \myparanthese{1 - \displaystyle\sum_{k=1}^{\mynorm{\mybetao}_{r,0}} \displaystyle\sum_{j=1}^{d_k} \beta_{1_j}^2 \mybracket{k}} \\
+& \frac{\partial \mathcal{L}}{\partial \beta_{1_j} \mybracket{k}} = 
+1 - 
+2 \lambda \beta_{1_j} \mybracket{k} = 0 
+\Rightarrow \beta_{1_j} \mybracket{k} = \frac{1}{2\lambda}.
+\end{aligned}}
+\end{gather*}
+\myhl{Next, applying the unit-energy constraint of the coefficients, we get:}
+\begin{equation*}
+\mycolor{\begin{aligned}
+&1 = \displaystyle\sum_{k=1}^{\mynorm{\mybetao}_{r,0}} \displaystyle\sum_{j=1}^{d_k} \beta_{1_j}^2 \mybracket{k} =
+\frac{d_k \mynorm{\mybetao}_{r,0}}{4 \lambda^2} \\
+& \Rightarrow \lambda = \frac{d_k^{\frac12} \mynorm{\mybetao}^{\frac12}_{r,0}}{2} 
+\Rightarrow \beta_{1_j} \mybracket{k} = \myparanthese{d_k \mynorm{\mybetao}_{r,0}}^ \frac{-1}{2}.
+\end{aligned}}
+\end{equation*}
+\myhl{It can be seen that, although the constraint of $\beta_{1_j} [k] \sg 0$ is not explicitly included in the Lagrangian function, but from the final closed form solution this constraint can be verified.
+Therefore, $\sum_{k=1}^{\Vert\mybetao \Vert_{r,0}} \sum_{j=1}^{d_k} \beta_{1_j} [k]$ is upper-bounded by $\Vert\mybetao \Vert_{r,0}^{-1/2} \sum_{k=1}^{\Vert\mybetao \Vert_{r,0}} d_k^{1/2}$, which is again upper-bounded by $\Vert\mybetao \Vert_{r,0}^{1/2} d_{max}^{1/2}$.
+Similarly, for the second problem it can be proved that $\sum_{k'=1}^{\Vert\mybetaTwo \Vert_{r,0}} d_{k'}^{-1} \sum_{j=1}^{d_{k'}} \beta_{2_j}[k']$ is upper-bounded by $\Vert\mybetaTwo \Vert_{r,0}^{-1/2} \sum_{k'=1}^{\Vert\mybetaTwo \Vert_{r,0}} d_{k'}^{-1/2}$, which is again upper-bounded by $\Vert\mybetaTwo \Vert_{r,0}^{1/2} d_{min}^{-1/2}$.
+Substituting the recently mentioned upper-bounds into ({\ref{eq:DontKnow3}}), we get the same results as for the previous case of $\forall (q , p) \ssin \mathbb{R}^2_{> 1}$.
+Hence, the Lemma holds true for $\forall (q , p) \ssin \mathbb{R}^2_{\sgeq 1}$.}
+\end{proof}

@@ -1,0 +1,19 @@
+Whether the block structure of a given dictionary is assumed to be known beforehand but it is not the optimal structure or it is unknown, by clustering coherent blocks in a bigger block, there would be the possibility of enhancing the structure of the dictionary as a preprocessing step. 
+
+
+In this chapter, we made use of standard agglomerative hierarchical clustering method, where, the proposed Block-MCC$_{q,p}$ is used as the measure of similarity or coherence.
+Hierarchical clustering provides a set of clustering structures in multilevel hierarchy manner, which allows to decide the level of clustering that is most suitable to the application of interest. 
+The set of clustering structures is called clustering tree or \emph{dendrogram}.
+The dendrogram consists of some nodes indicating the clusters, and usually the clustering level corresponding to the maximum inter-node distance is selected as the desired clustering level.
+%In this study we used agglomerative hierarchical cluster analysis.
+%In spectral clustering method, firstly a similarity matrix is obtained based on the coherency between the blocks, then the spectral clustering is applied to the similarity matrix.
+
+In figure \ref{fig:Clustered_Representation}, it has been assumed that before blocks clustering all of the blocks of the dictionary $\myPhi \ssin \mathbb{R}^{8 \stimes 12}$ share the same length of two, i.e., $d_1 \seq \cdots \seq d_6 \seq 2$. 
+Then, by applying hierarchical clustering on initial blocks of dictionary and choosing the clustering level corresponding to the maximum inter-node distance in the clustering tree, i.e., three clusters, the clustered representation appears.
+
+As it can be seen in figure \ref{fig:Clustered_Representation}, after blocks clustering, blocks $\myPhi \mybracket{1}$, $\myPhi \mybracket{4}$, and $\myPhi \mybracket{6}$ are concatenated to form a new block $\myPhi_{cls} \mybracket{1}$ in new representation, whereas $\myPhi \mybracket{2}$ and $\myPhi \mybracket{3}$ are concatenated to form $\myPhi_{cls} \mybracket{2}$.
+Hence, the identified block structure is $\boldsymbol{d} \seq [6,4,2]$.
+Consequently, their corresponding blocks in the representation vector $\mybeta$ will be clustered.
+The clustered representation of the new model, i.e., $\boldsymbol{y} \seq \myPhi_{cls} \mybeta_{cls}$, leads to more relaxed Block-ERC, i.e., higher sparsity levels, which will be demonstrated in Section \ref{sec:hierarchical_cluster_estim}.
+\input{sections/3-2-1-Clustering-BIdentif-ClustCoh-Fig2}
+\FloatBarrier

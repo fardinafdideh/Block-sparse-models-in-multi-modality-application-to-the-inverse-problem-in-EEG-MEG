@@ -1,0 +1,19 @@
+\begin{property}[Block-MCC$_{q,p}$ upper-bound with intra-block orthonormality II]
+\label{prp:BMIC-orth-bound2} 
+For a dictionary with orthonormal blocks, Block-MCC$_{q,p}$ is upper-bounded based on its relationship with MCC, i.e., $\forall (q , p , q' , p') \ssin \mathbb{R}^4_{\sg 0}$, we have: % $d_{min}^{-1/p} d_{max}^{1/q}$.
+\begin{gather*}
+\begin{aligned}
+0 \leq M_{q,p}\myparanthese{\myPhi} \leq 
+d_{max}^{-1} \, \max_{k,k' \neq k} d_{k}^{\frac12 - \frac1p} \, d_{k'}^{\frac1q + \frac12} \, &\max \mybrace{1 , d_k^{\frac1p - \frac{1}{p'}}} \, \max \mybrace{1 , d_{k'}^{\frac{1}{q'} - \frac1q}} \times \\
+&\max \mybrace{1 , d_k^{\frac{1}{p'} -\frac12}} \, \max \mybrace{1 , d_{k'}^{\frac{1}{2} - \frac{1}{q'}}}.
+%\begin{cases}
+%d_{max}^{\frac32 - \frac1p}, & \qquad \text{for \ }q \geq 1\\
+%d_{max}^{\frac1q - \frac1p + \frac12}, & \qquad \text{for \ }q < 1\\
+%\end{cases}.
+\end{aligned}
+\end{gather*}
+\input{sections/2-2-3-BERC-BSparsity-Characterisations-Table5MaxBMCC}
+\end{property}
+\begin{proof}
+Since MCC is upper-bounded by one, from Property \ref{prp:BMIC-MIC} the proof is done.
+\end{proof}

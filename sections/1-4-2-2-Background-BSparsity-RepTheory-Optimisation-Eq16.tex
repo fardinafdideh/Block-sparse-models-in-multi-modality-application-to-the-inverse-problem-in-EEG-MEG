@@ -1,0 +1,21 @@
+In a general framework, consider the following \emph{constrained $\ell_{p_1,p_2}$ (pseudo-)mixed-norm minimisation problem}:
+\begin{equation}
+\label{eq:Opt-Lp1p2}
+P_{\myparanthese{p_1,p_2},q,\varepsilon} \myparanthese{\boldsymbol{a},\boldsymbol{b}}: \min_{\boldsymbol{a}} \mynorm{\boldsymbol{a}}_{p_1,p_2} \quad s.t. \quad \mynorm{\boldsymbol{b}}_q \leq \varepsilon,
+\end{equation}
+where, $\boldsymbol{a}$ and $\boldsymbol{b}$ are vectors, $\varepsilon$ bounds the noise level, i.e., $0 \sleq \epsilon \sleq \varepsilon$, and $\ell_{p_1,p_2}$ (pseudo-)mixed-norm of block-structured vector $\boldsymbol{a} \seq \mybracket{\boldsymbol{a}^T\mybracket{1}, \cdots, \boldsymbol{a}^T\mybracket{k}, \cdots, \boldsymbol{a}^T\mybracket{K}}^T$, where, $\boldsymbol{a} \mybracket{k} \seq \mybracket{a_1\mybracket{k}, \cdots, a_{d} \mybracket{k}}^T$, is defined:
+\begin{equation*}
+\label{eq:MixedNormDef} 
+\mynorm{\boldsymbol{a}}_{p_1,p_2} \myeq 
+\begin{cases}
+    \displaystyle\sum_{k}^{} I \myparanthese{\mynorm{\boldsymbol{a} \mybracket{k}}_{p_1}}, & \qquad \text{for \ }p_2= 0\\
+    \myparanthese{\displaystyle\sum_{k}^{} \mynorm{\boldsymbol{a} \mybracket{k}}_{p_1}^ {p_2}} ^ {\frac{1}{p_2}},  & \qquad  \text{for \ } 0 < p_2 < +\infty\\
+    \displaystyle\max_{k}{\mybrace{\mynorm{\boldsymbol{a} \mybracket{k}}_{p_1}}}, & \qquad \text{for \ } p_2= \infty,
+  \end{cases}
+\end{equation*}
+where, $I(a)$ is the indicator function, i.e., $I(a) \myeq
+  \begin{cases}
+    1,  & \quad \text{if } \myabs{a} \sg 0\\
+    0,  & \quad \text{if } a \seq 0\\
+  \end{cases}$.
+%The $\ell_{p_1,p_2}$ mixed-norm for different values of $p_1$ and $p_2$ is investigated in Definition \ref{def:Mixed norm}.

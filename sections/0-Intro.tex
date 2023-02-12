@@ -1,0 +1,152 @@
+\chapter*{Introduction}
+\addstarredchapter{Introduction}
+\markboth{Introduction}{Introduction}
+\label{chap:introduction}
+%\minitoc
+
+Many problems in different areas of engineering and science, such as inverse problems, can be reformulated as an underdetermined system of linear equations, i.e., the number of equations is less than the number of unknowns.
+In order to retain an appropriate unique solution from infinitely many solutions to a such system, problem-related constraints need to be applied.
+According to Tropp, for more than one century \emph{sparsity} constraints have been studied and applied to numerous applications \cite{Tropp2004b}. 
+
+However, if a comprehensive measurement is not provided, attaining a desired solution will not be feasible, even considering optimal constraints.
+This is mainly due to the rich characteristics of the phenomenon of interest that makes it impossible for a single modality to project all aspects of the phenomenon.
+Therefore, the main research question of this dissertation is:
+\begin{tcolorbox}
+\center
+%How the diversity of multiple modalities can be effectively exploited in inverse problems with sparsity constraint?
+What is the added value of multi-modality, when solving inverse problems?
+\end{tcolorbox}
+To answer the above-mentioned question, three main challenges will raise.
+First of all, it should be noticed that the desirable sparse solution can be extracted from a set of possible solutions through a proper constrained optimisation problem. 
+
+In order to ensure the uniqueness of the sparsest solution of the optimisation problem, some theoretical recovery conditions are proposed in literature.
+These conditions are based on the amount of similarity or coherence between the columns of coefficient matrix of the inverse problem.
+More precisely, the less coherence, the more relaxed are the conditions under which recovery is guaranteed to be successful. %improved conditions.
+
+For \emph{vastly} underdetermined systems of linear equations, the columns of coefficient matrix are more likely to be coherent. 
+This gives rise to the following first challenge:
+\begin{challenge}
+\label{ch:Ch1}
+\input{sections/0-Intro-Challenge1}
+\end{challenge}
+Secondly, due to the inverse impact of the coherence on the recovery conditions, low coherence is favourable.
+Hence, the idea of clustering the coherent parts of the coefficient matrix seems to be promising.
+Although the first challenge has a rather straightforward approach, but this goes paired with the following technical challenge:
+%, which raises the following second challenge:
+\begin{challenge}
+\label{ch:Ch2}
+\input{sections/0-Intro-Challenge2}
+\end{challenge}
+Finally, assuming that the two mentioned challenges are addressed successfully, and returning to the main research question, the last challenge is related to the impact of multi-modality:
+\begin{challenge}
+\label{ch:Ch3}
+\input{sections/0-Intro-Challenge3}
+\end{challenge}
+
+\myhl{In order to explore and address the three aforementioned challenges, this dissertation is organized in three main parts.
+Since Challenge {\ref{ch:Ch1}} uses the results of Challenge {\ref{ch:Ch2}}, first Challenge {\ref{ch:Ch2}} is presented in the dissertation, then Challenge {\ref{ch:Ch1}}, and ultimately in the last part a partial answer to Challenge {\ref{ch:Ch3}} is provided through experiments.}
+
+The first part of this thesis offers general theoretical recovery conditions based on \emph{block-sparsity} constraint, which ensure the uniqueness of the block-sparse solution of corresponding weighted (pseudo-)mixed-norm optimisation problem in an underdetermined system of linear equations.
+This part responds to Challenge \ref{ch:Ch2}.
+
+The second part of the thesis suggests the clustering idea to improve the general theoretical recovery conditions proposed in the first part, which responds to Challenge \ref{ch:Ch1}.
+
+Consequently, the third part of the thesis investigates Challenge \ref{ch:Ch3}, while considering the constraint in Challenge \ref{ch:Ch2}, i.e., block-sparsity.
+Our main application problem is distributed EEG/MEG source reconstruction.
+
+Given a linear operator relating the current density to the observed potential/magnetic fields, which is called lead-field, the inverse problem in EEG/MEG source reconstruction solves a vastly underdetermined system of linear equations.
+
+%Since electromagnetic field is vectorial, the block structure is a natural aspect of this representation.
+
+In EEG/MEG source reconstruction problem, two concepts are integrated: block-sparsity, and multi-modality.
+In the following, we elucidate the existence of the two mentioned concepts.
+There is the notion of block activity, because the activity of each brain source is related to a current dipole which can be represented by three magnitudes in $x$, $y$, and $z$ directions, respectively, and can be modelled by a vector of dimension three.
+Hence, the source vector will be a concatenation of groups or blocks of length three.
+Moreover, usually for a given brain task, a few regions of brain are activated, then it is consistent with the notion of block-sparsity. 
+
+Due to the fact that EEG and MEG measure electric and magnetic properties, respectively, they are complementary.
+Additionally, EEG and MEG measure properties of the same neuronal activity, induced by same current dipoles.
+Then, EEG and MEG information can be combined to form a multi-modal problem.
+
+Accordingly, the real-world distributed EEG/MEG source reconstruction problem completely complies with the conditions of the three above-mentioned challenges, and will be used as a leading example.
+
+Considering the properties of the real-world distributed EEG/MEG source reconstruction problem, which require few number of active blocks in the source vector, in Chapter \ref{sec:BERC} a general framework for block-sparse recovery problem is proposed.
+In other words, this chapter gives a partial answer to "In an underdetermined system of linear equations, under which conditions a unique block-sparse solution can be recovered?".
+
+In fact, in a wide range of problems, the value of a single coefficient inside a block of coefficients, whether zero or non-zero, is not important, but the status of the whole block which is determined by all of its coefficients is the atomic meaningful entity.
+Therefore, instead of the sparsity constraint which penalizes the non-zero coefficients, a block of coefficients should be penalized.
+
+Moreover, in contrast to the conventional point of view, where, the number of non-zero values of coefficients determines the unique solution, in the block-structured problems the status of block of coefficients (active or inactive) has an effective role.
+In addition, depending on the definition of a block, an active block can also have zero coefficients.
+
+%This new point of view raises a first challenge to be addressed by the community:
+%\begin{challenge}
+%\label{ch:Ch1} 
+%Under which constraints will the obtained unique solution have a few number of active blocks of coefficients instead of the conventional few number of non-zero coefficients?
+%\end{challenge}
+
+%\begin{challenge}
+%\label{ch:Ch2}
+%What is the effect of combining the information of different modalities, knowing that each information is different properties of the same phenomenon?
+%\end{challenge}
+%In order to effectively address the aforementioned challenges, this thesis is oriented in three main directions and the dissertation is organized in three main parts.
+
+%The first part of thesis suggests general theoretical recovery conditions based on \emph{block-sparsity} constraint which ensures the uniqueness of the block-sparse solution of corresponding weighted mixed-norm optimisation problem in an underdetermined system of linear equations.
+%This part responds to the Challenge \ref{ch:Ch1}.
+%The second part of thesis offers an algorithmic solution to improve the general theoretical recovery conditions proposed in the first part.
+%Consequently, the third part of thesis investigates the Challenge \ref{ch:Ch2}, while considering the constraint in Challenge \ref{ch:Ch1}, i.e., block-sparsity.
+%In our main problem which is distributed EEG/MEG source reconstruction, the underdetermined system of linear equations can be rephrased as: EEG/MEG signal equals to EEG/MEG leadfield matrix times source vector.
+
+
+
+
+
+The mentioned generality of the framework of Chapter \ref{sec:BERC} is in terms of the properties of the underdetermined system of linear equations, extracted characterisations, optimisation problems, and ultimately the recovery conditions.
+This chapter offers four main groups of recovery conditions based on:
+\begin{enumerate}
+  \item $\myBSpkTxt$,
+  \item block null space property,
+  \item block mutual coherence constant, and
+  \item cumulative coherence constant.
+\end{enumerate}
+%(1) $\myBSpkTxt$, (2) block null space property, (3) block mutual coherence constant, and (4) cumulative coherence constant.
+
+It is worth mentioning that utilising the block structure, besides the conformity with circumstances of some of the real-world problems, has the advantage of weakening the conventional sparse recovery conditions.
+Then, the benefit of block-sparsity assumption over conventional sparsity is proved theoretically, while it is shown that due to the natural generalisation, all the proposed materials reduce to the conventional findings for the unit block length.
+Finally, we prove the improvement of the proposed conditions over other recently proposed block-sparse recovery conditions.
+
+As mentioned implicitly, the lead-field is a fat matrix.
+For instance, in an ordinary EEG/MEG source reconstruction problem with 30 sensors and 3000 sources, the lead-field would be a matrix of dimensions 30 by 9000 (3000 sources times 3 values in $x$, $y$, and $z$ directions).
+
+Since the mentioned block mutual coherence constant introduced in Chapter \ref{sec:BERC} is a coherence characterisation extracted from the lead-field matrix, and due to the fact that the low coherence is favourable, the idea of clustering coherent parts of lead-field is studied in Chapter \ref{sec:Clustering}.
+The clustering algorithm is applied in a hierarchical manner which enables us to estimate the number of clusters according to the resulted clustering tree. 
+
+To construct the similarity matrix in hierarchical clustering algorithm, the proposed coherence characterisation introduced in Chapter \ref{sec:BERC} is used.
+By applying clustering on the lead-field matrix we will have two main achievements: 
+\begin{enumerate}
+  \item improved block-sparse recovery conditions, and
+  \item brain source space segmentation.
+\end{enumerate}
+%(1) improved block-sparse recovery conditions, and (2) brain source space segmentation.
+%\begin{itemize}
+%\itemsep0em
+%\item improved block-sparse recovery conditions, and\\
+%\item brain source space segmentation.
+%\end{itemize}
+
+To explain more about the brain source space segmentation, it should be mentioned that each consecutive block of three columns of the lead-field matrix corresponds to a single brain source, so by clustering the blocks of the lead-field matrix we are actually clustering brain sources.
+
+It should be highlighted that in contrast to other existing brain source space segmentation scenarios, in this study this segmentation is done in the most general case, i.e., the clustering algorithm is blind to any information about the brain sources activity and EEG/MEG signals.
+In other words, the segmentation is not restricted to a special brain activity.
+
+%The proposed brain segmentation has two main meanings: (1) if based on the block-sparse recovery condition, a certain number of brain segments are allowed to be active, regardless of the activation of each of brain sources inside the determined segments, the unique recovery is still ensured; (2) the structure of the brain segmentation can be utilized as a criterion to distribute the source positions in the source model, i.e., sources can be more distributed in the boundaries of the segments.
+
+In Chapter \ref{chptr:Multimodality}, the goal is to show the effect of combining the information of two complementary modalities of EEG and MEG.
+%In order to create a new multi-modal EEG+MEG leadfield, knowing that each row of the leadfield corresponds to a sensor, half of the rows of each single modality leadfield are selected in a way that a new multi-modal sensor layout covers all regions of head.
+%The reason for utilizing only half of rows of each of two modalities is to keep the total number of sensors equal, in monomodal and multi-modal cases, in order to be able to have a fair comparison.  
+We show that in multi-modal case more refined and precise brain regions appear.
+Hence, EEG and MEG multi-modality advantage will be proved. %from another point of view.
+   
+Extensive experiments on synthetic and real data indicate a significant improvement over the state-of-the-art findings in our three main research orientations.
+
+

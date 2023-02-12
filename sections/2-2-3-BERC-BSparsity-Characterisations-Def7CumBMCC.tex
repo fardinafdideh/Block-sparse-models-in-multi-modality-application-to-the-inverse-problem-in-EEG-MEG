@@ -1,0 +1,15 @@
+\begin{Mydefinition}[Cumulative Block-MCC$_{q,p}$]
+\label{def:CBMIC}
+\leftbar
+The \emph{cumulative Block-MCC$_{q,p}$} of a dictionary \myhl{with full column rank blocks,} is defined for all integers $1 \sleq k \sleq K \sm 1$ and $\forall (q , p) \ssin \mathbb{R}^2_{\sg 0}$ as:
+\begin{equation*}
+%\label{eq:CBMIC}
+M_{q,p}\myparanthese{\myPhi , k} \myeq
+\max_{\myabs{\Lambda}=k} \max_{j \notin \Lambda} \sum_{i \in \Lambda}
+\frac{d_{i}^{-\frac1p} \, d_{j}^{\frac1q}}{d_{max}} \mynorm{\myPhi^\dagger\mybracket{i} \myPhi \mybracket{j}}_{q \to p},
+\end{equation*}
+where, $\Lambda \ssubset \{1, \cdots, K\}$ of $\myCardTxt$ $k$.
+\endleftbar
+\end{Mydefinition}
+
+Cumulative Block-MCC$_{q,p}$ measures the maximum total Block-MCC$_{q,p}$ between a fixed block and a collection of other blocks, which is the block-wise generalisation of the conventional cumulative MCC defined in (\ref{eq:CMIC}), i.e., $M(\myPhi , k) {\myeq} \max_{\myabs{\Lambda}=k} \max_{j \notin \Lambda} \sum_{i \in \Lambda} | \left\langle \boldsymbol{\varphi}_i , \boldsymbol{\varphi}_{j} \right\rangle|$.

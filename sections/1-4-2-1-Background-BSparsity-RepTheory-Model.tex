@@ -1,0 +1,14 @@
+As mentioned before, the goal is to extract a representation vector $\hat{\mybeta}$ which is the block-sparsest among all solutions, i.e., a representation with the fewest active blocks relative to its dimension.
+For instance, suppose the following estimated representation vector $\hat{\mybeta}$ which consists of nonoverlapping equally-sized blocks of length $d$, i.e., $\forall k,\hat{\mybeta}[k] \ssin \mathbb{R}^{d}$:
+\input{sections/1-4-2-1-Background-BSparsity-RepTheory-Model-BetaHat}
+where, $Kd \seq n$, and the $k^{th}$ block is:
+\input{sections/1-4-2-1-Background-BSparsity-RepTheory-Model-BetaHatK}
+Then, the dictionary is represented by:
+\input{sections/1-4-2-1-Background-BSparsity-RepTheory-Model-Phi}
+where, the $k^{th}$ blocks of atoms of the dictionary is:
+\input{sections/1-4-2-1-Background-BSparsity-RepTheory-Model-PhiK}
+with $\myphi_{j}[k] \ssin \mathbb{R}^{m}$ and without loss of generality, it is assumed that atoms have unit Euclidean norm, i.e., $\forall j,k,  \Vert \myphi_{j}[k] \Vert_2 \seq 1$.
+Then, assuming that the true solution $\mybetaz$ is exactly recovered, i.e., $\hat{\mybeta} \seq \mybetaz$, the block-sparsity structure of the estimated representation vector $\hat{\mybeta}$ in the noiseless linear model is represented graphically in figure \ref{fig:Block-Sparsity-Structure}.
+The model can be either noiseless, i.e., $\boldsymbol{y} \seq \myPhi \mybetaz$, or in general case, noisy, i.e., $\boldsymbol{y} \seq \myPhi \mybetaz \spl \boldsymbol{e}$, which are defined in (\ref{eq:Model_Noiseless}) and (\ref{eq:Model_Noisy}), respectively.
+\input{sections/1-4-2-1-Background-BSparsity-RepTheory-Model-Fig10}
+\FloatBarrier

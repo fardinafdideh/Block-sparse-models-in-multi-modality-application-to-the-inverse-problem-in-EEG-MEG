@@ -1,0 +1,17 @@
+%\subsubsection{Sparsity level in a clustered blocks compared to the conventional sparsity level}
+In this experiment, the goal is to compare the sparsity level obtained in the proposed Block-ERC to the conventional sparsity level which is equal to the half of the number of rows of $\myPhi$.%the dictionary.
+
+First, we need to express the block-sparsity level in terms of the conventional sparsity level as described in Section \ref{sec:Sparsity level for clustered blocks of a dictionary}, e.g., $\mySLTxt_{min}$ and $\mySLTxt_{max}$.
+Then, consider one of the cases in figure \ref{fig:SL_Hierarchical}, e.g., $\varepsilon_{inter} \seq 3.5$, $\varepsilon_{intra} \seq 0.1$.
+% and complete method.
+So, the complete method is used to calculate inter-clusters distance, whereas the Block-MCC$_{2,2}$ measures the inter-blocks coherence of a dictionary $\myPhi \ssin \mathbb{R}^{10 \stimes 80}$ with equally-sized blocks, i.e., $d_1 \seq \cdots \seq d_{40} \seq d \seq 2$.
+
+In figure \ref{fig:SL_Hierarchical_conventional}, it can be seen that by applying hierarchical clustering on the blocks of the dictionary, the increase in the sparsity levels even surpasses the conventional sparsity level which is marked with a black dotted line.
+It can be seen in figure \ref{fig:SL_Hierarchical_conventional} that close to the clustering level equal to the number of clusters in the simulated dictionary, even the proposed $\mySLTxt_{min}$ can surpass the conventional sparsity level.
+Therefore, clustering the coherent blocks of a dictionary in addition to enhancing the Block-ERC through increasing the $\myBSLTxt_{2,2}$, improves the conventional sparsity level. 
+Hence, improves the conventional ERC.
+
+At last, in order to make sure that the clustering structure in a clustering level, where, there is a peak in sparsity level is done properly, the average clustering accuracy over 100 repetitions is computed for fourth (for the case of four clusters in the dictionary) and eighth (for the case of eight clusters in the dictionary) clustering levels, which are equal to \myhl{$99.65\%$} and \myhl{$100\%$}, respectively.
+Therefore, the peak in the sparsity level diagram, which is more striking in figure \ref{fig:SL_Hierarchical} in addition to giving an estimation of the number of clusters in the dictionary, also with \myhl{high probability (at least in this example)} corresponds to the correct clustering structure of the dictionary.
+\input{sections/3-5-1-2-Clustering-Res-SynDic-SL-Fig9}
+\FloatBarrier

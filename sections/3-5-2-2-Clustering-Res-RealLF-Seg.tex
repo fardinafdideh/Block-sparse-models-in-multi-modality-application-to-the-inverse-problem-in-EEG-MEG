@@ -1,0 +1,16 @@
+As described in Section \ref{sec:EMEG segmentation}, clustering the coherent blocks of the lead-field matrix results in some brain regions, because each block of the lead-field correspond to \myhl{a single source position in the source space.}
+Then, coherent source positions form brain regions, where, coherency is defined by the Block-MCC$_{q,p}$ coherence measure applied on the bocks of the lead-field.
+
+The results of clustering coherent source positions using EEG and MEG lead-field, and for three head models with spherical, realistic inflated and realistic highly-folded cortical sheets are shown in figure \ref{fig:EMEG-LF-clustering-regions}. 
+Although, in this experiment the number of clusters or brain regions is estimated from the clustering tree, but since there is a series of clustering structures in the hierarchical clustering analysis, by introducing extra information to the problem about the number of brain regions, there would be the possibility of having different brain regions.
+In other words, the resulted brain regions in figure \ref{fig:EMEG-LF-clustering-regions} are not fixed and can be adapted based on the number of regions.
+In addition, the resulted brain regions are a function of Block-MCC$_{q,p}$ and inter-cluster distance method.
+
+
+%By clustering the blocks of the leadfield matrix, coherent sources form clusters, hence brain regions appear as described in Section \ref{sec:EMEG segmentation} and the number of clusters can be estimated by counting the number of intersections of a horizontal line with the dendrogram in an area where there is the maximum distance between adjacent nodes.
+
+%Using Block-MCC$_{1,\infty}$ as the similarity measure and the complete method as the algorithm for computing the distance between clusters, the brain source space segmentation resulted from EEG leadfield clustering in three cases of one spherical and two realistic volume conduction head models can be seen in figure \ref{fig:EMEG-LF-clustering_regions}(a), (b), and (c), respectively.
+%As it can be seen in figure \ref{EMEG-LF-clustering-regions}(a), with the help of dendrogram it is possible to estimate the number of clusters and the clustering structure.
+%Similar results are obtained from MEG leadfield, which are shown in figure \ref{EMEG-LF-clustering-regions}(d), (e) and (f).
+\input{sections/3-5-2-2-Clustering-Res-RealLF-Seg-Fig12}
+\FloatBarrier

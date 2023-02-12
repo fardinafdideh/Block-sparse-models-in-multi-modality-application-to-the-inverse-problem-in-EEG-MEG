@@ -1,0 +1,83 @@
+Now we need to prove the claim of improved recovery conditions in the block-wise domain through comparing sparsity level with block-sparsity level. 
+To this end, supposing that $\mybetaz$ has a block-sparse structure and satisfies the condition of Theorem \ref{th:BERC-BMIC} (Block-ERC based on Block-MCC$_{q,p}$), and considering the fact that $\forall r \sgeq 0$, $\Vert \mybetaz \Vert_{0} \sleq d_{max} \, \Vert \mybetaz \Vert_{r,0}$, we have:
+\begin{equation*}
+%\label{eq:DontKnow2}
+\forall (q,p) \in \mathbb{R}^2_{\geq 1}, \qquad
+\mynorm{\mybetaz}_{0} < 
+\frac{d_{max} + M_{q,p}^{-1}\myparanthese{\myPhi} \displaystyle\min_{k} \, \min \mybrace{1 , d_k^{\frac1q - \frac1p}}}{2}.
+\end{equation*}
+Comparing with $\Vert \mybetaz \Vert_0 \sless (1 \spl M^{-1} (\myPhi))/2$ in (\ref{eq:ERC-M}) on page \pageref{eq:ERC-M}, we see that the relationship between $d_{max} \spl M_{q,p}^{-1}(\myPhi) \min_{k} \, \min \{1 , d_k^{1/q \sm 1/p} \}$ and $1 \spl M^{-1}(\myPhi)$ should be investigated. 
+We show this relationship in the following property, which the proof is provided in Section \ref{prf:DontKnow1} (page \pageref{prf:DontKnow1}):
+%\iffalse
+%\begin{property}[SL\footnote{Sparsity Level} v.s. $\boldsymbol{\myBSLTxt}$]
+%\label{prp:DontKnow1} % $\forall \boldsymbol{x} \ssin \myKerMath$
+%For a dictionary $\myPhi$ with Block-MCC$_{q,p}$ $M_{q,p}(\myPhi)$ and the small enough MCC $M(\myPhi)$, 
+%%$\forall p \sgeq 1$, and $\forall q \sgeq 1$
+%we have: 
+%\begin{gather*}
+%%\forall (q,p) \in \mathbb{R}^2_{\geq 1}, \qquad
+%d_{max} + M_{q,p}^{-1}\myparanthese{\myPhi} \displaystyle\min_{k} \, \min \mybrace{1 , d_k^{\frac1q - \frac1p}}
+%\geq 1 + M^{-1}\myparanthese{\myPhi},
+%\end{gather*}
+%where, in the case of a dictionary with full column rank blocks, we assume the following conditions:
+%\begin{gather*}
+%q \geq p \geq 1, \qquad 
+%M\myparanthese{\myPhi} \leq
+%\min \mybrace{\frac{d_{max} ^{\frac1q - 2}}{\myparanthese{d_{max} - 1}^{\frac12}} , \frac{1 - d_{max} ^{\frac1q - \frac32}}{\myparanthese{d_{max} - 1}^{\frac12} \mybracket{\myparanthese{d_{max} - 1}^{\frac12} - d_{max} ^ \frac12}}},
+%\end{gather*}
+%whereas in the case of intra-block orthonormality, $\forall (q , p , q' , p') \ssin \mathbb{R}^4_{\sg 0}$
+%\iffalse
+%\begin{gather*}
+%M\myparanthese{\myPhi} \leq
+%\frac{1 - d_{max}^{\frac1p - \frac32}  \displaystyle\min_k \, \min \mybrace{1 , d_k^{\frac1q - \frac1p}}}{d_{max} - 1},
+%\end{gather*}
+%\fi
+%\begin{gather*}
+%\begin{aligned}
+%M\myparanthese{\myPhi} \leq
+%\frac{1 - \frac{d_{max} \, \displaystyle\min_{k} \, \min \mybrace{1 , d_k^{\frac1q - \frac1p}}}{\displaystyle\max_{k,k' \neq k} d_{k}^{\frac12 - \frac1p} \, d_{k'}^{\frac1q + \frac12} \, \max \mybrace{1 , d_k^{\frac1p - \frac{1}{p'}}} \, \max \mybrace{1 , d_{k'}^{\frac{1}{q'} - \frac1q}} \, \max \mybrace{1 , d_k^{\frac{1}{p'} -\frac12}} \, \max \mybrace{1 , d_{k'}^{\frac{1}{2} - \frac{1}{q'}}}}}{d_{max} - 1}.
+%\end{aligned}
+%\end{gather*}
+%should hold true.  
+%\end{property}
+%\fi
+\begin{property}[\myhl{SL\footnote{Sparsity Level} v.s. $\boldsymbol{\myBSLqpTxt}$}]
+\label{prp:DontKnow1} % $\forall \boldsymbol{x} \ssin \myKerMath$
+For a dictionary $\myPhi$ with intra-block orthonormality, and Block-MCC$_{q,p}$ $M_{q,p}(\myPhi)$, $\forall (q , p , q' , p') \ssin \mathbb{R}^4_{\sg 0}$ if the MCC $M(\myPhi)$ is small enough, i.e., 
+%$\forall p \sgeq 1$, and $\forall q \sgeq 1$
+%\iffalse
+%we have: 
+%\begin{gather*}
+%%\forall (q,p) \in \mathbb{R}^2_{\geq 1}, \qquad
+%d_{max} + M_{q,p}^{-1}\myparanthese{\myPhi} \displaystyle\min_{k} \, \min \mybrace{1 , d_k^{\frac1q - \frac1p}}
+%\geq 1 + M^{-1}\myparanthese{\myPhi},
+%\end{gather*}
+%where, in the case of a dictionary with full column rank blocks, we assume the following conditions:
+%\begin{gather*}
+%q \geq p \geq 1, \qquad 
+%M\myparanthese{\myPhi} \leq
+%\min \mybrace{\frac{d_{max} ^{\frac1q - 2}}{\myparanthese{d_{max} - 1}^{\frac12}} , \frac{1 - d_{max} ^{\frac1q - \frac32}}{\myparanthese{d_{max} - 1}^{\frac12} \mybracket{\myparanthese{d_{max} - 1}^{\frac12} - d_{max} ^ \frac12}}},
+%\end{gather*}
+%whereas in the case of intra-block orthonormality, $\forall (q , p , q' , p') \ssin \mathbb{R}^4_{\sg 0}$
+%\iffalse
+%\begin{gather*}
+%M\myparanthese{\myPhi} \leq
+%\frac{1 - d_{max}^{\frac1p - \frac32}  \displaystyle\min_k \, \min \mybrace{1 , d_k^{\frac1q - \frac1p}}}{d_{max} - 1},
+%\end{gather*}
+%\fi
+%\fi
+\begin{gather*}
+\begin{aligned}
+M\myparanthese{\myPhi} \leq
+\frac{1 - \frac{d_{max} \, \displaystyle\min_{k} \, \min \mybrace{1 , d_k^{\frac1q - \frac1p}}}{\displaystyle\max_{k,k' \neq k} d_{k}^{\frac12 - \frac1p} \, d_{k'}^{\frac1q + \frac12} \, \max \mybrace{1 , d_k^{\frac1p - \frac{1}{p'}}} \, \max \mybrace{1 , d_{k'}^{\frac{1}{q'} - \frac1q}} \, \max \mybrace{1 , d_k^{\frac{1}{p'} -\frac12}} \, \max \mybrace{1 , d_{k'}^{\frac{1}{2} - \frac{1}{q'}}}}}{d_{max} - 1},
+\end{aligned}
+\end{gather*}
+%should hold true.  
+then the proposed sparsity level in Theorem \ref{th:BERC-BMIC} (block-ERC based on Block-MCC$_{q,p}$, page \pageref{th:BERC-BMIC}) is higher than the conventional sparsity level, i.e.,
+\begin{gather*}
+%\forall (q,p) \in \mathbb{R}^2_{\geq 1}, \qquad
+d_{max} + M_{q,p}^{-1}\myparanthese{\myPhi} \displaystyle\min_{k} \, \min \mybrace{1 , d_k^{\frac1q - \frac1p}}
+\geq 1 + M^{-1}\myparanthese{\myPhi}.
+\end{gather*}
+\end{property}
+%The proof of Property \ref{prp:DontKnow1} is provided in Section \ref{prf:DontKnow1}.

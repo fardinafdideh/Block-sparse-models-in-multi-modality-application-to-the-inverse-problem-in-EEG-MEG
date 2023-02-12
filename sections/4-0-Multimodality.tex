@@ -1,0 +1,39 @@
+\input{sections/4-0-Multimodality-ChapTOC}
+%------------------------------------------------------
+\section{Introduction}
+\input{sections/4-1-Multimodality-Intro}
+%------------------------------------------------------
+\section{Multi-modal lead-field}
+%------------------------------------------------------
+\input{sections/4-2-0-0-Multimodality-LF}
+%------------------------------------------------------
+\section{Results}
+\input{sections/4-3-0-0-Multimodality-Res}
+%------------------------------------------------------
+\section{Conclusion}
+In this chapter, first we showed the effectiveness of multi-modality on synthetic data through demonstrating that the number of clusters in a combined random dictionary is equal to the sum of the number of clusters in its two original random dictionaries.
+
+Then, passing from synthetic data to real one, we showed that by clustering coherent brain sources through clustering their corresponding EEG or MEG lead-fields, some regions appear.
+The brain regions resulted from two mono-modal lead-fields are somehow complement each other.
+
+Then, by applying the block structure identification framework introduced in Chapter \ref{sec:Clustering}, i.e., assuming that the number of clusters can be estimated by the largest distance between the adjacent nodes in dendrogram, we demonstrated that by combining EEG and MEG modalities, the number of clusters existing in the resulted multi-modal lead-field increases.
+
+In addition, in another experiment we demonstrated that for a fixed number of clusters, the under-sensor brain regions are smaller in multi-modal lead-field compared to the mono-modal one.
+Therefore, more refined segmentation can be achieved in EEG and MEG multi-modality clustering using the proposed coherency measure.
+
+%Finally, we showed the effectiveness of multi-modality in a different scenario for a fixed number of clusters.
+%In the experiment, we observed that for a fixed number of clusters, the area of brain regions resulted from clustering the blocks of combined EEG and MEG leadfields is generally lower than the EEG or MEG leadfield alone, therefore the resolution increases.
+In all the above experiments the number of sensors for mono-modal or multi-modal cases was kept to be equal.
+
+Future research should focus on:
+\begin{itemize}
+\item Study on electromagnetic properties in 2D/3D mediums with different number of boundaries as a general case.
+\item Designing more scenarios (other than brain segmentation) to investigate the impact of multi-modality.
+\item Designing more methods to combine modalities.
+\item The impact of combining more modalities (greater than two).
+\item The optimum ratio of the number of measurements from each modality (not necessarily $50\%$ in two modalities case).
+\end{itemize} 
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../roque-phdthesis"
+%%% End: 

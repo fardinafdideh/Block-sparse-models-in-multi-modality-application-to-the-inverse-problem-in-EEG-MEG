@@ -1,0 +1,130 @@
+\begin{proof}
+The proof is similar to the proof of Property \ref{prp:BMIC-MIC} (Block-MCC$_{q,p}$ bounds).
+First, we investigate the required condition on $M^{Eldar}_{Intra}(\myPhi)$ for a dictionary \myhl{with full column rank blocks}.
+Utilising the Block-MCC$_{q,p}$ proposed in Definition \ref{def:BMIC} (\pageref{def:BMIC}), we have the following first line in (\ref{eq:BMCC-Eldar-BSL}). 
+Using the pseudo-inverse property of full column rank matrices and submultiplicativity property of operator-norms introduced in Property \ref{prp:OperatorProperties} ($\ell_{q {\to} p}$ operator-norm properties), and for $d_1 \seq \cdots \seq d_K \seq d$, $\forall (q , p) \ssin \mathbb{R}^2_{>0}$ we have:
+\begin{gather}
+\label{eq:BMCC-Eldar-BSL} 
+\begin{aligned}
+M_{q,p}\myparanthese{\myPhi} &= d^{\frac1q - \frac1p-1} \max_{k,k' \neq k} \mynorm{\myPhi^\dagger \mybracket{k} \myPhi \mybracket{k'}}_{q \to p} \\
+&= d^{\frac1q - \frac1p-1} \max_{k,k' \neq k} \mynorm{\myparanthese{\myPhi^T \mybracket{k} \myPhi\mybracket{k}}^{-1}\myPhi^T \mybracket{k} \myPhi \mybracket{k'}}_{q \to p} \\
+&\leq d^{\frac1q - \frac1p-1} \max_{k,k' \neq k} \mynorm{\myparanthese{\myPhi^T \mybracket{k} \myPhi \mybracket{k}}^{-1}}_{q \to p} \, \mynorm{\myPhi^T \mybracket{k} \myPhi \mybracket{k'}}_{q \to p} \max \mybrace{1 , d^{\frac1q - \frac1p}}.
+\end{aligned}
+\end{gather}
+
+{
+\label{cmmnt:77-2} 
+\myhl{Similar to the proof of the Property {\ref{prp:BMIC-MIC}} in finding upper-bound of $\Vert (\myPhi^T [k] \myPhi [k])^{-1} \Vert_{q \to p}$, by replacing $M(\myPhi)$ by $M^{Eldar}_{Intra}(\myPhi)$} (because $\forall i,j$, $\boldsymbol{F}_{i,j}[k] \sleq M^{Eldar}_{Intra}(\myPhi) {\myeq} \max_{\substack{i,j \neq i \\ k}} \vert \myphi_i ^T [k] \myphi_j [k] \vert \sleq M(\myPhi)$), \myhl{and using Property {\ref{lm:Horn}} ($q \sgeq p \sgeq 1$, $M^{Eldar}_{Intra}(\myPhi) \sless d^{1/q - 2} (d - 1)^{-1/2}$ to meet the related condition), we have:}
+}
+\begin{gather*}
+\forall k, q \geq p \geq 1, \qquad
+\mynorm{\myparanthese{\myPhi^T \mybracket{k} \myPhi \mybracket{k}}^{-1}}_{q \to p} 
+\leq \frac{1}{1-  d^{2 - \frac1q} \myparanthese{d - 1}^\frac12 \, M^{Eldar}_{Intra}\myparanthese{\myPhi}}.
+\end{gather*}
+For $q \sgeq p \sgeq 1$ (condition imposed by Property \ref{lm:Horn}), we have $\max \{1 , d^{1/q \sm 1/p} \} \seq 1$ in (\ref{eq:BMCC-Eldar-BSL}). 
+Therefore, by substituting the upper-bound of $\Vert (\myPhi^T [k] \myPhi [k])^{-1} \Vert_{q \to p}$ and the value of $\max \{1 , d^{1/q \sm 1/p} \}$ in (\ref{eq:BMCC-Eldar-BSL}), for $q \sgeq p \sgeq 1$ we get:
+\begin{gather*}
+\begin{aligned}
+M_{q,p}\myparanthese{\myPhi} &\leq 
+\frac{d^{\frac1q - \frac1p -1 }}{1- d^{2 - \frac1q} \myparanthese{d - 1}^\frac12 M^{Eldar}_{Intra}\myparanthese{\myPhi}} \max_{k,k' \neq k}  \mynorm{\myPhi^T \mybracket{k} \myPhi \mybracket{k'}}_{q \to p}\\
+&\leq \frac{d^{\frac1q - \frac1p -1 } \max \mybrace{1 , d^{\frac1p - \frac{1}{2}}} \max \mybrace{1 , d^{\frac{1}{2} - \frac1q}}}{1-  d^{2 - \frac1q} \myparanthese{d - 1}^\frac12 M^{Eldar}_{Intra}\myparanthese{\myPhi}} \max_{k,k' \neq k} \mynorm{\myPhi^T \mybracket{k} \myPhi \mybracket{k'}}_{2 \to 2}.
+\end{aligned}
+\end{gather*}
+The above last inequality is achieved based on the upper-bound of $\ell_{q \to p}$ operator-norm based on $\ell_{2 \to 2}$ operator-norm explained in Property \ref{lm:qpTO22}.
+\myhl{Then by definition, substituting $\max_{k,k' \neq k} \Vert \myPhi ^T [k] \myPhi [k'] \Vert_{2 \to 2}$ by $d \, M^{Eldar}_{Inter}(\myPhi)$ in the above inequality, for $q \sgeq p \sgeq 1$ we have:}
+\begin{gather*}
+\label{cmmnt:78} 
+\mycolor{M_{q,p}\myparanthese{\myPhi} \leq 
+\frac{d^{\frac1q - \frac1p} M^{Eldar}_{Inter}\myparanthese{\myPhi} \max \mybrace{1 , d^{\frac1p - \frac{1}{2}}} \max \mybrace{1 , d^{\frac{1}{2} - \frac1q}}}{1-  d^{2 - \frac1q} \myparanthese{d - 1}^\frac12 M^{Eldar}_{Intra}\myparanthese{\myPhi}},}
+\end{gather*}
+or,
+\begin{gather*}
+M_{q,p}^{-1}\myparanthese{\myPhi} \geq 
+\frac{1-  d^{2 - \frac1q} \myparanthese{d - 1}^\frac12 M^{Eldar}_{Intra}\myparanthese{\myPhi}}{d^{\frac1q - \frac1p} M^{Eldar}_{Inter}\myparanthese{\myPhi} \max \mybrace{1 , d^{\frac1p - \frac{1}{2}}} \max \mybrace{1 , d^{\frac{1}{2} - \frac1q}}}.
+\end{gather*}
+By comparing Eldar's Block-ERC, i.e., $\Vert \mybetaz \Vert_{2,0} \sless (1 \spl (d M^{Eldar}_{Inter}(\myPhi))^{-1} (1 \sm (d \sm 1)M^{Eldar}_{Intra}(\myPhi)))/2$, explained in (\ref{BERC-Eldar}) and the proposed equally-sized Block-ERC proposed in Theorem \ref{th:BERC-BMIC}, i.e., $\forall (q,p) \ssin \mathbb{R}^2_{\sgeq 1}, \forall r \ssin \mathbb{R}_{\sgeq 0} : \Vert \mybetaz \Vert_{r,0} \sless ( 1 + (dM_{q,p}(\myPhi))^{-1} \min \{1 , d^{1/q \sm 1/p} \}) / 2 $, it is clear that for $q \sgeq p \sgeq 1$ (the constraint imposed up to this step) the relationship between $d^{1/q \sm 1/p} M_{q,p}^{-1}(\myPhi)$ 
+%and $M_{q,p}^{-1}(\myPhi)$, respectively, with 
+and $(M^{Eldar}_{Inter}(\myPhi))^{-1} (1 \sm (d \sm 1)M^{Eldar}_{Intra}(\myPhi))$ should be investigated.
+By multiplying both sides of the above inequality by $d^{1/q \sm 1/p} \sg 0$, for $q \sgeq p \sgeq 1$ we have:
+\begin{gather*}
+d^{\frac1q - \frac1p} M_{q,p}^{-1}\myparanthese{\myPhi} \geq 
+\frac{1-  d^{2 - \frac1q} \myparanthese{d - 1}^\frac12 M^{Eldar}_{Intra}\myparanthese{\myPhi}}{M^{Eldar}_{Inter}\myparanthese{\myPhi} \, \max \mybrace{1 , d^{\frac1p - \frac{1}{2}}} \max \mybrace{1 , d^{\frac{1}{2} - \frac1q}}}.
+\end{gather*}
+Assuming that the above right-hand side is greater than or equal to the expression that we are interested in to its relation with $d^{1/q \sm 1/p} M_{q,p}^{-1}(\myPhi)$, i.e., $(M^{Eldar}_{Inter}(\myPhi))^{-1} (1 \sm (d \sm 1)M^{Eldar}_{Intra}(\myPhi))$, we extract the required corresponding condition.
+In other words, assuming that for $q \sgeq p \sgeq 1$, we have:
+\begin{gather*} 
+\frac{1-  d^{2 - \frac1q} \myparanthese{d - 1}^\frac12 M^{Eldar}_{Intra}\myparanthese{\myPhi}}{M^{Eldar}_{Inter}\myparanthese{\myPhi} \, \max \mybrace{1 , d^{\frac1p - \frac{1}{2}}} \max \mybrace{1 , d^{\frac{1}{2} - \frac1q}}} 
+\geq \frac{1 - \myparanthese{d - 1} M^{Eldar}_{Intra}\myparanthese{\myPhi}}{M^{Eldar}_{Inter}\myparanthese{\myPhi}},
+\end{gather*}
+we conclude that for
+\begin{gather*}
+q \geq p \geq 1, \qquad
+M^{Eldar}_{Intra}\myparanthese{\myPhi} \leq 
+\frac{1 - \max \mybrace{1 , d^{\frac1p - \frac12}} \max \mybrace{1 , d^{\frac12 - \frac1q}}}{d^{2 - \frac1q} \myparanthese{d - 1}^\frac12 - \myparanthese{d - 1} \max \mybrace{1 , d^{\frac1p - \frac12}} \max \mybrace{1 , d^{\frac12 - \frac1q}}},
+\end{gather*}
+the assumption will hold true.
+On the other hand, we had another condition on the upper-bound of $M^{Eldar}_{Intra}(\myPhi)$ to meet the condition of Property \ref{lm:Horn}.
+Therefore, the minimum of the obtained upper-bounds on the $M^{Eldar}_{Intra}(\myPhi)$ ensures that $\forall q \sgeq p \sgeq 1$ the Block-ERC proposed in Theorem \ref{th:BERC-BMIC} improves Eldar's Block-ERC, i.e., $d^{1/q \sm 1/p} M_{q,p}^{-1}(\myPhi) \sgeq (M^{Eldar}_{Inter}(\myPhi))^{-1} (1 \sm (d \sm 1)M^{Eldar}_{Intra}(\myPhi))$:
+\begin{gather*}
+\begin{aligned}
+M^{Eldar}_{Intra}\myparanthese{\myPhi} &\leq 
+\min \mybrace{\frac{1}{d^{2 - \frac1q} \myparanthese{d - 1}^\frac12} , \frac{1 - \max \mybrace{1 , d^{\frac1p - \frac12}} \max \mybrace{1 , d^{\frac12 - \frac1q}}}{d^{2 - \frac1q} \myparanthese{d - 1}^\frac12 - \myparanthese{d - 1} \max \mybrace{1 , d^{\frac1p - \frac12}} \max \mybrace{1 , d^{\frac12 - \frac1q}}}} \\
+&= \frac{1 - \max \mybrace{1 , d^{\frac1p - \frac12}} \max \mybrace{1 , d^{\frac12 - \frac1q}}}{d^{2 - \frac1q} \myparanthese{d - 1}^\frac12 - \myparanthese{d - 1} \max \mybrace{1 , d^{\frac1p - \frac12}} \max \mybrace{1 , d^{\frac12 - \frac1q}}}.
+\end{aligned}
+\end{gather*}
+The above last inequality yields from the fact that a fraction with smaller numerator and denominator is smaller.
+But, the resulted upper-bound is negative.
+Therefore, although in practice the numerical simulations approve that the proposed block-sparsity level for general dictionaries with full column rank blocks is higher than the block-sparsity level proposed by Eldar et al., in theory due to utilising the most pessimistic bounds, its supremacy cannot be proved.
+%then, the Block-ERC proposed in Theorem \ref{th:BERC-BMIC} improves Eldar's Block-ERC, i.e., $d^{1/q \sm 1/p} M_{q,p}^{-1}(\myPhi) \sgeq (M^{Eldar}_{Inter}(\myPhi))^{-1} (1 \sm (d \sm 1)M^{Eldar}_{Intra}(\myPhi))$.
+%Under conditions mentioned in the Lemma, we have $(d^{1/p \sm 1/q} M_{q,p}(\myPhi))^{-1} \sgeq (M^{Eldar}_{Inter}(\myPhi))^{-1} (1 \sm (d \sm 1)M^{Eldar}_{Intra}(\myPhi))$. \\
+% and $M_{q,p}^{-1}(\myPhi) \sgeq (M^{Eldar}_{Inter}(\myPhi))^{-1} (1 \sm (d \sm 1)M^{Eldar}_{Intra}(\myPhi))$ for the most pessimistic and optimistic cases, respectively. \\
+
+Now let us consider the assumption of the lemma, i.e., intra-block orthonormality.
+By definition, $M^{Eldar}_{Intra}(\myPhi)$ is equal to zero in this case.
+Therefore, according to Theorem \ref{th:BERC-BMIC}, the relationship between $\forall (q,p) \ssin \mathbb{R}^2_{\sgeq 1} : M_{q,p}^{-1}(\myPhi) \min \{1 , d^{1/q \sm 1/p} \}$ and 
+%$(d^{1/p \sm 1/q} M_{q,p}(\myPhi) \min \{1 , d^{1/q \sm 1/p} \})^{-1}$, respectively, with 
+$(M^{Eldar}_{Inter}(\myPhi))^{-1}$ should be investigated.
+Starting from the relationship between $M_{q,p}(\myPhi)$ and $M^{Eldar}_{Inter}(\myPhi)$ explained in Property \ref{prp:BMIC-MEldar}, we build the required relationship $\forall (q,p) \ssin \mathbb{R}^2_{\sg 0}$:
+\begin{gather*}
+\begin{aligned}
+M_{q,p}^{-1}\myparanthese{\myPhi} &\geq 
+\frac{d^{\frac1p - \frac1q} \myparanthese{M^{Eldar}_{Inter}\myparanthese{\myPhi}} ^{-1}}{\max \mybrace{1 , d^{\frac1p - \frac{1}{2}}} \max \mybrace{1 , d^{\frac{1}{2} - \frac1q}}}, \\
+M_{q,p}^{-1}\myparanthese{\myPhi} \, \min \mybrace{1 , d^{\frac1q - \frac1p}}  &\geq 
+\frac{d^{\frac1p - \frac1q} \myparanthese{M^{Eldar}_{Inter}\myparanthese{\myPhi}} ^{-1} \min \mybrace{1 , d^{\frac1q - \frac1p}}}{\max \mybrace{1 , d^{\frac1p - \frac{1}{2}}} \max \mybrace{1 , d^{\frac{1}{2} - \frac1q}}}, \\
+\frac{M_{q,p}^{-1}\myparanthese{\myPhi} \, \min \mybrace{1 , d^{\frac1q - \frac1p}}}{\myparanthese{M^{Eldar}_{Inter}\myparanthese{\myPhi}} ^{-1}}  &\geq 
+\frac{\min \mybrace{1 , d^{\frac1p - \frac1q}}}{\max \mybrace{1 , d^{\frac1p - \frac{1}{2}}} \max \mybrace{1 , d^{\frac{1}{2} - \frac1q}}}.
+\end{aligned}
+\end{gather*}
+The numerator and denominator of the above left-hand side are the values that we need to compare with each other.
+To enhance Eldar's Block-ERC the above right-hand side should be greater than one.
+Those right-hand side values are shown in table \ref{table:BMCC-EldarBMCC} for different basic values of $(q,p)$ pairs.
+From table \ref{table:BMCC-EldarBMCC}, it can be seen that for $q \seq p \seq 2$, $M_{q,p}^{-1}(\myPhi) \, \min \{1 , d^{1/q \sm 1/p} \}$ is greater than or equal to $(M^{Eldar}_{Inter}(\myPhi)) ^{-1}$, which is in fact just equal (not greater), because according to Property \ref{prp:BMIC-MEldar} for dictionaries with intra-block orthonormality, we have $M_{2,2}(\myPhi) \seq M^{Eldar}_{Inter}(\myPhi)$.
+Therefore, the proposed Block-ERC for $q \seq p \seq 2$ as the best case equals to Eldar's Block-ERC.
+\begin{table*}[tp]
+%\begin{adjustbox}{width=1\textwidth} % ,totalheight=\textheight,.5
+\centering
+%\tiny
+%\resizebox{\textwidth}{!}{
+\begin{tabular}{ccccccc}
+\toprule
+%\cline{2-4}
+\multicolumn{1}{c}{$(q ,p )$} &\multicolumn{1}{c}{$(1,1)$} & \multicolumn{1}{c}{$(1,2)$}  & \multicolumn{1}{c}{$(1,\infty)$} & \multicolumn{1}{c}{$(2,2)$} & \multicolumn{1}{c}{$(2,\infty)$} & \multicolumn{1}{c}{$(\infty,\infty)$}\\ \midrule %\hline
+\multicolumn{1}{c}{$\frac{M_{q,p}^{-1}\myparanthese{\myPhi} \, \min \mybrace{1 , d^{\frac1q - \frac1p}}}{\myparanthese{M^{Eldar}_{Inter}\myparanthese{\myPhi}} ^{-1}}  \geq$} &\multicolumn{1}{l}{$d^{-\frac12}$} & \multicolumn{1}{c}{$d^{-\frac12}$} & \multicolumn{1}{c}{$d^{-1}$} &\multicolumn{1}{c}{$1$} &\multicolumn{1}{c}{$d^{-\frac12}$} & \multicolumn{1}{c}{$d^{-\frac12}$}   \\ \bottomrule %\hline
+\end{tabular}
+%}
+%\end{adjustbox}
+\caption{Lower-bound of $M_{q,p}^{-1}(\myPhi) \, \min \{1 , d^{1/q \sm 1/p} \} / (M^{Eldar}_{Inter}(\myPhi)) ^{-1}$ ensuring the supremacy of the proposed sparsity level when it is greater than one, for different basic values of $(q,p)$ pairs and for a dictionary with intra-block orthonormality.}
+\label{table:BMCC-EldarBMCC}
+\end{table*}
+%\iffalse
+%which it is not possible. 
+%
+%Similarly, for optimistic case we have:
+%\begin{gather*}
+%\myparanthese{d^{\frac1p - \frac1q} M_{q,p}\myparanthese{\myPhi} \min \mybrace{1 , d^{\frac1q - \frac1p}}} ^{-1} \geq 
+%\frac{\myparanthese{M^{Eldar}_{Inter}\myparanthese{\myPhi}} ^{-1}}{\max \mybrace{1 , d^{\frac1p - \frac{1}{2}}} \max \mybrace{1 , d^{\frac{1}{2} - \frac1q}} \min \mybrace{1 , d^{\frac1q - \frac1p}}}.
+%\end{gather*}
+%Again, to enhance Eldar's Block-ERC the denominator of right-hand side should be less than one, i.e., $\max \{1 , d^{1/p \sm 1/2} \} \max \{1 , d^{1/2 \sm 1/q} \} \min \{1 , d^{1/q \sm 1/p} \} \sless 1$, which it is not possible. 
+%Therefore, the proposed Block-ERC for $q \seq p \seq 2$ as the best case equals to Eldar's Block-ERC.
+%\fi
+\end{proof}

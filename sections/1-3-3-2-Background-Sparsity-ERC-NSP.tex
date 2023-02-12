@@ -1,0 +1,33 @@
+Conventional \emph{Null Space Property (NSP)} provides necessary and sufficient conditions for the exact recovery of $k$-sparse representation via $P_1$, in other words the equivalence of $P_0$ and $P_1$, \myhl{i.e., the solution to $P_0$ is necessarily equal to the solution to $P_1$.}
+
+For a $k$-sparse representation $\mybeta \ssin \mathbb{R}^{n}$, i.e., $|S(\mybeta)| \sleq k$, assuming that the $\mySuppTxt$ $S$ of the true solution lies within $S(\mybeta) \ssubset \{1, \cdots , n\}$, i.e., $S(\mybetaz) \ssubset S(\mybeta)$, the mentioned traditional condition states that if 
+\begin{equation*}
+Q_p \myparanthese{S\myparanthese{\mybeta} , \myPhi} \myeq 
+\max_{\boldsymbol{x} \in \myKerMath \backslash\left\{\boldsymbol{0}\right\}}{\frac{\displaystyle\sum_{i \in S\myparanthese{\mybeta}} \myabs{x_i} ^ p}{\displaystyle\sum_{i} \myabs{x_i} ^ p}} < \frac12,
+\end{equation*}
+%where support $S$ of the true solution lies within $S(\mybeta) \ssubset \{1, \cdots , n\}$, i.e., $S(\mybetaz) \ssubset S(\mybeta)$, and $|S(\mybeta)| \sleq k$, i.e., $k$-sparse representation. 
+then $\mybetaz$ is the unique solution to the problem $P_p$.
+
+NSP has been demonstrated by starting to prove that for all $\boldsymbol{x} \ssin \myKerMath$, we have $\Vert \mybetaz \Vert_p^p \sless \Vert \mybetaz \spl \boldsymbol{x} \Vert_p^p$.
+Then using a variant of quasi-triangle inequality, i.e., $\vert a \spl b \vert^p \sm \vert a \vert^p \sgeq \sm \vert b \vert^p$, and calculating $\ell_p$ norm over on-$\mySuppTxt$ ($\ssin S(\mybeta)$) and off-$\mySuppTxt$ (${\notin} S(\mybeta)$) parts, $Q_p (S(\mybeta) , \myPhi)$ is achieved.
+
+NSP was first stated for a dictionary which is concatenation of two orthonormal matrices corresponding to orthonormal bases and for $p$ equal to one \cite{Donoho2001,Elad2001,Elad2002a,Feuer2003}, then was proved for arbitrary nonorthogonal dictionaries \cite{Donoho2003,Gribonval2003,Zhang2005a,Stojnic2008,Cohen2009}. 
+Later, it was more generalised to $0 \sleq p \sleq 1$ and for dictionaries being a union of orthonormal bases \cite{Gribonval2003,Gribonval2003a} and for general arbitrary dictionaries \cite{Gribonval2004a,Gribonval2007}.
+
+In order to investigate the relationship between the ERC based on NSP and the previously mentioned ERC based on $\mySpkTxt$ in (\ref{eq:ERC-S}), let $p \seq 0$ in $Q_p (S(\mybeta) , \myPhi)$:
+\begin{equation*}
+\begin{aligned}
+Q_0 \myparanthese{S\myparanthese{\mybeta} , \myPhi} \myeq 
+\max_{\boldsymbol{x} \in \myKerMath \backslash\left\{\boldsymbol{0}\right\}}{\frac{\myabs{S\myparanthese{\mybeta}}}{\mynorm{\boldsymbol{x}}_0}} 
+= \frac{\myabs{S\myparanthese{\mybeta}}}{\displaystyle\min_{\boldsymbol{x} \in \myKerMath \backslash\left\{\boldsymbol{0}\right\}} \mynorm{\boldsymbol{x}}_0} 
+& = \frac{\myabs{S\myparanthese{\mybeta}}}{\mySpk\myparanthese{\myPhi}} \\
+& < \frac12.
+\end{aligned}
+\end{equation*}
+Then, $|S(\mybeta)| \sless \mySpk(\myPhi) / 2$.
+
+On the other hand, due to the assumption $S(\mybetaz) \ssubset S(\mybeta)$, we have $|S(\mybetaz)| \sleq |S(\mybeta)|$, which leads to the ERC based on $\mySpkTxt$.
+Therefore, the ERC based on NSP is a general property, which in a special case of $p \seq 0$ reduces to the ERC based on $\mySpkTxt$ in (\ref{eq:ERC-S}).
+
+Another stable variant of NSP is also introduced in literature, which is called robust NSP \cite{Davies2009a,Foucart2013}. 
+From algorithmic point of view, robust NSP is used for stable signal recovery via basis pursuit \cite{Foucart2013}.

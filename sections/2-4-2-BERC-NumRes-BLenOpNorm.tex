@@ -1,0 +1,18 @@
+In this experiment, assume that the dictionary is in general with full column rank blocks.
+%and does not have intra-block orthonormality.
+%, and the Block-ERC of the most optimistic case is used.
+The goal is to investigate the sparsity levels for the six pairs of $q$ and $p$ with tractable operator-norms and for different dictionaries with equally-sized blocks $d \seq \{ 1,2,4,5,8,10 \}$.
+Finally, the sparsity levels for six Block-MCC$_{q,p}$ computed for different values of $d$, are compared to the conventional sparsity levels of Donoho et al. and Eldar and her co-workers.
+As it can be seen in figure \ref{fig:SL_Opt_PhiOrt_Eldar_Donoho}, for a general dictionary, for $d \sg 1$ all the proposed sparsity levels based on Block-MCC$_{q,p}$ are higher than the conventional sparsity levels introduced by Donoho et al. and Eldar and her co-workers.
+By increasing the block length $d$, the difference between the proposed and conventional sparsity levels becomes more pronounced.     
+
+Assuming that the sparsity level corresponding to Block-MCC$_{q,p}$ is represented by $\mySLqpMath$, the following $\mySLqpTxt$ inequalities was obtained from simulation experiments for all values of $d$: 
+$SL_{1,\infty}(\myPhi) \sless SL_{1,2}(\myPhi) \sless SL_{2,\infty}(\myPhi) \sless SL_{1,1}(\myPhi) \sless SL_{\infty,\infty}(\myPhi) \sless SL_{2,2}(\myPhi)$, whereas $SL_{1,2}(\myPhi)$, $SL_{2,\infty}(\myPhi)$, $SL_{1,1}(\myPhi)$, and $SL_{\infty,\infty}(\myPhi)$ are closer to each other compared to the two other sparsity levels. 
+Part of the sparsity level inequalities obtained from simulation experiments is proved theoretically in Property \ref{prp:BSLqp-relationships} ($\myBSLqpTxt$ inequalities, page \pageref{prp:BSLqp-relationships}).
+
+For a general dictionary with full column rank blocks, sparsity level of Eldar et al. is not computable for all values of $d$, because from Block-ERC of Eldar et al., i.e., $\Vert \mybetaz \Vert_{2,0} \sless (1 \spl (d M^{Eldar}_{Inter}(\myPhi))^{-1} (1 \sm (d \sm 1)M^{Eldar}_{Intra}(\myPhi)))/2$, (equation (\ref{BERC-Eldar}), page \pageref{BERC-Eldar}), the inequality $1 \sm (d \sm 1) M^{Eldar}_{Intra}(\myPhi) \spl d \, M^{Eldar}_{Inter}(\myPhi) {>} 0$ should hold true in order to have a positive sparsity levels.
+%As explained in Remark \ref{Rmrk:Eldar-BMIC-equality}, for Block-MCC$_{2,2}$ the proposed sparsity level is equal to Eldar's.
+%In addition, in contrast to Donoho's condition, increasing the $d$ leads to increment in the proposed and Eldar's sparsity levels.
+At last, for $d \seq 1$, the $\mySLTxt$ in block domain are equal to the scalar domain.
+\input{sections/2-4-2-BERC-NumRes-BLenOpNorm-Fig7}
+\FloatBarrier

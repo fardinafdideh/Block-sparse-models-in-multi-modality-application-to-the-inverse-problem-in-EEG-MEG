@@ -1,0 +1,36 @@
+\addcontentsline{toc}{section}{\protect\numberline{}Multi-modality}
+\begin{tcolorbox}
+\begin{challenge}
+Is joining multiple modalities always beneficial, knowing that each modality provides us with different properties of the same phenomenon? 
+How can the added value of multi-modality be demonstrated?
+\end{challenge}
+\end{tcolorbox}
+
+In order to approach the above-mentioned important and huge challenge, we simplify and limit the challenge to the conditions of our main problem, i.e., distributed EEG and MEG source reconstruction problem.
+In other words, we restrict the mentioned general challenge to have only two modalities, and try to partially address the challenge.
+
+In Chapter \ref{chptr:Multimodality}, we propose a multi-modality framework based on the block structure identification framework proposed in Chapter \ref{sec:Clustering} and block mutual coherence constant proposed in Chapter \ref{sec:BERC}.
+
+To this aim, we applied the block structure identification framework on multi-modal lead-field instead of mono-modal one, to segment brain source space.
+To investigate the impact of multi-modality, we defined a lead-field combining strategy, which reduces the impact of other factors such as change in the position and number of sensors.
+
+First, we showed that brain regions resulted from clustering the coherent sources of EEG and MEG lead-field matrices separately, are complementary.
+Then, we made use of complementarities of EEG and MEG lead-field matrices to generated a combined EEG and MEG multi-modal lead-field matrix, and it turned out that in multi-modality case the number of clusters determined by the largest distance between adjacent nodes in dendrogram is higher than mono-modal cases. 
+In addition, for a fixed number of clusters, the under-sensor brain regions in multi-modal lead-field is smaller than mono-modal lead-field clustering.
+
+%Furthermore, for a fixed number of clusters, the brain regions in multi-modal case are smaller than mono-modal cases.
+Therefore, it can be deduced that in multi-modality case, more refined and precise regions appear, hence, the resolution of identifying the active regions increases in comparison to the mono-modal cases.
+
+As perspective in this research area, we could mention to the following points:
+\begin{itemize}
+\item Study on electromagnetic properties in 2D/3D mediums with different number of boundaries as a general case.
+\item Designing more scenarios (other than brain segmentation) to investigate the impact of multi-modality.
+\item Designing more methods to combine modalities.
+\item The impact of combining more modalities (greater than two).
+\item The optimum ratio of the number of measurements from each modality (not necessarily $50\%$ in two modalities case).
+\end{itemize}    
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../roque-phdthesis"
+%%% End:

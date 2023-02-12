@@ -1,0 +1,22 @@
+\begin{corollary}
+\label{crl:BERC-BNSP-BS-beta}
+$\mybeta$ is the unique solution of $P_{p,0}$ (or $P_{\boldsymbol{w};p,0}$) minimisation problem, if $\forall p \sgeq 1$
+\begin{equation*}
+\myabs{S_b\myparanthese{\mybeta}} < \frac{\myBSpkMath}{2},
+\end{equation*}
+where, $\myabs{S_b(\mybeta)}$ is the $\myBCardTxt$ of $\mybeta$ defined in Definition \ref{Def:Block Support} (page \pageref{Def:Block Support}).
+%For equally-sized blocks, the corollary holds true for $P_{p,0}$, as well.
+\end{corollary}
+\begin{proof}
+In Theorem \ref{th:BNSP} (Block-NSP) for a special case of $p_2 \seq 0$, $\forall p_1 \seq p \sgeq 1$ we have
+\begin{equation*}
+\forall S_b\myparanthese{\mybeta}, \qquad Q_{\boldsymbol{w};p,0}(S_b\myparanthese{\mybeta},\myPhi) \leq \max_{\boldsymbol{x} \in \myKerMath \backslash\left\{\boldsymbol{0}\right\}} \frac{\myabs{S_b\myparanthese{\mybeta}}}{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};p,0}}.
+\end{equation*}
+Maximum value of the right-hand side is obtained by minimising $\mynorm{\boldsymbol{x}}_{\boldsymbol{w};p,0}$, which the minimum value is defined according to Definition \ref{def:Block Spark} as $\myBSpkTxt$, so
+\begin{equation*}
+\forall S_b\myparanthese{\mybeta}, \qquad Q_{\boldsymbol{w};p,0}(S_b\myparanthese{\mybeta},\myPhi) \leq \frac{\myabs{S_b\myparanthese{\mybeta}}}{\myBSpkMath}.
+\end{equation*}
+But from Theorem \ref{th:BNSP} (Block-NSP), it is known that for unique solution of the problem $P_{\boldsymbol{w};p,0}$, it is required that $Q_{\boldsymbol{w};p,0}(S_b(\mybeta),\myPhi) \sless 1/2$.
+On the other hand, $\forall p \sgeq 1$, $P_{\boldsymbol{w};p,0}$ is equal to $P_{p,0}$, which proves the corollary.
+%All the above steps of proof hold true for non-weighted characterisation and optimisation problem, which proofs the case of equally-sized blocks.
+\end{proof}

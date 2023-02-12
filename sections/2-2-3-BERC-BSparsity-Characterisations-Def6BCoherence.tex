@@ -1,0 +1,25 @@
+\begin{Mydefinition}[Block coherence]
+\label{def:BMIC}
+\leftbar
+The \emph{$({q,p})$-Block Mutual Coherence Constant (Block-MCC$_{q,p}$)} of a dictionary is defined 
+%$\forall q \sg 0$ and $\forall p \sgeq 1$ 
+$\forall (q , p) \ssin \mathbb{R}^2_{>0}$ as:	
+\begin{equation*}
+\begin{aligned}
+\label{eq:BMIC}
+M_{q,p}\myparanthese{\myPhi} 
+%&\myeq \max_{\substack{k,k' \neq k  \\ \boldsymbol{x} \neq \boldsymbol{0}}} \frac{d_{k}^{-\frac1p} \, d_{k'}^{\frac1q} \, \mynorm{\myPhi^\dagger\mybracket{k} \myPhi \mybracket{k'}\boldsymbol{x}\mybracket{k'}}_{p}}{d_{max} \, \mynorm{\boldsymbol{x}\mybracket{k'}}_{q}} \\
+\myeq \max_{k,k' \neq k} \frac{d_{k}^{-\frac1p} \, d_{k'}^{\frac1q}}{d_{max}} \mynorm{\myPhi^\dagger\mybracket{k} \myPhi \mybracket{k'}}_{q \to p},
+\end{aligned}
+\end{equation*}
+where, $\myPhi^\dagger[k]$ is Moore-Penrose pseudo-inverse of the \myhl{full column rank} block $\myPhi[k] \ssin \mathbb{R}^{m \stimes d_k}$, and $\Vert \myPhi \Vert_{q \to p}$ is the $\ell_{q {\to} p}$ operator-norm of dictionary $\myPhi$, which can be computed through any of the following expressions \cite{Tropp2004b,Golub2013}:
+\begin{gather*}
+\begin{aligned}
+\label{eq:Operator-Norm}
+\mynorm{\boldsymbol{A}}_{q \to p} & \myeq 
+\max_{\boldsymbol{a} \neq \boldsymbol{0}} \frac{\mynorm{\boldsymbol{A} \boldsymbol{a}}_{p}}{\mynorm{\boldsymbol{a}}_{q}} 
+= \max_{\mynorm{\boldsymbol{a}}_q = 1} \mynorm{\boldsymbol{A} \boldsymbol{a}}_{p} = \max_{\mynorm{\boldsymbol{a}}_q \leq 1} \mynorm{\boldsymbol{A} \boldsymbol{a}}_{p}.
+\end{aligned}
+\end{gather*}
+\endleftbar
+\end{Mydefinition}

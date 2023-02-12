@@ -1,0 +1,30 @@
+The transmission of electromagnetic fields from sources space through head tissues towards sensors space can be modelled with quasi-static approximations of Maxwell’s equations \cite{Sarvas1987}.
+
+The quasi-static approximations of Maxwell’s equations, which allows to ignore the time derivatives, can be divided into two groups of: 
+\begin{itemize}
+\item quasi-electrostatics, which are describing electric field $\boldsymbol{E}$, and
+\item quasi-magnetostatics, which are describing magnetic field $\boldsymbol{B}$.
+\end{itemize} 
+
+The mentioned quasi-static approximations with electric potential $\boldsymbol{V}$ and magnetic field $\boldsymbol{B}$ in distance $\boldsymbol{r}$ in an infinite homogeneous medium with permittivity $\varepsilon_0$ and permeability $\mu_0$ for a dipole $\boldsymbol{p}$ with electric charge density $\rho$ and electric current density $\boldsymbol{J}$ are shown in figure \ref{fig:quasi-static}, and table \ref{table:quasi-static}.
+
+The quasi-static approximations of Maxwell’s equations in addition to the assumed discrete positions of the brain sources lead to a discretised and linearised relationship between electromagnetic signals and the source activities.
+The mentioned relationship is realised through the so-called \emph{lead-field} matrix which contains the electromagnetic and geometrical properties of the head.
+\\
+\input{sections/1-2-5-Background-Multimodality-Leadfield-Fig6}
+\input{sections/1-2-5-Background-Multimodality-Leadfield-Table1}
+\newpage
+
+The lead-field matrix, which is also considered as the solution of the forward problem, is computed when the volume conduction head model, source model, and sensor model is given.
+%The forward problem can be solved when the volume conduction head model, source model, and sensor model is given.
+%The solution of the forward problem is called \emph{leadfield}, which linearly relates the activities in source and EEG/MEG sensor space.
+%This relationship holds true for a fixed and discrete distribution of positions of each source-sensor pair.
+%which is a matrix of dimensions sensors' number by three times of the number of sources.
+
+As shown in figure \ref{fig:LF}, knowing the volume conduction head model including scalp, skull, and brain models with $K$ source positions in source space and $m$ sensors in sensor space makes possible the computation of the lead-field matrix of dimension $m$ by $3K$.
+
+Each block of \emph{three columns} in lead-field matrix, consists of the response of all sensors to a specific probing dipole in the source space.
+Actually, it is a block of three canonical probing vectors.
+%the forward and inverse problems and geometrical models are illustrated.
+\input{sections/1-2-5-Background-Multimodality-Leadfield-Fig7}
+\FloatBarrier

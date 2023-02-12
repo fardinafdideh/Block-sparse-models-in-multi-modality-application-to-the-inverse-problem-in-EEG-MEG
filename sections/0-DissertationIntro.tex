@@ -1,0 +1,40 @@
+% Title & cover pages (the first is made mandatory by UDG and the second is more traditional)
+\input{sections/0-Titlepage}
+\includepdf{images/couverture_these}
+\cleardoublepage
+
+% Per-chapter table of content
+\dominitoc
+
+% Use roman page numbering for non-significant pages
+\pagenumbering{roman}
+\frontmatter
+
+% Acknowledgements
+\cleardoublepage
+\input{sections/0-Acknowledgements}
+
+% General table of contents
+\setcounter{tocdepth}{1}
+\tableofcontents
+
+% List of figures
+\listoffigures
+\addstarredchapter{List of figures}
+\markboth{List of figures}{List of figures}
+
+% List of tables
+\listoftables
+\addstarredchapter{List of tables}
+\markboth{List of tables}{List of tables}
+\cleardoublepage
+
+% Table of acronyms
+\input{sections/0-Acronyms}
+
+% Mathematical notations & nomenclature
+\input{sections/0-Nomenclature}
+
+%% Use arabic page numbering for significant pages
+\mainmatter
+\pagestyle{fancy}

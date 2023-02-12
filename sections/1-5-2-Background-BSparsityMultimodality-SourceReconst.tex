@@ -1,0 +1,28 @@
+Regardless of the chosen strategy to combine the EEG and MEG measurements and lead-field matrices, consider the combined measurement vector as $\boldsymbol{y_{\mathrm{EMEG}}}$, the lead-field matrix as $\myPhi_{\boldsymbol{\mathrm{EMEG}}}$, and the true source vector as $\mybeta_{\boldsymbol{0}}$.
+Then, the distributed EEG and MEG source reconstruction problem can be translated in mathematical form as an USLE model in an ideally noiseless case, i.e., $\boldsymbol{y_{\mathrm{EMEG}}} \seq \myPhi_{\boldsymbol{\mathrm{EMEG}}} \mybeta_{\boldsymbol{0}}$.
+%Thus, the model of our real-world problem is equal to the it is 
+%For example, suppose that the goal is finding active sources in an EEG/MEG source reconstruction problem. 
+
+On the other hand, each current dipole in the source space, which can be represented as a vector, has three values in three dimensions of $x$, $y$ and $z$ in the Cartesian coordination. 
+So, each current dipole can be represented as a block of length three, i.e., $\mybeta_{\boldsymbol{0}}[k] \ssin \mathbb{R}^3$, $\forall k$.
+%Supposing that the activity of all of the current dipoles are stored in a source activity vector, each current dipole can be represented by a successive three elements in the source activity vector. 
+Then, each successive three elements in the source vector $\mybeta_{\boldsymbol{0}}$ represents the activity of a current dipole.
+
+From physiological a priori knowledge, it is known that for a given brain task only a few regions of brain will be activated, i.e., sparse regions.
+Furthermore, for a given active current dipole, the activity of each of values in three dimensions of $x$, $y$ and $z$ is not constrained, then sparsity inside each active block $\mybeta_{\boldsymbol{0}}[k]$ is not important.
+
+Therefore, among the infinitely many solutions of the above-mentioned USLE or source activity vectors $\tilde{\mybeta}$, solutions with the fewest \emph{active blocks} of dimension three would be of interest and not necessarily solutions with the fewest non-zero \emph{scalar} entries.
+
+Ultimately, our real-world distributed EEG and MEG source reconstruction problem perfectly complies with the notions of multi-modality and block-sparse representation theory.
+%In addition to imposing proper constraints, 
+%In addition, the sparsity inside each active block is not important.
+
+As shown in figure \ref{fig:Anatomical-sparsity-constraints}, without imposing appropriate constraints on the optimisation problem corresponding to the EEG and MEG multi-modal USLE in the source reconstruction problem, there would be infinitely many solutions $\mybeta_{\boldsymbol{1}}, \cdots , \mybeta_{\boldsymbol{\infty}}$ (left branch), but by applying block-sparsity constraints, the desired block-sparse solution $\mybeta_{\boldsymbol{0}}$ (right branch), can be recovered.
+
+Notice, the left branch in figure \ref{fig:Anatomical-sparsity-constraints}, in contrary to the right branch, is obtained without exploiting any anatomical information from MRI\footnote{{\emph{Magnetic Resonance Imaging}}}, i.e., the volume conduction head model is spherical and is computed analytically. 
+By utilising anatomical constraint, the position of sources is restricted to be placed on a specific points, hence, the resulted lead-field matrix is more precise.
+
+In addition, in order to \emph{uniquely} recover the desired block-sparse solution $\mybeta_{\boldsymbol{0}}$, we need to consider block-sparse exact recovery conditions, which are going to be discussed in the next chapter.
+\newpage
+\input{sections/1-5-2-Background-BSparsityMultimodality-SourceReconst-Fig11}
+%Usually Euclidean norm has been used as a criterion for determining the active block.

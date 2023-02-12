@@ -1,0 +1,7 @@
+\input{sections/2-2-1-BERC-BSparsity-Model-BetaHat} 
+Then, the block structure of the representation vector $\hat{\mybeta}$, which is consecutive $d_k$-length vectors, is assumed to be known a priori.
+\input{sections/2-2-1-BERC-BSparsity-Model-Phi} 
+\input{sections/2-2-1-BERC-BSparsity-Model-Fig1} 
+%\FloatBarrier
+The matrix multiplication can be decomposed as sum of multiplication of blocks to reconstruct the measurement vector $\boldsymbol{y} \ssin span \{ \myPhi \} \ssin \mathbb{R}^{m}$.
+Therefore, as the model we use the noiseless USLE explained in (\ref{eq:Model_Noiseless}), which can be viewed as the block-wise structure, i.e., $\boldsymbol{y} \seq \myPhi \hat{\mybeta} \seq \sum_{k=1}^{K} \myPhi[k] \hat{\mybeta} [k]$.

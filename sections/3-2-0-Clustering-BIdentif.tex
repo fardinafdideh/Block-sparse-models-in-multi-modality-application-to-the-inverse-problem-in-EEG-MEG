@@ -1,0 +1,43 @@
+As mentioned earlier, many real-world inverse problems are vastly underdetermined.
+In a fat coefficient matrix of a vastly USLE\footnote{\emph{Underdetermined System(s) of Linear Equations}}, the columns are more likely to be coherent.
+Therefore, computing any kind of dictionary characterisation based on inter-columns coherence leads to high values.
+As discussed in Chapter \ref{sec:BERC}, because of the inverse relationship between the coherence characterisation of a general dictionary and the corresponding sparsity level in Block-ERC\footnote{\emph{Block-sparse Exact Recovery Condition(s)}}, the resulted Block-ERC would be tighter, which is not desired.
+
+One possible solution to the issue of high coherence characterisation of dictionary or coefficient matrix in vastly USLE, is grouping the coherent columns of the dictionary to form some groups of columns, where, the columns inside each group or block are highly coherent.
+Then, computing the inter-blocks coherence characterisation leads to lower coherence characterisation of dictionary in comparison to the standard inter-columns coherence characterisation, because the resulted block of columns are more incoherent compared to the columns of dictionary.
+The proposed Block-MCC$_{q,p}$\footnote{\emph{$({q,p})$-Block Mutual Coherence Constant}} is a suitable coherence characterisation of dictionary, due to its generality and flexibility in computing the coherence between differently-sized blocks of columns.
+
+By clustering the coherent columns or blocks of columns of a given dictionary utilising general characterisation of Block-MCC$_{q,p}$ as the similarity measure, the block structure of the dictionary can be identified.
+Because each cluster of columns represents a block of the dictionary.
+In other words, clusters resulted from the clustering algorithm are equivalent to the blocks of the dictionary.
+
+After applying clustering algorithm on the dictionary, each cluster, e.g., cluster $k$, contains some columns, where, the number of columns determines the size of corresponding block in the dictionary, i.e., $d_k$, therefore, the block structure $\boldsymbol{d} \seq [d_1, \cdots, d_K]$ is identified.
+
+Each column in the dictionary $\myPhi \ssin \mathbb{R}^{m \stimes n}$ is multiplied to a corresponding element in the representation vector $\mybeta \ssin \mathbb{R}^{n}$, i.e., $\boldsymbol{y} \seq \sum_{i=1}^n \beta_i \myphi_i$.
+So, each column $\myphi_i$ in dictionary is linked to a corresponding element in $\mybeta$, i.e., $\beta_i$.
+Therefore, by determining the block structure of dictionary, the block structure of the representation vector is also identified.
+
+By utilising the proposed clustering-based framework, we attain two main goals, which are represented graphically in figure \ref{fig:Leadfield_clustering_aimes} for a real-world problem of EEG\footnote{\emph{ElectroEncephaloGraphy}}/MEG\footnote{\emph{MagnetoEncephaloGraphy}} source reconstruction USLE:
+\begin{itemize}
+\item improved Block-ERC, and
+\item support segmentation.
+\end{itemize}
+
+Assuming the EEG/MEG source reconstruction problem in figure \ref{fig:Leadfield_clustering_aimes}, there are four brain sources of $s_1, \cdots , s_4$, as a simple example. 
+The clustering tree is resulted from clustering the lead-fields of four sources.
+As shown graphically, the inter-cluster distance in clustering tree at the clustering level equivalent to three clusters is maximum.
+Then, the estimated number of clusters in the lead-field is three.
+As represented graphically in figure \ref{fig:Leadfield_clustering_aimes} (right part), the $\mySLTxt[\%]$\footnote{\emph{Sparsity Level}} for three clusters is higher than the $\mySLTxt[\%]$ for four clusters, where, the clustering is not applied.
+So there is improvement in Block-ERC based on Block-MCC$_{q,p}$.
+The computation of different sparsity levels will be explained in Section \ref{sec:Sparsity level for clustered blocks of a dictionary}.
+
+The clustering structure corresponding to three clusters is $\mathbb{P} \seq \{ s_1 , s_2 , [s_3 , s_4 ] \} $, where, $s_3$ and $s_4$ are clustered to form a new cluster, while $s_1$ and $s_2$ are single-element clusters. 
+Therefore, $\boldsymbol{d} \seq [3, 3, 6]$, because in EEG/MEG source reconstruction problem each source's lead-field corresponds to three columns in the whole lead-field matrix.
+The partitioning $\mathbb{P}$ of sources $s_1, \cdots , s_4$, indicates to the brain source space segmentation, as represented graphically in figure \ref{fig:Leadfield_clustering_aimes} (left part), and will be explained in detail in Section \ref{sec:EEG/MEG source reconstruction problem and USLE}.
+%The first achievement is the improvement of Block-ERC based on Block-MCC$_{q,p}$ because of the increased sparsity level, which is represented graphically in figure \ref{fig:Leadfield_clustering_aimes}, and will be explained in Section \ref{sec:Sparsity level for clustered blocks of a dictionary}.
+%The second achievement is segmenting the source space in an EEG/MEG source reconstruction problem, where the dictionary is composed of leadfield matrices, which is represented in figure \ref{fig:Leadfield_clustering_aimes}, and will be explained in Section \ref{sec:EEG/MEG source reconstruction problem and USLE}.
+\input{sections/3-2-0-Clustering-BIdentif-Fig1}
+\FloatBarrier
+%------------------------------------------------------
+\subsection{Clustering coherent blocks of a general dictionary}
+\input{sections/3-2-1-Clustering-BIdentif-ClustCoh}

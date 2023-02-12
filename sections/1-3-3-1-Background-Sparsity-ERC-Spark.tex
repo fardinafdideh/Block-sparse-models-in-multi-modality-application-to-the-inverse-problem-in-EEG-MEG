@@ -1,0 +1,40 @@
+%In general, the columns of the dictionary do not need to be linearly independent. 
+%Therefore, $\mySpkTxt$ was defined according to the smallest number of columns which are linearly dependent \cite{Donoho2003,Donoho2003a,Bruckstein2009}. 
+
+In literature, to approach the problem of determining the sufficient conditions for unique sparse recovery, i.e., ERC, a different problem inspired by the concept of uncertainty principle is considered \cite{Gorodnitsky1997,Donoho1989}.
+%\cite{Gorodnitsky1997,Donoho1989,Donoho2001,Elad2001,Elad2002a,Donoho2003,Donoho2003a,Bruckstein2009}. 
+
+Consider the problem $P_0$ and suppose $\mybetaz$ and $\mybetao$ are two distinct representations of the non-zero signal $\boldsymbol{y}$, in the dictionary $\myPhi$, i.e., $\boldsymbol{y} \seq \myPhi \mybetaz$ and $\boldsymbol{y} \seq \myPhi \mybetao$. 
+The uncertainty principle of redundant solutions states that a non-zero signal cannot have multiple highly sparse representations. 
+In other words, in a given dictionary $\myPhi$ there is a limit on the sparsity level of the representations $\mybetaz$ and $\mybetao$:
+\begin{equation}
+\label{eq:UP-S}
+\mynorm{\mybetaz}_0 + \mynorm{\mybetao}_0 \geq \mySpk\myparanthese{\myPhi}.
+\end{equation}
+
+The mentioned uncertainty principle has been proved based on the definition of $\mySpkTxt$ in (\ref{eq:Conventional Spark}), i.e., $\mySpk(\myPhi) {\myeq} \min_{\boldsymbol{x} \in \myKerMath \backslash\left\{\boldsymbol{0}\right\}} \Vert \boldsymbol{x} \Vert_{0}$, indicating that for $\mybetaz \sm \mybetao$ in the $\myKerTxt$ of the dictionary $\myPhi$, i.e., $\myPhi(\mybetaz \sm \mybetao) \seq \boldsymbol{0}$, we have
+$\Vert \mybetaz \sm \mybetao \Vert_0 \sgeq \mySpk(\myPhi)$. 
+Then, triangle inequality induces (\ref{eq:UP-S}).
+
+The uncertainty principle in (\ref{eq:UP-S}) has been stated and demonstrated for different cases of dictionaries. 
+At first, the dictionary was considered as a concatenation of two orthonormal bases \cite{Donoho2001,Elad2001,Elad2002a}.
+Then, this uncertainty principle was generalised to dictionaries which arise from the union of more than two orthonormal bases \cite{Gribonval2003a}. 
+Finally, it was generalised to dictionaries which can be the concatenation of less structured blocks 
+%, or frames 
+\cite{Donoho2003,Donoho2003a,Gribonval2003}.
+
+%The uncertainty results can be represented either in the form of classical multiplicative \cite{Elad2001,Elad2002a,Mallat2008} or current additive, such as (\ref{eq:UP-S}).
+%The multiplicative and additive results are simply related to each other by the arithmetic-geometric mean inequality.
+
+Using the aforementioned uncertainty principle in different cases of dictionary, and the simple criterion of $\mySpkTxt$, the uniqueness of the sparse solution can be demonstrated. 
+
+If $\mybetaz$ is a candidate solution of the $P_0$ problem for a general dictionary $\myPhi$, and meets
+\begin{equation}
+\label{eq:ERC-S}
+\mynorm{\mybetaz}_0 < \frac{\mySpk\myparanthese{\myPhi}}{2},
+\end{equation}
+then according to the mentioned uncertainty principle in (\ref{eq:UP-S}), any other solution must be denser. Therefore the solution which is sufficiently sparse according to (\ref{eq:ERC-S}), is unique and the sparsest.
+
+For a dictionary $\myPhi \ssin \mathbb{R}^{m \stimes n}$, considering the upper bound of $\mySpkTxt$ in (\ref{eq:spark-bounds}), i.e., $m \spl 1$, and the above-mentioned conventional $\mySpkTxt$-based condition in (\ref{eq:ERC-S}), the admitted sparsity level is at most $(1 \spl m)/2$.
+
+Although among different ERC, ERC based on $\mySpkTxt$ is the most relaxed condition, i.e., the highest sparsity level, the computation of the $\mySpkTxt$ characterisation is not tractable \cite{Tillmann2013}.

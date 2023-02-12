@@ -1,0 +1,9 @@
+In literature on block sparsity, there is another cumulative characteristic based on subspaces, named cumulative mutual subspace coherence, which is defined as \cite{Elhamifar2012b}:
+\begin{equation*}
+\label{eq:CMSIC}
+M_S\myparanthese{\myPhi , k} \myeq
+\max_{\myabs{\Lambda}=k} \max_{j \notin \Lambda} \sum_{i \in \Lambda} \max_{\substack{\boldsymbol{x} \in S_i \\ \boldsymbol{y} \in S_j}} \frac{\myabs{\boldsymbol{x}^T \boldsymbol{y}}}{\mynorm{\boldsymbol{x}}_2 \mynorm{\boldsymbol{y}}_2},
+\end{equation*}
+where, $\Lambda$ represents $k$ different indices from $\{1, \cdots, K\}$.
+For $d$ equal to $1$, the cumulative mutual subspace coherence is equivalent to the conventional cumulative coherence, i.e., $M_S(\myPhi , k) {\equiv} M(\myPhi , k)$ \cite{Elhamifar2012b}.
+Similar properties of conventional cumulative coherence hold true for cumulative mutual subspace coherence, i.e., $M_S(\myPhi , 1)$ is equal to $M_S(\myPhi)$, and $M_S(\myPhi , k) \sleq k M_S(\myPhi)$ \cite{Elhamifar2012b}.

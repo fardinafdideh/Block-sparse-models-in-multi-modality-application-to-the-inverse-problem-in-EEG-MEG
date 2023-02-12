@@ -1,0 +1,35 @@
+Eldar and her colleagues extended the basic uncertainty principle to the block-sparse representations \cite{Eldar2009b,Eldar2010b,Eldar2010}.
+In other words, there is a limit on the block-sparsity level of the representations $\mybetao$ and $\mybetaTwo$:
+\begin{gather}
+\label{eq:BUP-Eldar} 
+\mynorm{\mybetao}_{2,0} + \mynorm{\mybetaTwo}_{2,0} 
+\geq\frac{2}{d \, \overbar{M}^{Eldar}_{Inter} \myparanthese{\myPhiOne,\myPhiTwo}},
+\end{gather}
+where, the basic block-coherence of Eldar et al., i.e., $\overbar{M}^{Eldar}_{Inter}(\myPhiOne,\myPhiTwo)$, is the maximal coherence between the blocks of the orthonormal bases $\myPhiOne$ and $\myPhiTwo$, i.e.,:
+\begin{equation*}
+\overbar{M}^{Eldar}_{Inter}\myparanthese{\myPhiOne,\myPhiTwo} = \max_{k,k'} \frac1d \mynorm{\myPhiOne^T \mybracket{k} \myPhiTwo \mybracket{k'}}_{2 \to 2},
+\end{equation*}
+where, $d$ is the length of the equally-sized blocks.
+
+Notice that for orthonormal bases $\myPhiOne$, $\myPhiTwo$ and their concatenation $[\myPhiOne , \myPhiTwo]$, we have $\overbar{M}^{Eldar}_{Inter}(\myPhiOne,\myPhiTwo) \seq M^{Eldar}_{Inter}([\myPhiOne,\myPhiTwo])$.
+
+{
+\label{txt:BasicEldarCCBound} 
+Again, supposing the dimension of two orthonormal bases $\myPhiOne$ and $\myPhiTwo$ is $m$ by $m$, and $m \seq R \, d$ ($R$ is an integer), it is proved that $\overbar{M}^{Eldar}_{Inter}(\myPhiOne,\myPhiTwo) \sgeq 1/\sqrt{d \, m}$ \cite{Eldar2009b,Eldar2010b,Eldar2010}.
+}
+
+Notice that for $d \seq 1$, all the formulation reduces to its conventional one described in Section \ref{sec:Sparsity-ERC-MIC}.
+
+Then, they proposed Block-ERC for ensuring the uniqueness of the solution of their proposed recovery algorithms of $\ell_2/\ell_1$-optimisation program \cite{Eldar2009c}, block matching pursuit and block orthogonal matching pursuit \cite{Eldar2009b,Eldar2010b,Eldar2010} based on their proposed block version of the conventional MCC.
+
+Their Block-ERC for recovering a block $k$-sparse representation through their proposed recovery algorithms and for equally-sized blocks of length $d$ is \cite{Eldar2009b,Eldar2010b,Eldar2010}:
+\begin{gather}
+\label{BERC-Eldar} 
+\mynorm{\mybetaz }_{2,0} < \frac{1+\myparanthese{d \, M^{Eldar}_{Inter}\myparanthese{\myPhi}}^{-1} \myparanthese{1-\myparanthese{d-1}M^{Eldar}_{Intra}\myparanthese{\myPhi}}}{2}.
+\end{gather}
+
+In a similar work, Ziaei et al. proved nearly the same Block-ERC of (\ref{BERC-Eldar}), for the different block size setting, where, all the $d$-s in (\ref{BERC-Eldar}) and $M^{Eldar}_{Inter}(\myPhi)$ have been replaced by $\max_{i , j {\neq} i} \sqrt{d_i d_j}$ \cite{Ziaei2010}.
+
+Ziaei et al. proved that their proposed modification of the $\ell_2/\ell_1$-optimisation program for different-size blocks outperforms the $\ell_2/\ell_1$-optimisation program \cite{Eldar2009c} and basis pursuit \cite{Chen2001}, in terms of the error rate \cite{Ziaei2010}.
+
+In the presence of noise, Ben-Haim and Eldar proposed block-sparse stable recovery conditions for block orthogonal matching pursuit and block-thresholding algorithms \cite{Ben-Haim2011}.

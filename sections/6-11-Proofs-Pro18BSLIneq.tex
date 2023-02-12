@@ -1,0 +1,31 @@
+\begin{proof}
+First, considering that for all basic tractable ($q,p$) pairs of table \ref{table:OperatorNorm} (page \pageref{table:OperatorNorm}), we have $q \sleq p$, then the term $\min_{k} \, \min \{1 , d_k^{1/q \sm 1/p} \}$ in $\myBSLqpTxt$ of Theorem \ref{th:BERC-BMIC} (page \pageref{th:BERC-BMIC}) would be equal to one.
+Hence, $\myBSLqpTxt$ has directly an inverse relationship with Block-MCC$_{q,p}$ (Definition \ref{def:BMIC}, page \pageref{def:BMIC}), i.e., for $1 \sleq q \sleq p$, $\myBSLqpMath \seq (1 \spl (d_{max} M_{q,p}(\myPhi))^{-1}) {/} 2$.
+Thus, according to the previously-mentioned relationship between different Block-MCC$_{q,p}$ characterisations with basic ($q,p$) pairs according to table \ref{table:OperatorNorm} (page \pageref{table:OperatorNorm}) demonstrated in Property \ref{prp:BMCC-relationships} (Block-MCC$_{q,p}$ inequalities, page \pageref{prp:BMCC-relationships}), the $\myBSLqpTxt$ inequalities would be in the opposite direction, which proves the inequalities of the Property.
+Therefore, for $q \sleq p$ the directions in figure \ref{fig:BSLqp_Inequalities}(a) (page \pageref{fig:BSLqp_Inequalities}) is in the opposite of the ones in figure \ref{fig:BMCC_Inequalities} (page \pageref{fig:BMCC_Inequalities}).
+
+For the proof of general relationships (tractable and intractable) of figure \ref{fig:BSLqp_Inequalities}(b), we have the following $\myBSLqpTxt$ for $q \sg p$, and $d_1 \seq \cdots \seq d_K \seq d$:
+\begin{gather}
+\label{eq:BSLq>p} 
+\begin{aligned}
+\forall (q , p) \in \mathbb{R}^2_{\geq 1}, q > p, \qquad
+\myBSLqpMath &= \frac{1 + \myparanthese{d \, M_{q,p}\myparanthese{\myPhi} }^{-1} d^{\frac1q - \frac1p}}{2} \\
+&= \frac{1 + \myparanthese{d^{1 + \frac1p - \frac1q}  M_{q,p}\myparanthese{\myPhi}}^{-1} }{2} \\
+&= \frac{1 + \myparanthese{d^{1 + \frac1p - \frac1q}  \displaystyle\max_{k,k' \neq k} d^{-1 - \frac1p + \frac1q} \mynorm{\myPhi^\dagger\mybracket{k} \myPhi \mybracket{k'}}_{q \to p}}^{-1} }{2} \\
+&= \frac{1 + \myparanthese{\displaystyle\max_{k,k' \neq k} \mynorm{\myPhi^\dagger\mybracket{k} \myPhi \mybracket{k'}}_{q \to p}}^{-1} }{2}.
+\end{aligned}
+\end{gather}
+
+On the other hand, for $q \seq p$, and $d_1 \seq \cdots \seq d_K \seq d$, we get the following $\myBSLqpTxt$:
+\begin{gather}
+\label{eq:BSLq=p}
+\begin{aligned}
+\forall q \in \mathbb{R}_{\geq 1}, \qquad
+Block{-}SL_{q,q}\myparanthese{\myPhi} &= \frac{1 + \myparanthese{d \, M_{q,q}\myparanthese{\myPhi} }^{-1}}{2} \\
+&= \frac{1 + \myparanthese{d \displaystyle\max_{k,k' \neq k} d^{-1} \mynorm{\myPhi^\dagger\mybracket{k} \myPhi \mybracket{k'}}_{q \to q}}^{-1} }{2} \\
+&= \frac{1 + \myparanthese{\displaystyle\max_{k,k' \neq k} \mynorm{\myPhi^\dagger\mybracket{k} \myPhi \mybracket{k'}}_{q \to q}}^{-1} }{2}.
+\end{aligned}
+\end{gather}
+By comparing the $\myBSLqpTxt$ in (\ref{eq:BSLq>p}) for $p \sg q$, with (\ref{eq:BSLq=p}) for $q \seq p$, we see that the only difference between the equations is the $\ell_{q {\to} p}$ operator-norm.
+On the other hand, from figure \ref{fig:OperatorNorm-Inequalities}, we know that for a fixed $p$ by increasing $q$, and for a fixed $q$ by decreasing $p$, the $\ell_{q {\to} p}$ operator-norm increases, hence, $\myBSLqpTxt$ decreases, which results in the figure \ref{fig:BSLqp_Inequalities}(b).
+\end{proof}

@@ -1,0 +1,84 @@
+As mentioned before, in the conventional element-wise sparse recovery problem, the goal is to extract a representation vector among the set of eligible solutions which is the sparsest one, i.e., a representation with the fewest non-zero elements. 
+But in the framework of block-sparsity, the fewest \emph{active blocks} are of interest, and not fewest non-zero elements. 
+Any active block $k$ has at least one non-zero element in $\mybeta[k]$ which results in its non-zero $\ell_p$ norm (for any $p$), which can be used for determining the active blocks. 
+Usually, $p$ is assigned to two, because the $\ell_2$ norm is a rotational invariant measure.
+Here we use the $\ell_p$ norm in more general cases of $0 \sleq p$ and $1 \sleq p$. 
+
+As we said, a representation $\mybeta$ is called block k-sparse if it has at most $k$ active blocks, i.e., $\Vert \mybeta \Vert_{p,0} \sleq k$. 
+The $\ell_{p,0}$ pseudo-mixed-norm of $\mybeta$, i.e., $\sum_{k}^{} I (\Vert \mybeta [k] \Vert_p)$, 
+%(see table \ref{table:MixedNorm} for its complete definition), 
+which can be used for counting the number of active blocks, measures the activity of each block in $\ell_{p}$ norm sense and the sparsity of the active blocks in $\ell_{0}$ pseudo-norm sense.
+Therefore, block's $\ell_p$ norm for any $p$ could be a suitable criterion for determining the activity of blocks and then using another sparsity inducing norm applied on the resulted vector containing the $\ell_p$ norm of each block could implement the concept of block-sparsity.
+
+The previously-introduced (equation (\ref{eq:Opt-Lp}), page \pageref{eq:Opt-Lp}) general constrained $\ell_p$ norm optimisation problem $P_{p,q,\varepsilon} (\boldsymbol{a},\boldsymbol{b}) : \min_{\boldsymbol{a}} \Vert \boldsymbol{a} \Vert_p \quad s.t. \quad \Vert \boldsymbol{b} \Vert_q \sleq \varepsilon$, 
+%defined in (\ref{eq:Opt-Lp}) 
+is defined to recover sparse solution, i.e., solution with the fewest non-zero elements, \myhl{with the widely used problem $P_{p} : \min_{\mybeta} \Vert \mybeta \Vert_p \quad s.t. \quad \boldsymbol{y} \seq \myPhi \mybeta$.}
+Then, the general constrained $\ell_{p_1,p_2}$ (pseudo-)mixed-norm optimisation problem $P_{(p_1,p_2),q,\varepsilon} (\boldsymbol{a},\boldsymbol{b}) : \min_{\boldsymbol{a}} \Vert \boldsymbol{a} \Vert_{p_1,p_2} \quad s.t. \quad \Vert \boldsymbol{b} \Vert_q \sleq \varepsilon$, introduced (equation (\ref{eq:Opt-Lp1p2}), page \pageref{eq:Opt-Lp1p2}) to recover equally-sized block-sparse solution, i.e., solution with the fewest active blocks, where, $\forall k$, $d_k \seq d$, \myhl{with the widely used problem $P_{p_1,p_2} : \min_{\mybeta} \Vert \mybeta \Vert_{p_1,p_2} \quad s.t. \quad \boldsymbol{y} \seq \myPhi \mybeta$.}
+In this chapter, we introduce the following \emph{constrained $\ell_{p_1,p_2}^{\boldsymbol{w}}$ weighted (pseudo-)mixed-norm optimisation problem} $P_{(\boldsymbol{w};p_1,p_2),q,\varepsilon}(\boldsymbol{a},\boldsymbol{b})$ in a more general case to recover differently-sized block-sparse solution, and cover all previously introduced optimisation problems:
+%can be adapted for the block-sparse recovery and redefined in the following more general cases to meet the needs in block-sparse recovery:
+%\begin{equation*}
+%\label{eq:Opt-Lp1p2}
+%P_{\myparanthese{p_1,p_2},q,\varepsilon} \myparanthese{\boldsymbol{a},\boldsymbol{b}}: \min_{\boldsymbol{a}} \mynorm{\boldsymbol{a}}_{p_1,p_2} \quad s.t. \quad \mynorm{\boldsymbol{b}}_q \leq \varepsilon,
+%\end{equation*}
+%and 
+\input{sections/2-2-2-BERC-BSparsity-Optimisation-Def1OptProb}
+
+The $\ell_{p_1,p_2}^{\boldsymbol{w}}$ for either $0 \sleq p_1 \sless 1$ or $0 \sleq p_2 \sless 1$ is called weighted \emph{pseudo}-mixed-norm, consequently, the corresponding problem $P_{(\boldsymbol{w};p_1,p_2),q,\varepsilon}(\boldsymbol{a},\boldsymbol{b})$ is called constrained $\ell_{p_1,p_2}^{\boldsymbol{w}}$ weighted \emph{pseudo}-mixed-norm optimisation problem.
+
+$\ell_{p_1,p_2}^{\boldsymbol{w}}$ weighted (pseudo-)mixed-norm when all the weights are $1$, i.e., $\boldsymbol{w} \seq \boldsymbol{1}_{1 \stimes K}$, is equal to the $\ell_{p_1,p_2}$ (pseudo-)mixed-norm, i.e., $\ell_{p_1,p_2}^{\boldsymbol{1}} {\equiv} \ell_{p_1,p_2}^{}$.
+\myhl{In addition, for $p_1 \sg 0$ and $p_2 \seq 0$, the $\ell_{p_1,0}^{\boldsymbol{w}}$ weighted pseudo-mixed-norm is independent of weight vector $\boldsymbol{w}$, so it equals to ordinary pseudo-mixed-norm, i.e., $\ell_{p,0}^{\boldsymbol{w}} {\equiv} \ell_{p,0}^{}$ for $p \sg 0$.}
+
+Although 
+%the \emph{constrained $\ell_{p_1,p_2}$ mixed norm minimisation problem} $P_{(p_1,p_2),q,\varepsilon}(\boldsymbol{a},\boldsymbol{b})$ and \emph{constrained $\ell_{p_1,p_2}^{\boldsymbol{w}}$ weighted mixed norm minimisation problem} 
+$P_{(\boldsymbol{w};p_1,p_2),q,\varepsilon}(\boldsymbol{a},\boldsymbol{b})$ with carefully selected values for $p_1$ and $p_2$, is defined generally and can cover lots of scenarios, but the proposed conditions in this study concentrate on the following special cases:
+\begin{itemize}
+\item $\boldsymbol{a}$: $\boldsymbol{a}$ is chosen to be the representation vector, i.e., $\boldsymbol{a} \seq \mybeta$.
+\item $\boldsymbol{b}$: $\boldsymbol{b}$ is selected as $\boldsymbol{r}$, i.e., $\boldsymbol{b} \seq \boldsymbol{r} \seq \boldsymbol{y} \sm \myPhi \mybeta$.
+\item $\varepsilon$ (and $q$): The representation vector $\mybeta$ is minimised in a block-sparse exact signal recovery problem, hence, $\varepsilon$ should be zero, i.e., 
+%$P_{(p_1,p_2),q,0} (\mybeta,\boldsymbol{r})$ and 
+$P_{(\boldsymbol{w};p_1,p_2),q,0} (\mybeta,\boldsymbol{r})$.
+For the sake of simplicity we refer to $P_{(\boldsymbol{w};p_1,p_2),q,0} (\mybeta,\boldsymbol{r})$
+%them 
+as %$P_{p_1,p_2}$ and 
+$P_{\boldsymbol{w};p_1,p_2}$, because regardless of choice of $q$, the $\Vert \boldsymbol{r} \Vert _q \seq 0$ directly indicates to the noiseless model, so the only parameters to be determined are $\boldsymbol{w}$, $p_1$ and $p_2$.
+Therefore, the utilised optimisation problem is $P_{\boldsymbol{w};p_1,p_2} : \min_{\mybeta} \Vert \mybeta \Vert_{\boldsymbol{w};p_1,p_2} \quad s.t. \quad \boldsymbol{y} \seq \myPhi \mybeta$.
+%, respectively.
+\item $\boldsymbol{w}$: Throughout this thesis, only two cases for $\boldsymbol{w}$ is considered. 
+In a block-structured vector $\boldsymbol{a} \seq [\boldsymbol{a}^T[1], \cdots,\boldsymbol{a}^T[K]]^T$ with length vector $\boldsymbol{d} \seq [d_1, \cdots, d_K ]$, $w_k$ in \myhl{$w_k \Vert \boldsymbol{a}[k] \Vert_{p_1}$} is either \myhl{$d_k^{-1/{p_1}}$} or $1$.
+Therefore, although in general the weight vector $\boldsymbol{w}$ can consist of any arbitrary values, in this work it is considered as \myhl{$\boldsymbol{d}^{-1/{p_1}}$} and the corresponding problem is represented as $P_{\boldsymbol{w};p_1,p_2}$, except when mentioned explicitly that it is a vector of ones, i.e., $\boldsymbol{1}_{1 \stimes K}$, and it can be represented as $P_{\boldsymbol{1};p_1,p_2}$.
+But $P_{\boldsymbol{1};p_1,p_2}$ is equal to $P_{p_1,p_2}$, so we refer this case to $P_{p_1,p_2}$.
+Therefore, we have two cases of $P_{p_1,p_2}$ and $P_{\boldsymbol{w};p_1,p_2}$, where the weight vector $\boldsymbol{w}$ is:
+\begin{equation*}
+\mycolor{\forall k \in \mybrace{1, \cdots, K}, \qquad w_k = d_k^{-\frac{1}{p_1}}.}
+\end{equation*}
+\item $p_1$ and $p_2$: The main proposed Block-ERC include the cases $0 \seq p_2 \sleq p_1$, and the more general one of $0 \sleq p_2 \sleq 1 \sleq p_1$.
+\end{itemize}
+
+%\begin{remark}
+It is obvious that, if the size of all the blocks is chosen to be 1, i.e., $\forall k, d_k \seq 1$, then the block-sparse exact signal recovery reduces to the conventional exact signal recovery, i.e., $P_{\boldsymbol{w};p_1,p_2} {\equiv} P_{p_1,p_2} {\equiv} P_{p_2}$.
+In addition, the problem $P_{\boldsymbol{w};p_1,p_2}$ for $0 \seq p_2 \sless p_1$ is independent of the weight vector $\boldsymbol{w}$ and equals to ordinary pseudo-mixed-norm problem, i.e., $P_{\boldsymbol{w};p,0} {\equiv} P_{p,0}$ for $p \sg 0$.
+%\end{remark}
+
+As it can be seen in Section \ref{sec:Block-sparse_representation_theory}, most of the previous works are based on Euclidean norm as a measure of block activity, i.e., $P_{2,p}$. However, it has been shown that by using norms other than Euclidean, the performance of the selection of group of variables increases \cite{Zhao2009}.
+So, we study the impact of other norms.
+
+ %%%
+In this chapter, we first introduce Block-ERC based on $P_{p,0}$ in two different cases of $p \sgeq 0$ and $p \sgeq 1$. 
+Then, we generalise the results to $P_{p_1,p_2}$ and $P_{\boldsymbol{w};p_1,p_2}$, where, the activity of blocks is measured by $\ell_{p_1}$ norm, $p_1 \sgeq 1$, and the sparsity of the blocks by $\ell_{p_2}$ (pseudo-)norm, $0 \sleq p_2 \sleq 1$.
+%, see table \ref{table:MixedNorm} for $\ell_{p_1,p_2}$ mixed norm definition of the vector $\mybeta$ for different values of $p_1$ and $p_2$.
+\input{sections/2-2-2-BERC-BSparsity-Optimisation-Rmrk1}
+
+The selection of the values of the (pseudo-)mixed-norm coefficients $p_1$ and $p_2$ in the corresponding optimisation problems $P_{p_1,p_2}$ and $P_{\boldsymbol{w};p_1,p_2}$ is very important. 
+Since the optimisation problems $P_{p_1,p_2}$ and $P_{\boldsymbol{w};p_1,p_2}$ are presented in a general case, by selecting a certain values of the (pseudo-)mixed-norm coefficients $p_1$ and $p_2$, one can switch the problem between the conventional sparsity and block-sparsity problem.
+Map of the values of the (pseudo-)mixed-norm coefficients $p_1$ and $p_2$, which leads to sparsity and block-sparsity problems is shown in figure \ref{fig:MixedNorm-Map}.
+
+Figure \ref{fig:MixedNorm-Map} represents schematically our regions of interest in orange colour for the (pseudo-)mixed-norm coefficients $p_1$ and $p_2$ in a block sparsity problems $P_{p_1,p_2}$ or $P_{\boldsymbol{w};p_1,p_2}$, compared to the traditional sparsity problem, shown in blue colour region. 
+As it can be seen in figure \ref{fig:MixedNorm-Map}, considering additional constraint of proposed block sparsity (orange-coloured regions) on the representation vector, gives rise to a wider region of the (pseudo-)mixed-norm coefficients of the corresponding optimisation problem compared to the existing block sparsity (green-coloured regions), and conventional sparsity (blue-coloured regions).
+In figure \ref{fig:MixedNorm-Map}, the most frequently studied cases are represented by solid circles. 
+For instance, $P_{0,1}$ (${\equiv} P_0$) and $P_{1,1}$ (${\equiv} P_1$), which are represented by blue circles (left and right one, respectively) are the widely used cases in sparse exact recovery problems, whereas $P_{2,0}$ and $P_{2,1}$, which are represented by green circles (down and top one, respectively) are the widely used cases in block-sparse exact recovery problems.
+\newpage
+\input{sections/2-2-2-BERC-BSparsity-Optimisation-Rmrk2SparsityRegion}
+\input{sections/2-2-2-BERC-BSparsity-Optimisation-Rmrk3BSparsityRegion}
+\input{sections/2-2-2-BERC-BSparsity-Optimisation-Fig2}
+\FloatBarrier
+%mixed norm coefficients of the representation vector, weighted mixed norm coefficients of the representation vector,

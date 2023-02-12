@@ -1,0 +1,40 @@
+\begin{proof}
+From Property \ref{prp:IntraBlkO} (Block-MCC$_{q,p}$ for intra-block orthonormality, page \pageref{prp:IntraBlkO}), in the special case of two matrices and parameter changing of $p {\to} p/(p \sm 1)$, we have:
+\begin{equation*}
+\forall \myparanthese{q , p} \in \mathbb{R}^2_{>0}, \qquad
+\overbar{M}_{q,\frac{p}{p-1}}\myparanthese{\myPhiOne , \myPhiTwo} = 
+\max_{k,k'} \frac{d_k^{-\frac{p-1}{p}} d_{k'}^{\frac1q}}{d_{max}} \mynorm{\myPhiOne ^T \mybracket{k} \myPhiTwo^{ }\mybracket{k'}}_{q \to \frac{p}{p-1}}.
+\end{equation*}
+Then, squaring both sides and for $q \seq p \seq 2$, we get:
+\begin{gather*}
+\begin{aligned}
+\overbar{M}^2_{2,2}\myparanthese{\myPhiOne , \myPhiTwo} &= 
+\max_{k,k'} \frac{d_k^{-1} d_{k'}}{d^2_{max}}\mynorm{\myPhiOne^T \mybracket{k} \myPhiTwo^{ }\mybracket{k'}}^2_{2 \to 2}\\
+&= \max_{k,k'} \frac{d_k^{-1} d_{k'}}{d^2_{max}}\mynorm{\myPhiTwo^T \mybracket{k'} \myPhiOne^{ } \mybracket{k} \myPhiOne^T \mybracket{k} \myPhiTwo^{ }\mybracket{k'}}_{2 \to 2}.
+\end{aligned}
+\end{gather*}
+The above second equality follows from a property of operator-norms, 
+%defined in Section \ref{sec:operator-norm}, 
+i.e., $\Vert \boldsymbol{A} \Vert^2 _{2 \to 2} \seq \Vert \boldsymbol{A}^T \boldsymbol{A} \Vert _{2 \to 2}$.
+Summing over $k$ and $k'$, we have:
+\begin{gather*}
+\begin{aligned}
+K^2 \overbar{M}^2_{2,2}\myparanthese{\myPhiOne , \myPhiTwo} &\geq
+\displaystyle\sum_{k=1}^K \displaystyle\sum_{k'=1}^K \frac{d_k^{-1} d_{k'}}{d^2_{max}} \mynorm{\myPhiTwo^T \mybracket{k'} \myPhiOne^{ } \mybracket{k} \myPhiOne^T \mybracket{k} \myPhiTwo^{ }\mybracket{k'}}_{2 \to 2} \\
+&\geq \frac{1}{d^2_{max}} \mynorm{\displaystyle\sum_{k'=1}^K d_{k'} \myPhiTwo ^T \mybracket{k'}\myparanthese{\displaystyle\sum_{k=1}^K d_k^{-1} \myPhiOne^{ } \mybracket{k} \myPhiOne^T \mybracket{k}} \myPhiTwo^{ }\mybracket{k'}}_{2 \to 2}\\
+&\mycolor{\geq \frac{d_{min}}{d^{3}_{max}} \mynorm{\displaystyle\sum_{k'=1}^K \myPhiTwo ^T \mybracket{k'}\myparanthese{\displaystyle\sum_{k=1}^K \myPhiOne^{ } \mybracket{k} \myPhiOne^T \mybracket{k}} \myPhiTwo^{ }\mybracket{k'}}_{2 \to 2}} \\
+&= \frac{d_{min}}{d^{3}_{max}} \mynorm{K \boldsymbol{I}_{d_{k'}}}_{2 \to 2}\\
+&= \frac{d_{min}}{d^{3}_{max}} K.
+\end{aligned}
+\end{gather*}
+The above second inequality follows from the triangle inequality, whereas the third one results from considering the minimum values for variable block length coefficients in the sum operator.
+\myhl{In fact, in this problem, having some finite integer values $d_k \sgeq 1$, $\forall k$, and the corresponding orthonormal bases $\myPhi[k]$, we are utilising the lower-bound $\sum_k d_k \myPhi[k] \sgeq \min_k d_k \sum_k \myPhi[k] \seq d_{min} \sum_k \myPhi[k]$.}
+The above first equality results from the fact that for orthonormal matrices $\myPhiOne$ and $\myPhiTwo$ we have, $\sum_{k=1}^K \myPhiOne^{ } [k] \myPhiOne^T [k] \seq \myPhiOne \myPhiOne^T \seq \boldsymbol{I}_m$ and $\forall k'$, $\myPhiTwo^T [k'] \myPhiTwo ^{ } [k'] \seq \boldsymbol{I}_{d_{k'}}$.
+The last equality results from the homogeneity property (Property \ref{prp:OperatorProperties}, page \pageref{prp:OperatorProperties}) and unity of operator-norm of the identity matrix.
+The proof is then completed by taking square roots from both sides and noticing that for each matrix $\myPhiOne$ and $\myPhiTwo$, we have $m \seq \sum_{k \seq 1}^K d_k \sgeq \min_k d_k \sum_{k \seq 1}^K 1 \seq K \, d_{min}$, then $K \sleq m / d_{min}$, i.e.,:
+\begin{gather*}
+\overbar{M}_{2,2}\myparanthese{\myPhiOne , \myPhiTwo} 
+\geq \sqrt{\frac{d_{min}}{K \, d^{3}_{max}}} 
+\geq \sqrt{\frac{d^2_{min}}{m \, d^{3}_{max}}}.
+\end{gather*}  
+\end{proof}

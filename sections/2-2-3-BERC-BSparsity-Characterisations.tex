@@ -1,0 +1,129 @@
+To define the Block-ERC, it is necessary to introduce some notations.
+Except when mentioned explicitly, (1) 
+%all of the below characterisations hold true for all $q \ssin \mathbb{R}_{\sg 0}$, $p \ssin \mathbb{R}_{\sgeq 0}$ and 
+the block length $d_k \ssin \mathbb{N}$, where, $\sum_{k \seq 1}^K d_k \seq n$, and $d_{max}$ and $d_{min}$ are the maximum and minimum block length, respectively, and (2) the characterisations coincide with the results known in the conventional element-wise case if all blocks are of size $1$, i.e., $d_1 \seq \cdots \seq d_K \seq 1$.
+We first give some general definitions, which then will be used to prove uniqueness results.
+\input{sections/2-2-3-BERC-BSparsity-Characterisations-BSuppCard}
+
+$\Vert \mybeta \Vert_{p,0}$ simply counts the number of active blocks in the sense of their non-zero $\ell_{p}$ norm.
+
+In fact, considering the definition of $\Vert \mybeta \Vert_{p,0}$, each block is first represented by its $\ell_{p}$ norm.
+%while based on definition, 
+So, non-zero representatives indicate active blocks.
+Then, by applying the $\ell_{0}$ pseudo-norm on the blocks' representatives, 
+%non-zero representatives or indeed 
+the active blocks are counted.
+When $d_1 \seq \cdots \seq d_K \seq 1$, the $\myBSuppTxt$ and $\myBCardTxt$ will be equivalent to the conventional $\mySuppTxt$ and $\myCardTxt$ (see Section \ref{sec:Conv-Characterization}), respectively.
+\input{sections/2-2-3-BERC-BSparsity-Characterisations-BKernel}
+Actually, the $\myBKerTxt$ is the block-wise definition of the conventional $\myKerTxt$ of a dictionary.
+Because of their equivalency and for the sake of simplicity, we use the notation of conventional $\myKerTxt$.
+
+Regarding the uniqueness of the solution of $P_{p,0}$ problem, an interesting question is 
+"What is the minimal value of $\Vert \boldsymbol{x} \Vert_{p,0}$ for $\boldsymbol{x} \ssin \myKerMath \backslash\{\boldsymbol{0}\}$, and $p \sg 0$?".
+To elucidate the significance of the mentioned question, assume that $\mybetaz$ and $\mybetao$ are both solutions to problem $P_{p,0}$, i.e., $\boldsymbol{y} \seq \myPhi \mybetaz \seq \myPhi \mybetao$.
+Then $\myPhi (\mybetaz \sm \mybetao) \seq \boldsymbol{0}$, so $\boldsymbol{x} \seq \mybetaz \sm \mybetao \ssin \myKerMath$. 
+Clearly, $\Vert \boldsymbol{x} \Vert_{p,0} \seq \Vert \mybetaz \sm \mybetao \Vert_{p,0} \sleq \Vert \mybetaz \Vert_{p,0} \spl \Vert \mybetao \Vert_{p,0} \seq 2 \Vert\mybetaz \Vert_{p,0}$ since both $\Vert \mybetaz \Vert_{p,0}$ and $\Vert \mybetao \Vert_{p,0}$ attain the minimum $\ell_{p,0}$ pseudo-mixed-norm.
+Consequently, assuming two solutions we reach to $\Vert \boldsymbol{x} \Vert_{p,0} / 2 \sleq \Vert \mybetaz \Vert_{p,0}$. 
+
+Hence, if $\Vert \mybetaz \Vert_{p,0} \sless \min_{\boldsymbol{x} \ssin \myKerMath \backslash\{\boldsymbol{0}\}} \Vert \boldsymbol{x} \Vert_{p,0}/2$, then no other solution $\mybetao$ exists for which $\Vert \mybetaz \Vert_{p,0} \seq \Vert \mybetao \Vert_{p,0}$. We stress the importance of the latter through the following definition which is a straightforward generalisation of the conventional $\mySpkTxt$ \cite{Gribonval2003a,Donoho2003}:
+\input{sections/2-2-3-BERC-BSparsity-Characterisations-BSpark}
+$\myBSpkTxt$ characterises the block null space of a dictionary using the $\ell_{p,0}$ pseudo-mixed-norm.
+%or the $\ell_{p,0}^{\boldsymbol{w}}$ weighted pseudo-mixed-norm. 
+%Notice that, in definition of $\myBSpkTxt$ using the $\ell_{p,0}^{\boldsymbol{w}}$ weighted pseudo-mixed-norm, $p$ cannot have zero value.
+
+By definition, any vector $\boldsymbol{x}$ in the block null space of the dictionary, i.e., $\sum_{k=1}^{K} \myPhi[k]\boldsymbol{x}[k] \seq \boldsymbol{0}$, must satisfy $\forall p \sgeq 0, \Vert \boldsymbol{x} \Vert_{p,0} \sgeq \myBSpkMath$. 
+%or $\forall p \sg 0, \Vert \boldsymbol{x} \Vert_{\boldsymbol{w};p,0} \sgeq \myBSpkMath$.
+This important block-wise characterisation of the dictionary is the extension of the conventional $\mySpkTxt$ defined in equation (\ref{eq:Conventional Spark}) page \pageref{eq:Conventional Spark}.
+
+Because of the fact that the proposed characterisation is a block-wise generalisation of the conventional element-wise case, in a unit block size setting, i.e., $\forall k, d_k \seq 1$, our proposed $\myBSpkTxt$ is equivalent to the conventional $\mySpkTxt$, i.e., $\myBSpkMath {\equiv}\mySpkMath$.
+
+\input{sections/2-2-3-BERC-BSparsity-Characterisations-Pro1BSparkVsSpark}
+Due to non-convexity of the 
+%weighted pseudo-mixed-norm ${\Vert \cdot \Vert_{\boldsymbol{w};p,0}}$ and 
+pseudo-mixed-norm $\Vert \cdot \Vert_{p,0}$, $\myBSpkTxt$ is not computationally tractable.
+Therefore, the following 
+%tractable 
+block coherence measure, which is the block-wise extension of the conventional MCC\footnote{\emph{Mutual Coherence Constant}} is proposed:
+\newpage
+\input{sections/2-2-3-BERC-BSparsity-Characterisations-Def6BCoherence}
+%The reason for choosing the coefficients $d_{k}^{-\frac1p} \, d_{k'}^{\frac1q}$ and $d_{max}^{\sm 1}$ in Definition \ref{def:BMIC}, is mentioned in the proof of corollaries \ref{crl:Block Spark Inequality} and \ref{prp:BMIC-MIC}, respectively.
+%In figure \ref{fig:SchematicBMIC} a schematic representation of computation of Block-MCC$_{q,p}$ for a low-dimensional case is shown.
+%In this case, the dictionary is composed of two blocks, so to compute Block-MCC$_{q,p}$ maximisation is applied over two cases, as shown as two lines of computations.
+%Take the first line of computations, the columns of $\myPhi^\dagger[1]$ and $\myPhi [2]$ are shown in solid blue and orange colors, respectively.
+%Then, the $\myPhi^\dagger[1] \myPhi [2]$ matrix is represented numerically and graphically.
+%Afterwards, in order to compute the $q$ to $p$ operator, the $\ell_p$-norm of $\myPhi^\dagger[1] \myPhi [2] \boldsymbol{x}$ should be computed for three tractable norms of $\ell_1$, $\ell_2$, and $\ell_{\infty}$, where $\Vert \boldsymbol{x} \Vert_1$, $\Vert \boldsymbol{x} \Vert_2$, and $\Vert \boldsymbol{x} \Vert_{\infty}$ are less than or equal to one, respectively.
+%Then, by multiplying to the proper coefficient based on the block size, $q$, and $p$, and finally by taking the maximum value among all cases (here two), Block-MCC$_{q,p}$ is obtained.
+%\begin{figure}[!b]
+%\centering
+%\includegraphics[width=1\textwidth,keepaspectratio]{images/BMIC-Schematic.png}
+%\centering
+%\caption{Schematic representation of computation of Block-MCC$_{q,p}$ for a low-dimensional case.}
+%\label{fig:SchematicBMIC}
+%\end{figure}
+
+For a unit block size setting, $d_1 \seq \cdots \seq d_K \seq 1$, and $\ell_2$-normalized columns of $\myPhi$, as expected, Block-MCC$_{q,p}$ is equivalent to conventional MCC (page \pageref{eq:MIC}), i.e., $M_{q,p}(\myPhi) {\equiv} M(\myPhi)$, because each block of $d_k$ columns $\myPhi[k]$ will be a single column, i.e., $\myPhi[k] \seq \myphi_k$, and for the vector $\myphi_k$, we have $\myphi^\dagger_k \seq \boldsymbol{\varphi}^T_k$ and for the scalar $\boldsymbol{\varphi}^T_k \boldsymbol{\varphi}^{ }_{k'}$, we have $\Vert \boldsymbol{\varphi}^T_k \boldsymbol{\varphi}^{ }_{k'} \Vert_{q \to p} \seq \vert \boldsymbol{\varphi}^T_k \boldsymbol{\varphi}^{ }_{k'} \vert$ for $\forall (q , p) \ssin  \mathbb{R}^2_{\sgeq 0}$, so $M_{q,p}(\myPhi) \seq \max_{k , k' {\neq} k} \vert \boldsymbol{\varphi}^T_k \boldsymbol{\varphi}^{ }_{k'} \vert \seq M(\myPhi)$.
+
+Although Block-MCC$_{q,p}$ is valid for $\forall \myparanthese{q , p} \ssin \mathbb{R}^2_{>0}$, in practice, because of the computational complexity, only some basic operator-norms can be calculated \cite{Tropp2004b}.
+\input{sections/2-2-3-BERC-BSparsity-Characterisations-Table1OpNorm}
+
+In order to investigate the bounds and relationship of the proposed Block-MCC$_{q,p}$ to the existing dictionary characterisations, we need to study the properties of the $\ell_{q {\to} p}$ operator-norm of a matrix, which in turn requires to establish the bounds of division of norm of two vectors:
+\input{sections/2-2-3-BERC-BSparsity-Characterisations-Pro2BoundsNormsDiv}
+The proof of Property \ref{prp:VectorDivisionBound} is provided in Section \ref{prf:VectorDivisionBound} (page \pageref{prf:VectorDivisionBound}).
+The general bounds of Property \ref{prp:VectorDivisionBound} include the following special cases $\forall \boldsymbol{a} \ssin \mathbb{R}^d$ \cite{Golub2013}:
+\begin{gather*}
+\begin{aligned}
+1 &\leq \frac{\mynorm{\boldsymbol{a}}_1}{\mynorm{\boldsymbol{a}}_2} \leq \sqrt{d}, \\
+1 &\leq \frac{\mynorm{\boldsymbol{a}}_2}{\mynorm{\boldsymbol{a}}_{\infty}} \leq \sqrt{d}, \\
+1 &\leq \frac{\mynorm{\boldsymbol{a}}_1}{\mynorm{\boldsymbol{a}}_{\infty}} \leq d.
+\end{aligned}
+\end{gather*}
+\input{sections/2-2-3-BERC-BSparsity-Characterisations-Pro3BoundsPNormsDiv}
+\input{sections/2-2-3-BERC-BSparsity-Characterisations-Pro4OpNormsProp}
+
+Now, based on the above-mentioned properties of the $\ell_{q {\to} p}$ operator-norm introduced in Property \ref{prp:OperatorProperties} ($\ell_{q {\to} p}$ operator-norm properties), in the following property we investigate the possible relationship between different Block-MCC$_{q,p}$ characterisations (Definition \ref{def:BMIC}, page \pageref{def:BMIC}) with basic ($q,p$) pairs according to table \ref{table:OperatorNorm} (page \pageref{table:OperatorNorm}):
+\input{sections/2-2-3-BERC-BSparsity-Characterisations-Pro5BMCCIneq}
+
+Since the recovery conditions started with orthonormal bases, the following property shows Definition \ref{def:BMIC} (block coherence) in special case of intra-block orthonormality:
+\input{sections/2-2-3-BERC-BSparsity-Characterisations-Pro6BMCCOrtho}
+Block-MCC$_{q,p}$ is a measure of similarity between different blocks of the columns of the dictionary, which is the block-wise extension of the conventional MCC (page \pageref{eq:MIC}).
+Since the dictionary coherence has an inverse effect on the theoretical recovery conditions, the lower bounds for coherence is desired.
+When a dictionary has intra-block orthonormality, Block-MCC$_{q,p}$ can be bounded, as shown in the following property:
+\input{sections/2-2-3-BERC-BSparsity-Characterisations-Pro7BMCCOrthoBound}
+Later, in Property \ref{prp:BMIC-orth-bound2}, we will show another upper-bounds for Block-MCC$_{q,p}$ based on the relationship with conventional MCC.
+\input{sections/2-2-3-BERC-BSparsity-Characterisations-Pro8BMCCBound}
+In addition, we have:
+%using the second part of Property \ref{prp:BMIC-MIC} and knowing the upper-bound of $M(\myPhi)$, we can again, as in Property \ref{prp:BMIC-orth-bound}, find the upper-bounds of the Block-MCC$_{q,p}$.
+\input{sections/2-2-3-BERC-BSparsity-Characterisations-Pro9BMCCOrthoBound2}
+
+%\FloatBarrier
+{
+\label{cmmnt:28} 
+Notice that in Property \ref{prp:BMIC-orth-bound} we introduced the bounds of Block-MCC$_{q,p}$ based on the bounds of the operator-norms in terms of the unit $\ell_{2 {\to} 2}$ operator-norm, whereas now in Property \ref{prp:BMIC-orth-bound2} we introduced another upper-bound based on its relationship with MCC and considering the upper-bound of MCC.
+\myhl{By minimising upper-bounds of Block-MCC$_{q,p}$ in properties {\ref{prp:BMIC-orth-bound}} (table {\ref{table:BMIC-orth-bound}}) and {\ref{prp:BMIC-orth-bound2}} (table {\ref{table:BMIC-orth-upper-bound}}), the final resulted upper-bounds are shown in table {\ref{table:BMIC-orth-bound-min}}.}
+}
+%we see that all the smallest values belong to table \ref{table:BMIC-orth-bound}, therefore, we select table \ref{table:BMIC-orth-bound} as the upper-bound of Block-MCC$_{q,p}$.
+
+%By selecting the smallest upper-bounds of Block-MCC$_{q,p}$ in properties \ref{prp:BMIC-orth-bound} (table \ref{table:BMIC-orth-bound}) and \ref{prp:BMIC-orth-bound2} (table \ref{table:BMIC-orth-upper-bound}), the final upper-bounds are shown in table \ref{table:BMIC-orth-bound3}.
+%As it can be seen in table \ref{table:BMIC-orth-bound3}, the maximum Block-MCC$_{2,2}$ and Block-MCC$_{\infty,\infty}$ are resulted from Property \ref{prp:BMIC-orth-bound}, and \ref{prp:BMIC-orth-bound2}, respectively, whereas for other $(q,p)$ pairs the minimum value between results of the mentioned two properties should be calculated.
+%Property \ref{prp:BMIC-orth-bound2} only for Block-MCC$_{1,1}$ and Block-MCC$_{\infty,\infty}$ affects the upper-bound of Block-MCC$_{q,p}$ in Property \ref{prp:BMIC-orth-bound}.
+
+\input{sections/2-2-3-BERC-BSparsity-Characterisations-Table6MaxBMCC}
+
+\input{sections/2-2-3-BERC-BSparsity-Characterisations-Rmrk7}
+%, whereas the upper bounds for $(2,2)$ is less than, for $(1,1)$, $(1,2)$, $(2,\infty)$, and $(\infty,\infty)$ are equal and finally for $(1,\infty)$ is higher than to the upper bound in (\ref{eq:M-bounds}).
+
+If MCC is small enough, the dictionary is said to be \emph{incoherent}, similarly if Block-MCC$_{q,p}$ is small enough, the dictionary will be \emph{block-incoherent}.
+The term block-incoherent is previously used in some studies, of course with a different definition for the characterisation of the coherence of the dictionary which is called \emph{block-coherence} \cite{Peotta2007,Eldar2009b,Eldar2010b}. % ,Eldar2010
+
+Next, we demonstrate the relationship between the proposed general Block-MCC$_{q,p}$ and the conventional characterisation of Donoho and Huo, i.e., \myhl{$\tilde{M}(\myPhiOne,\myPhiTwo) {\myeq} \max\{ \max_{i,j} |\myPhiOne^{-1} \myPhiTwo|_{i,j} , \max_{i,j} |\myPhiTwo^{-1} \myPhiOne|_{i,j}\}$ explained on page {\pageref{Def:M-tilda}}} \cite{Donoho2001}, in sparsity, and block-coherence of Eldar et al., i.e., \myhl{$M^{Eldar}_{Inter}(\myPhi) {\myeq} \max_{k,k' \neq k} \Vert\myPhi ^T [k] \myPhi [k']\Vert_{2 \to 2}/d$ explained on page {\pageref{eq:Eldar-Block-coherence}} equation ({\ref{eq:Eldar-Block-coherence}})} \cite{Eldar2010}, in block-sparsity domain.
+%show the relationship between Eldar's block-coherence in \cite{Eldar2010}, and our proposed Block-MCC$_{q,p}$:
+\input{sections/2-2-3-BERC-BSparsity-Characterisations-Pro10BMCCVsDonoho}
+\input{sections/2-2-3-BERC-BSparsity-Characterisations-Pro10BMCCVsEldar}
+The above introduced coherence constant Block-MCC$_{q,p}$ characterises the dictionary by means of the maximum coherence, but with the expense of heavier computations it is possible to better characterise it using a cumulative coherence.
+\input{sections/2-2-3-BERC-BSparsity-Characterisations-Def7CumBMCC}
+
+As expected, for a unit block size scenario, i.e., $d_1 \seq \cdots \seq d_K \seq 1$, cumulative Block-MCC$_{q,p}$ in Definition \ref{def:CBMIC} is equivalent to the conventional cumulative MCC in (\ref{eq:CMIC}) presented on page \pageref{eq:CMIC}.
+\input{sections/2-2-3-BERC-BSparsity-Characterisations-Pro12CumBMCCProp}
+\input{sections/2-2-3-BERC-BSparsity-Characterisations-Def8CumCEldar}
+\input{sections/2-2-3-BERC-BSparsity-Characterisations-Pro13CumCEldarProp}
+\input{sections/2-2-3-BERC-BSparsity-Characterisations-Pro14CumBMCCVsCEldar}

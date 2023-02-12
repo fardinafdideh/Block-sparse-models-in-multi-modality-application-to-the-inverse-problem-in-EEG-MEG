@@ -1,0 +1,51 @@
+In science and technology, e.g., 
+%astronomology \cite{Donoho2002}, seismology, 
+statistics \cite{Cand`es2007a}, or biomedical engineering \cite{Geer2004,Erickson2005,Lustig2007}, 
+%\cite{Daniel1998,Peters2000,Cand`es2007a,Lustig2007,Lustig2008,Haldar2011}, 
+%genomics \cite{Erickson2005,Milenkovic2007,Cand`es2007a,Parvaresh2008a}, statistics \cite{Kettenring2003,Geer2004,Cand`es2007a}, spectroscopy, tomography, digital photography, A/D converters \dots \,and in many research fields and communities e.g., computational harmonic analysis \cite{Daubechies1992,Mallat1993,Wickerhauser1994,Mallat2008}, coding theory  \cite{Donoho2001,Feldman2003,Cand`es2005b,Cand`es2005c,Feldman2005,Feldman2005a,Rudelson2005,Feldman2007,Cand`es2007b,Akcakaya2008}, random matrix theory \cite{Cand`es2005b}, compressed sensing \cite{Donoho2006}, approximation \cite{DeVore1998,Donoho2001,Gribonval2006a,DeVore2009}, model selection \cite{Akaike1974}, variable selection, model identifiability, linear regression, inverse problems, (near-) best $S$-term approximation  \cite{Temlyakov1998,Temlyakov1999,Temlyakov2000,Temlyakov2003,Gilbert2003,Tropp2004}, overcomplete signal representation \cite{Coifman1992,Mallat1993,Qian1994,Chen1994,Wickerhauser1994,Huo1999,Chen2001,Elad2001,Elad2002a,Starck2002,Donoho2003,Strohmer2003}, sources separation \cite{Donoho2001,Zibulevsky2001,Gribonval2004a}, denoising \cite{Donoho1995,Chen2001}, compression \cite{DeVore1992}, data conversion \cite{Cand`es2006b,Donoho2006}, sensor networks \cite{Haupt2006}, single-pixel camera \cite{Takhar2006,Duarte2008,Chen2014c}, fast ultra-wideband signal acquisition \cite{Cand`es2007b}, superresolution \cite{Donoho1992,Wohlberg2003,Donoho2006a}, \dots \,
+scientists and engineers end up with vastly USLE, which have an infinite number of solutions, if any. 
+%The inverse problem is a such example.
+\myhl{For instance, the research domain of inverse problem mainly deals with USLE.}
+Because of these infinitely many solutions, the problem is said ill-posed \cite{Hadamard1902}. 
+According to some \emph{a priori} knowledge about the nature of the data of interest, and consequently the solution, this eligible infinite number of solutions, which results in ambiguity in solution space, could be restricted to a smaller class of solutions or, pragmatically, to a unique solution, which is a good approximation to a true solution. 
+
+Commonly, the amount of \emph{sparsity} of the true solution has been exploited as additional constraint to disappear the mentioned ill-posedness of the USLE
+%key prior knowledge  is related to .
+Sparsity assumption is a generic constraint that its application in different domains can lead to solutions with different properties, e.g., smoothness of the solution.
+In this work, the sparsity assumption is utilised.
+In fact, the sparsity assumption is a very relevant constraint due to the practical observation indicating that many real world signals have approximately sparse representations.
+
+If the coefficient matrix of USLE is union of orthonormal bases, 
+%or tight frames, e.g., sinusoids and wavelets \cite{Donoho2001}, sinuosids and spikes \cite{Donoho2001}, Wilson bases \cite{Daubechies1991}, wavelet packets and cosine packets \cite{Coifman1992}, ridgelets and curvelets \cite{Cand`es1999,Cand`es2001}, spikes and Walsh functions \cite{Donoho2001}, \dots \,
+the solution is 
+%\emph{effective}, 
+\emph{efficient}, 
+% or \emph{optimal}
+where 
+%effectiveness, 
+efficiency 
+%or optimality 
+in solution means requiring very few significant coefficients in comparison to the dimension of the solution, so sparsity \cite{Chen2001,Gribonval2003a}.
+%\cite{Chen2001,Donoho2001,Donoho2003a,Gribonval2003a}.
+But practically it has been observed that because of the rich characteristics of the natural phenomena, if the coefficient matrix is a single orthonormal basis, usually the natural images or sounds do not necessarily have sparse solution \cite{Gribonval2003}. 
+Therefore, the more generalised concept of coefficient matrix is introduced which is the so-called \emph{dictionary} \cite{Mallat1993}. Each column of a dictionary is called \emph{atom}. 
+For explanation of the atom-dictionary terminology, the interested reader is referred to \cite{Mallat1993} and \cite{Chen2001}.
+The coefficient matrix appears in different names of design matrix, measurement matrix, coding matrix, codebook, 
+%orthonormal bases, 
+or dictionary, based on its nature and the research community.
+
+In the community of overcomplete signal representations, finding the sparse solution of a vastly USLE is translated as 
+%reconstructing or 
+recovering a high-dimensional ideally sparse 
+%, nearly sparse or even sparse in a fixed basis \cite{Cand`es2005} 
+vector, which can be a digital signal 
+%(sound) 
+or image. 
+In addition, it can be translated as an 
+%effective or 
+efficient representation of a signal in an overcomplete dictionary. 
+Overcompleteness of the dictionary implies that the linear system of equations is underdetermined, because the number of atoms in the dictionary is more than the number of entries in each of the atoms.
+However, despite of the fact that the problem is underdetermined, there are some heuristic and theoretical arguments on benefits of overcompleteness in theoretical neuroscience \cite{Olshausen1997}, approximation theory \cite{Cand`es2002}, signal processing \cite{DeBrunner1997,Berg1999,Cotter2002}, and image processing \cite{Huo1999,Starck2002,Starck2003}.
+%, where all indicate to the improved approximations of the true solution in an overcomplete dictionary. 
+
+Section \ref{sec:Sparse_representation} defines the sparse representation theory, next in Section \ref{sec:Exact_recovery_condition}, recovery conditions are reviewed.

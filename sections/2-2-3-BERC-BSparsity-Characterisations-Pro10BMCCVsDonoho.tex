@@ -1,0 +1,20 @@
+\begin{property}[Block-MCC$_{q,p}$ v.s. coherence of Donoho and Huo]
+\label{prp:BMIC-MDonoho} 
+For a dictionary $\myPhi \seq [\myPhiOne,\myPhiTwo]$ with two \myhl{invertible} square blocks of same size, $d_1 \seq d_2 \seq m$, we have:
+\begin{equation*}
+M_{1,\infty}\myparanthese{\myPhi} = \tilde{M}\myparanthese{\myPhiOne,\myPhiTwo},
+\end{equation*}
+and
+\begin{equation*}
+\mybrace{M_{1,1}\myparanthese{\myPhi} , M_{1,2}\myparanthese{\myPhi} , M_{2,2}\myparanthese{\myPhi} , M_{2,\infty}\myparanthese{\myPhi} , M_{\infty,\infty}\myparanthese{\myPhi}} \leq \tilde{M}\myparanthese{\myPhiOne,\myPhiTwo},
+\end{equation*}
+where, $\tilde{M}(\myPhiOne,\myPhiTwo)$ is the dictionary characterisation of Donoho and Huo, i.e., $\tilde{M}(\myPhiOne,\myPhiTwo) {\myeq} \max\{ \max_{i,j} |\myPhiOne^{-1} \myPhiTwo|_{i,j} , \max_{i,j} |\myPhiTwo^{-1} \myPhiOne|_{i,j}\}$, and $M_{q,p}(\myPhi)$ is the proposed Block-MCC$_{q,p}$, i.e., $M_{q,p}(\myPhi) {\myeq} d_{max}^{-1} \max_{k,k' \neq k} d_{k}^{-1/p} d_{k'}^{1/q} \Vert\myPhi^\dagger [k] \myPhi [k'] \Vert_{q \to p}$.
+\end{property}
+\begin{proof}
+\myhl{Considering that $\ell_{1 {\to}\infty}$ operator-norm represents the maximum absolute value of matrix, i.e., $\Vert \boldsymbol{A} \Vert_{1 {\to}\infty} \seq \max_{i,j} | a_{i,j} |$ (table {\ref{table:OperatorNorm}}, page {\pageref{table:OperatorNorm}}), and the fact that here $\myPhi[k] \seq \myPhi_{\boldsymbol{k}}$, the definition $\tilde{M}(\myPhiOne,\myPhiTwo) {\myeq} \max\{ \max_{i,j} |\myPhiOne^{-1} \myPhiTwo|_{i,j} , \max_{i,j} |\myPhiTwo^{-1} \myPhiOne|_{i,j}\}$ (page {\pageref{Def:M-tilda}}) can be rewritten as $\tilde{M}(\myPhiOne,\myPhiTwo) \seq \max_{k,k' \neq k} \Vert \myPhi^{-1}[k] \myPhi[k'] \Vert_{1 {\to}\infty}$.
+On the other hand for the invertible block $\myPhi[k]$, we have $\myPhi^{-1}[k] \seq \myPhi^{\dagger}[k]$, so $\tilde{M}(\myPhiOne,\myPhiTwo) \seq \max_{k,k' \neq k} \Vert \myPhi^{\dagger}[k] \myPhi[k'] \Vert_{1 {\to}\infty} $.
+On the other hand, $M_{1,\infty}(\myPhi) {\seq} d_{max}^{-1} \max_{k,k' \neq k} d_{k'} \Vert\myPhi^\dagger [k] \myPhi [k'] \Vert_{1 \to \infty} \seq \max_{k,k' \neq k} \Vert\myPhi^\dagger [k] \myPhi [k'] \Vert_{1 \to \infty}$, because $\forall k, d_k \seq d_{max}$ ($d_1 \seq d_2 \seq m$).
+% \sleq d_{max}^{-1} \max_{k,k' \neq k} d_{k'} \max_{k,k' \neq k} \Vert\myPhi^\dagger [k] \myPhi [k'] \Vert_{1 \to \infty}
+Then, $M_{1,\infty}(\myPhi) \seq \tilde{M}(\myPhiOne,\myPhiTwo)$.
+In addition from Property {\ref{prp:BMCC-relationships}} (Block-MCC$_{q,p}$ inequalities), we know that $M_{1,\infty}(\myPhi)$ upper-bounds the other basic tractable ($q,p$) pairs of table {\ref{table:OperatorNorm}} (page {\pageref{table:OperatorNorm}}), hence, the proof for the second part is done.} 
+\end{proof}

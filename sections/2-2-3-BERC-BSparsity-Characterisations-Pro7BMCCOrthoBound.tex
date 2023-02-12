@@ -1,0 +1,20 @@
+\begin{property}[Block-MCC$_{q,p}$ upper-bound with intra-block orthonormality I]
+\label{prp:BMIC-orth-bound} 
+For a dictionary $\myPhi$ with intra-block orthonormality, i.e., for $1 \sleq k \sleq K$, \myhl{$\myPhi^T[k] \myPhi[k] \seq \boldsymbol{I}_{d_k}$}, the upper-bound of Block-MCC$_{q,p}$ is shown in table \ref{table:BMIC-orth-bound}. 
+\begin{table*}[bp]
+%\begin{adjustbox}{width=1\textwidth} % ,totalheight=\textheight,.5
+\centering
+%\tiny
+\begin{tabular}{ccccccc}
+\toprule
+%\cline{2-4}
+\multicolumn{1}{c}{$(q,p)$} &\multicolumn{1}{c}{$(1,1)$} & \multicolumn{1}{c}{$(1,2)$}  & \multicolumn{1}{c}{$(1,\infty)$} & \multicolumn{1}{c}{$(2,2)$} & \multicolumn{1}{c}{$(2,\infty)$} & \multicolumn{1}{c}{$(\infty,\infty)$}\\ \midrule %\hline
+\multicolumn{1}{l}{$\max M_{q,p}(\myPhi)$} &\multicolumn{1}{l}{\myhl{$d_{min}^{-\frac12} \, m^{\frac12}$}} & \multicolumn{1}{c}{\myhl{$d_{min}^{-\frac12} \, m^{\frac12}$}} & \multicolumn{1}{c}{\myhl{$m$}} &\multicolumn{1}{c}{$d_{min}^{-\frac12} \, d_{max}^{-\frac12}$}  &\multicolumn{1}{c}{\myhl{$d_{max}^{-\frac12} \, m^{\frac12}$}}  &\multicolumn{1}{c}{\myhl{$d_{max}^{-\frac12} \, m^{\frac12}$}} \\ %\hline
+\bottomrule
+\end{tabular}
+%\end{adjustbox}
+\caption{Upper-bound of Block-MCC$_{q,p}$ obtained based on the relationship with unit $\ell_{2 {\to} 2}$ operator-norm, for different basic $(q,p)$ pairs and for a dictionary $\myPhi \ssin \mathbb{R}^{m \stimes n}$ with intra-block orthonormality.}
+\label{table:BMIC-orth-bound}
+\end{table*}
+\end{property}
+The proof of Property \ref{prp:BMIC-orth-bound} is provided in Section \ref{prf:BMIC-bounds} (page \pageref{prf:BMIC-bounds}).

@@ -1,0 +1,59 @@
+% Author : Fardin Afdideh <fardin.afdideh@gmail.com>
+
+% Dissertation mode
+\documentclass[a4paper,11pt,twoside]{config/roque-phdthesis-template}
+
+%% Journal mode
+%\documentclass[journal,10pt]{config/IEEEtran}
+%\documentclass[journal,12pt,onecolumn,draftclsnofoot]{config/IEEEtran}
+
+% Configs
+\include{config/configuration}
+
+% Macros
+\include{config/macros}
+
+\begin{document}
+
+% Title - Dissertation mode
+\include{sections/0-DissertationIntro}
+
+%% Title - Journal mode
+%\include{sections/0-JournalIntro}
+
+%% Abstract - Journal mode
+%\include{sections/0-JournalAbstract}
+
+% Introduction
+\include{sections/0-Intro}
+
+% Background material
+\include{sections/1-0-Background}
+
+% Block-sparse exact recovery conditions in general dictionaries
+\include{sections/2-0-BERC}
+
+% A general framework for block structure identification
+\include{sections/3-0-Clustering}
+
+% EEG and MEG multi-modality
+\include{sections/4-0-Multimodality}
+
+% Contributions and perspectives
+\include{sections/5-0-Contributions}
+
+\appendix
+
+% Proofs
+\include{sections/6-0-Proofs}
+
+% Bibligraphy - Dissertation mode
+\include{sections/8-DissertationBib}
+
+%% Bibliography - Journal mode
+%\include{sections/8-JournalBib}
+
+% Abstract - Dissertation mode
+\include{sections/7-0-DissertationAbstract}
+
+\end{document}

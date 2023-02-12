@@ -1,0 +1,23 @@
+This chapter contains the main contribution of the Ph.D. thesis.
+In this chapter, a general framework for block-sparse exact signal recovery in an USLE\footnote{\emph{Underdetermined System(s) of Linear Equations}} problem, i.e., Block-ERC\footnote{\emph{Block-sparse Exact Recovery Condition(s)}}, is proposed.
+The framework consists of four theoretical and one algorithmic-dependent Block-ERC.
+\newpage
+The mentioned generality is in terms of 
+\begin{itemize}
+\item structure of the dictionary, i.e., 
+%blocks could be linearly dependent/independent or 
+blocks could be orthonormal bases or there may exist intra-block orthonormality, \myhl{however, in one of the proposed Block-ERC the computation of the Moore-Penrose pseudo-inverse of each block is involved, which requires the blocks to be full column rank,}
+\item norm in the corresponding optimisation problem,
+\item length of blocks,
+\item parameters of the proposed block-sparsity measures, e.g., we are not constrained to only Euclidean norm criterion for determining the active blocks, and
+\item there is no constraint on the relationship between the dimensions of size of the dictionary $\myPhi \ssin \mathbb{R}^{m \stimes n}$, except $m \sless n$.
+\end{itemize}
+
+As mentioned, the recovery conditions are proposed for the exact solution of the optimisation problem, therefore the \emph{uniqueness} of the representation is the center of our focus. 
+In addition, the exact recovery conditions ensure the uniqueness of the $\mySuppTxt$ of the solution, i.e., the problem is $\mySuppTxt$ recovery, and not coefficient recovery.
+
+Through the aforementioned generalisations, we can relax some constraints as mentioned before, and improve the results of Eldar et al. \cite{Eldar2009b,Eldar2010b,Eldar2010}, and extend some findings of Donoho et al. \cite{Donoho2001,Donoho2003}, Elad and and Bruckstein \cite{Elad2001,Elad2002a}, and Gribonval and Nielsen \cite{Gribonval2003a,Gribonval2003} from element-wise (scalar-wise) to block-wise (vector-wise) framework \cite{Afdideh2016}.
+
+This chapter is a major extended version of \cite{Afdideh2016}.
+Section \ref{sec:Our_Block-sparsity} presents the required terminology and tools to establish the main block-sparse recovery conditions which are introduced in Section \ref{sec:Our_BERC}.
+At last, to demonstrate the supremacy of the proposed theoretical recovery conditions in comparison to the state-of-the-art results, some numerical experiments are implemented in Section \ref{sec:Numerical_experiments}, and finally conclusions in Section \ref{sec:Our_Conclusion} terminate this chapter.

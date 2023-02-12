@@ -1,0 +1,19 @@
+\begin{tcolorbox}
+\begin{theorem}[Block-ERC based on Block-MCC$_{q,p}$]
+\label{th:BERC-BMIC}
+For any dictionary $\myPhi$ \myhl{with full column rank blocks, let $\boldsymbol{y} \seq \myPhi \mybetaz$,} then supposing Block-MCC$_{q,p}$ $M_{q,p}(\myPhi)$, \myhl{Block-Support relation $S_b(\mybetaz) {\subset} S_b(\mybeta)$,} $\forall (q,p) \ssin \mathbb{R}^2_{\sgeq 1}$, \myhl{and $\forall r \ssin \mathbb{R}_{\sgeq 0}$, if}
+\begin{equation*}
+\mynorm{\mybetaz}_{r,0} < 
+\frac{1 + \myparanthese{d_{max} M_{q,p}\myparanthese{\myPhi} }^{-1} \mycolor{\displaystyle\min_{k} \, \min \mybrace{1 , d_k^{\frac1q - \frac1p}}}}{2},
+\end{equation*}
+then $\mybetaz$ is the unique solution to the \myhl{$P_{\boldsymbol{w};q,1}$} problem.
+\end{theorem}
+\end{tcolorbox}
+The proof of Theorem \ref{th:BERC-BMIC} is provided in Section \ref{prf:BERC-BMIC} (page \pageref{prf:BERC-BMIC}).
+%\iffalse
+%\begin{proof}
+%Similar to proof of Block-ERC based on $\myBSpkTxt$ in Theorem \ref{th:BERC-BS}, and using block-sparse uncertainty principle based on Block-MCC$_{q,p}$ in Lemma \ref{lm:BUP-BMIC}, instead of block-sparse uncertainty principle based on $\myBSpkTxt$ in Lemma \ref{lm:BUP-BS}.
+%\end{proof}
+%\fi
+
+For $d_1 \seq \cdots \seq d_K \seq 1$, Theorem \ref{th:BERC-BMIC} converges to its conventional element-wise counterpart explained in (\ref{eq:ERC-M}) on page \pageref{eq:ERC-M}, i.e., $\Vert \mybetaz \Vert_0 \sless (1 \spl M^{-1} (\myPhi))/2$.

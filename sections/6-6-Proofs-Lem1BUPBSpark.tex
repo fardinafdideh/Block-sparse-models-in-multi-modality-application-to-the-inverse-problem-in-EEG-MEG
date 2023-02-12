@@ -1,0 +1,17 @@
+\begin{proof}
+Here, we used the following triangle inequality:
+\begin{equation*}
+\mynorm{\mybetaz}_{p,0}+\mynorm{\mybetao}_{p,0} \geq \mynorm{\mybetaz-\mybetao}_{p,0}.
+\end{equation*}
+which is the the block-structured generalisation of one of the properties of the $\ell_0$ pseudo-norm operator for vector space.
+%, defined in Lemma \ref{lm:Triangle-inequality}.
+The above relation simply indicates that, if two representations have no overlapped supports, the sum of their number of active blocks are equal to the number of active blocks of their subtraction (equality), while in case of overlapped supports, the sum of their number of active blocks is greater than the number of active blocks of their subtraction (inequality).
+
+On the other hand, we have $\myPhi(\mybetaz \sm \mybetao) \seq \boldsymbol{0}$. 
+Therefore $(\mybetaz \sm \mybetao)$ is in the $\myKerTxt$ of the dictionary, and based on the definition of $\myBSpkTxt$ in Definition \ref{def:Block Spark} (page \pageref{def:Block Spark}), we have:
+\begin{equation*}
+\mynorm{\mybetaz-\mybetao}_{p,0} \geq \myBSpkMath,
+\end{equation*}
+which proves the lemma.
+%Similarly, it can be proved for $\ell_{p,0}$ mixed-norm.
+\end{proof}

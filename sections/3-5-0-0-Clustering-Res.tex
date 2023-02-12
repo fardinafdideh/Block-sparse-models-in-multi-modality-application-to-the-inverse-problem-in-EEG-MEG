@@ -1,0 +1,36 @@
+%Only the basic operator norms of table \ref{table:OperatorNorm} for $q \sleq p$ are considered for the calculation of the Block-MCC$_{q,p}$ as the similarity measure between the blocks $\myPhi [k]$, and Block-MCC$_{1,\infty}$ is selected in showing the results.
+
+Assuming that the number of clusters is not known, a strategy will be needed to appropriately estimate it, which leads us to hierarchical clustering analysis.
+Hierarchical clustering 
+%groups data in different scales, which 
+can be visualized by the so-called clustering tree or dendrogram.
+The clustering tree is composed of nodes (clusters) and branches, which the length of each branch shows the distance between the two nodes.
+%located at its two ends.
+%Then, the number of intersections of a horizontal line with the clustering tree gives the number of clusters in that scale or clustering level.
+A scale with the largest distance between consecutive nodes or longest branch can be considered as an appropriate scale for clustering, which gives the estimated number of clusters.
+The agglomerative hierarchical clustering algorithm is used. 
+In 
+%bottom-up or 
+agglomerative as opposed to 
+%top-down or 
+divisive method, each single data is considered as a cluster, then at each clustering level the clusters are successively merged until all the data are clustered into a single cluster.
+
+Suppose that in figure \ref{fig:NumberOfClusters_Estimation}(a), each block $\myPhi [k]$ of dictionary is represented by a single circle, and there are 100 blocks, i.e., $k \ssin \{ 1 , \cdots , 100 \}$.
+The relative distances between circles are determined by the proposed coherence measure Block-MCC$_{2,2}$.
+The random dictionary is generated in a way to have five equally-sized clusters of blocks of length 20.
+Then, $\myPhi [1] , \cdots , \myPhi [20]$, construct cluster I and so on.
+The process of generating desired random dictionaries is explained in Section \ref{sec:Artificial simulated dictionary}.
+%There are different methods to compute the distance between two clusters.
+A method called \emph{complete} has been used to compute the distance between two clusters, which is equal to the longest distance between two points in the two clusters as illustrated in figure \ref{fig:NumberOfClusters_Estimation}(a).
+In figure \ref{fig:NumberOfClusters_Estimation}(b) the dendrogram resulted from clustering the random dictionary is shown.
+As expected, the magenta dotted horizontal line in the scale with the largest distance between consecutive nodes intersects the dendrogram five times, so the estimated number of clusters is five, which is true.
+\input{sections/3-5-0-0-Clustering-Res-Fig6}
+\FloatBarrier
+%------------------------------------------------------
+\subsection{Synthetic dictionary}
+\label{sec:Artificial simulated dictionary} 
+\input{sections/3-5-1-0-Clustering-Res-SynDic}
+%------------------------------------------------------
+\subsection{Real EEG/MEG lead-field}
+\label{sec:Real EEG/MEG leadfield} 
+\input{sections/3-5-2-0-Clustering-Res-RealLF}

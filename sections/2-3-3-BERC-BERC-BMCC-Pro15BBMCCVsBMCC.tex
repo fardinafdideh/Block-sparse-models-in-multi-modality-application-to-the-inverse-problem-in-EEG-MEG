@@ -1,0 +1,82 @@
+\begin{property}[Basic Block-MCC$_{q,p}$ v.s. basic MCC]
+\label{prp:DontKnow2} 
+Supposing $\myPhiOne$ and $\myPhiTwo$ are two orthonormal matrices, $\forall (q , p) \ssin \mathbb{R}^2_{\sg 0}$ we have:
+\begin{gather*}
+\begin{aligned}
+0 \leq 
+\frac{d_{min}^{-\frac12} d_{max}^{\frac32} \, \overbar{M}_{q,\frac{p}{p-1}}\myparanthese{\myPhiOne , \myPhiTwo}}{d_{max} \, \overbar{M}\myparanthese{\myPhiOne , \myPhiTwo}} \leq 
+d_{min}^{-\frac12} \, d_{max}^{-\frac12} \, \max_{k,k'} d_{k}^{\frac1p - \frac12} \, d_{k'}^{\frac1q + \frac12} \, &\max \mybrace{1 , d_k^{\frac12 - \frac1p}} \, \max \mybrace{1 , d_{k'}^{\frac12 - \frac1q}}.
+\end{aligned}
+\end{gather*}
+\iffalse
+\begin{equation*}
+\overbar{M}_{q,\frac{p}{p-1}}\myparanthese{\myPhiOne , \myPhiTwo} \leq 
+\begin{cases}
+d_{max}^{\frac1p + \frac12} \, \overbar{M}\myparanthese{\myPhiOne , \myPhiTwo}, & \qquad \text{for \ }q \geq 1\\
+d_{max}^{\frac1p + \frac1q - \frac12} \, \overbar{M}\myparanthese{\myPhiOne , \myPhiTwo}, & \qquad \text{for \ }q < 1\\
+\end{cases}.
+\end{equation*}
+\fi
+The above upper-bound for different values of $q$ and $p$ are shown in table \ref{table:BasicBMCC-BasicMCC}.
+\begin{table*}[bp]
+\begin{adjustbox}{width=1\textwidth} % ,totalheight=\textheight,.5
+\centering
+%\tiny
+\begin{tabular}{ccccc}
+\toprule
+%\cline{2-4}
+\multicolumn{1}{c}{} &\multicolumn{1}{c}{${0 < q\, \& \, p \leq 2}$} & \multicolumn{1}{c}{${q\, \& \, p \geq 2}$}  & \multicolumn{1}{c}{${0 < q \leq 2\, \& \, p \geq 2}$} & \multicolumn{1}{c}{${q \geq 2\, \& \, 0 < p \leq 2}$} \\ \midrule %\hline
+\multicolumn{1}{r}{${\frac{d_{min}^{-\frac12} d_{max}^{\frac32} \, \overbar{M}_{q,\frac{p}{p-1}}\myparanthese{\myPhiOne , \myPhiTwo}}{d_{max} \, \overbar{M}\myparanthese{\myPhiOne , \myPhiTwo}} \leq}$} &\multicolumn{1}{c}{$d_{min}^{-\frac12} \, d_{max}^{\frac1p + \frac1q - \frac12}$} & \multicolumn{1}{c}{$d_{min}^{-\frac12} \, d_{max}^{\frac12}$} & \multicolumn{1}{c}{$d_{min}^{-\frac12} \, d_{max}^{\frac1q}$} &\multicolumn{1}{c}{$d_{min}^{-\frac12} \, d_{max}^{\frac1p}$}    \\ 
+\bottomrule %\hline
+\end{tabular}
+\end{adjustbox}
+\caption{Upper-bound of $d_{min}^{-1/2} d_{max}^{3/2} \overbar{M}_{q,p/(p-1)} (\myPhiOne , \myPhiTwo) / d_{max} \overbar{M}(\myPhiOne,\myPhiTwo)$ for different values of $q$ and $p$.}
+\label{table:BasicBMCC-BasicMCC}
+\end{table*}
+\end{property}
+\begin{proof}
+From second part of Property \ref{prp:BMIC-MIC} (Block-MCC$_{q,p}$ bounds, page \pageref{prp:BMIC-MIC}), which the dictionary has intra-block orthonormality, in a special case of two distinct orthonormal bases instead of one dictionary, $\forall (q , p , q' , p') \ssin \mathbb{R}^4_{\sg 0}$ we have:
+\begin{gather*}
+\begin{aligned}
+0 \leq \overbar{M}_{q,p}\myparanthese{\myPhiOne , \myPhiTwo} \leq 
+\frac{\overbar{M}\myparanthese{\myPhiOne , \myPhiTwo}}{d_{max}} \, \max_{k,k'} d_{k}^{\frac12 - \frac1p} \, d_{k'}^{\frac1q + \frac12} \, &\max \mybrace{1 , d_k^{\frac1p - \frac{1}{p'}}} \, \max \mybrace{1 , d_{k'}^{\frac{1}{q'} - \frac1q}} \times \\
+&\max \mybrace{1 , d_k^{\frac{1}{p'} -\frac12}} \, \max \mybrace{1 , d_{k'}^{\frac{1}{2} - \frac{1}{q'}}}.
+\end{aligned}
+\end{gather*}
+Then, by parameter changing of $p {\to} p/(p \sm 1)$, and then selecting $q' \seq p' \seq 2$, we get:
+\begin{gather*}
+\begin{aligned}
+0 \leq \overbar{M}_{q,\frac{p}{p-1}}\myparanthese{\myPhiOne , \myPhiTwo} &\leq 
+\frac{\overbar{M}\myparanthese{\myPhiOne , \myPhiTwo}}{d_{max}} \, &&\max_{k,k'} d_{k}^{\frac1p - \frac12} \, d_{k'}^{\frac1q + \frac12} \, \max \mybrace{1 , d_k^{1 - \frac1p - \frac{1}{p'}}} \, \max \mybrace{1 , d_{k'}^{\frac{1}{q'} - \frac1q}} \times \\
+& && \qquad \qquad \qquad \ \ \ \, \max \mybrace{1 , d_k^{\frac{1}{p'} -\frac12}} \, \max \mybrace{1 , d_{k'}^{\frac{1}{2} - \frac{1}{q'}}} \\
+&= 
+\frac{\overbar{M}\myparanthese{\myPhiOne , \myPhiTwo}}{d_{max}} \, &&\max_{k,k'} d_{k}^{\frac1p - \frac12} \, d_{k'}^{\frac1q + \frac12} \, \max \mybrace{1 , d_k^{\frac12 - \frac1p}} \, \max \mybrace{1 , d_{k'}^{\frac12 - \frac1q}}.
+\end{aligned}
+\end{gather*}
+\iffalse
+%Next, by substituting $q' \seq p' \seq 1$, because the threshold on $q$ and $p$ is on one, i.e., $\forall (q , p) \ssin \mathbb{R}^2_{\sgeq 1}$, we have:
+\begin{gather*}
+\begin{aligned}
+0 \leq \overbar{M}_{q,\frac{p}{p-1}}\myparanthese{\myPhiOne , \myPhiTwo} &\leq 
+\frac{\overbar{M}\myparanthese{\myPhiOne , \myPhiTwo}}{d_{max}} \, \max_{k,k'} d_{k}^{\frac1p - \frac12} \, d_{k'}^{\frac1q + \frac12} \, d_{k'}^{1 - \frac1q} d_k^{\frac12} \\
+&= \frac{\overbar{M}\myparanthese{\myPhiOne , \myPhiTwo}}{d_{max}} \, \max_{k,k'} d_{k}^{\frac1p} \, d_{k'}^{\frac32} \\
+&\leq d_{max}^{\frac1p + \frac12} \, \overbar{M}\myparanthese{\myPhiOne , \myPhiTwo}.
+\end{aligned}
+\end{gather*}
+\fi
+Next, by multiplying by $d_{min}^{-1/2} d_{max}^{1/2} \sg 0$, the proof is done.
+\end{proof}
+%\begin{remark}
+\iffalse
+Since the threshold on the range of $q$ and $p$ in Lemma \ref{lm:BBUP} is one, to determine the relation between $d_{max} \overbar{M}(\myPhiOne,\myPhiTwo)$ and $d_{min}^{-1/2} d_{max}^{3/2} \overbar{M}_{q,p/(p-1)} (\myPhiOne , \myPhiTwo)$, we select $q' \seq p' \seq 1$ in Property \ref{prp:DontKnow2}, i.e., $0 \sleq \overbar{M}_{q,p/(p-1)} (\myPhiOne , \myPhiTwo) / \overbar{M}(\myPhiOne,\myPhiTwo) \sleq d_{max}^{-1} \max_{k,k'} d_{k}^{\frac1p} d_{k'}^{\frac1q + \frac12} \max \{ 1 , d_{k'}^{1 - \frac1q} \}$.
+Therefore, the upper-bound is independent of the relation of $p$ to one, and it only depends on that of $q$, then we have:
+\begin{equation*}
+\forall p \ssin \mathbb{R}_{\sg 0}, \qquad
+0 \leq  \frac{d_{min}^{-\frac12} \, d_{max}^{\frac32} \, \overbar{M}_{q,\frac{p}{p-1}}\myparanthese{\myPhiOne , \myPhiTwo}}{d_{max} \, \overbar{M}\myparanthese{\myPhiOne , \myPhiTwo}} \leq 
+\begin{cases}
+d_{min}^{- \frac12} \, d_{max}^{\frac1p + \frac1q}, & \qquad \text{for \ }0 < q < 1 \\
+d_{min}^{- \frac12} \, d_{max}^{\frac1p + 1}, & \qquad \text{for \ }q \geq 1\\
+\end{cases}.
+\end{equation*}
+%\end{remark}
+\fi

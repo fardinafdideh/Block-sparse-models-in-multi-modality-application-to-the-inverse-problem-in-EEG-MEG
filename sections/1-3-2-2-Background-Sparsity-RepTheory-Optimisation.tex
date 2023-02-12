@@ -1,0 +1,81 @@
+\paragraph{2) Optimisation problem}
+The problem of finding a sparse solution $\hat{\mybeta}$ in the noiseless case is called \emph{exact (unique) signal recovery} whereas for the problem in the noisy case, it is called \emph{stable (robust) signal recovery}. 
+
+\myhl{In general,} exact signal recovery provides deep insight into the problem of stable signal recovery \cite{Cand`es2005b,Cand`es2007a,Donoho2004,Donoho2004a}. 
+Exact signal recovery remains invariant by scaling of the dictionary, $\myPhi {\to} k \myPhi$, whereas stable signal recovery has a direct relation with scaling of the dictionary \cite{Davies2008,Foucart2009a}.
+
+Stablity in stable signal recovery means that bounded changes in the measurement vector $\boldsymbol{y}$ result in bounded changes in the estimated representation vector $\hat{\mybeta}$ \cite{Cand`es2006}. 
+Based on the amount of the bounded change either small or arbitrary, there are two main types of stability named local stability and global stability, respectively \cite{Donoho2006a}. 
+
+The best case in stable signal recovery is obtained when the size of the representation error is guaranteed to be bounded by the noise level, i.e., $\Vert \hat{\mybeta} \sm \mybetaz \Vert_2 \sless \epsilon$.
+In a real-world situation, usually the measurement is severely incomplete and also inaccurate and when the measurement vector is noisy and the true representation vector is not exactly sparse, the measurement is said to be imperfect \cite{Cand`es2006}.
+
+Norms play an essential role in quantifying distances between two vectors or amplitude of a single vector in the definition of cost functions for optimisation problems \cite{Walter2014}.
+Exact and stable signal recovery problems can be realised through a proper constrained optimisation problem.
+% (program). 
+The straightforward optimisation problem for stable signal recovery is:
+\input{sections/1-3-2-2-Background-Sparsity-RepTheory-Optimisation-Eq3}
+where, for $\varepsilon \seq 0$, the optimisation problem (\ref{eq:Opt-L0}) solves an exact signal recovery problem.
+In a general framework in order to cover all the previous types of optimisation problems, consider the following \emph{constrained $\ell_p$ norm minimisation problem}:
+\input{sections/1-3-2-2-Background-Sparsity-RepTheory-Optimisation-Eq4}
+where, $\boldsymbol{a}$ and $\boldsymbol{b}$ are vectors, and $\ell_p$ norm of vector $\boldsymbol{a}$ is defined:
+\input{sections/1-3-2-2-Background-Sparsity-RepTheory-Optimisation-EqNorm}
+where, $I(\cdot)$ is the indicator function, i.e., $I(a) \myeq
+  \begin{cases}
+    1,  & \quad \text{if } \myabs{a} \sg 0\\
+    0,  & \quad \text{if } a \seq 0\\
+  \end{cases}$.
+The noise level $\epsilon$, which upper-bounds the Euclidean norm of noise $\boldsymbol{e}$ in the general model of (\ref{eq:Model_Noisy}) is bounded such that $0 \sleq \epsilon \sleq \varepsilon$.
+Therefore, according to (\ref{eq:Opt-Lp}) the problem (\ref{eq:Opt-L0}) can be represented as $P_{0,2,\varepsilon} (\mybeta,\boldsymbol{y} \sm \myPhi \mybeta)$.
+
+By defining $\boldsymbol{r} (\mybeta) \seq \boldsymbol{y} \sm \myPhi \mybeta$ as a \emph{remainder} vector, it is assumed in this work as a consequence that $\Vert \boldsymbol{r} (\mybeta) \Vert _q \seq 0$ is equivalent to $\boldsymbol{y} \seq \myPhi \mybeta$. 
+For the sake of simplicity we refer to $\boldsymbol{r} (\mybeta)$ as $\boldsymbol{r}$.
+The estimated solution of the problem $P_{p,q,\varepsilon} (\boldsymbol{a},\boldsymbol{b})$ is called $\hat{\mybeta}$.
+In the introduced general optimisation problem, the widely used case is when the minimisation is over $\mybeta$ and the problem is an exact signal recovery, i.e., $P_{p,q,0} (\mybeta,\boldsymbol{r})$, which for the sake of simplicity we refer to it as $P_p$.
+Because regardless of choice of $q$, the $\Vert \boldsymbol{r} \Vert _q \seq 0$ directly indicates to the noiseless model, so the only parameter to be determined is $p$.
+
+A norm function $f$ has three following properties \cite{Golub2013,Walter2014}:
+\begin{enumerate}
+\item $f(\boldsymbol{a}) \geq 0$ (nonnegativity),
+\item $f(\alpha \boldsymbol{a}) = \vert \alpha \vert f(\boldsymbol{a})$ (positive homogeneity or scalability),
+\item $f(\boldsymbol{a} \pm \boldsymbol{b}) \leq f(\boldsymbol{a}) + f(\boldsymbol{b})$ (triangle inequality).
+\end{enumerate}
+Some of the most important norms that their minimum induces sparsity in exact and stable signal recovery problems are:
+\begin{itemize}
+\item $\ell_0$ pseudo-norm (or semi-norm, or Hamming norm \cite{Hurley2009}),
+\item $\ell_1$ norm (or taxicab norm, or Manhattan norm, or grid norm \cite{Walter2014}),
+\item $\ell_2$ norm (or Euclidean norm), and% , or RMS value
+\item $\ell_\infty$ norm (or maximum norm, or Chebyshev norm, or uniform norm).
+\end{itemize}
+\input{sections/1-3-2-2-Background-Sparsity-RepTheory-Optimisation-Remark1}
+\input{sections/1-3-2-2-Background-Sparsity-RepTheory-Optimisation-Remark2}
+
+For a vector $\mybeta$, the basic sparsity measure is the $\ell_0$ pseudo-norm \cite{Hurley2009}, which is the number of non-zero entries of the vector $\mybeta$. 
+Therefore, $P_0$ which is an \emph{equality-constrained $\ell_0$ pseudo-norm minimisation problem} can be used for the exact signal recovery problem \cite{Cand`es2005b}.
+Similarly, $P_{0,2,\varepsilon}(\mybeta,\boldsymbol{r})$ which is an \emph{$\ell_2$-constrained $\ell_0$ pseudo-norm minimisation problem} can be used for the stable signal recovery problem \cite{Donoho2006a}, where, both $P_0$ and $P_{0,2,\varepsilon}(\mybeta,\boldsymbol{r})$ are in general NP-hard, i.e., they  cannot be solved by a polynomial time algorithm \cite{Natarajan1995,Amaldi1998}.
+
+In finding the unique and sparse representations, some researchers focused on a more general cases of $P_p$, $0 \sless p \sleq 1$ \cite{Chartrand2007,Davies2008,Foucart2009a,Davies2009}, and $P_p$, $0 \sleq p \sleq 1$ \cite{Gribonval2003a,Gribonval2004a,Gribonval2007} for the exact signal recovery problem and $P_{p,2,\varepsilon}(\mybeta,\boldsymbol{r})$, $0 \sless p \sleq 1$ \cite{Foucart2009a} for the stable signal recovery problem.
+
+For $P_{p,q,\varepsilon}(\mybeta,\boldsymbol{r})$, $0 \sleq p \sless 1$, the optimisation problem is non-convex, combinatorial, and generally computationally intractable \cite{Davis1997}, i.e., all possible combinations of the columns of the dictionary should be tested for finding the smallest subset of columns satisfying the optimisation constraint, and its complexity grows exponentially with $n$ the length of $\mybeta$.
+But there is still hope, either by approximating the solution of $P_{p,q,\varepsilon}(\mybeta,\boldsymbol{r})$, $0 \sleq p \sless 1$, and relaxing the optimisation problem to $P_{1,q,\varepsilon}(\mybeta,\boldsymbol{r})$, which can be viewed as a convexification of $P_{p,q,\varepsilon}(\mybeta,\boldsymbol{r})$, $0 \sleq p \sless 1$, or using numerical bypasses (shortcuts), such as \emph{greedy algorithms}, e.g., matching pursuit \cite{Mallat1993,Mallat2008}, orthogonal matching pursuit \cite{Pati1993,Mallat1993,Davis1997}, and basis pursuit \cite{Chen2001}, or \emph{iterative thresholding algorithms}, e.g., iterative hard thresholding \cite{Figueiredo2003,Daubechies2008,Blumensath2008,Blumensath2009a}, iterative soft thresholding, and iterative thresholding with inversion \cite{Maleki2009,Maleki2010}. 
+
+Matching pursuit as an iterative algorithm can be used for approximating the $P_0$, whereas basis pursuit leads to the exact solution to the $P_0$.
+At first, in practice it had been observed that $P_1$ and $P_0$ often lead to the same results \cite{Chen2001}, later it turned out that under sufficient conditions, i.e., if $\mybeta$ is sufficiently sparse, the solutions of the mentioned problems are indeed the same and unique \cite{Donoho2001,Elad2001}.
+%\cite{Donoho2001,Elad2001,Elad2002a,Donoho2003,Donoho2003a,Feuer2003,Donoho2004,Gribonval2004a,Cand`es2005b,Donoho2005b,Donoho2005,Cand`es2006d,Cand`es2006a,Donoho2006,Donoho2006d,Gribonval2007,Cand`es2008a}.
+Regarding the conditions for the relationship between the solutions of $P_1$ and $P_0$, Donoho and Elad have addressed the following two main questions \cite{Donoho2003,Donoho2003a}: Under which conditions,
+
+\begin{list}{Q\arabic{qcounter}:}{\usecounter{qcounter}}
+\item the solution to $P_1$ is necessarily the sparsest representation (solution to $P_0$) (\emph{Uniqueness})?\\
+\item the solution to $P_0$ is necessarily equal to the solution to $P_1$ (\emph{Equivalence})?
+\end{list}
+
+In general, $P_{1,q,\varepsilon}(\boldsymbol{a},\boldsymbol{b})$ is convex, implying that there is no local minima problems in its numerical solution, and based on the optimisation theory, it can be recast as a linear programming problem \cite{Gill1990,Bertsekas1999,Chen2001}. 
+Therefore, it can be efficiently solved by search problems based on either the classical simplex method or recently popular interior point methods \cite{Wyner1979,Bertsekas2003,Boyd2004}.
+There are also some other fast algorithms \cite{Cormode2006,Gilbert2006,Gilbert2007,Xu2007a}.
+Although $P_{1,q,\varepsilon}(\boldsymbol{a},\boldsymbol{b})$ is convex, it is not strictly convex, so the range of unicity of the solution should be determined \cite{Gribonval2003}.
+Because of the mentioned convexity, researchers started using $P_1$ or \emph{equality-constrained $\ell_1$ norm minimisation problem} or basis pursuit \cite{Chen2001,Donoho2003,Cand`es2005b} %\cite{Chen2001,Donoho2003,Cand`es2005b,Cand`es2008a,Mallat2008,Cai2009,Cai2010,Foucart2010} 
+for exact signal recovery problem, and in parallel $P_{1,2,\varepsilon}(\mybeta,\boldsymbol{r})$ or \emph{$\ell_2$-constrained $\ell_1$ norm minimisation problem} or basis pursuit denoising \cite{Chen2001,Donoho2006a,Tropp2006},  %\cite{Chen2001,Donoho2006a,Tropp2006,Cand`es2006,Cand`es2008a,Cai2009,Cai2010}, 
+for stable signal recovery problem.
+
+There are two other widely used optimisation problems used for stable signal recovery: $P_{2,1,\varepsilon}(\boldsymbol{r},\mybeta)$, and $P_{1,\infty,\varepsilon}(\mybeta, \myPhi ^ T\boldsymbol{r})$. 
+The former, \emph{$\ell_1$-constrained $\ell_2$ norm minimisation problem} is LASSO\footnote{\emph{Least Absolute Shrinkage and Selection Operator}}, and  is also known as $\ell_1$-regularized least squares \cite{Tibshirani1994,Tropp2006,Koh2007,Meinshausen2009} and the latter, \emph{$\ell_\infty$-constrained $\ell_1$ norm minimisation problem} is known as \emph{Dantzig selector} \cite{Cand`es2007a,Cai2009,Cai2010}.

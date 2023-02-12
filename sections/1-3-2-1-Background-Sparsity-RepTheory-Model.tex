@@ -1,0 +1,44 @@
+\paragraph{1) Structure and model}
+In general, the USLE can be formulated as \cite{Cand`es2005b,Donoho2006a}:
+%there are two models for formulating the USLE: 
+%\begin{itemize}
+%\item noiseless case \cite{Donoho2003,Gribonval2003a}:
+%\cite{Donoho2003,Donoho2003a,Gribonval2003a,Donoho2004,Fuchs2004a,Tropp2004,Cand`es2005b,Cand`es2006a,Cand`es2006b,Cand`es2006c,Chartrand2007,Cand`es2008a,Davies2008,Foucart2009a,Davies2009,Cai2009,Foucart2010,Cai2010}:
+%\begin{equation}
+%\label{eq:Model_Noiseless}
+%\boldsymbol{y}=\myPhi \mybetaz,
+%\end{equation}
+%\item  noisy case \cite{Cand`es2005b,Donoho2006a}:%\cite{Cand`es2005b,Cand`es2006,Tropp2006,Donoho2006a,Cand`es2007a,Cand`es2008a,Cai2009,Foucart2009a,Cai2009,Wainwright2009,Wainwright2009a,Fletcher2009,Cai2010,Jin2010}: 
+\input{sections/1-3-2-1-Background-Sparsity-RepTheory-Model-Eq1}
+%\end{itemize}
+where, $\boldsymbol{y} \ssin \mathbb{R}^{m}$ is the measurement vector, 
+%(also called observation, signal, response variable), 
+$\myPhi \ssin \mathbb{R}^{m \stimes n}$, $m \sless n$, is the dictionary, $\mybetaz \ssin \mathbb{R}^{n}$ is the true representation vector, 
+or input variable, 
+and $\boldsymbol{e} \ssin \mathbb{R}^{m}$ is noise, 
+%quantization or round-off error, or bounded perturbation or noise (due to the circuit imperfections) 
+bounded by a known noise level, e.g., $\Vert \boldsymbol{e} \Vert_2 \sless \epsilon$. 
+%Usually $\boldsymbol{e}$ is assumed to have i.i.d. Gaussian distribution.
+%\cite{Cand`es2007a,Cai2009,Cai2010}.
+%where $\mybetaz \ssin \mathbb{R}^{n}$ is the unknown true representation vector (input variable) of the known measurement vector (observation, signal, response variable) $\boldsymbol{y} \ssin \mathbb{R}^{m}$ in the known dictionary $\myPhi \ssin \mathbb{R}^{m \stimes n}$ and $m \sless n$ since we are dealing with USLE. 
+%$\boldsymbol{e} \ssin \mathbb{R}^{m}$ is an unknown quantization or round-off error, or bounded perturbation or noise (due to the circuit imperfections) bounded by a known \emph{noise level}, $\Vert \boldsymbol{e} \Vert_2 \sless \epsilon$. 
+%Furthermore, $\boldsymbol{e}$ can be considered as a modelling error when the true solution does not exactly satisfy a priori knowledge.
+if $\boldsymbol{e} \seq \boldsymbol{0}$, then the model is noiseless \cite{Donoho2003,Gribonval2003a}.
+In this study, we will concentrate on the following noiseless model:
+\input{sections/1-3-2-1-Background-Sparsity-RepTheory-Model-Eq2}
+
+As mentioned before, the goal is to extract a representation vector $\hat{\mybeta}$ which is the sparsest among all solutions, i.e., a representation with the fewest non-zero elements relative to its dimension.
+For example, suppose the following estimated representation vector $\hat{\mybeta}$:
+\input{sections/1-3-2-1-Background-Sparsity-RepTheory-Model-EqBetaHatStruct}
+and following dictionary:
+\input{sections/1-3-2-1-Background-Sparsity-RepTheory-Model-EqPhiStruct}
+with $\myphi_{j} \ssin \mathbb{R}^{m}$ and without loss of generality, it is assumed that atoms have unit Euclidean norm, i.e., $\forall j,  \Vert \myphi_{j} \Vert_2 \seq 1$.
+Then, the sparsity structure of the noiseless USLE 
+%the estimated representation vector in the noiseless linear model 
+is graphically represented in figure \ref{fig:Sparsity-Structure}.
+Commonly, this problem is referred to as \emph{atomic decomposition}, since the measurement vector $\boldsymbol{y}$ is decomposed into its fewest active 
+%building 
+atoms of the dictionary \cite{Chen2001,Donoho2001,Donoho2003a}.
+%, i.e., in the noiseless case we have $\boldsymbol{y} \seq \sum_{j {\in S(\hat{\mybeta})}}  \hat{\beta}_j \boldsymbol{\varphi}_j$, where $S(\hat{\mybeta})$ is the support of $\hat{\mybeta}$ \cite{Chen2001,Donoho2001,Donoho2003a}.
+\input{sections/1-3-2-1-Background-Sparsity-RepTheory-Model-Fig9}
+\FloatBarrier

@@ -1,0 +1,12 @@
+As mentioned in Section \ref{sec:Multimodality}, EEG\footnote{\emph{ElectroEncephaloGraphy}} and MEG\footnote{\emph{MagnetoEncephaloGraphy}} source reconstruction problems solve a same brain source activity problem when acquired simultaneously \cite{Molins2008}.
+In other words, for EEG or MEG signal $\boldsymbol{y}_{\boldsymbol{\mathrm{EEG}} / \boldsymbol{\mathrm{MEG}}} \ssin \mathbb{R}^m$, EEG or MEG lead-field matrix $\myPhi_{\boldsymbol{\mathrm{EEG}} / \boldsymbol{\mathrm{MEG}}} \ssin \mathbb{R}^{m \stimes n}$, and brain source activity $\mybetaz \ssin \mathbb{R}^n$, we have the following EEG and MEG USLE \footnote{\emph{Underdetermined System(s) of Linear Equations}}:
+\begin{equation*}
+\boldsymbol{y}_{\boldsymbol{\mathrm{EEG}}} = \myPhi_{\boldsymbol{\mathrm{EEG}}} \mybetaz, \qquad \text{and} \qquad
+\boldsymbol{y}_{\boldsymbol{\mathrm{MEG}}} = \myPhi_{\boldsymbol{\mathrm{MEG}}} \mybetaz.
+\end{equation*}
+%On the other hand, EEG and MEG are complementary in observing the same brain source activity.
+
+The key aim in this chapter is to integrate the complementary information of EEG and MEG modalities within the block structure identification framework introduced in Chapter \ref{sec:Clustering} with application to brain source space segmentation.
+%by combining the information of the two modalities, i.e., multi-modal signal processing, one can improve the final results, which is the ultimate aim of this chapter.
+
+In contrast to the brain source space segmentation studies in literature, which are integrating the information of EEG or MEG signals $\boldsymbol{y}_{\boldsymbol{\mathrm{EEG}} / \boldsymbol{\mathrm{MEG}}}$ and lead-fields $\myPhi_{\boldsymbol{\mathrm{EEG}} / \boldsymbol{\mathrm{MEG}}}$ into the problem, the proposed multi-modality strategy uses the block structure identification framework, which requires only the lead-field matrices, in order to demonstrate the benefit of merging EEG and MEG modalities at the same complexity or number of sensors.

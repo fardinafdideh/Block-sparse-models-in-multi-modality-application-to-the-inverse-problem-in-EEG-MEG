@@ -1,0 +1,15 @@
+The following property shows the relationship between the proposed $\myBSpkTxt$ and the conventional $\mySpkTxt$, which will be used in Section \ref{sec:BERC-BS} to demonstrate the improvement of the recovery conditions based on $\myBSpkTxt$ compared to the ones based on the conventional $\mySpkTxt$:
+\begin{property}[$\boldsymbol{\myBSpkTxt}$ v.s. $\boldsymbol{\mySpkTxt}$]
+\label{prp:BS-S}
+Let $d_k$ be the block length of the $k^{th}$ block in $\myPhi$, and denoting $\overbar{d} \seq \sum_{k \ssin S_b(\boldsymbol{x}^\star_b)}d_k / \myabs{S_b(\boldsymbol x^\star_b)}$ the average block length, with $\boldsymbol{x}^\star_b \seq \arg \min_{\boldsymbol{x} \ssin \myKerMath \backslash\{\boldsymbol{0}\}} \Vert \boldsymbol{x} \Vert_{p,0}$, $\forall p \sgeq 0$, then we have:
+\begin{equation*}
+\overbar{d} \, \myBSpkMath \geq \mySpkMath.
+\end{equation*}
+%where $\begin{cases}\overbar{d} &=\sum_{k \ssin S_b(\boldsymbol{x}^\star_b)}d_k / \myabs{S_b(\boldsymbol x^\star_b)}\\
+%\boldsymbol{x}^\star_b &= \arg \min_{\boldsymbol{x} \ssin \myKer(\myPhi) \backslash\{\boldsymbol{0}\}} \Vert \boldsymbol{x} \Vert_{\boldsymbol{w};p,0}, \quad \forall p \sg 0\end{cases}$.
+\end{property}
+\begin{proof}
+Let $\boldsymbol{x}^\star \ssin \arg \min_{\boldsymbol{x} \ssin \myKerMath \backslash\{\boldsymbol{0}\}} \Vert \boldsymbol{x} \Vert_{0}$ and $\boldsymbol{x}^\star_b \ssin \arg \min_{\boldsymbol{x}\ssin \myKerMath \backslash\{\boldsymbol{0}\}} \Vert \boldsymbol{x} \Vert_{p,0}$. 
+Obviously, $\Vert \boldsymbol{x}^\star \Vert_0 \sleq \Vert\boldsymbol{x}^\star_b \Vert_{0}$, and $\Vert \boldsymbol{x}^\star_b \Vert_{0}\sleq \sum_{k\in S_b(\boldsymbol{x}^\star_b)}d_k$, indeed the whole block is activated even if only a single element is needed. 
+Now letting $\overbar{d} \seq \myabs{S_b(\boldsymbol{x}^\star_b)}^{-1}\sum_{k\ssin S_b(\boldsymbol{x}^\star_b)}d_k \seq \Vert \boldsymbol{x}^\star_b\Vert_{p,0}^{-1}\sum_{k\in S_b(\boldsymbol{x}^\star_b)}d_k$, the transitivity of the inequalities yields $\Vert \boldsymbol{x}^\star \Vert_0 \sleq \overbar{d} \, \Vert \boldsymbol{x}^\star_b \Vert_{p,0}$, which is exactly $\overbar{d} \, \myBSpkMath \sgeq \mySpkMath$.
+\end{proof}

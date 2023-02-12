@@ -1,0 +1,82 @@
+\begin{property}[$\ell_{q {\to} p}$ operator-norm properties]
+\label{prp:OperatorProperties}
+Assuming \myhl{$\boldsymbol{A} \ssin \mathbb{R}^{m \stimes n}$, $\boldsymbol{B} \ssin \mathbb{R}^{m \stimes n}$, and $\boldsymbol{C} \ssin \mathbb{R}^{n \stimes l}$,} the $\ell_{q {\to} p}$ operator-norm of a matrix satisfies the following properties:
+%$\ell_{q {\to} p}$ operator-norm of a matrix $\boldsymbol{A}$ is a matrix norm as it satisfies the following properties:
+\begin{itemize}
+\item Nonnegativity: $\forall (q , p) \ssin \mathbb{R}^2_{\sgeq 0} : \Vert \boldsymbol{A} \Vert_{q {\to} p} \sgeq 0$.
+\item Positivity: $\forall (q , p) \ssin \mathbb{R}^2_{\sgeq 0} : \Vert \boldsymbol{A} \Vert_{q {\to} p} \seq 0$ if and only if $\boldsymbol{A} \seq \boldsymbol{0}$.
+\item Homogeneity: $\forall q \ssin \mathbb{R}_{\sgeq 0} , \forall p \ssin \mathbb{R}_{\sg 0}$, \myhl{$\forall \alpha \ssin \mathbb{R}$} $: \Vert \alpha \boldsymbol{A} \Vert_{q {\to} p} \seq \myabs{\alpha} \Vert \boldsymbol{A} \Vert_{q {\to} p}$.
+\item Triangle inequality: $\forall q \ssin \mathbb{R}_{\sgeq 0} , \forall p \ssin \mathbb{R}_{\sgeq 1}$, for $p \seq 0 : \Vert \boldsymbol{A} \spl \boldsymbol{B} \Vert_{q {\to} p} \sleq \Vert \boldsymbol{A} \Vert_{q {\to} p} \spl \Vert \boldsymbol{B} \Vert_{q {\to} p}$.
+\end{itemize}
+\begin{remark}[Generalised matrix norm]
+\label{rmrk:Generalized matrix norm} 
+Any matrix norm definition that satisfies the above four properties is called \emph{generalised matrix norm} \cite{HornR.A.2012}.
+All the above-mentioned properties hold true $\forall q \ssin \mathbb{R}_{\sgeq 0}$, in contrast to $p$.
+\input{sections/2-2-3-BERC-BSparsity-Characterisations-Table2OpNormProp}
+%In the following we continue to investigate the other properties of the $\ell_{q \to p}$ operator-norm.
+\end{remark}
+\begin{itemize}
+\item Submultiplicativity: In general, we have:
+\begin{gather*}
+\forall (q , p) \in \mathbb{R}^2_{\sg 0}, \qquad \mynorm{\boldsymbol{A} \, \boldsymbol{C}}_{q \to p} \leq \mynorm{\boldsymbol{A}}_{q \to p} \, \mynorm{\boldsymbol{C}}_{q \to p} \max \mybrace{1 , n^{\frac1q - \frac1p}}. 
+\end{gather*}
+For $q \sgeq p$ we have $\max \{1 , n^{1/q \sm 1/p} \} \seq 1$, and then there exists submultiplicativity property, i.e., for $q \sgeq p \sg 0$, we have $\Vert \boldsymbol{A} \, \boldsymbol{C} \Vert_{q {\to} p} \sleq \Vert \boldsymbol{A} \Vert_{q {\to} p} \, \Vert \boldsymbol{C} \Vert_{q {\to} p}$.
+\end{itemize}
+\begin{remark}[Matrix norm]
+\label{rmrk:Oprtr-nrm-matrx}
+Any norm definition that satisfies the above five properties is called \emph{matrix norm} \cite{HornR.A.2012}.
+The $\ell_{q \to p}$ operator-norm $\forall q \ssin \mathbb{R}_{\sgeq 0}$ and $\forall p \ssin \mathbb{R}_{\sgeq 1}$ satisfies the first four properties (generalised matrix norm), whereas for $q \sgeq p \sg 0$ satisfies the fifth property.
+Then, $\ell_{q \to p}$ operator-norm for $q \sgeq p \sgeq 1$ satisfies all the above five properties, hence it is a matrix norm.
+\end{remark}
+\begin{itemize}
+\item Bounds: We define the following four types of bounds and inequalities for the $\ell_{q {\to} p}$ operator-norm: \\
+1) $\forall \myparanthese{q , p , q' , p'} \ssin \mathbb{R}^4_{>0}$, we have:
+\begin{gather*}
+\begin{aligned}
+&\mynorm{\boldsymbol{A}}_{q \to p} \geq \max \mybrace{\min \mybrace{1 , m^{\frac1p - \frac{1}{p'}}} \mynorm{\boldsymbol{A}}_{q \to p'} , \min \mybrace{1 , n^{\frac{1}{q'} - \frac1q}} \mynorm{\boldsymbol{A}}_{q' \to p}}, \\
+&\mynorm{\boldsymbol{A}}_{q \to p} \leq \min \mybrace{\max \mybrace{1 , m^{\frac1p - \frac{1}{p'}}} \mynorm{\boldsymbol{A}}_{q \to p'} , \max \mybrace{1 , n^{\frac{1}{q'} - \frac1q}} \mynorm{\boldsymbol{A}}_{q' \to p}},
+\end{aligned}
+\end{gather*}
+which the bounds are based on the operator norm having one of the original domains, either $q$, or $p$.
+
+2) In addition, the bounds can be based on the operator norm having totally new domains, e.g., $q'$ and $p'$, i.e., $\forall \myparanthese{q , p , q' , p'} \ssin \mathbb{R}^4_{>0}$ we have:
+\begin{gather*}
+\begin{aligned}
+&\mynorm{\boldsymbol{A}}_{q \to p} \geq \min \mybrace{1 , m^{\frac1p - \frac{1}{p'}}} \min \mybrace{1 , n^{\frac{1}{q'} - \frac1q}} \mynorm{\boldsymbol{A}}_{q' \to p'}, \\
+&\mynorm{\boldsymbol{A}}_{q \to p} \leq \max \mybrace{1 , m^{\frac1p - \frac{1}{p'}}} \max \mybrace{1 , n^{\frac{1}{q'} - \frac1q}} \mynorm{\boldsymbol{A}}_{q' \to p'}.
+\end{aligned}
+\end{gather*}
+\input{sections/2-2-3-BERC-BSparsity-Characterisations-Rmrk6OpNormIneq}
+\input{sections/2-2-3-BERC-BSparsity-Characterisations-Fig3OpNormIneq}
+
+3) Another useful lower- and upper-bound $\forall \myparanthese{q , p , q' , p'} \ssin \mathbb{R}^4_{>0}$ are:
+\begin{gather*}
+\begin{aligned}
+&\mynorm{\boldsymbol{A}}_{q \to p} \geq \frac{\min \mybrace{1 , m^{\frac1p - \frac{1}{p'}}} \min \mybrace{1 , n^{\frac{1}{q'} - \frac1q}} \min \mybrace{1 , m^{\frac{1}{p'} -\frac12}} \min \mybrace{1 , n^{\frac{1}{2} - \frac{1}{q'}}}}{\sqrt{\min \mybrace{m , n}}} \mynorm{\boldsymbol{A}}_F, \\
+&\mynorm{\boldsymbol{A}}_{q \to p} \leq \max \mybrace{1 , m^{\frac1p - \frac{1}{p'}}} \max \mybrace{1 , n^{\frac{1}{q'} - \frac1q}} \max \mybrace{1 , m^{\frac{1}{p'} - \frac12}} \max \mybrace{1 , n^{\frac12 - \frac{1}{q'}}} \mynorm{\boldsymbol{A}}_F,
+\end{aligned}
+\end{gather*}
+where, the Frobenius norm is defined as $\Vert \boldsymbol{A} \Vert_F \seq \sqrt{\sum_{i=1}^m \sum_{j=1}^n \vert a_{i,j} \vert^2}$.
+
+\myhl{4) In addition, the $\ell_{q {\to} p}$ operator-norm of any matrix $\boldsymbol{A}$ is less than or equal to the $\ell_{q {\to} p}$ operator-norm of another matrix $\boldsymbol{B}$, in which all the elements are the maximum absolute value of the elements of first matrix.
+It also holds true, when all the on-diagonal entries of $\boldsymbol{A}$ and $\boldsymbol{B}$ are set to zero:}
+%to compare the $\ell_{q {\to} p}$ operator-norm of two matrices $\boldsymbol{A}$ and $\boldsymbol{B}$ with the same size, where 
+%\newpage
+\begin{gather*}
+\mycolor{\forall i , j, \forall \myparanthese{q , p} \in \mathbb{R}^2_{>0}, \qquad \textrm{if } \myabs{a_{i,j}} \leq b_{i,j} = \max_{i,j} \myabs{a_{i,j}} \Rightarrow \mynorm{\boldsymbol{A}}_{q \to p} \leq \mynorm{\boldsymbol{B}}_{q \to p},}
+\end{gather*}
+\myhl{and}
+\begin{gather*}
+\mycolor{\forall i , j, \forall \myparanthese{q , p} \in \mathbb{R}^2_{>0}, \qquad \textrm{if } 
+\begin{cases}
+\begin{aligned}
+  &\myabs{a_{i,j}} \leq b_{i,j} = \max_{i,j} \myabs{a_{i,j}}, \quad &&i \neq j \\
+  &a_{i,j} = b_{i,j} = 0, \quad &&i = j
+\end{aligned}
+\end{cases}
+\Rightarrow \mynorm{\boldsymbol{A}}_{q \to p} \leq \mynorm{\boldsymbol{B}}_{q \to p}.}
+\end{gather*}
+%The above inequality also holds true, when all the on-diagonal entries of $\boldsymbol{A}$ and $\boldsymbol{B}$ are set to zero.
+\end{itemize}
+\end{property}
+See Section \ref{prf:OperatorProperties} (page \pageref{prf:OperatorProperties}) for the proof of Property \ref{prp:OperatorProperties}.

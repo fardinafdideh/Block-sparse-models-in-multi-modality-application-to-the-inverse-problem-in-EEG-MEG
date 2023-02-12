@@ -1,0 +1,50 @@
+Similar to the conventional element-wise sparse recovery, the problem of finding a solution $\hat{\mybeta}$, in the noiseless case of (\ref{eq:Model_Noiseless}), i.e., $\boldsymbol{y} \seq \myPhi \mybetaz$, is called \emph{block-sparse exact (unique) signal recovery} whereas in the other case of (\ref{eq:Model_Noisy}), i.e., $\boldsymbol{y} \seq \myPhi \mybetaz \spl \boldsymbol{e}$, is called \emph{block-sparse stable (robust) signal recovery}.
+
+Block-sparse exact and stable signal recovery problems can be realised through a proper constrained optimisation problem.
+% (program). 
+\input{sections/1-4-2-2-Background-BSparsity-RepTheory-Optimisation-Eq15}
+ 
+\input{sections/1-4-2-2-Background-BSparsity-RepTheory-Optimisation-Eq16}
+
+According to (\ref{eq:Opt-Lp1p2}) the problem (\ref{eq:Opt-L20}) can be represented as $P_{(2,0),2,\varepsilon} (\mybeta,\boldsymbol{y} \sm \myPhi \mybeta)$.
+
+Although the notation $P_{(p_1,p_2),q,\varepsilon} (\boldsymbol{a},\boldsymbol{b})$ can cover all the previous types of optimisation problems, the widely used case is when the minimisation is over $\mybeta$ and the problem is a block-sparse exact signal recovery, i.e., $P_{(p_1,p_2),q,0} (\mybeta,\boldsymbol{r})$, which for the sake of simplicity we refer to as $P_{p_1,p_2}$.
+Because regardless of the choice of $q$, the $\Vert \boldsymbol{r} \Vert _q \seq 0$ directly indicates to the noiseless model, i.e., $\boldsymbol{y} \seq \myPhi \mybetaz$, so the only parameters to be determined are $p_1$ and $p_2$.
+
+Since the optimisation problem in block-sparsity domain is a generalisation of the conventional optimisation problem in sparsity domain, for $d \seq 1$, the two optimisation problems are equivalent, i.e., $P_{p_1,p_2} {\equiv} P_{p_2}$.
+
+The straightforward configuration of the mentioned optimisation problem in a block-sparse exact or stable signal recovery problem is $P_{(p,0),q,\varepsilon}(\mybeta,\boldsymbol{r})$, which simply minimise the number of active blocks, i.e., blocks with non-zero $\ell_p$ norm.
+
+However, the $P_{(p,0),q,\varepsilon}(\mybeta,\boldsymbol{r})$ optimisation problem is in general non-convex and finding its solution is NP-hard\footnote{\emph{Non-deterministic Polynomial-hard}} \cite{Natarajan1995,Amaldi1998}.
+Therefore, there is a need for convexification, relaxation or approximation of $P_{(p,0),q,\varepsilon}(\mybeta,\boldsymbol{r})$.
+Similar to sparsity domain, in block-sparsity domain the following two main questions are addressed:
+\begin{list}{Q\arabic{qcounter}:}{\usecounter{qcounter}}
+\item Is the solution to $P_{2,1}$ necessarily the block-sparsest representation (solution to $P_{2,0}$) (\emph{Uniqueness})?\\
+\item Is the solution to $P_{2,0}$ necessarily equal to the solution to $P_{2,1}$ (\emph{Equivalence})?
+\end{list}
+%Fortunately, the mentioned equivalence theorem for two optimisation problems $P_1$ and $P_0$ in exact signal recovery problem, has a correspondence in block case for finding solution in a block-sparse exact signal recovery problem. 
+%In other words, 
+It has been shown that under sufficient conditions, $P_{2,1}$ and $P_{2,0}$ are equivalent \cite{Eldar2009b,Eldar2009c,Stojnic2009a,Eldar2010b,Eldar2010}, and in a more general case the equivalence of $P_{p,1}$ and $P_{p,0}$ for $p \sg 0$ and for both non-redundant and redundant blocks is investigated \cite{Elhamifar2011,Elhamifar2012b}.
+
+\myhl{Subspace matching pursuit is a greedy algorithm, which is used for a block-sparse exact and stable signal recovery problems of $P_{(2,0),q,0}(\mybeta_{\myPhi},\boldsymbol{r})$ and $P_{(2,0),2,\varepsilon}(\mybeta_{\myPhi},\boldsymbol{r})$, respectively, where, $\mybeta_{\myPhi} \seq \mybracket{(\myPhi[1] \mybeta[1])^T, \cdots, (\myPhi[k] \mybeta[k])^T, \cdots, (\myPhi[K] \mybeta[K])^T}^T$, and the $\myPhi[k]$\textquotesingle s are assumed to be full rank matrices {\cite{Ganesh2009}}.
+
+In addition, subspace base pursuit and its modified version is used for a block-sparse exact and stable signal recovery problems of $P_{(2,1),q,0}(\mybeta_{\myPhi},\boldsymbol{r})$ and $P_{(2,1),2,\varepsilon}(\mybeta_{\myPhi},\boldsymbol{r})$, respectively, and under sufficient conditions, $P_{(2,1),q,0}(\mybeta_{\myPhi},\boldsymbol{r})$ and $P_{(2,0),q,0}(\mybeta_{\myPhi},\boldsymbol{r})$ are equivalent {\cite{Ganesh2009}}.
+
+Moreover, there are theoretical conditions for ensuring the equivalence of $P_{(p,1),q,0}(\mybeta_{\myPhi},\boldsymbol{r})$ and $P_{(p,0),q,0}(\mybeta_{\myPhi},\boldsymbol{r})$ for $p \sg 0$, while the blocks could be non-redundant or redundant {\cite{Elhamifar2011}}; {\cite{Elhamifar2012b}}.
+% and for both non-redundant and redundant blocks \cite{Elhamifar2011,Elhamifar2012b}.
+
+In fact, unlike $P_{p,0}$ that extracts a representation with the fewest active blocks $\mybeta[k]$, the $P_{(p,0),q,0}(\mybeta_{\myPhi},\boldsymbol{r})$ extracts a representation with the fewest active reconstructed vectors $\myPhi[k] \mybeta[k]$ {\cite{Elhamifar2012}}.
+When the blocks $\myPhi[k]$\textquotesingle s are non-redundant, 
+%In case of each block non-redundancy, 
+the solution to $P_{(p,0),q,0}(\mybeta_{\myPhi},\boldsymbol{r})$ has also the fewest active blocks {\cite{Elhamifar2012}}.}
+
+There are also some recovery conditions of $P_{2,1}$ via the mixed $\ell_2/\ell_1$-optimisation program \cite{Eldar2009c,Stojnic2009a}, also known in the statistics literature as group LASSO\footnote{\emph{Least Absolute Shrinkage and Selection Operator}} \cite{Yuan2006,Lv2011}, 
+%\cite{Yuan2006,Chesneau2008,Nardi2008,Bach2008,Meier2008,Huang2009a,Lv2011}, 
+BMP (Block Matching Pursuit) 
+%\cite{Eldar2009b,Eldar2010b,Eldar2010} 
+and BOMP (Block Orthogonal Matching Pursuit) 
+%\cite{Eldar2009b,Swirszcz2009,Eldar2010b,Eldar2010} 
+algorithms \cite{Eldar2010}.
+
+In addition, there are block-sparse stable recovery conditions for block orthogonal matching pursuit and block-thresholding algorithms \cite{Ben-Haim2011}. 
+Also $\ell_2/\ell_1$-optimisation program \cite{Eldar2009c}, block versions of CoSaMP\footnote{\emph{Compressive Sampling Matched Pursuit}} and IHT\footnote{\emph{Iterative Hard Thresholding}} \cite{Baraniuk2010} algorithms (which are the extensions of iterative sparse coding algorithms to model-based sparse representation) lead to robust recoveries in the presence of noise.

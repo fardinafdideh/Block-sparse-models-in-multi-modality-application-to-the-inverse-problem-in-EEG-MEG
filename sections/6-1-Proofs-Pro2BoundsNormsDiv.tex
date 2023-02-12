@@ -1,0 +1,84 @@
+\begin{proof}
+\myhl{In order to demonstrate the bounds of $\Vert \boldsymbol{a} \Vert_{p} / \Vert \boldsymbol{a} \Vert_{q}$, first we prove it using the derivative method for $\forall (q,p) \ssin \mathbb{R}_{\sg 1}$, next utilising the H{\"o}lder's inequality we show that the same bounds hold true for the wider range of $q$ and $p$, i.e., $\forall (q,p) \ssin \mathbb{R}_{\sg 0}$.}
+
+1) To compute the critical point of $\Vert \boldsymbol{a} \Vert_{p} / \Vert \boldsymbol{a} \Vert_{q}$ using the derivative method, we need to compute its derivative with respect to the coordinates, knowing that $(f/g)' \seq (f'g \sm g'f)/g^2$, and $(|f|)' \seq f' \, f / |f| $, where $f'$ is derivative of $f$ with respect to $x$, i.e. $d \, f(x) / d \, x$, we have:
+\begin{gather}
+\label{eq:prf:VectorDivisionBound} 
+\forall (q,p) \in \mathbb{R}_{> 1}, \qquad
+\frac{\partial}{\partial a_i} \frac{\mynorm{\boldsymbol{a}}_p}{\mynorm{\boldsymbol{a}}_q} =
+\frac{\frac{\partial \mynorm{\boldsymbol{a}}_p}{\partial a_i} \mynorm{\boldsymbol{a}}_q - \frac{\partial \mynorm{\boldsymbol{a}}_q}{\partial a_i} \mynorm{\boldsymbol{a}}_p}{\mynorm{\boldsymbol{a}}_q^2}
+\end{gather}
+Then, we need to compute $\partial \Vert \boldsymbol{a} \Vert_p / \partial a_i$ and $\partial \Vert \boldsymbol{a} \Vert_q / \partial a_i$, so:
+\begin{gather*}
+\frac{\partial \mynorm{\boldsymbol{a}}_p}{\partial a_i} =
+\frac{\partial}{\partial a_i} \myparanthese{\sum_i \myabs{a_i}^p}^\frac{1}{p} = 
+\frac{1}{p} \myparanthese{\sum_i \myabs{a_i}^p}^{\frac{1}{p} - 1} \frac{\partial}{\partial a_i} \sum_i \myabs{a_i}^p =
+\mynorm{\boldsymbol{a}}_{\mycolor{p}} ^ {1 - p} \myabs{a_i} ^{p - 2} a_i.
+\end{gather*}
+Therefore, substituting $\partial \Vert \boldsymbol{a} \Vert_p / \partial a_i$ and $\partial \Vert \boldsymbol{a} \Vert_q / \partial a_i$ in (\ref{eq:prf:VectorDivisionBound}) and make it equal to zero, we have:
+\begin{gather*}
+\begin{aligned}
+\frac{\partial}{\partial a_i} \frac{\mynorm{\boldsymbol{a}}_p}{\mynorm{\boldsymbol{a}}_q} &=
+\mycolor{\frac{\mynorm{\boldsymbol{a}}_q \mynorm{\boldsymbol{a}}_p ^ {1 - p} \myabs{a_i} ^{p - 2} a_i
+- \mynorm{\boldsymbol{a}}_p \mynorm{\boldsymbol{a}}_q ^ {1 - q} \myabs{a_i} ^{q - 2} a_i}{\mynorm{\boldsymbol{a}}_q^2}} \\
+&= a_i \frac{\mynorm{\boldsymbol{a}}_p}{\mynorm{\boldsymbol{a}}_q} \myparanthese{\frac{\myabs{a_i}^{p-2}}{\mynorm{\boldsymbol{a}}_p^p} - \frac{\myabs{a_i}^{q-2}}{\mynorm{\boldsymbol{a}}_q^q}} = 0
+&\Rightarrow \myabs{a_i} \in \mybrace{0 , \myparanthese{\frac{\mynorm{\boldsymbol{a}}_p^p}{\mynorm{\boldsymbol{a}}_q^q}}^{\frac{1}{p-q}}}.
+\end{aligned}
+\end{gather*}
+Hence, the derivative cancels for all $\boldsymbol{a}$ with $1 \sleq m \sleq d$ non-zero elements that all are equal, i.e., $|a_i| \seq (\Vert \boldsymbol{a} \Vert_p^p / \Vert \boldsymbol{a} \Vert_q^q) ^ {1/(p-q)} \seq C \ssin \mathbb{R}_{>0}$, whereas all other elements are identically zero. 
+Then, the fraction in the critical point evaluates to
+\begin{gather*}
+\forall (q,p) \in \mathbb{R}_{> 1}, \qquad
+\frac{\mynorm{\boldsymbol{a}}_p}{\mynorm{\boldsymbol{a}}_q} = 
+\frac{\myparanthese{m C^p}^{\frac1p}}{\myparanthese{m C^q}^{\frac1q}} = 
+m ^{\frac1p - \frac1q},
+\end{gather*}
+which is minimised for $m \seq
+  \begin{cases}
+  \begin{aligned}
+    &d^{1/p-1/q},   \quad  && \text{if } q \sleq p\\
+    &1,   \quad && \text{if } q \sg p\\
+  \end{aligned}
+  \end{cases} \seq \min\{1 , d^{1/p-1/q}\}$, and maximised for $m \seq
+  \begin{cases}
+  \begin{aligned}
+    &1,  \quad  && \text{if } q \sleq p\\
+    &d^{1/p-1/q},  \quad && \text{if } q \sg p\\
+     \end{aligned}
+     \end{cases} \seq \max\{1 , d^{1/p-1/q}\}$.
+     
+     
+\myhl{2) Knowing that the $\ell_p$ norm is a decreasing function in $p$, the following lower-bound is resulted for $p \sleq q$:}
+\begin{gather*}
+\mycolor{\forall \boldsymbol{a} \in \mathbb{R}^d, \forall (q,p) \in \mathbb{R}^2_{> 0}, \qquad
+\text{if } p \leq q 
+\Rightarrow \mynorm{\boldsymbol{a}}_q \leq \mynorm{\boldsymbol{a}}_p
+\Rightarrow 1 \leq \frac{\mynorm{\boldsymbol{a}}_p}{\mynorm{\boldsymbol{a}}_q}.}
+\end{gather*}
+\myhl{Now to demonstrate the upper-bound, the following H{\"o}lder's inequality is used {\cite{Golub2013}}:}
+\begin{gather*}
+\mycolor{\forall r \in \mathbb{R}_{\geq 1}, \qquad
+\sum_{i = 1}^d \myabs{x_i y_i} \leq \mynorm{\boldsymbol{x}}_r \mynorm{\boldsymbol{y}}_{\frac{r}{r-1}}
+= \myparanthese{\displaystyle\sum_{i = 1}^d \myabs{x_i}^ r} ^ {\frac1r} \, \myparanthese{\displaystyle\sum_{i = 1}^d \myabs{y_i}^ {\frac{r}{r-1}}} ^ {\frac{r-1}{r}}.}
+\end{gather*}
+\myhl{Next, assuming $x_i \seq {a_i}^p$, $y_i \seq 1$, and $r \seq q/p$ (the above condition on $r$ is met, because $p \sleq q$), we have $\sum_{i \seq 1}^d \myabs{x_i y_i} \seq \sum_{i \seq 1}^d \myabs{{a_i}^p} \seq \sum_{i \seq 1}^d \myabs{{a_i}}^p$, and the above equation turns into:}
+\begin{gather*}
+\begin{aligned}
+\mycolor{\forall \boldsymbol{a} \in \mathbb{R}^d, \forall (q,p) \in \mathbb{R}^2_{> 0}, p \leq q, \qquad
+\sum_{i = 1}^d \myabs{a_i}^p} 
+&\mycolor{\leq \myparanthese{\displaystyle\sum_{i = 1}^d \myparanthese{\myabs{a_i}^p}^ {\frac{q}{p}}} ^ {\frac{p}{q}} \, \myparanthese{\displaystyle\sum_{i = 1}^d 1^ {\frac{q}{q-p}}} ^ {\frac{q-p}{q}}} \\
+&\mycolor{= \myparanthese{\displaystyle\sum_{i = 1}^d \myabs{a_i}^q} ^ {\frac{p}{q}} \, d ^ {\frac{q-p}{q}}.}
+\end{aligned}
+\end{gather*}
+\myhl{Then, taking the both sides to the power of $1/p$, we get:}
+\begin{gather*}
+\mycolor{\begin{aligned}
+\forall \boldsymbol{a} \in \mathbb{R}^d, \forall (q,p) \in \mathbb{R}^2_{> 0}, p \leq q, \qquad
+&\myparanthese{\sum_{i = 1}^d \myabs{a_i}^p}^\frac1p
+\leq \myparanthese{\displaystyle\sum_{i = 1}^d \myabs{a_i}^q} ^ {\frac1q} \, d ^ {\frac1p -\frac1q} \\
+&\Rightarrow \frac{\mynorm{\boldsymbol{a}}_p}{\mynorm{\boldsymbol{a}}_q} \leq d ^ {\frac1p -\frac1q}.
+\end{aligned}}
+\end{gather*}
+\myhl{Therefore, for $p \sleq q$, we have $1 \sleq \Vert \boldsymbol{a} \Vert_p / \Vert \boldsymbol{a} \Vert_q \sleq d^{1/p \sm 1/q}$.
+Similarly, for $q \sleq p$, we get $d^{1/p \sm 1/q} \sleq \Vert \boldsymbol{a} \Vert_p / \Vert \boldsymbol{a} \Vert_q \sleq 1$, which proves the property.}
+\end{proof}

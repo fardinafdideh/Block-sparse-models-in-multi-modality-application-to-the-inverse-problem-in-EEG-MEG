@@ -1,0 +1,170 @@
+\begin{proof}
+Based on the definition of the $\Vert \boldsymbol{A} \Vert_{q \to p}$, i.e., $\max_{\boldsymbol{a} \neq \boldsymbol{0}} \Vert \boldsymbol{A} \boldsymbol{a} \Vert_{p} / \Vert \boldsymbol{a} \Vert_{q}$ or $\max_{\Vert \boldsymbol{a} \Vert_q \sleq 1} \Vert \boldsymbol{A} \boldsymbol{a} \Vert_{p}$, we prove the following properties, for $\boldsymbol{A} \ssin \mathbb{R}^{m \stimes n}$, $\boldsymbol{B} \ssin \mathbb{R}^{m \stimes n}$, and $\boldsymbol{C} \ssin \mathbb{R}^{n \stimes l}$:
+\begin{itemize}
+\item Nonnegativity: In definition $\Vert \boldsymbol{A} \Vert_{q \to p} \seq \max_{\Vert \boldsymbol{a} \Vert_q \sleq 1} \Vert \boldsymbol{A} \boldsymbol{a} \Vert_{p}$, $\Vert \boldsymbol{A} \boldsymbol{a} \Vert_{p}$ is greater than or equal to zero, then the nonnegativity of $\Vert \boldsymbol{A} \Vert_{q \to p}$ is obvious $\forall (q , p) \ssin \mathbb{R}^2_{\sgeq 0}$. 
+\item Positivity: $\forall (q , p) \ssin \mathbb{R}^2_{\sgeq 0}$ if $\Vert \boldsymbol{A} \Vert_{q \to p} \seq 0$, then $\Vert \boldsymbol{A} \boldsymbol{a} \Vert_{p} \seq 0$ for each $\boldsymbol{a} \ssin \mathbb{R}^n$, i.e., each column in $\boldsymbol{A}$ is zero. 
+Hence, $\boldsymbol{A} \seq \boldsymbol{0}$.
+\item Homogeneity: $\forall q \sgeq 0$ and $\forall p \sg 0$, we have
+\begin{gather*} 
+\begin{aligned}
+\mynorm{\alpha \boldsymbol{A}}_{q \to p} = \max_{\boldsymbol{a} \neq \boldsymbol{0}} \frac{\mynorm{\alpha \boldsymbol{A} \boldsymbol{a} }_{p}}{\mynorm{ \boldsymbol{a}}_{q}} 
+&= \max_{\boldsymbol{a} \neq \boldsymbol{0}} \myabs{\alpha} \frac{\mynorm{\boldsymbol{A} \boldsymbol{a}}_{p}}{\mynorm{\boldsymbol{a}}_{q}} \\
+&= \myabs{\alpha} \mynorm{\boldsymbol{A}}_{q \to p}.
+\end{aligned}
+\end{gather*}
+The above second equality in the first line is resulted from the homogeneity property of norm of vectors, which holds true only for $p \sg 0$ \cite{Elad2010,Golub2013}.
+\item Triangle inequality: $\forall q \sgeq 0$, $p \seq 0$ or $\forall p \sgeq 1$, it is obtained as follows
+\begin{gather*}
+\begin{aligned}
+\mynorm{\boldsymbol{A} + \boldsymbol{B}}_{q \to p} = 
+\max_{\boldsymbol{a} \neq \boldsymbol{0}} \frac{\mynorm{\myparanthese{\boldsymbol{A} + \boldsymbol{B}} \boldsymbol{a}}_{p}}{\mynorm{\boldsymbol{a}}_{q}} 
+&\leq \max_{\boldsymbol{a} \neq \boldsymbol{0}} \frac{\mynorm{\boldsymbol{A} \boldsymbol{a}}_{p} + \mynorm{\boldsymbol{B} \boldsymbol{a}}_{p}}{\mynorm{\boldsymbol{a}}_{q}} \\
+&\leq \max_{\boldsymbol{a} \neq \boldsymbol{0}} \frac{\mynorm{\boldsymbol{A} \boldsymbol{a}}_{p}}{\mynorm{\boldsymbol{a}}_{q}} + \max_{\boldsymbol{a} \neq \boldsymbol{0}} \frac{\mynorm{\boldsymbol{B} \boldsymbol{a}}_{p}}{\mynorm{\boldsymbol{a}}_{q}} \\
+&= \mynorm{\boldsymbol{A}}_{q \to p} + \mynorm{\boldsymbol{B}}_{q \to p}.
+\end{aligned}
+\end{gather*}
+The above inequality in the first line is resulted from the triangle inequality property of norm of vectors, which holds true only for $p \seq 0$ and $p \sgeq 1$ \cite{Elad2010,Golub2013}.
+\item Submultiplicativity: It is obtained as follows: %for $\boldsymbol{B} \ssin \mathbb{R}^{m \stimes n}$
+\begin{gather}
+\begin{aligned}
+\label{eq:prf:OperatorProperties} 
+\mynorm{\boldsymbol{A} \boldsymbol{C}}_{q \to p} = 
+\max_{\boldsymbol{a} \neq \boldsymbol{0}} \frac{\mynorm{\boldsymbol{A} \boldsymbol{C} \boldsymbol{a}}_{p}}{\mynorm{\boldsymbol{a}}_{q}} &=
+\max_{\boldsymbol{a} \neq \boldsymbol{0}} \frac{\mynorm{\boldsymbol{A} \boldsymbol{C} \boldsymbol{a}}_{p}}{\mynorm{\boldsymbol{a}}_{q}} \frac{\mynorm{\boldsymbol{C} \boldsymbol{a}}_{q}}{\mynorm{\boldsymbol{C} \boldsymbol{a}}_{q}} \frac{\mynorm{\boldsymbol{C} \boldsymbol{a}}_{p}}{\mynorm{\boldsymbol{C} \boldsymbol{a}}_{p}} \\
+&\leq \max_{\boldsymbol{C} \boldsymbol{a} \neq \boldsymbol{0}} \frac{\mynorm{\boldsymbol{A} \boldsymbol{C} \boldsymbol{a}}_{p}}{\mynorm{\boldsymbol{C} \boldsymbol{a}}_{q}}
+\max_{\boldsymbol{a} \neq \boldsymbol{0}} \frac{\mynorm{\boldsymbol{C} \boldsymbol{a}}_{p}}{\mynorm{\boldsymbol{a}}_{q}}
+\max_{\boldsymbol{a} \neq \boldsymbol{0}} \frac{\mynorm{\boldsymbol{C} \boldsymbol{a}}_{q}}{\mynorm{\boldsymbol{C} \boldsymbol{a}}_{p}} \\
+&= \mynorm{\boldsymbol{A}}_{q \to p} \, \mynorm{\boldsymbol{C}}_{q \to p} \, \max \mybrace{1 , n^{\frac1q - \frac1p}}.
+\end{aligned}
+\end{gather}
+The last term of (\ref{eq:prf:OperatorProperties}) is obtained using the upper-bound in Property \ref{prp:VectorDivisionBound} (bounds of two vector norms division), i.e.,:
+\begin{gather*}
+\forall \myparanthese{q , p} \in \mathbb{R}^2_{>0} , \forall \boldsymbol{a} \in \mathbb{R}^d, \qquad 
+\min \mybrace{1 , d^{\frac1q - \frac1p}} \leq \frac{\mynorm{\boldsymbol{a}}_q}{\mynorm{\boldsymbol{a}}_p} \leq \max \mybrace{1 , d^{\frac1q - \frac1p}}.
+\end{gather*}
+Therefore, from (\ref{eq:prf:OperatorProperties}) for $q \sgeq p \sg 0$, we see that the submultiplicativity holds true, i.e., $\mynorm{\boldsymbol{A} \boldsymbol{C}}_{q \to p} \sleq \mynorm{\boldsymbol{A}}_{q \to p} \mynorm{\boldsymbol{C}}_{q \to p}$.
+\item Bounds: 1) Considering the definition of $\ell_{q {\to} p}$ operator-norm, i.e., $\max_{\boldsymbol{a} \neq \boldsymbol{0}} \Vert \boldsymbol{A} \boldsymbol{a} \Vert_{p} / \Vert \boldsymbol{a} \Vert_{q}$, and the lower-bound of division of two vector norms introduced in Property \ref{prp:VectorDivisionBound} (bounds of two vector norms division), i.e., $\forall (q , p) \ssin \mathbb{R}^2_{\sg 0}, \forall \boldsymbol{a} \ssin \mathbb{R}^d : \Vert \boldsymbol{a} \Vert_q / \Vert \boldsymbol{a} \Vert_p \sgeq \min \mybrace{1 , d^{1/q - 1/p}}$, we conclude the following lower-bounds for $\boldsymbol{A} \ssin \mathbb{R}^{m \stimes n}$, $\boldsymbol{a} \ssin \mathbb{R}^n$, and $\forall \myparanthese{q , p , q' , p'} \ssin \mathbb{R}^4_{>0}$:
+\begin{gather*}
+\begin{aligned}
+\forall \boldsymbol{a} \neq \boldsymbol{0}, \qquad \frac{\mynorm{\boldsymbol{A} \boldsymbol{a}}_p}{\mynorm{\boldsymbol{a}}_q} \geq
+&\min \mybrace{1 , m^{\frac1p - \frac{1}{p'}}} \frac{\mynorm{\boldsymbol{A} \boldsymbol{a}}_{p'}}{\mynorm{\boldsymbol{a}}_q}, \\
+\forall \boldsymbol{a} \neq \boldsymbol{0}, \qquad \frac{\mynorm{\boldsymbol{A} \boldsymbol{a}}_p}{\mynorm{\boldsymbol{a}}_q} \geq
+&\min \mybrace{1 , n^{\frac{1}{q'} - \frac1q}} \frac{\mynorm{\boldsymbol{A} \boldsymbol{a}}_p}{\mynorm{\boldsymbol{a}}_{q'}}.
+\end{aligned}
+\end{gather*}
+Therefore, we have
+\begin{gather*}
+\forall \boldsymbol{a} \neq \boldsymbol{0}, \qquad \frac{\mynorm{\boldsymbol{A} \boldsymbol{a}}_p}{\mynorm{\boldsymbol{a}}_q} \geq
+\max \mybrace{\min \mybrace{1 , m^{\frac1p - \frac{1}{p'}}} \frac{\mynorm{\boldsymbol{A} \boldsymbol{a}}_{p'}}{\mynorm{\boldsymbol{a}}_q}, 
+\min \mybrace{1 , n^{\frac{1}{q'} - \frac1q}} \frac{\mynorm{\boldsymbol{A} \boldsymbol{a}}_p}{\mynorm{\boldsymbol{a}}_{q'}}}.
+\end{gather*}
+Then, taking into account that the max operator is order preserving, i.e., $\forall x$, if $f(x) \sleq g(x)$, then $\max_x f(x) \sleq \max_x g(x)$, the lower-bound of $\Vert \boldsymbol{A} \Vert_{q {\to} p}$ is achieved.
+
+Similarly, utilising the upper-bound of division of two vector norms introduced in Property \ref{prp:VectorDivisionBound} (bounds of two vector norms division), i.e., $\forall (q , p) \ssin \mathbb{R}^2_{\sg 0}, \forall \boldsymbol{a} \ssin \mathbb{R}^d : \Vert \boldsymbol{a} \Vert_q / \Vert \boldsymbol{a} \Vert_p \sleq \max \{1 , d^{1/q - 1/p} \}$, results in the following inequalities, which conclude the upper-bound of $\Vert \boldsymbol{A} \Vert_{q {\to} p}$ for $\boldsymbol{A} \ssin \mathbb{R}^{m \stimes n}$, $\boldsymbol{a} \ssin \mathbb{R}^n$, and $\forall \myparanthese{q , p , q' , p'} \ssin \mathbb{R}^4_{>0}$:
+\begin{gather*}
+\begin{aligned}
+\forall \boldsymbol{a} \neq \boldsymbol{0}, \qquad \frac{\mynorm{\boldsymbol{A} \boldsymbol{a}}_p}{\mynorm{\boldsymbol{a}}_q} \leq
+&\max \mybrace{1 , m^{\frac1p - \frac{1}{p'}}} \frac{\mynorm{\boldsymbol{A} \boldsymbol{a}}_{p'}}{\mynorm{\boldsymbol{a}}_q}, \\
+\forall \boldsymbol{a} \neq \boldsymbol{0}, \qquad \frac{\mynorm{\boldsymbol{A} \boldsymbol{a}}_p}{\mynorm{\boldsymbol{a}}_q} \leq
+&\max \mybrace{1 , n^{\frac{1}{q'} - \frac1q}} \frac{\mynorm{\boldsymbol{A} \boldsymbol{a}}_p}{\mynorm{\boldsymbol{a}}_{q'}}.
+\end{aligned}
+\end{gather*}
+Therefore,
+\begin{gather*}
+\forall \boldsymbol{a} \neq \boldsymbol{0}, \qquad \frac{\mynorm{\boldsymbol{A} \boldsymbol{a}}_p}{\mynorm{\boldsymbol{a}}_q} \leq
+\min \mybrace{\max \mybrace{1 , m^{\frac1p - \frac{1}{p'}}} \frac{\mynorm{\boldsymbol{A} \boldsymbol{a}}_{p'}}{\mynorm{\boldsymbol{a}}_q}, 
+\max \mybrace{1 , n^{\frac{1}{q'} - \frac1q}} \frac{\mynorm{\boldsymbol{A} \boldsymbol{a}}_p}{\mynorm{\boldsymbol{a}}_{q'}}}.
+\end{gather*}
+2) To prove the second set of bounds, from Property \ref{prp:VectorDivisionBound} (bounds of two vector norms division), i.e., $\forall (q , p) \ssin \mathbb{R}^2_{\sg 0}, \forall \boldsymbol{a} \ssin \mathbb{R}^d : \Vert \boldsymbol{a} \Vert_q / \Vert \boldsymbol{a} \Vert_p \sgeq \min \{1 , d^{1/q - 1/p} \}$, we have the following inequalities for $\boldsymbol{A} \ssin \mathbb{R}^{m \stimes n}$, $\boldsymbol{a} \ssin \mathbb{R}^n$, and $\forall \myparanthese{q , p , q' , p'} \ssin \mathbb{R}^4_{>0}$:
+\begin{gather*}
+\begin{aligned}
+&\forall \boldsymbol{a} \neq \boldsymbol{0}, \qquad \mynorm{\boldsymbol{A} \boldsymbol{a}}_p &&\geq
+\min \mybrace{1 , m^{\frac1p - \frac{1}{p'}}} \mynorm{\boldsymbol{A} \boldsymbol{a}}_{p'}, \\
+&\forall \boldsymbol{a} \neq \boldsymbol{0}, \qquad \frac{1}{\mynorm{\boldsymbol{a}}_q} &&\geq
+\min \mybrace{1 , n^{\frac{1}{q'} - \frac1q}} \frac{1}{\mynorm{\boldsymbol{a}}_{q'}}.
+\end{aligned}
+\end{gather*}
+Considering that both sides of the above inequalities are positive, by multiplying the same sides we get:
+\begin{gather*}
+\forall \boldsymbol{a} \neq \boldsymbol{0}, \qquad \frac{\mynorm{\boldsymbol{A} \boldsymbol{a}}_p}{\mynorm{\boldsymbol{a}}_q} \geq
+\min \mybrace{1 , m^{\frac1p - \frac{1}{p'}}} \min \mybrace{1 , n^{\frac{1}{q'} - \frac1q}} \frac{\mynorm{\boldsymbol{A} \boldsymbol{a}}_{p'}}{\mynorm{\boldsymbol{a}}_{q'}}.
+\end{gather*}
+Then taking into account that the max function is order preserving, the proof is done for lower-bound.
+
+Similarly, for the upper-bound, from Property \ref{prp:VectorDivisionBound} (bounds of two vector norms division), i.e., $\forall (q , p) \ssin \mathbb{R}^2_{\sg 0} , \forall \boldsymbol{a} \ssin \mathbb{R}^d : \Vert \boldsymbol{a} \Vert_q / \Vert \boldsymbol{a} \Vert_p \sleq \max \{1 , d^{1/q - 1/p} \}$, we have the following inequalities for $\boldsymbol{A} \ssin \mathbb{R}^{m \stimes n}$, $\boldsymbol{a} \ssin \mathbb{R}^n$, and $\forall \myparanthese{q , p , q' , p'} \ssin \mathbb{R}^4_{>0}$:
+\begin{gather*}
+\begin{aligned}
+&\forall \boldsymbol{a} \neq \boldsymbol{0}, \qquad \mynorm{\boldsymbol{A} \boldsymbol{a}}_p &&\leq
+\max \mybrace{1 , m^{\frac1p - \frac{1}{p'}}} \mynorm{\boldsymbol{A} \boldsymbol{a}}_{p'}, \\
+&\forall \boldsymbol{a} \neq \boldsymbol{0}, \qquad \frac{1}{\mynorm{\boldsymbol{a}}_q} &&\leq
+\max \mybrace{1 , n^{\frac{1}{q'} - \frac1q}} \frac{1}{\mynorm{\boldsymbol{a}}_{q'}}.
+\end{aligned}
+\end{gather*}
+Considering that both sides of the above inequalities are positive, by multiplying the same sides we get:
+\begin{gather*}
+\forall \boldsymbol{a} \neq \boldsymbol{0}, \qquad \frac{\mynorm{\boldsymbol{A} \boldsymbol{a}}_p}{\mynorm{\boldsymbol{a}}_q} \leq
+\max \mybrace{1 , m^{\frac1p - \frac{1}{p'}}} \, \max \mybrace{1 , n^{\frac{1}{q'} - \frac1q}} \frac{\mynorm{\boldsymbol{A} \boldsymbol{a}}_{p'}}{\mynorm{\boldsymbol{a}}_{q'}}.
+\end{gather*}
+Then taking into account that the max function is order preserving, the proof is done for upper-bound.
+
+In order to prove the $\ell_{q {\to} p}$ operator-norm inequalities shown schematically in figure \ref{fig:OperatorNorm-Inequalities}, utilising the lower-bound of second set of bounds in Property \ref{prp:OperatorProperties} ($\ell_{q {\to} p}$ operator-norm properties), i.e., $\forall \myparanthese{q , p , q' , p'} \ssin \mathbb{R}^4_{>0} , \forall \boldsymbol{A} \ssin \mathbb{R}^{m \stimes n} : \Vert \boldsymbol{A} \Vert_{q \to p} \sgeq \min \{1 , m^{1/p \sm 1/{p'}} \} \min \{1 , n^{1/{q'} \sm 1/q} \} \Vert \boldsymbol{A} \Vert_{q' \to p'}$, it is straightforward that for a fixed $p \seq p'$ if $q' \sleq q$ (or similarly, for a fixed $q \seq q'$ if $p \sleq p'$) we have $\Vert \boldsymbol{A} \Vert_{q \to p} \sgeq \Vert \boldsymbol{A} \Vert_{q' \to p'}$.
+
+3) In order to prove the lower-bound of the third set of bounds, using the lower-bound of second set of bounds in Property \ref{prp:OperatorProperties} ($\ell_{q {\to} p}$ operator-norm properties), i.e., $\forall \myparanthese{q , p , q' , p'} \ssin \mathbb{R}^4_{>0} , \forall \boldsymbol{A} \ssin \mathbb{R}^{m \stimes n} : \Vert \boldsymbol{A} \Vert_{q \to p} \sgeq \min \{1 , m^{1/p \sm 1/{p'}} \} \min \{1 , n^{1/{q'} \sm 1/q} \} \Vert \boldsymbol{A} \Vert_{q' \to p'}$, we will have the following first line of inequalities.
+Then, by utilising the same inequality once again, this time for $q' \seq p' \seq 2$, we get the following second line of inequalities.
+The reason that first the relation with $\Vert \boldsymbol{A} \Vert_{q' \to p'}$ is stated and then the relation with $\Vert \boldsymbol{A} \Vert_{2 \to 2}$, is that if in a problem the $q$ and $p$ values are bounded based on some thresholds such as $q'$ and $p'$, respectively, e.g., $q \sleq / \sgeq q'$ and $p \sleq / \sgeq p'$, then there could be a unique solution to the related $\min$ and $\max$ operators.
+Whereas, if directly the relation with $\Vert \boldsymbol{A} \Vert_{2 \to 2}$ was stated, and supposing that $p \sgeq 1$, then form instance $\min \{1 , m^{1/p \sm 1/{2}} \}$ would have two values based on the value of $p$ compared to $1$.
+Then from \cite{Golub2013}, we have $\Vert \boldsymbol{A} \Vert_{2 \to 2} \sgeq \Vert \boldsymbol{A} \Vert_F / \sqrt{Rank(\boldsymbol{A})}$, where the Frobenius norm is defined as $(\sum_{i \seq 1}^m \sum_{j \seq 1}^n |a_{i,j}|^2)^{1/2}$, which produces the following third line.
+But $Rank(\boldsymbol{A})$ is upper-bounded by $\min \{ m , n \}$ \cite{Golub2013}, then  $1/ \sqrt{Rank(\boldsymbol{A})}$ is lower-bounded by $1/ \sqrt{\min \{ m , n \}}$, which produces the following last line:
+\begin{gather*}
+\begin{aligned}
+\mynorm{\boldsymbol{A}}_{q \to p} &\geq 
+\min \mybrace{1 , m^{\frac1p - \frac{1}{p'}}} \min \mybrace{1 , n^{\frac{1}{q'} - \frac1q}} \mynorm{\boldsymbol{A}}_{q' \to p'} \\
+&\geq \min \mybrace{1 , m^{\frac1p - \frac{1}{p'}}} \min \mybrace{1 , n^{\frac{1}{q'} - \frac1q}} \min \mybrace{1 , m^{\frac{1}{p'} - \frac12}} \min \mybrace{1 , n^{\frac12 - \frac{1}{q'}}} \mynorm{\boldsymbol{A}}_{2 \to 2} \\
+&\geq \frac{\min \mybrace{1 , m^{\frac1p - \frac{1}{p'}}} \min \mybrace{1 , n^{\frac{1}{q'} - \frac1q}} \min \mybrace{1 , m^{\frac{1}{p'} -\frac12}} \min \mybrace{1 , n^{\frac{1}{2} - \frac{1}{q'}}}}{\sqrt{Rank(\boldsymbol{A})}} \mynorm{\boldsymbol{A}}_F \\
+&\geq \frac{\min \mybrace{1 , m^{\frac1p - \frac{1}{p'}}} \min \mybrace{1 , n^{\frac{1}{q'} - \frac1q}} \min \mybrace{1 , m^{\frac{1}{p'} -\frac12}} \min \mybrace{1 , n^{\frac{1}{2} - \frac{1}{q'}}}}{\sqrt{\min \mybrace{m , n}}} \mynorm{\boldsymbol{A}}_F.
+%&= \frac{\min \mybrace{1 , m^{\frac1p - \frac{1}{p'}}} \min \mybrace{1 , n^{\frac{1}{q'} - \frac1q}} \min \mybrace{1 , m^{\frac{1}{p'} -\frac12}} \min \mybrace{1 , n^{\frac{1}{2} - \frac{1}{q'}}}}{\sqrt{\min \mybrace{m , n}}} \sqrt{\displaystyle\sum_{i=1}^m \displaystyle\sum_{j=1}^n \myabs{a_{i,j}}^2}.
+\end{aligned}
+\end{gather*}
+
+In order to prove the upper-bound of the last set of bounds, using the upper-bound of second set of bounds in Property \ref{prp:OperatorProperties} ($\ell_{q {\to} p}$ operator-norm properties), i.e., $\forall \myparanthese{q , p , q' , p'} \ssin \mathbb{R}^4_{>0} , \forall \boldsymbol{A} \ssin \mathbb{R}^{m \stimes n} : \Vert \boldsymbol{A} \Vert_{q \to p} \sleq \max \{1 , m^{1/p \sm 1/{p'}} \} \max \{1 , n^{1/{q'} \sm 1/q} \} \Vert \boldsymbol{A} \Vert_{q' \to p'}$, we will have the following first line of inequalities.
+Then, by utilising the same inequality once again, this time for $q' \seq p' \seq 2$, we get the following second line of inequalities.
+%The reason that first the relation with $\Vert \boldsymbol{A} \Vert_{q' \to p'}$ is stated and then the relation with $\Vert \boldsymbol{A} \Vert_{2 \to 2}$, is that if in a problem the $q$ and $p$ values are bounded based on some thresholds such as $q'$ and $p'$, respectively, e.g., $q \sleq / \sgeq q'$ and $p \sleq / \sgeq p'$, then there could be a unique solution to the related $\min$ and $\max$ operators.
+%Whereas, if directly the relation with $\Vert \boldsymbol{A} \Vert_{2 \to 2}$ was stated, and supposing that $p \sgeq 1$, then form instance $\min \{1 , m^{1/p \sm 1/{2}} \}$ would have two values based on the value of $p$ compared to $1$.
+But from \cite{Golub2013}, we have $\Vert \boldsymbol{A} \Vert_{2 \to 2} \sleq \Vert \boldsymbol{A} \Vert_F$, which produces the following last line:
+\begin{gather*}
+\begin{aligned}
+\mynorm{\boldsymbol{A}}_{q \to p} &\leq 
+\max \mybrace{1 , m^{\frac1p - \frac{1}{p'}}} \max \mybrace{1 , n^{\frac{1}{q'} - \frac1q}} \mynorm{\boldsymbol{A}}_{q' \to p'} \\
+&\leq \max \mybrace{1 , m^{\frac1p - \frac{1}{p'}}} \max \mybrace{1 , n^{\frac{1}{q'} - \frac1q}} \max \mybrace{1 , m^{\frac{1}{p'} - \frac12}} \max \mybrace{1 , n^{\frac12 - \frac{1}{q'}}} \mynorm{\boldsymbol{A}}_{2 \to 2} \\
+&\leq \max \mybrace{1 , m^{\frac1p - \frac{1}{p'}}} \max \mybrace{1 , n^{\frac{1}{q'} - \frac1q}} \max \mybrace{1 , m^{\frac{1}{p'} -\frac12}} \max \mybrace{1 , n^{\frac{1}{2} - \frac{1}{q'}}} \mynorm{\boldsymbol{A}}_F.
+%&= \max \mybrace{1 , m^{\frac1p - \frac{1}{p'}}} \max \mybrace{1 , n^{\frac{1}{q'} - \frac1q}} \max \mybrace{1 , m^{\frac{1}{p'} -\frac12}} \max \mybrace{1 , n^{\frac{1}{2} - \frac{1}{q'}}} \sqrt{\displaystyle\sum_{i=1}^m \displaystyle\sum_{j=1}^n \myabs{a_{i,j}}^2}.
+\end{aligned}
+\end{gather*}
+4) In order to prove the relation between the $\ell_{q {\to} p}$ operator-norm of two matrices $\boldsymbol{A} \ssin \mathbb{R}^{m \stimes n}$ and $\boldsymbol{B} \ssin \mathbb{R}^{m \stimes n}$, having the condition $\forall i , j$, $|a_{i,j}| \sleq b_{i,j} \seq \max_{i,j} |a_{i,j}|$, or even when the on-diagonal entries are set to zero, we can utilise the second bounds   proposed in the current property.
+First, using the lower-bound of the mentioned set of bounds, i.e., $\forall \myparanthese{q , p , q' , p'} \ssin \mathbb{R}^4_{>0} , \forall \boldsymbol{A} \ssin \mathbb{R}^{m \stimes n} : \Vert \boldsymbol{A} \Vert_{q \to p} \sgeq \min \{1 , m^{1/p \sm 1/{p'}} \} \min \{1 , n^{1/{q'} \sm 1/q} \} \Vert \boldsymbol{A} \Vert_{q' \to p'}$, for $q' \seq 1$ and $p' \seq \infty$, the following first line is produced.
+Then considering $\min \{ 1 , m^{1/p} \} \seq 1$ and also $\Vert \boldsymbol{A} \Vert_{1 \to \infty} \seq \max_{i,j} |a_{i,j}| \seq \max_{i,j} |b_{i,j}| \seq \Vert \boldsymbol{B} \Vert_{1 \to \infty}$, we can substitute $\Vert \boldsymbol{A} \Vert_{1 \to \infty}$ by $\Vert \boldsymbol{B} \Vert_{1 \to \infty}$ to have the following second line.
+Again, using the same lower-bound, this time for $q \seq 1$, $p \seq \infty$, $q' \seq q$ and $p' \seq p$, we reach the following third line:
+\begin{gather*}
+\begin{aligned}
+\mynorm{\boldsymbol{A}}_{q \to p} &\geq 
+\min \mybrace{1 , m^{\frac1p}} \min \mybrace{1 , n^{1 - \frac1q}} \mynorm{\boldsymbol{A}}_{1 \to \infty} \\
+&= \min \mybrace{1 , n^{1 - \frac1q}} \mynorm{\boldsymbol{B}}_{1 \to \infty} \\
+&\geq \min \mybrace{1 , n^{1 - \frac1q}} \min \mybrace{1 , m^{-\frac1p}} \min \mybrace{1 , n^{\frac1q - 1}} \mynorm{\boldsymbol{B}}_{q \to p} \\
+&= m^{-\frac1p} n^{-\myabs{1 - \frac1q}} \mynorm{\boldsymbol{B}}_{q \to p}. \\
+\end{aligned}
+\end{gather*}
+Therefore, 
+\begin{gather*}
+\begin{aligned}
+\frac{\mynorm{\boldsymbol{A}}_{q \to p}}{\mynorm{\boldsymbol{B}}_{q \to p}} \geq m^{-\frac1p} n^{-\myabs{1 - \frac1q}} \xLongrightarrow{m^{-\frac1p} n^{-\myabs{1 - \frac1q}} \leq 1} \mynorm{\boldsymbol{A}}_{q \to p} \leq \mynorm{\boldsymbol{B}}_{q \to p}.
+\end{aligned}
+\end{gather*}
+
+Similarly, using the upper-bound of the mentioned set of bounds, i.e., $\forall \myparanthese{q , p , q' , p'} \ssin \mathbb{R}^4_{>0} , \forall \boldsymbol{A} \ssin \mathbb{R}^{m \stimes n} : \Vert \boldsymbol{A} \Vert_{q \to p} \sleq \max \{1 , m^{1/p \sm 1/{p'}} \} \max \{1 , n^{1/{q'} \sm 1/q} \} \Vert \boldsymbol{A} \Vert_{q' \to p'}$, and following above steps, we obtain:
+\begin{gather*}
+\begin{aligned}
+\frac{\mynorm{\boldsymbol{B}}_{q \to p}}{\mynorm{\boldsymbol{A}}_{q \to p}} \leq m^{\frac1p} n^{\myabs{1 - \frac1q}} \xLongrightarrow{m^{\frac1p} n^{\myabs{1 - \frac1q}} \geq 1} \mynorm{\boldsymbol{A}}_{q \to p} \leq \mynorm{\boldsymbol{B}}_{q \to p}.
+\end{aligned}
+\end{gather*}
+\end{itemize}
+\end{proof}

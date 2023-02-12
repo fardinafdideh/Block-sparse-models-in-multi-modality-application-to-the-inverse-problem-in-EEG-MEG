@@ -1,0 +1,12 @@
+\begin{property}[Block-MCC$_{q,p}$ for intra-block orthonormality]
+\label{prp:IntraBlkO}
+If the dictionary $\myPhi$ has intra-block orthonormality, i.e., for $1 \sleq k \sleq K$, \myhl{$\myPhi^T[k] \myPhi[k] \seq \boldsymbol{I}_{d_k}$}, then 
+%$\forall q \sg 0$ and $\forall p \sgeq 1$ 
+$\forall (q , p) \ssin \mathbb{R}^2_{>0}$ we have:
+\begin{equation*}
+M_{q,p}\myparanthese{\myPhi} = \max_{k,k' \neq k} \frac{d_{k}^{-\frac1p} \, d_{k'}^{\frac1q}}{d_{max}} \mynorm{\myPhi^T \mybracket{k} \myPhi \mybracket{k'}}_{q \to p}.
+\end{equation*}
+\end{property}
+\begin{proof}
+Taking into account that, for an orthonormal matrix we have $\boldsymbol{A}^\dagger \seq \boldsymbol{A}^T$, the result is immediately obtained from the Definition \ref{def:BMIC} (block coherence).
+\end{proof}

@@ -1,0 +1,162 @@
+\chapter*{Mathematical notations and nomenclature}
+\addstarredchapter{Mathematical notations and nomenclature}
+\markboth{Mathematical notations and nomenclature}{Mathematical notations and nomenclature}
+%-------------------------------------------------------------------------------------------
+\paragraph{Mathematical notations}
+Throughout the manuscript, we represent matrices, vectors and scalars by boldface uppercase characters (e.g., $\boldsymbol{A}$), boldface lowercase italic characters (e.g., $\boldsymbol{a}$), and lowercase italic characters (e.g., $a$), respectively.
+
+The mathematical notations used in the manuscript are shown in table \ref{table:Mathematical notations}.
+To better formulate the block-wise indexing, let $\mathbb{P}$ be a partitioning of indices of elements in vector $\boldsymbol{a}$ or indices of columns in matrix $\boldsymbol{A}$.
+Then suppose $\mathbb{P}_i$ indicates the $i^{th}$ partition and $\mathbb{P}_i(j)$ indexes the $j^{th}$ element in $\mathbb{P}_i$. 
+
+As an example of block-wise indexing, take vector $\boldsymbol{b} \ssin \mathbb{R}^{5}$, matrix $\boldsymbol{A} \ssin \mathbb{R}^{2 \stimes 5}$, and the partitioning $\mathbb{P} \seq \{\{1,2\},\{3,4\},\{5\}\}$.
+Then, $\boldsymbol{b}[2]$ is concatenation of the elements $b_3$ and $b_4$, whereas $\boldsymbol{A}[2]$ is concatenation of the columns $\boldsymbol{a}_3$ and $\boldsymbol{a}_4$, and $\boldsymbol{a}_1[2]$ is the column $\boldsymbol{a}_3$.
+\begin{table}[hb]
+%\begin{adjustbox}{width=1\textwidth} % ,totalheight=\textheight,.5
+\begin{center}
+%\centering
+%\tiny
+\begin{tabular}{cc}
+\toprule
+%\cline{2-4}
+%\multicolumn{2}{c}{Vectors and matrices} \\ 
+%\midrule
+%\multicolumn{1}{l}{$a$} & \multicolumn{1}{l}{Scalars (lowercase italic characters)} \\
+%\multicolumn{1}{l}{$\boldsymbol{a}$} & \multicolumn{1}{l}{Vectors (boldface lowercase italic characters)} \\
+%\multicolumn{1}{l}{$\boldsymbol{A}$} & \multicolumn{1}{l}{Matrices (boldface uppercase characters)} \\
+%\midrule
+\multicolumn{2}{c}{Operators} \\ 
+\midrule
+\multicolumn{1}{l}{$\boldsymbol{A}^T$} & \multicolumn{1}{l}{Transpose of matrix $\boldsymbol{A}$}   \\
+%\multicolumn{1}{l}{$\boldsymbol{A}^H$} & \multicolumn{1}{l}{Conjugate transpose of matrix $\boldsymbol{A}$}   \\
+\multicolumn{1}{l}{$\boldsymbol{A}^\dagger$} & \multicolumn{1}{l}{Moore-Penrose pseudo-inverse of matrix $\boldsymbol{A}$}   \\
+\multicolumn{1}{l}{$\boldsymbol{I}_{d}$} & \multicolumn{1}{l}{Identity matrix in $\mathbb{R}^{d \stimes d}$}   \\
+\multicolumn{1}{l}{$\boldsymbol{1}_{d_1 \stimes d_2}$} & \multicolumn{1}{l}{Matrix of ones in $\mathbb{R}^{d_1 \stimes d_2}$}   \\
+\midrule
+\multicolumn{2}{c}{Element-wise indexing} \\ 
+\midrule
+\multicolumn{1}{l}{$a_i$} & \multicolumn{1}{l}{$i^{th}$ element in vector $\boldsymbol{a}$} \\
+\multicolumn{1}{l}{$\boldsymbol{a}_i$} & \multicolumn{1}{l}{$i^{th}$ column in matrix $\boldsymbol{A}$} \\
+\multicolumn{1}{l}{$a_{i,j}$} & \multicolumn{1}{l}{The element in the $i^{th}$ row and $j^{th}$ column in the matrix $\boldsymbol{A}$} \\
+\midrule
+\multicolumn{2}{c}{Block-wise indexing} \\ 
+\midrule
+\multicolumn{1}{l}{$\mathbb{P}$} & \multicolumn{1}{l}{Partitioning of indices} \\
+\multicolumn{1}{l}{$\boldsymbol{a}[i]$} & \multicolumn{1}{l}{$i^{th}$ block of elements in vector $\boldsymbol{a}$, i.e., $\boldsymbol{a}[i] \seq [a_k \, | \, k \ssin \mathbb{P}_i]$} \\
+\multicolumn{1}{l}{$\boldsymbol{A}[i]$} & \multicolumn{1}{l}{$i^{th}$ block of columns in matrix $\boldsymbol{A}$, i.e., $\boldsymbol{A}[i] \seq [\boldsymbol{a}_k \, | \, k \ssin \mathbb{P}_i]$} \\
+\multicolumn{1}{l}{$\boldsymbol{a}_j[i]$} & \multicolumn{1}{l}{$j^{th}$ column in block $\boldsymbol{A}[i]$, i.e., $\boldsymbol{a}_j[i] \seq [\boldsymbol{a}_k \, | \, k \ssin \mathbb{P}_i(j)]$} \\
+\bottomrule
+\end{tabular}
+\caption{The mathematical notations used throughout the manuscript.}
+\label{table:Mathematical notations}
+%\end{adjustbox}
+\end{center} 
+\end{table}
+\FloatBarrier
+%\newpage
+
+%Throughout the manuscript, we represent matrices, vectors and scalars by boldface uppercase letters (e.g., $\boldsymbol{A}$), boldface lowercase italic letters (e.g., $\boldsymbol{a}$), and lowercase italic letters (e.g., $a$), respectively. 
+
+%For indexing the given matrix $\boldsymbol{A}$, $\boldsymbol{A}[k]$ denotes the $k^{th}$ block of columns in $\boldsymbol{A}$, $\boldsymbol{a}_{j}[k]$ stands for the $j^{th}$ column in the $k^{th}$ block of $\boldsymbol{A}$, $\boldsymbol{a}_k$ stands for the $k^{th}$ column of $\boldsymbol{A}$, and $a_{i,j}$ indexes the element in the $i^{th}$ row and $j^{th}$ column of the matrix $\boldsymbol{A}$.  
+%Similarly for indexing the given vector $\boldsymbol{b}$, $\boldsymbol{b}[k]$ denotes the $k^{th}$ block of elements in $\boldsymbol{b}$, $b_{j}[k]$ stands for the $j^{th}$ element in the $k^{th}$ block of $\boldsymbol{b}$, and $b_k$ stands for the $k^{th}$ element of $\boldsymbol{b}$.
+%\begin{remark}
+%For better clarifying the indexing convention of matrices and vectors, the block-wise indexing and its corresponding equivalent element-wise indexing is shown in table \ref{table:Indexing}.
+%\end{remark}
+%\begin{table}[ht]
+%\begin{adjustbox}{width=1\textwidth} % ,totalheight=\textheight,.5
+%\begin{center}
+%\centering
+%\tiny
+%\begin{tabular}{cccccc}
+%\toprule
+%\cline{2-4}
+%\multicolumn{3}{c}{Vector indexing} & \multicolumn{3}{c}{Matrix indexing}   \\ \midrule %\hline
+%\multicolumn{1}{c}{indexing} & \multicolumn{1}{c}{block-wise} &  \multicolumn{1}{c}{element-wise} & \multicolumn{1}{c}{indexing} & \multicolumn{1}{c}{block-wise} &  \multicolumn{1}{c}{element-wise}\\ \midrule %\hline
+%\multicolumn{1}{l}{$k^{th}$ block of $\boldsymbol{b}$} & \multicolumn{1}{l}{$\boldsymbol{b}\mybracket{k}$} & \multicolumn{1}{l}{$\boldsymbol{b}_{\sum_{i=1}^{k-1} d_i + 1: \sum_{i=1}^{k} d_i}$} & \multicolumn{1}{l}{$k^{th}$ block of columns of $\boldsymbol{A}$} & \multicolumn{1}{l}{$\boldsymbol{A}\mybracket{k}$} &  \multicolumn{1}{l}{$\boldsymbol{A}_{\sum_{i=1}^{k-1} d_i + 1: \sum_{i=1}^{k} d_i}$}\\ %\cline{1-1}%\hline
+%\multicolumn{1}{l}{$j^{th}$ element in $\boldsymbol{b}\mybracket{k}$} & \multicolumn{1}{l}{$b_j\mybracket{k}$} & \multicolumn{1}{l}{$b_{\sum_{i=1}^{k-1} d_i + j}$} & \multicolumn{1}{l}{$j^{th}$ column of $\boldsymbol{A}\mybracket{k}$} & \multicolumn{1}{l}{$\boldsymbol{a}_j\mybracket{k}$} & \multicolumn{1}{l}{$\boldsymbol{a}_{\sum_{i=1}^{k-1} d_i +j}$}    \\ %\cline{1-1} %\hline
+%   &  & & \multicolumn{1}{l}{$i^{th}$ row and $j^{th}$ column of $\boldsymbol{A}\mybracket{k}$} & \multicolumn{1}{l}{$a_{j_i}\mybracket{k}$} & \multicolumn{1}{l}{$a_{i,\sum_{l=1}^{k-1} d_l+j}$}    \\ \bottomrule %\hline 
+%\end{tabular}
+%\end{adjustbox}
+%\caption{Block-wise and its corresponding equivalent element-wise vector and matrix indexing. $d_k$ is the length of block $k$.}
+%\label{table:Indexing}
+%\end{center} 
+%\end{table}
+%-------------------------------------------------------------------------------------------
+\paragraph{Nomenclature}
+The nomenclature used throughout the manuscript can be divided into three categories as shown in table \ref{table:nomenclature}.
+\begin{table}[hb]
+%\begin{adjustbox}{width=1\textwidth} % ,totalheight=\textheight,.5
+\begin{center}
+%\centering
+%\tiny
+\begin{tabular}{cc}
+\toprule
+%\cline{2-4}
+\multicolumn{2}{c}{Structure and model} \\ 
+\midrule
+\multicolumn{1}{l}{$\boldsymbol{y}$} & \multicolumn{1}{l}{Measurement vector in $\mathbb{R}^{m}$} \\ 
+\multicolumn{1}{l}{$\myPhi$} & \multicolumn{1}{l}{Dictionary (lead-field) matrix in $\mathbb{R}^{m \times n}$} \\
+\multicolumn{1}{l}{$\mybetaz$} & \multicolumn{1}{l}{True representation vector in $\mathbb{R}^{n}$}   \\
+%\multicolumn{1}{l}{$\mybetao$} & \multicolumn{1}{l}{Any alternative representation vector}   \\
+\multicolumn{1}{l}{$\hat{\mybeta}$} & \multicolumn{1}{l}{Estimated representation vector}   \\ 
+\multicolumn{1}{l}{$d_k$} & \multicolumn{1}{l}{Cardinality of the $k^{th}$ partition}   \\ % Length of block $k$
+\multicolumn{1}{l}{$K$} & \multicolumn{1}{l}{Number of blocks}   \\
+\multicolumn{1}{l}{$[ \boldsymbol{A} , \boldsymbol{B} ]$} & \multicolumn{1}{l}{Concatenation of matrices $\boldsymbol{A}$ and $\boldsymbol{B}$}   \\
+\multicolumn{1}{l}{$\left\langle \boldsymbol{a} , \boldsymbol{b} \right\rangle$} & \multicolumn{1}{l}{Inner product of vectors $\boldsymbol{a}$ and $\boldsymbol{b}$, i.e., $\boldsymbol{a}^T \boldsymbol{b}$}   \\
+\midrule
+\multicolumn{2}{c}{Optimisation problem} \\ 
+\midrule
+\multicolumn{1}{l}{$\mynorm{\boldsymbol{a}}_p$} & \multicolumn{1}{l}{$\ell_p$ norm of vector $\boldsymbol{a}$}   \\
+\multicolumn{1}{l}{$P_{p,q,\varepsilon} \myparanthese{\boldsymbol{a},\boldsymbol{b}}$} & \multicolumn{1}{l}{$\min_{\boldsymbol{a}} \mynorm{\boldsymbol{a}}_p \quad s.t. \quad \mynorm{\boldsymbol{b}}_q \sleq \varepsilon$}   \\
+\multicolumn{1}{l}{$P_{p}$} & \multicolumn{1}{l}{$\min_{\mybeta} \mynorm{\mybeta}_p \quad s.t. \quad \boldsymbol{y} \seq \myPhi \mybeta$}   \\
+\multicolumn{1}{l}{$\mynorm{\boldsymbol{a}}_{p_1,p_2}$} & \multicolumn{1}{l}{$\ell_{p_1,p_2}$ (pseudo-)mixed-norm of vector $\boldsymbol{a}$}   \\
+\multicolumn{1}{l}{$P_{\myparanthese{p_1,p_2},q,\varepsilon} \myparanthese{\boldsymbol{a},\boldsymbol{b}}$} & \multicolumn{1}{l}{$\min_{\boldsymbol{a}} \mynorm{\boldsymbol{a}}_{p_1,p_2} \quad s.t. \quad \mynorm{\boldsymbol{b}}_q \sleq \varepsilon$}   \\
+\multicolumn{1}{l}{$P_{p_1,p_2}$} & \multicolumn{1}{l}{$\min_{\mybeta} \mynorm{\mybeta}_{p_1,p_2} \quad s.t. \quad \boldsymbol{y} \seq \myPhi \mybeta$}   \\
+\multicolumn{1}{l}{$\mynorm{\boldsymbol{a}}_{\boldsymbol{w};p_1,p_2}$} & \multicolumn{1}{l}{$\ell_{p_1,p_2}^{\boldsymbol{w}}$ weighted (pseudo-)mixed-norm of vector $\boldsymbol{a}$}   \\
+\multicolumn{1}{l}{$P_{\myparanthese{\boldsymbol{w};p_1,p_2},q,\varepsilon} \myparanthese{\boldsymbol{a},\boldsymbol{b}}$} & \multicolumn{1}{l}{$\min_{\boldsymbol{a}} \mynorm{\boldsymbol{a}}_{\boldsymbol{w};p_1,p_2} \quad s.t. \quad \mynorm{\boldsymbol{b}}_q \sleq \varepsilon$}   \\
+\multicolumn{1}{l}{$P_{\boldsymbol{w};p_1,p_2}$} & \multicolumn{1}{l}{$\min_{\mybeta} \mynorm{\mybeta}_{\boldsymbol{w};p_1,p_2} \quad s.t. \quad \boldsymbol{y} \seq \myPhi \mybeta$}   \\
+\midrule
+\multicolumn{2}{c}{Characterisations} \\ 
+\midrule
+\multicolumn{1}{l}{$I\myparanthese{a}$} & \multicolumn{1}{l}{Indicator function of scalar $a$, i.e., $
+I(a) {\myeq}
+  \begin{cases}
+    1,  & \quad \text{if } \myabs{a} \sg 0\\
+    0,  & \quad \text{if } a \seq 0\\
+  \end{cases}
+  $
+  }
+     \\
+\multicolumn{1}{l}{$\mynorm{\boldsymbol{A}}_{q {\to} p}$} & \multicolumn{1}{l}{$\ell_{q {\to} p}$ operator-norm of matrix $\boldsymbol{A}$, i.e., $\mynorm{\boldsymbol{A}}_{q \to p} {\myeq} 
+ \max_{\mynorm{\boldsymbol{a}}_q \leq 1} \mynorm{\boldsymbol{A} \boldsymbol{a}}_{p}$}   \\
+\multicolumn{1}{l}{$S\myparanthese{\mybeta}$} & \multicolumn{1}{l}{Support of vector $\mybeta$}   \\
+\multicolumn{1}{l}{$S_b\myparanthese{\mybeta}$} & \multicolumn{1}{l}{Block support of vector $\mybeta$}   \\
+\multicolumn{1}{l}{$\myabs{S\myparanthese{\mybeta}}$} & \multicolumn{1}{l}{Cardinality of $S\myparanthese{\mybeta}$}   \\
+\multicolumn{1}{l}{\myhl{$\boldsymbol{G}(\myPhi)$}} & \multicolumn{1}{l}{\myhl{Gram matrix of $\myPhi$}}   \\
+\multicolumn{1}{l}{\myhl{$\myKerMath$}} & \multicolumn{1}{l}{\myhl{$\myKerTxt$ of $\myPhi$, i.e., $\myKerMath {\myeq} \{ \boldsymbol{x} \ssin \mathbb{R}^n, \, \myPhi \boldsymbol{x} \seq \boldsymbol{0} \}$}}   \\
+\multicolumn{1}{l}{\myhl{$\mySpkMath$}} & \multicolumn{1}{l}{\myhl{$\mySpkTxt$ of $\myPhi$, i.e., $\mySpkMath {\myeq} \min_{\boldsymbol{x} \in \myKerMath\backslash\left\{\boldsymbol{0}\right\}} \mynorm{\boldsymbol x}_{0}$}}   \\
+\multicolumn{1}{l}{\myhl{$\myBSpkMath$}} & \multicolumn{1}{l}{\myhl{$\myBSpkTxt$ of $\myPhi$}} \\
+%, i.e., $\myBSpkMath \myeq \min_{\boldsymbol{x} \in \myKerMath\backslash\left\{\boldsymbol{0}\right\}} \mynorm{\boldsymbol x}_{p,0} \quad \forall p \geq 0$}   \\
+\multicolumn{1}{l}{\myhl{$\overbar{M} \myparanthese{\myPhiOne,\myPhiTwo}$}} & \multicolumn{1}{l}{\myhl{Basic mutual coherence constant of $\myPhiOne$ and $\myPhiTwo$}}   \\
+\multicolumn{1}{l}{$M\myparanthese{\myPhi}$} & \multicolumn{1}{l}{Mutual coherence constant of dictionary $\myPhi$}   \\
+\multicolumn{1}{l}{\myhl{$M\myparanthese{\myPhi , k}$}} & \multicolumn{1}{l}{\myhl{Cumulative mutual coherence constant of dictionary $\myPhi$}} \\
+%, or $\ell_1$-coherence function}   \\
+\multicolumn{1}{l}{\myhl{$M_p\myparanthese{\myPhi , k}$}} & \multicolumn{1}{l}{\myhl{$\ell_p$-coherence function}}   \\
+\multicolumn{1}{l}{$\overbar{M}_{q,p}\myparanthese{\myPhiOne,\myPhiTwo}$} & \multicolumn{1}{l}{$({q,p})$-basic block mutual coherence constant of $\myPhiOne$ and $\myPhiTwo$}   \\ % two orthonormal bases
+\multicolumn{1}{l}{$M_{q,p}\myparanthese{\myPhi}$} & \multicolumn{1}{l}{$({q,p})$-block mutual coherence constant of dictionary $\myPhi$}   \\
+\multicolumn{1}{l}{$M_{q,p}\myparanthese{\myPhi , k}$} & \multicolumn{1}{l}{$({q,p})$-cumulative block mutual coherence constant of dictionary $\myPhi$}   \\
+\multicolumn{1}{l}{\myhl{$\overbar{M}^{Eldar}_{Inter}\myparanthese{\myPhiOne,\myPhiTwo}$}} & \multicolumn{1}{l}{\myhl{Eldar et al.\textquotesingle s basic block-coherence constant of $\myPhiOne$ and $\myPhiTwo$}}   \\ %\textsc{\char13}
+\multicolumn{1}{l}{\myhl{$M^{Eldar}_{Intra}\myparanthese{\myPhi}$}} & \multicolumn{1}{l}{\myhl{Eldar et al.\textquotesingle s intra-block coherence constant of dictionary $\myPhi$}}   \\
+\multicolumn{1}{l}{\myhl{$M^{Eldar}_{Inter}\myparanthese{\myPhi}$}} & \multicolumn{1}{l}{\myhl{Eldar et al.\textquotesingle s inter-block coherence constant of dictionary $\myPhi$}}   \\
+
+\multicolumn{1}{l}{$M_{Inter}^{Eldar}\myparanthese{\myPhi , k}$} & \multicolumn{1}{l}{Cumulative inter-block coherence constant of dictionary $\myPhi$}   \\
+\multicolumn{1}{l}{\myhl{$Q_{p}\myparanthese{S_b\myparanthese{\mybeta},\myPhi}$}} & \multicolumn{1}{l}{\myhl{Characterisation of null space property}}   \\
+\multicolumn{1}{l}{$Q_{p_1,p_2}\myparanthese{S_b\myparanthese{\mybeta},\myPhi}$} & \multicolumn{1}{l}{Characterisation of block null space property}   \\
+\multicolumn{1}{l}{$Q_{\boldsymbol{w};p_1,p_2}\myparanthese{S_b\myparanthese{\mybeta},\myPhi}$} & \multicolumn{1}{l}{Weighted characterisation of block null space property}   \\
+\bottomrule
+\end{tabular}
+\caption{The nomenclature used throughout the manuscript.}
+\label{table:nomenclature}
+%\end{adjustbox}
+\end{center} 
+\end{table}

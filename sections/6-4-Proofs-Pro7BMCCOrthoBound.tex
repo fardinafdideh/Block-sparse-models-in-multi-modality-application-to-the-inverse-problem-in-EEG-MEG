@@ -1,0 +1,134 @@
+\begin{proof}
+%Since the operator norm is non-negative, simply it can be seen that $M_{q,p}(\myPhi) \sgeq 0$.
+%We begin the proof by the following property:
+%\begin{property}[Submultiplicativity property]
+%\label{lm:Submultiplicativity}
+%Supposing $\boldsymbol{A}$ and $\boldsymbol{B}$ as two matrices, we have the following inequality for the operator-norm of their product:
+%\begin{gather*}
+%\begin{aligned}
+%\mynorm{\boldsymbol{A} \boldsymbol{B}}_{q \to p} 
+%&\leq \max\mybrace{\mynorm{\boldsymbol{A}}_{q \to p} \mynorm{\boldsymbol{B}}_{q \to q} , \mynorm{\boldsymbol{A}}_{p \to p} \mynorm{\boldsymbol{B}}_{q \to %p}} \\
+%&\leq \max\mybrace{\mynorm{\boldsymbol{A}}_{q \to p} , \mynorm{\boldsymbol{A}}_{p \to p}} 
+%\max\mybrace{\mynorm{\boldsymbol{B}}_{q \to q} ,  \mynorm{\boldsymbol{B}}_{q \to p}}.
+%\end{aligned}
+%\end{gather*}
+%\end{property}
+%\begin{proof}%[Submultiplicativity property]
+%\begin{equation*}
+%\begin{aligned}
+%\mynorm{\boldsymbol{A} \boldsymbol{B}}_{q \to p} = \max_{\boldsymbol{x} \neq \boldsymbol{0}} \frac{\mynorm{\boldsymbol{ABx}}_{p}}{\mynorm{\boldsymbol{x}}_{q}} &= 
+%\begin{cases}
+%\displaystyle\max_{\boldsymbol{Bx} \neq \boldsymbol{0}} \frac{\mynorm{\boldsymbol{ABx}}_{p}}{\mynorm{\boldsymbol{Bx}}_{q}} \frac{\mynorm{\boldsymbol{Bx}}_{q}}{\mynorm{\boldsymbol{x}}_{q}}\\
+%and\\
+%\displaystyle\max_{\boldsymbol{Bx} \neq \boldsymbol{0}} \frac{\mynorm{\boldsymbol{ABx}}_{p}}{\mynorm{\boldsymbol{Bx}}_{p}} \frac{\mynorm{\boldsymbol{Bx}}_{p}}{\mynorm{\boldsymbol{x}}_{q}} \\
+%\end{cases}\\
+%&\leq \begin{cases}
+%\displaystyle\max_{\boldsymbol{y} \neq \boldsymbol{0}} \frac{\mynorm{\boldsymbol{Ay}}_{p}}{\mynorm{\boldsymbol{y}}_{q}} \displaystyle\max_{\boldsymbol{x} \neq \boldsymbol{0}} \frac{\mynorm{\boldsymbol{Bx}}_{q}}{\mynorm{\boldsymbol{x}}_{q}}\\
+%and\\
+%\displaystyle\max_{\boldsymbol{y} \neq \boldsymbol{0}} \frac{\mynorm{\boldsymbol{Ay}}_{p}}{\mynorm{\boldsymbol{y}}_{p}} \displaystyle\max_{\boldsymbol{x} \neq \boldsymbol{0}} \frac{\mynorm{\boldsymbol{Bx}}_{p}}{\mynorm{\boldsymbol{x}}_{q}}. \\
+%\end{cases}
+%\end{aligned}
+%\end{equation*}
+%\end{proof}
+Using the definition of $M_{q,p}(\myPhi)$ in Property \ref{prp:IntraBlkO}, and submultiplicativity property of operator-norm introduced in Property \ref{prp:OperatorProperties} ($\ell_{q {\to} p}$ operator-norm properties), we have:
+\begin{gather}
+\begin{aligned}
+\label{eq:BMCC_UpperBound} 
+\forall \myparanthese{q , p} \in \mathbb{R}^2_{>0}, \qquad
+M_{q,p}\myparanthese{\myPhi} &=
+\max_{k,k' \neq k} \frac{d_{k}^{-\frac1p} \, d_{k'}^{\frac1q}}{d_{max}} \mynorm{\myPhi^T \mybracket{k} \myPhi \mybracket{k'}}_{q \to p} \\
+&\leq \max_{k,k' \neq k} \frac{d_{k}^{-\frac1p} \, d_{k'}^{\frac1q}}{d_{max}} 
+\mynorm{\myPhi^T \mybracket{k}}_{q \to p} \mynorm{\myPhi[k']}_{q \to p} \max \mybrace{1 , m^{\frac1q - \frac1p}}.
+%\max \mybrace{\mynorm{\myPhi^T \mybracket{k}}_{q \to p}, \mynorm{\myPhi^T [k]}_{p \to p}} \max \mybrace{\mynorm{\myPhi \mybracket{k'}}_{q \to q},  \mynorm{\myPhi[k']}_{q \to p}}.
+\end{aligned}
+\end{gather}
+On the other hand, 
+%$d_{k}^{-1/p} d_{k'}^{1/q}$ is bounded between $d_{min}^{1/q} d_{max}^{-1/p}$ and $d_{min}^{-1/p} d_{max}^{1/q}$ and 
+from the following property, 
+%Lemma \ref{lm:qpTO22}, 
+$\Vert \cdot \Vert_{q {\to} p}$ can be bounded in terms of $\Vert \cdot \Vert_{2 {\to} 2}$, which is often called the spectral norm:
+\begin{property}[Bounds of $\ell_{q {\to} p}$ operator-norm in terms of $\ell_{2 {\to} 2}$]
+\label{lm:qpTO22}
+The bounds of the $\ell_{q {\to} p}$ operator-norm of a matrix $\boldsymbol{A} \ssin \mathbb{R}^{m \stimes n}$ in terms of its $\ell_{2 {\to} 2}$ operator-norm based on the second set of bounds in Property \ref{prp:OperatorProperties} ($\ell_{q {\to} p}$ operator-norm properties) for $q' \seq p' \seq 2$ is:
+\begin{gather*}
+\begin{aligned}
+&\mynorm{\boldsymbol{A}}_{q \to p} \geq \min \mybrace{1 , m^{\frac1p - \frac{1}{2}}} \min \mybrace{1 , n^{\frac{1}{2} - \frac1q}} \mynorm{\boldsymbol{A}}_{2 \to 2}, \\
+&\mynorm{\boldsymbol{A}}_{q \to p} \leq \max \mybrace{1 , m^{\frac1p - \frac{1}{2}}} \max \mybrace{1 , n^{\frac{1}{2} - \frac1q}} \mynorm{\boldsymbol{A}}_{2 \to 2}.
+\end{aligned}
+\end{gather*}
+These bounds for different values of $q$ and $p$ are shown in table \ref{table:qpTO22}.
+\begin{table}[bp]
+%\begin{adjustbox}{width=0.5\textwidth} % ,totalheight=\textheight,.5
+\centering
+%\tiny
+\begin{tabular}{ccccc}
+\toprule
+%\cline{2-4}
+\multicolumn{1}{c}{} &\multicolumn{1}{c}{${q\, \& \, p \leq 2}$} & \multicolumn{1}{c}{${q\, \& \, p \geq 2}$}  & \multicolumn{1}{c}{${q \leq 2\, \& \, p \geq 2}$} & \multicolumn{1}{c}{${q \geq 2\, \& \, p \leq 2}$} \\ \midrule %\hline
+\multicolumn{1}{r}{${\frac{\mynorm{\boldsymbol{A}}_{q \to p}}{\mynorm{\boldsymbol{A}}_{2 \to 2}} \leq}$} &\multicolumn{1}{c}{$m^{\frac1p - \frac12}$} & \multicolumn{1}{c}{$n^{-\frac1q + \frac12}$} & \multicolumn{1}{c}{$1$} &\multicolumn{1}{c}{$m^{\frac1p - \frac12} n^{-\frac1q + \frac12}$}    \\ %\midrule %\hline
+\multicolumn{1}{r}{${\frac{\mynorm{\boldsymbol{A}}_{q \to p}}{\mynorm{\boldsymbol{A}}_{2 \to 2}} \geq}$} &\multicolumn{1}{c}{$n^{-\frac1q + \frac12}$} & \multicolumn{1}{c}{$m^{\frac1p - \frac12}$} & \multicolumn{1}{c}{$m^{\frac1p - \frac12} n^{-\frac1q + \frac12}$} &\multicolumn{1}{c}{$1$}    \\
+\bottomrule %\hline
+\end{tabular}
+%\end{adjustbox}
+\caption{Bounds of $\Vert \boldsymbol{A} \Vert_{q \to p}/ \Vert \boldsymbol{A} \Vert_{2 \to 2}$ for different values of $q$ and $p$, where, $\boldsymbol{A}$ is a $m$ by $n$ matrix.}
+\label{table:qpTO22}
+\end{table}
+\end{property}
+\iffalse
+\begin{proof}%[Bounds of $\mynorm{\cdot}_{q \to p}$]
+From the definition of the operator-norm \cite{Tropp2004b,Golub2013}, we have $\Vert \boldsymbol{A}\Vert_{q \to p} \seq \max_{\boldsymbol{a} \neq \boldsymbol{0}} \Vert \boldsymbol{Aa}\Vert_p {/} \Vert \boldsymbol{a}\Vert_q$, where, $\boldsymbol{A} \ssin \mathbb{R}^{d_1 \stimes d_2}$, $\boldsymbol{a} \ssin \mathbb{R}^{d_2}$, and hence $\boldsymbol{Aa} \ssin \mathbb{R}^{d_1}$.
+On the other hand, based on the bounds introduced in Property \ref{prp:VectorDivisionBound}, we have:
+
+
+for $0 \sless q' \sless p'$, and $\boldsymbol{b} \ssin \mathbb{R}^{d}$, we have $B1 {:} d^{1/p' \sm 1/q'} \sleq \Vert \boldsymbol{b} \Vert_{p'} {/} \Vert \boldsymbol{b} \Vert_{q'} \sleq 1$ and $B2 {:} 1 \sleq \Vert\boldsymbol{b} \Vert_{q'} {/} \Vert \boldsymbol{b} \Vert_{p'} \sleq d^{1/q' \sm 1/p'}$ \cite{Golub2013}.
+To compute the upper-bound of $\Vert \boldsymbol{A}\Vert_{q \to p} \seq \max_{\boldsymbol{a} \neq \boldsymbol{0}} \Vert \boldsymbol{Aa}\Vert_p {/} \Vert \boldsymbol{a}\Vert_q$, we need to find the maximum value of the numerator, i.e., $\Vert \boldsymbol{Aa}\Vert_p$, and the minimum value of the denominator, i.e., $\Vert \boldsymbol{a}\Vert_q$, for each case of pairs of $q$ and $p$.
+Similarly, the lower-bound can be computed.
+Utilising the two above-mentioned inequalities $B1$ and $B2$, in the following we demonstrate the values of table \ref{table:qpTO22}:
+\begin{itemize}
+\item ${q\, \& \, p \sless 2}$: To establish the upper-bound of $\Vert \boldsymbol{A}\Vert_{q \to p}$, using upper-bound of $B2$ with $q' \seq p$ and $p' \seq 2$, we have $\Vert \boldsymbol{Aa}\Vert_p \sleq d_1^{1/p \sm 1/2} \Vert \boldsymbol{Aa}\Vert_2$, whereas using lower-bound of $B2$ with $q' \seq q$ and $p' \seq 2$, we have $\Vert \boldsymbol{a}\Vert_q \sgeq \Vert \boldsymbol{a}\Vert_2$, therefore, $\Vert \boldsymbol{A}\Vert_{q \to p} \sleq \max_{\boldsymbol{a} \neq \boldsymbol{0}} d_1^{1/p \sm 1/2} \Vert \boldsymbol{Aa}\Vert_2 {/} \Vert \boldsymbol{a}\Vert_2 \seq d_1^{1/p \sm 1/2} \Vert \boldsymbol{A}\Vert_{2 \to 2}$.
+On the other hand, to find the lower-bound of $\Vert \boldsymbol{A}\Vert_{q \to p}$, using lower-bound of $B2$ with $q' \seq p$ and $p' \seq 2$, we have $\Vert \boldsymbol{Aa}\Vert_p \sgeq \Vert \boldsymbol{Aa}\Vert_2$, whereas using upper-bound of $B2$ with $q' \seq q$ and $p' \seq 2$, we have $\Vert \boldsymbol{a}\Vert_q \sleq d_2^{1/q \sm 1/2} \Vert \boldsymbol{a}\Vert_2$, therefore, $\Vert \boldsymbol{A}\Vert_{q \to p} \sgeq \max_{\boldsymbol{a} \neq \boldsymbol{0}} d_2^{-1/q \spl 1/2} \Vert \boldsymbol{Aa}\Vert_2 {/} \Vert \boldsymbol{a}\Vert_2 \seq d_2^{-1/q \spl 1/2} \Vert \boldsymbol{A}\Vert_{2 \to 2}$.
+\item ${q\, \& \, p \sg 2}$: To establish the upper-bound of $\Vert \boldsymbol{A}\Vert_{q \to p}$, using upper-bound of $B1$ with $p' \seq p$ and $q' \seq 2$, we have $\Vert \boldsymbol{Aa}\Vert_p \sleq \Vert \boldsymbol{Aa}\Vert_2$, whereas using lower-bound of $B1$ with $p' \seq q$ and $q' \seq 2$, we have $\Vert \boldsymbol{a}\Vert_q \sgeq d_2^{1/q \sm 1/2} \Vert \boldsymbol{a}\Vert_2$, therefore, $\Vert \boldsymbol{A}\Vert_{q \to p} \sleq \max_{\boldsymbol{a} \neq \boldsymbol{0}} d_2^{-1/q \spl 1/2} \Vert \boldsymbol{Aa}\Vert_2 {/} \Vert \boldsymbol{a}\Vert_2 \seq d_2^{-1/q \spl 1/2} \Vert \boldsymbol{A}\Vert_{2 \to 2}$.
+On the other hand, to find the lower-bound of $\Vert \boldsymbol{A}\Vert_{q \to p}$, using lower-bound of $B1$ with $p' \seq p$ and $q' \seq 2$, we have $\Vert \boldsymbol{Aa}\Vert_p \sgeq d_1^{1/p \sm 1/2} \Vert \boldsymbol{Aa}\Vert_2$, whereas using upper-bound of $B1$ with $p' \seq q$ and $q' \seq 2$, we have $\Vert \boldsymbol{a}\Vert_q \sleq \Vert \boldsymbol{a}\Vert_2$, therefore, $\Vert \boldsymbol{A}\Vert_{q \to p} \sgeq \max_{\boldsymbol{a} \neq \boldsymbol{0}} d_1^{1/p \sm 1/2} \Vert \boldsymbol{Aa}\Vert_2 {/} \Vert \boldsymbol{a}\Vert_2 \seq d_1^{1/p \sm 1/2} \Vert \boldsymbol{A}\Vert_{2 \to 2}$.
+\item ${q \sleq 2\, \& \, p \sgeq 2}$: To establish the upper-bound of $\Vert \boldsymbol{A}\Vert_{q \to p}$, using upper-bound of $B1$ with $p' \seq p$ and $q' \seq 2$, we have $\Vert \boldsymbol{Aa}\Vert_p \sleq \Vert \boldsymbol{Aa}\Vert_2$, whereas using lower-bound of $B2$ with $q' \seq q$ and $p' \seq 2$, we have $\Vert \boldsymbol{a}\Vert_q \sgeq \Vert \boldsymbol{a}\Vert_2$, therefore, $\Vert \boldsymbol{A}\Vert_{q \to p} \sleq \max_{\boldsymbol{a} \neq \boldsymbol{0}} \Vert \boldsymbol{Aa}\Vert_2 {/} \Vert \boldsymbol{a}\Vert_2 \seq \Vert \boldsymbol{A}\Vert_{2 \to 2}$.
+On the other hand, to find the lower-bound of $\Vert \boldsymbol{A}\Vert_{q \to p}$, using lower-bound of $B1$ with $p' \seq p$ and $q' \seq 2$, we have $\Vert \boldsymbol{Aa}\Vert_p \sgeq d_1^{1/p \sm 1/2} \Vert \boldsymbol{Aa}\Vert_2$, whereas using upper-bound of $B2$ with $q' \seq q$ and $p' \seq 2$, we have $\Vert \boldsymbol{a}\Vert_q \sleq d_2^{1/q \sm 1/2} \Vert \boldsymbol{a}\Vert_2$, therefore, $\Vert \boldsymbol{A}\Vert_{q \to p} \sgeq \max_{\boldsymbol{a} \neq \boldsymbol{0}} d_1^{1/p \sm 1/2} \, d_2^{-1/q \spl 1/2} \Vert \boldsymbol{Aa}\Vert_2 {/} \Vert \boldsymbol{a}\Vert_2 \seq d_1^{1/p \sm 1/2} \, d_2^{-1/q \spl 1/2} \Vert \boldsymbol{A}\Vert_{2 \to 2}$.
+\item ${q \sgeq 2\, \& \, p \sleq 2}$: To establish the upper-bound of $\Vert \boldsymbol{A}\Vert_{q \to p}$, using upper-bound of $B2$ with $q' \seq p$ and $p' \seq 2$, we have $\Vert \boldsymbol{Aa}\Vert_p \sleq d_1^{1/p \sm 1/2} \Vert \boldsymbol{Aa}\Vert_2$, whereas using lower-bound of $B1$ with $p' \seq q$ and $q' \seq 2$, we have $\Vert \boldsymbol{a}\Vert_q \sgeq d_2^{1/q \sm 1/2} \Vert \boldsymbol{a}\Vert_2$, therefore, $\Vert \boldsymbol{A}\Vert_{q \to p} \sleq \max_{\boldsymbol{a} \neq \boldsymbol{0}} d_1^{1/p \sm 1/2} d_2^{-1/q \spl 1/2} \Vert \boldsymbol{Aa}\Vert_2 {/} \Vert \boldsymbol{a}\Vert_2 \seq d_1^{1/p \sm 1/2} d_2^{-1/q \spl 1/2} \Vert \boldsymbol{A}\Vert_{2 \to 2}$.
+On the other hand, to find the lower-bound of $\Vert \boldsymbol{A}\Vert_{q \to p}$, using lower-bound of $B2$ with $q' \seq p$ and $p' \seq 2$, we have $\Vert \boldsymbol{Aa}\Vert_p \sgeq \Vert \boldsymbol{Aa}\Vert_2$, whereas using upper-bound of $B1$ with $p' \seq q$ and $q' \seq 2$, we have $\Vert \boldsymbol{a}\Vert_q \sleq \Vert \boldsymbol{a}\Vert_2$, therefore, $\Vert \boldsymbol{A}\Vert_{q \to p} \sgeq \max_{\boldsymbol{a} \neq \boldsymbol{0}}  \Vert \boldsymbol{Aa}\Vert_2 {/} \Vert \boldsymbol{a}\Vert_2 \seq \Vert \boldsymbol{A}\Vert_{2 \to 2}$.
+\end{itemize} 
+\end{proof}
+\fi
+Therefore, based on Property \ref{lm:qpTO22}, we upper-bound the $\ell_{q {\to} p}$ operator-norms of the upper-bound of Block-MCC in equation (\ref{eq:BMCC_UpperBound}):
+\begin{gather}
+\label{eq:BMCC-UB} 
+\begin{aligned} 
+M_{q,p}\myparanthese{\myPhi} \leq 
+\max_{k,k' \neq k} \frac{d_{k}^{-\frac1p} \, d_{k'}^{\frac1q}}{d_{max}} 
+&\mycolor{\max} \mybrace{1 , d_{k}^{\frac1p - \frac{1}{2}}} \mycolor{\max} \mybrace{1 , m^{\frac{1}{2} - \frac1q}} \mynorm{\myPhi^T \mybracket{k}}_{2 \to 2} \times\\ 
+&\mycolor{\max} \mybrace{1 , m^{\frac1p - \frac{1}{2}}} \mycolor{\max} \mybrace{1 , d_{k'}^{\frac{1}{2} - \frac1q}} \mynorm{\myPhi[k']}_{2 \to 2} 
+\max \mybrace{1 , m^{\frac1q - \frac1p}}.
+\end{aligned}
+\end{gather}
+
+But $\forall k, \Vert \myPhi^T [k] \Vert_{2 {\to} 2} \seq \Vert \myPhi[k] \Vert_{2 {\to} 2} \seq 1$, because for a typical matrix $\boldsymbol{A} \ssin \mathbb{R}^{m \stimes n}$ we have $\Vert \boldsymbol{A} \Vert_{2 {\to} 2} \seq \sigma_{max}(\boldsymbol{A}) \seq \sqrt{\lambda_{max}(\boldsymbol{A}^T \boldsymbol{A})}$, where, $\sigma$ and $\lambda$ are singular value and eigenvalue, respectively, but here $\boldsymbol{A}$ is an  orthonormal matrix, then $\boldsymbol{A}^T \boldsymbol{A} \seq \boldsymbol{I}_n$, and then $\lambda_{max}(\boldsymbol{I}_n) \seq 1$.
+
+Therefore, the inequality (\ref{eq:BMCC-UB}) is developed into table \ref{table:BMCC_UpperBound}.
+In each case in the last column of the table \ref{table:BMCC_UpperBound}, the maximum value is achieved for minimum block length $d_{min}$ with negative power, and maximum block length $d_{max}$ with positive power.
+The table \ref{table:BMIC-orth-bound} shows the upper-bound of $M_{q,p}(\myPhi)$ based on table \ref{table:BMCC_UpperBound}, for the basic tractable values of $q$ and $p$ based on table \ref{table:OperatorNorm}. 
+\begin{table}[tp]
+\begin{adjustbox}{width=1\textwidth} % ,totalheight=\textheight,.5
+\centering
+%\tiny
+\begin{tabular}{ccccc}
+\toprule
+%\cline{2-4}
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{$\max M_{q,p}(\myPhi)$} & \multicolumn{1}{c}{ } & \multicolumn{1}{c}{$\max M_{q,p}(\myPhi)$} \\ \midrule %\hline
+\multicolumn{1}{r}{${0 < q\, \& \, p \leq 2}$} & \multicolumn{1}{l}{$\displaystyle\max_{k,k' \neq k} d_{k}^{-\frac12} \, d_{k'}^{\frac1q} \, d_{max}^{-1} \, m^{\frac1p - \frac12} \, \max \mybrace{1 , m^{\frac1q - \frac1p}}$} & \multicolumn{1}{l}{$\leq$} & \multicolumn{1}{l}{$d_{min}^{-\frac12} \, d_{max}^{\frac1q - 1} \, m^{\frac1p - \frac12} \, \max \mybrace{1 , m^{\frac1q - \frac1p}}$}  \\ 
+\multicolumn{1}{r}{${q\, \& \, p \geq 2}$} & \multicolumn{1}{l}{$\displaystyle\max_{k,k' \neq k} d_{k}^{-\frac1p} \, d_{k'}^{\frac12} \, d_{max}^{-1} \, m^{\frac12 - \frac1q} \, \max \mybrace{1 , m^{\frac1q - \frac1p}}$} & \multicolumn{1}{l}{$\leq$} & \multicolumn{1}{l}{$d_{min}^{-\frac1p} \, d_{max}^{-\frac12} \, m^{\frac12 - \frac1q} \, \max \mybrace{1 , m^{\frac1q - \frac1p}}$}  \\
+\multicolumn{1}{r}{${0 < q \leq 2\, \& \, p \geq 2}$} & \multicolumn{1}{l}{$\displaystyle\max_{k,k' \neq k} d_{k}^{-\frac1p} \, d_{k'}^{\frac1q} \, d_{max}^{-1} \, m^{\frac1q - \frac1p}$}  & \multicolumn{1}{l}{$\leq$} & \multicolumn{1}{l}{$d_{min}^{-\frac1p} \, d_{max}^{\frac1q - 1} \, m^{\frac1q - \frac1p}$}  \\ 
+\multicolumn{1}{r}{${q \geq 2\, \& \, 0 < p \leq 2}$} & \multicolumn{1}{l}{$\displaystyle\max_{k,k' \neq k} d_{k}^{-\frac12} \, d_{k'}^{\frac12} \, d_{max}^{-1} \, m^{\frac1p - \frac1q}$}  & \multicolumn{1}{l}{$\leq$} & \multicolumn{1}{l}{$d_{min}^{-\frac12} \, d_{max}^{-\frac12} \, m^{\frac1p - \frac1q}$} \\
+\bottomrule %\hline
+\end{tabular}
+\end{adjustbox}
+\caption{Upper-bound of Block-MCC$_{q,p}$ for different ranges of $q$ and $p$ and for a dictionary with intra-block orthonormality.}
+\label{table:BMCC_UpperBound}
+\end{table}
+\end{proof}

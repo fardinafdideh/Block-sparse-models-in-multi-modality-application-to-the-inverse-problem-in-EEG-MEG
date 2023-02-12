@@ -1,0 +1,68 @@
+MCC uses the maximum absolute off-diagonal element of the Gram matrix $\boldsymbol{G}(\myPhi)$ as the characterization of the dictionary $\myPhi$, while by summing over any $k$ elements of $\boldsymbol{G}(\myPhi)$, we would better characterize the dictionary. 
+This kind of dictionary characterization is called \emph{cumulative MCC}.
+
+The conventional cumulative MCC, (or Babel function \cite{Tropp2004}, or $\ell_1$-coherence function \cite{Foucart2013}) of a dictionary $\myPhi \ssin \mathbb{R}^{m \stimes n}$ is defined as:
+\begin{equation}
+\label{eq:CMIC}
+M\myparanthese{\myPhi , k} \myeq 
+\max_{\myabs{\Lambda}=k} \max_{j \notin \Lambda}
+\sum_{i \in \Lambda} \myabs{ \left\langle \boldsymbol{\varphi}_i , \boldsymbol{\varphi}_{j} \right\rangle},
+\end{equation}
+where, $\Lambda$ represents $k$ different indices from $\{1, \cdots, n\}$.
+%, and by convention $M(\myPhi , 0) \seq 0$.
+
+Although cumulative MCC is computationally more difficult than MCC characterization, \myhl{it leads to more weakened or relaxed recovery conditions, i.e., the solution of the corresponding optimisation problem is ensured to be unique even for less sparse representation vectors.}
+
+A straightforward extension of $\ell_1$-coherence function would be $\ell_p$-coherence function, defined for any $p \sg 0$ \cite{Foucart2013}:
+\begin{equation*}
+M_p\myparanthese{\myPhi , k} \myeq 
+\max_{\myabs{\Lambda}=k} \max_{j \notin \Lambda}
+\myparanthese{\sum_{i \in \Lambda} \myabs{ \left\langle \boldsymbol{\varphi}_i , \boldsymbol{\varphi}_{j} \right\rangle}^p } ^ {\frac1p}.
+\end{equation*}
+
+The $p$ parameter in $M_p(\myPhi , k)$ controls the $\ell_p$ norm of $k$ off-diagonal elements of $\boldsymbol{G}(\myPhi)$, which makes the $M_p(\myPhi , k)$ to have the following properties:
+\begin{itemize}
+\item For $p \seq 1$, $M_p(\myPhi , k)$ reduces to the conventional cumulative MCC, i.e., $M_1(\myPhi , k) {\equiv} M(\myPhi , k)$.
+\item For $p \seq \infty$, for any value of $k$, $M_p(\myPhi , k)$ reduces to the conventional MCC, i.e., $M_{\infty}(\myPhi , k) {\equiv} M(\myPhi)$, because $\ell_{\infty}$ norm of any vector is equal to the maximum absolute value of the vector.
+\end{itemize}
+
+The Welch bound mentioned for the MCC can be extended to the cumulative MCC, i.e., for $k \sless \sqrt{n \sm 1}$, cumulative MCC is lower-bounded by $k\sqrt{(n \sm m)/(m(n \sm 1))}$, where, again the lower-bound is achieved when the dictionary is an equiangular tight frame \cite{Schnass2008}.
+
+In a similar work for extracting the cumulative coherence of the dictionary, Donoho and Elad introduced $\mu_{1/2}$ and $\mu_1$ of the Gram matrix, which is the smallest $m$ off-diagonal entries in a single row or column of the Gram matrix $\boldsymbol{G}$, which sums at least to $1/2$ and $1$, respectively.
+
+There are the relationships $M^{-1}(\myPhi) \sleq \mu_1(\boldsymbol{G}) \sless \mySpk(\myPhi)$ and $\mu_{1/2}(\boldsymbol{G}) \sleq (1/2) \mu_1(\boldsymbol{G})$ \cite{Donoho2003,Donoho2003a}.
+\newpage
+In another study, based on the manner of identifying the $\mySuppTxt$ set of a sparse signal in the OMP\footnote{\emph{Orthogonal Matching Pursuit}} algorithm, \emph{union cumulative coherence} is proposed and denoted by $M_U(\myPhi , k)$ \cite{Dossal2005,Zhao2015a}:
+\begin{gather*}
+\label{eq:M_U} 
+M_U\myparanthese{\myPhi , k} \myeq \max_{\myabs{\Lambda}=k} \mybrace{\max_{j \notin \Lambda} \sum_{i \in \Lambda} \myabs{ \left\langle \boldsymbol{\varphi}_i , \boldsymbol{\varphi}_{j} \right\rangle} + 
+\max_{l \in \Lambda} \sum_{i \in \Lambda \backslash \{ l \}} \myabs{ \left\langle \boldsymbol{\varphi}_i , \boldsymbol{\varphi}_{l} \right\rangle}}, 
+\end{gather*}
+where, $\Lambda$ represents $k$ different indices from $\{1, \cdots, n\}$.
+
+$M_U(\myPhi , k)$ even better characterizes the dictionary $\myPhi$ in comparison to conventional cumulative MCC, i.e., $M(\myPhi , k)$.
+Because, a part from the first common term in $M_U(\myPhi , k)$, which seeks the maximum of sum of pairwise absolute \emph{inter-set} correlations between the columns $i \ssin \Lambda$ and $j {\notin} \Lambda$, the second term in $M_U(\myPhi , k)$ seeks the same characterization for \emph{intra-set} columns $i \ssin \Lambda$ and $l \ssin \Lambda$. 
+
+Although $M_U(\myPhi , k)$ is computationally more complicated than $M(\myPhi , k)$, it leads to more accurate analysis of the reconstruction capacity of the orthogonal matching pursuit \cite{Zhao2015a}.
+
+Tropp has shown the following properties for cumulative MCC \cite{Tropp2004}:
+\begin{itemize}
+\label{txt:CMCC-properties} 
+\item $M(\myPhi , 0) \seq 0$ (by convention),
+\item $M(\myPhi , 1) \seq M(\myPhi)$,
+\item $M(\myPhi , k) \sleq k \, M(\myPhi)$,
+\item $M(\myPhi , k \spl 1) \sm M(\myPhi , k) \sgeq 0$,
+\item $M(\myPhi , k \spl 2) \sm 2M(\myPhi , k \spl 1) + M(\myPhi , k) \sleq 0, \forall k \sgeq 0$, and
+\item For orthonormal basis, $M(\myPhi , k) \seq 0, \forall k \sgeq 0$. 
+\end{itemize}
+
+In a more general case, for $1 \sleq k_1,k_2 \sleq n \sm 1$ with $k_1 \spl k_2 \sleq n \sm 1$, we have \cite{Foucart2013}:
+\begin{gather*}
+\begin{aligned}
+\max \mybrace{M(\myPhi , k_1) , M(\myPhi , k_2)} &\leq M(\myPhi , k_1+k_2) \\
+&\leq M(\myPhi , k_1) + M(\myPhi , k_2).
+\end{aligned}
+\end{gather*}
+
+As it can be learned from the above-mentioned different formula of cumulative version of the ordinary coherence measure, this type of dictionary characterisation is more informative and general.
+Since instead of the first maximum off-diagonal absolute value of the Gram matrix $\boldsymbol{G}(\myPhi)$, $k$ of them characterise the dictionary $\myPhi$.

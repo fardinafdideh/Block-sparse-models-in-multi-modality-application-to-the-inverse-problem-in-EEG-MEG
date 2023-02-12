@@ -1,0 +1,93 @@
+In general, 
+%dictionary characterisation of $\mySpk(\myPhi)$
+$\mySpkTxt$ and 
+%property of 
+NSP are computationally unrealistic, in other words, it is computationally intractable in polynomial time to check the identifiability of the model through the recovery conditions, specially when the number of atoms in the dictionary is high. 
+For detailed information about the computational complexity of $\mySpkTxt$ and NSP, the interested reader is referred to \cite{Tillmann2013} and \cite{Tillmann2014}.
+
+To overcome this shortcoming, another characterisation of the dictionary called \emph{Mutual Coherence Constant} (MCC) was exploited in literature with the expense of making the recovery conditions more restrictive, i.e., lowering the sparsity level.
+%, e.g., according to the bound of $M(\myPhi)$ in (\ref{eq:M-bounds}) and the following conventional MCC-based condition in (\ref{eq:ERC-M}), the sparsity level is at most $(1 \spl \sqrt{m})/2$, whereas according to the bound of $\mySpk(\myPhi)$ in (\ref{eq:spark-bounds}) and the conventional $\mySpkTxt$-based condition in (\ref{eq:ERC-S}), the sparsity level is at most $(1 \spl m)/2$.
+
+MCC, which is defined on page \pageref{eq:MIC}, i.e., $M(\myPhi) {\myeq} \max_{k,k' \neq k} |\left\langle \boldsymbol{\varphi}_k , \boldsymbol{\varphi}_{k'} \right\rangle|$, is a simple approach for characterising the proximity or similarity between the atoms of the dictionary.
+
+MCC was first introduced by Mallat and Zhang to heuristically evaluate the performance of the MP\footnote{\emph{Matching Pursuit}} algorithm \cite{Mallat1993}. 
+
+Like $\mySpkTxt$, to approach the problem of exact signal recovery based on mutual coherence, uncertainty principle was used in literature.
+Suppose $\mybetao$ and $\mybetaTwo$ are two distinct representations of the non-zero signal $\boldsymbol{y}$ in two orthonormal bases $\myPhiOne$ and $\myPhiTwo$, respectively, i.e., $\boldsymbol{y} \seq \myPhiOne \mybetao \seq \myPhiTwo \mybetaTwo$.
+The basic or classic uncertainty principle states that a non-zero signal cannot have multiple sparse representations in two distinct orthonormal bases, if both bases are mutually incoherent \cite{Donoho1989,Donoho2001,Elad2001,Elad2002a}. 
+
+Therefore, there is a limit on the sparsity level of the representations $\mybetao$ and $\mybetaTwo$:
+\begin{equation}
+\label{eq:UP-basic} 
+\mynorm{\mybetao}_0 + \mynorm{\mybetaTwo}_0 
+\geq\frac{2}{\overbar{M} \myparanthese{\myPhiOne,\myPhiTwo}},
+\end{equation}
+where, $\overbar{M} (\myPhiOne,\myPhiTwo) \seq \max_{k,k'} |\boldsymbol{\varphi}_{{\boldsymbol{1}}_k}^T \boldsymbol{\varphi}_{{\boldsymbol{2}}_{k'}}^{ }|$ is the basic MCC.
+
+{
+\label{Def:M-tilda} 
+\myhl{In an attempt to extend the basic uncertainty principle to non-orthonormal bases but still square and non-singular matrices $\myPhiOne$ and $\myPhiTwo$, $\Vert \mybetao \Vert_0 \spl \Vert\mybetaTwo \Vert_0 
+\sleq (1/2) \tilde{M} ^{-1} (\myPhiOne,\myPhiTwo)$ is developed as recovery condition for the uniqueness of the solutions of $P_0$ and $P_1$, and their equivalence, where, $\tilde{M}(\myPhiOne,\myPhiTwo) \seq \max\{ \max_{i,j} |\myPhi^{-1}_{\boldsymbol{1}} \myPhiTwo|_{i,j} , \max_{i,j} |\myPhi^{-1}_{\boldsymbol{2}} \myPhiOne|_{i,j}\}$ {\cite{Donoho2001}}.}}
+
+\myhl{In fact, the definition of coherence in $\tilde{M}(\myPhiOne,\myPhiTwo)$, which computes the $\ell_{\infty}$ norm (maximum entry in a vector) of $\ell_{1,\infty}$ norm (maximum absolute entry in a matrix) of matrices $\myPhi^{-1}_{\boldsymbol{1}} \myPhiTwo$ and $\myPhi^{-1}_{\boldsymbol{2}} \myPhiOne$, implicitly indicates to the definition of coherence of blocks in a special case, which will be explained in Chapter {\ref{sec:BERC}}.}
+
+Returning back from basic two orthornomal bases $\myPhiOne$ and $\myPhiTwo$ to the dictionaries $\myPhi$, and in order to shift the recovery conditions based on $\mySpkTxt$ to MCC, first we need to find their relationship.
+
+MCC for an orhtogonal matrix is zero, 
+%and the sparsity level approaches to infinity, 
+i.e., no constraint.
+It should be mentioned that, $\mySpkTxt$ is lower bounded by a function of inverse of MCC, i.e., $\mySpk(\myPhi) \sgeq f(M^{-1}(\myPhi))$. 
+Therefore, we can approximate the intractable characterisation $\mySpkTxt$ with a computationally tractable characterisation MCC.
+
+For a general dictionary, the smallest value of the MCC is of interest, in other words the tightest lower bound of the $\mySpkTxt$, because as mentioned before in (\ref{eq:ERC-S}), the sparsity level is defined as half of the $\mySpkTxt$, i.e., $\Vert \mybetaz \Vert_0 \sless \mySpk(\myPhi)/2$.
+
+In addition to theoretic results, from algorithmic point of view, generally the smaller the MCC, the better the performance of recovery algorithms.
+\cite{Foucart2013} has justified the claim for OMP\footnote{\emph{Orthogonal Matching Pursuit}}, BP\footnote{\emph{Basis Pursuit}}, and basic thresholding algorithms. 
+
+If the dictionary is the concatenation of two orthonormal bases, 
+%Donoho and Huo 
+\cite{Donoho2001} proved that for guaranteeing the uniqueness of the solution of $P_0$ and equivalence of $P_1$, it is sufficient for $f(M^{-1}(\myPhi)) \seq 1 \spl M^{-1}(\myPhi)$.
+
+Later, Elad and Bruckstein improved the condition by getting $f(M^{-1}(\myPhi)) \seq 2M^{-1}(\myPhi)$ (also proved in \cite{Donoho2003} and \cite{Donoho2003a} as a special case) and $f(M^{-1}(\myPhi)) \seq (2\sqrt{2} \sm 1)M^{-1}(\myPhi)$ for guaranteeing the uniqueness of the solution of $P_0$ and equivalence of $P_1$, respectively \cite{Elad2001}.
+%\cite{Elad2001,Elad2002a}.
+Feuer and Nemirovski proved that the latter is the maximum lower bound for $\mySpkTxt$ that can be achieved in the $P_1$ problem, i.e., the bound is tight \cite{Feuer2003}.
+
+Supposing that the dictionary arises from the union of $L$ orthonormal bases ($L \sgeq 2$), Gribonval and Nielsen proved $f(M^{-1}(\myPhi)) \seq L/(L \sm 1)M^{-1}(\myPhi)$ and $f(M^{-1}(\myPhi)) \seq (2\sqrt{2} \sm 2 \spl 1/(L \sm 1))M^{-1}(\myPhi)$ for guaranteeing the uniqueness of the solution of $P_0$ and equivalence of $P_1$, respectively \cite{Gribonval2003a,Gribonval2003}.
+Tropp also proved the recovery condition resulted from the latter $f(M^{-1}(\myPhi))$, for the equivalence of OMP and BP algorithms \cite{Tropp2004}.
+
+Later, Donoho, Elad, Gribonval, Nielsen, and Bruckstein demonstrated that the previous results of Donoho and Huo, \myhl{i.e., $f(M^{-1}(\myPhi)) \seq 1 \spl M^{-1}(\myPhi)$,} can be generalised from a union of two orthonormal bases to a dictionary in a general case, which it can be the concatenation of less structured blocks (in addition to orthonormal bases) \cite{Donoho2003,Donoho2003a,Gribonval2003,Bruckstein2009}.
+
+For $\mybetaz$ and $\mybetao$ as two distinct representations of the non-zero signal $\boldsymbol{y}$, in the dictionary $\myPhi$, i.e., $\boldsymbol{y} \seq \myPhi \mybetaz$ and $\boldsymbol{y} \seq \myPhi \mybetao$, and by combining $f(M^{-1}(\myPhi)) \seq 1 \spl M^{-1}(\myPhi)$ with (\ref{eq:UP-S}), we have
+\begin{equation}
+\label{eq:S-M} 
+\mynorm{\mybetaz}_0 + \mynorm{\mybetao}_0 \geq 
+\mySpk \myparanthese{\myPhi} \geq 1+M^{-1}\myparanthese{\myPhi}.
+\end{equation}
+Therefore, for any general dictionary, \myhl{the $k$-sparse representation vector} $\mybetaz$ is the unique solution of the $P_0$ and $P_1$ problems, if
+\begin{equation}
+\label{eq:ERC-M} 
+\mynorm{\mybetaz}_0 \mycolor{\leq k} < \frac{1+M^{-1}\myparanthese{\myPhi}}{2}.
+\end{equation}
+
+According to the lower bound of MCC for a general random dictionary $\myPhi$ in (\ref{eq:M-bounds}), i.e., $1/\sqrt{m}$, and the above-mentioned conventional MCC-based condition in (\ref{eq:ERC-M}), the sparsity level is at most $(1 \spl \sqrt{m})/2$, although for equiangular tight frame deterministic dictionaries it can goes up until $(1 \spl\sqrt{(m(n \sm 1))/(n \sm m)})/2$.
+
+Gribonval and Nielsen demonstrated that under the condition in (\ref{eq:ERC-M}), and for an arbitrary dictionary, the problems $P_p$ with $0 \sleq p \sless 1$ and $P_1$ are equivalent \cite{Gribonval2007}. 
+
+From algorithmic point of view, Tropp proved the same condition of (\ref{eq:ERC-M}) for representation recovery through some greedy recovery algorithms, i.e., equivalence of OMP and BP algorithms \cite{Tropp2004}.
+
+In another algorithmic study, Maleki demonstrated slightly stronger sufficient recovery conditions than (\ref{eq:ERC-M}) via iterative thresholding algorithms of iterative thresholding with inversion, namely IHT\footnote{\emph{Iterative Hard Thresholding}} and IST\footnote{\emph{Iterative Soft Thresholding}}.
+He showed that, supposing $\mybetaz$ is sorted in descending order of its
+absolute values \cite{Maleki2009}:
+\begin{enumerate}
+\item if $k \sless (1/3)M^{-1}(\myPhi)$, then iterative thresholding with inversion recovers the true solution, i.e., $\mybetaz$, in at most $k$ iterations.
+\item if $k \sless (1/3.1)M^{-1}(\myPhi)$ and $\vert \beta_{0_i} \vert/ \vert\beta_{0_{i \spl 1}}\vert \sless 3^{\ell_i \sm 4}, 1 \sleq i \sless k$, then iterative hard thresholding will recover $\mySuppTxt$ of the true solution, i.e., $S(\mybetaz)$, in at most $\sum_{i \seq 1}^k \ell_i \spl k$ iterations, and after this number of iterations, without changing the $\mySuppTxt$, the error of $\mybetaz$ recovery will be eliminated exponentially.
+\myhl{$\ell_i$ is the step after which $\beta_{0_{i \spl 1}}$ will get into the $\mySuppTxt$.}
+\item if $k \sless (1/4.1)M^{-1}(\myPhi)$ and $\vert \beta_{0_i} \vert/ \vert\beta_{0_{i \spl 1}} \vert \sless 3^{\ell_i \sm 5}, 1 \sleq i \sless k$, then iterative soft thresholding will recover $\mySuppTxt$ of the true solution, i.e., $S(\mybetaz)$, in at most $\sum_{i \seq 1}^k \ell_i \spl k$ iterations, and after this number of iterations, without changing the $\mySuppTxt$, the error of $\mybetaz$ recovery will be eliminated exponentially.
+\myhl{$\ell_i$ is the step after which $\beta_{0_{i \spl 1}}$ will get into the $\mySuppTxt$.}
+\end{enumerate}
+In another algorithm-based condition, it has been shown that for $k \sless M^{-1}(\myPhi)/4$ every $k$-sparse representation can be exactly recovered via iterative hard thresholding \cite{Foucart2013}.
+
+In addition, Donoho et al. demonstrated the same condition of (\ref{eq:ERC-M}) for a stable solution in a stable signal recovery problem of $P_{0,2,\varepsilon}(\mybeta, \boldsymbol{r})$ \cite{Donoho2006a}.
+\iffalse
+In an attempt to improve the recovery conditions while using the same formula in (\ref{eq:ERC-M}), it is assumed that if we are given infinite number of USLE $\{y_i\}_{i=1}^\infty \seq \{\myPhi \beta_{0_i} \}_{i=1}^\infty $, generated with the same probabilistic law, then the MCC of the ensemble, denoted by $M_{Ensemble}$, would be $M^O(\myPhi)$ for $O \seq \{2,3,\cdots\}$, where, $O$ is the order of the moment used in the statistic analysis \cite{Donoho2003a}.
+\fi

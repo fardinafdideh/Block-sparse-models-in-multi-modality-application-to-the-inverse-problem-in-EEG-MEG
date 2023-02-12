@@ -1,0 +1,18 @@
+In order to have a clear sense of the upper-bound on the conventional MCC in Property \ref{prp:DontKnow1} (SL v.s. $\myBSLqpTxt$), this value is calculated in table \ref{table:MaxMToBeBetterMCC} for the basic tractable $(q,p)$ pairs of table \ref{table:OperatorNorm} (page \pageref{table:OperatorNorm}).
+Although, for the MCC values less than the upper-bounds in table \ref{table:MaxMToBeBetterMCC}, the supremacy of the proposed sparsity level is ensured, but these bounds are very pessimistic and in practice for even higher values of MCC the supremacy of the proposed sparsity level can be observed.
+\begin{table*}[tp]
+\begin{adjustbox}{width=1\textwidth} % ,totalheight=\textheight,.5
+\centering
+%\tiny
+%\resizebox{\textwidth}{!}{
+\begin{tabular}{ccccccc}
+\toprule
+%\cline{2-4}
+\multicolumn{1}{c}{$(q = q',p = p')$} &\multicolumn{1}{c}{$(1,1)$} & \multicolumn{1}{c}{$(1,2)$}  & \multicolumn{1}{c}{$(1,\infty)$} & \multicolumn{1}{c}{$(2,2)$} & \multicolumn{1}{c}{$(2,\infty)$} & \multicolumn{1}{c}{$(\infty,\infty)$}\\ \midrule %\hline
+\multicolumn{1}{c}{$M(\myPhi) \leq$} &\multicolumn{1}{l}{$\frac{1}{d_{max}^\frac12 \myparanthese{d_{max}^\frac12 + 1}}$} & \multicolumn{1}{c}{$\frac{1}{d_{max}^\frac12 \myparanthese{d_{max}^\frac12 + 1}}$} & \multicolumn{1}{c}{$\frac{1}{d_{max}}$} &\multicolumn{1}{c}{$0$} &\multicolumn{1}{c}{$\frac{1}{d_{max}^\frac12 \myparanthese{d_{max}^\frac12 + 1}}$} & \multicolumn{1}{c}{$\frac{1}{d_{max}^\frac12 \myparanthese{d_{max}^\frac12 + 1}}$}   \\ \bottomrule %\hline
+\end{tabular}
+%}
+\end{adjustbox}
+\caption{Upper-bound of MCC ensuring the supremacy of the proposed sparsity level, for different basic values of $(q,p)$ pairs and for a dictionary with intra-block orthonormality.}
+\label{table:MaxMToBeBetterMCC}
+\end{table*}

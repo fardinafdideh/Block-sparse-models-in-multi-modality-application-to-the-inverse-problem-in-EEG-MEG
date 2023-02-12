@@ -1,0 +1,14 @@
+There is a relationship between subspace $\mySpkTxt$ and mutual subspace coherence, i.e., $\mySpk_S(\myPhi) \sgeq 1 \spl M^{-1}_S(\myPhi)$, which is similar to its conventional relationship \cite{Ganesh2009}.
+
+From algorithmic point of view, Ganesh and his colleagues proved similar conditions in recovering the representation. 
+Supposing that the measurement vector $\boldsymbol{y}$ is \emph{$k$-subspace sparse}, they demonstrated that if $k \sless (1 \spl M_S^{-1}(\myPhi))/2$, then subspace matching pursuit and subspace base pursuit algorithms are guaranteed to find the $k$ subspaces exactly \cite{Ganesh2009}.
+
+In a related work based on $M_S(\myPhi)$, Elhamifar and Vidal proved that if the measurement vector $\boldsymbol{y}$ has a unique block $k$-sparse representation vector $\mybetaz$, and the subspaces spanned by the columns of the blocks are disjoint, then under the condition
+\begin{equation*}
+k < \frac{1 + \myparanthese{\frac{1+\epsilon_p}{1-\epsilon_p} M_S\myparanthese{\myPhi}}^{-1}}{1+\sqrt{\frac{1+\sigma_p}{1+\epsilon_p}}},
+\end{equation*}
+the optimisation problems $P_{p,1}$ and $P_{p,0}$ are equivalent, and also under the condition
+\begin{equation*}
+k < \frac{1 + \myparanthese{\frac{1+\epsilon'_p}{1-\epsilon'_p} M_S\myparanthese{\myPhi}}^{-1}}{2},
+\end{equation*}
+the optimisation problems $P_{(p,1),q,0}(\mybeta_{\myPhi},\boldsymbol{r})$ and $P_{(p,0),q,0}(\mybeta_{\myPhi},\boldsymbol{r})$ are equivalent, where, $\sigma_p$, $\epsilon_p$, and $\epsilon'_p$ are some intra-block $p$-restricted isometry constants which are defined based on the restricted isometry properties introduced in the paper \cite{Elhamifar2011,Elhamifar2012b}.

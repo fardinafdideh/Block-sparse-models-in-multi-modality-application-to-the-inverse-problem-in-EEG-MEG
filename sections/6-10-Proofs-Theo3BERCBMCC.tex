@@ -1,0 +1,112 @@
+\begin{proof}
+Because $\boldsymbol{x} \ssin \myKerMath$, we have $\sum_{k'} \myPhi[k']\boldsymbol{x}[k'] \seq \boldsymbol{0}$. 
+Hence, for all $k$, $-\sum_{k' \neq k} \myPhi[k']\boldsymbol{x}[k'] \seq \myPhi[k]\boldsymbol{x}[k]$. 
+Therefore, \myhl{since for all $k$ the block $\myPhi[k]$ is full column rank,} we have $-\sum_{k' \neq k} \myPhi^\dagger[k] \myPhi[k']\boldsymbol{x}[k'] \seq\boldsymbol{x}[k]$.
+Applying $\Vert \cdot \Vert_{p}$ to both sides and using the triangular inequality for $p \sgeq 1$ and $p \seq 0$, $ \sum{\Vert \cdot \Vert_p} \sgeq \Vert \sum{\cdot} \Vert_p$, we have $\sum_{k' \neq k} \Vert \myPhi^\dagger[k]\myPhi[k']\boldsymbol{x}[k'] \Vert_{p} \sgeq \Vert \boldsymbol{x}[k] \Vert_{p}$. 
+On the other hand, from the definition of mutual coherence constant (Definition \ref{def:BMIC}, page \pageref{def:BMIC}), i.e., $\forall (q , p) \ssin \mathbb{R}^2_{>0} : M_{q,p}(\myPhi) \seq \max_{\substack{k,k' \neq k \\ \boldsymbol{x}[k'] \neq \boldsymbol{0}}} d_k^{-1/p} d_{k'}^{1/q} d_{max}^{-1} \Vert \myPhi^\dagger[k]\myPhi[k']\boldsymbol{x}[k'] \Vert_{p} / \Vert \boldsymbol{x}[k'] \Vert_{q}$, we can see that in order to compute $M_{q,p}(\myPhi)$, the value $d_k^{-1/p} d_{k'}^{1/q} d_{max}^{-1} \Vert \myPhi^\dagger[k]\myPhi[k']\boldsymbol{x}[k'] \Vert_{p} / \Vert \boldsymbol{x}[k'] \Vert_{q}$ is calculated for each $k$ and $k' {\neq} k$ and finally the maximum calculated value is considered as $M_{q,p}(\myPhi)$.
+Then for any $k$ and $k' {\neq} k$, the $d_k^{-1/p} d_{k'}^{1/q} d_{max}^{-1} \Vert \myPhi^\dagger[k]\myPhi[k']\boldsymbol{x}[k'] \Vert_{p} / \Vert \boldsymbol{x}[k'] \Vert_{q}$ is upper-bounded by $M_{q,p}(\myPhi)$, and since $d_k^{1/p} d_{k'}^{-1/q} d_{max} \Vert \boldsymbol{x}[k'] \Vert_{q}$ is positive, we have $\Vert \myPhi^\dagger[k]\myPhi[k']\boldsymbol{x}[k'] \Vert_{p} \sleq d_k^{1/p} d_{k'}^{-1/q} d_{max} \Vert \boldsymbol{x}[k'] \Vert_{q} M_{q,p}(\myPhi)$.
+Hence, returning back to the proof, we have $\sum_{k' \neq k} d_k^{1/p} d_{k'}^{-1/q} d_{max} \Vert \boldsymbol{x}[k'] \Vert_{q} M_{q,p}(\myPhi) \sgeq \sum_{k' \neq k} \Vert \myPhi^\dagger[k]\myPhi[k']\boldsymbol{x}[k'] \Vert_{p} \sgeq \Vert \boldsymbol{x}[k] \Vert_{p}$ or $d_{max} M_{q,p}(\myPhi) \sum_{k' \neq k} d_k^{1/p} d_{k'}^{-1/q} \Vert \boldsymbol{x}[k'] \Vert_{q} \sgeq \Vert \boldsymbol{x}[k] \Vert_{p}$.
+Then by rearranging the inequality we get $d_{max} M_{q,p}(\myPhi) \sum_{k' \neq k} \Vert\boldsymbol{x}[k'] \Vert_{q} / d^{1/q}_{k'} \sgeq \Vert \boldsymbol{x}[k] \Vert_{p} / d^{1/p}_k$.
+Adding $d_{max} M_{q,p}(\myPhi) \Vert \boldsymbol{x}[k] \Vert_{q} / d^{1/q}_{k}$ to both sides, we have:
+\begin{gather*}
+%\label{eq:DontKnow4} 
+\forall q \in \mathbb{R}_{>0}, \forall p \in \mathbb{R}_{\geq 1}, \qquad
+\begin{aligned}
+d_{max} M_{q,p}\myparanthese{\myPhi} \displaystyle\sum_{k'} \frac{\mynorm{\boldsymbol{x}\mybracket{k'}}_{q}}{d^{\frac1q}_{k'}} \geq 
+ d_{max} M_{q,p}\myparanthese{\myPhi} \frac{\mynorm{\boldsymbol{x}\mybracket{k}}_q}{d^{\frac1q}_{k}} 
++ \frac{\mynorm{\boldsymbol{x}\mybracket{k}}_p}{d^{\frac1p}_{k}},
+\end{aligned}
+\end{gather*}
+\myhl{which using the definition of weighted (pseudo-)mixed-norm $\ell^{\boldsymbol{w}}_{p_1 , p_2}$ (Definition {\ref{def:Weighted mixed norm}}, page {\pageref{def:Weighted mixed norm}}), with $w_k \seq d_{k}^{-1/{q}}$, $p_1 \seq q$, and $p_2 \seq 1$, it is equivalent to}
+\begin{gather*} 
+\mycolor{\begin{aligned}
+\forall q \in \mathbb{R}_{>0}, \forall p \in \mathbb{R}_{\geq 1}, \qquad
+d_{max} M_{q,p}\myparanthese{\myPhi} \mynorm{\boldsymbol{x}}_{\boldsymbol{w};q,1} \geq 
+ d_{max} M_{q,p}\myparanthese{\myPhi} \frac{\mynorm{\boldsymbol{x}\mybracket{k}}_q}{d^{\frac1q}_{k}} 
++ \frac{\mynorm{\boldsymbol{x}\mybracket{k}}_p}{d^{\frac1p}_{k}}.
+\end{aligned}}
+\end{gather*}
+{
+\label{cmmnt:74} 
+\myhl{Now take any vector $\mybeta$ with Block-Support $S_b(\mybeta)$ such that $S_b(\mybetaz) {\ssubset} S_b(\mybeta)$, then summing over blocks $k \ssin S_b(\mybeta)$, and knowing that for any constants $\alpha$ and $\forall r \sgeq 0$, we have $\sum_{k \ssin S_b(\mybeta)} \alpha \seq \alpha \Vert \mybeta \Vert_{r , 0}$, we get:}
+}
+\begin{gather*} 
+\mycolor{\begin{aligned}
+\forall q \in \mathbb{R}_{>0}, \forall p \in \mathbb{R}_{\geq 1}, \qquad
+d_{max} M_{q,p}\myparanthese{\myPhi} \mynorm{\boldsymbol{x}}_{\boldsymbol{w};q,1} \mynorm{\mybeta}_{r,0} &\geq 
+\sum_{k \in S_b(\mybeta)} \myparanthese{d_{max} M_{q,p}\myparanthese{\myPhi} \frac{\mynorm{\boldsymbol{x}\mybracket{k}}_q}{d^{\frac1q}_{k}} 
++ \frac{\mynorm{\boldsymbol{x}\mybracket{k}}_p}{d^{\frac1p}_{k}}} \\
+&=
+d_{max} M_{q,p}\myparanthese{\myPhi} \sum_{k \in S_b(\mybeta)} \frac{\mynorm{\boldsymbol{x}\mybracket{k}}_q}{d^{\frac1q}_{k}}
++ \sum_{k \in S_b(\mybeta)} \frac{\mynorm{\boldsymbol{x}\mybracket{k}}_p}{d^{\frac1p}_{k}}.
+\end{aligned}}
+\end{gather*}
+\myhl{On the other hand from the proof of Property {\ref{lm:FractionBound}} (bounds of two (pseudo-)mixed-norms division, page {\pageref{lm:FractionBound}}), we have $\forall (q , p) \ssin \mathbb{R}^2_{>0}: (\Vert \boldsymbol{x}[k] \Vert_p / d^{1/p}_{k}) / (\Vert \boldsymbol{x}[k] \Vert_q / d^{1/q}_{k}) \sgeq \min \{1 , d_k^{1/q - 1/p} \}$.
+Again using the lower-bound on the fraction of two sums of values explained in Property {\ref{lm:FractionBound}}, we have $\forall (q , p) \ssin \mathbb{R}^2_{>0} : (\sum_{k \in S_b(\mybeta)} \Vert \boldsymbol{x}[k] \Vert_p / d^{1/p}_{k}) / (\sum_{k \in S_b(\mybeta)} \Vert \boldsymbol{x}[k] \Vert_q / d^{1/q}_{k}) \sgeq \min_{k \in S_b(\mybeta)} \min \{1 , d_k^{1/q - 1/p} \}$, which is a special case of Property {\ref{lm:FractionBound}}. 
+%when the sum is over certain blocks $k \ssin S_b(\mybeta)$ instead of all of the blocks.
+Hence, returning back to the proof, $\forall q \ssin \mathbb{R}_{>0}$, $\forall p \ssin \mathbb{R}_{\sgeq 1}$, and $\forall r \ssin \mathbb{R}_{\sgeq 0}$ we get:}
+\begin{gather*} 
+\mycolor{\begin{aligned}
+d_{max} M_{q,p}\myparanthese{\myPhi} \mynorm{\boldsymbol{x}}_{\boldsymbol{w};q,1} \mynorm{\mybeta}_{r,0} &\geq 
+d_{max} M_{q,p}\myparanthese{\myPhi} \sum_{k \in S_b(\mybeta)} \frac{\mynorm{\boldsymbol{x}\mybracket{k}}_q}{d^{\frac1q}_{k}} 
++ \myparanthese{\min_{k \in S_b(\mybeta)} \, \min \mybrace{1 , d_k^{\frac1q - \frac1p}}} \sum_{k \in S_b(\mybeta)} \frac{\mynorm{\boldsymbol{x}\mybracket{k}}_q}{d^{\frac1q}_{k}} \\
+&= \myparanthese{d_{max} M_{q,p}\myparanthese{\myPhi} + \min_{k \in S_b(\mybeta)} \, \min \mybrace{1 , d_k^{\frac1q - \frac1p}}} \sum_{k \in S_b(\mybeta)} \frac{\mynorm{\boldsymbol{x}\mybracket{k}}_q}{d^{\frac1q}_{k}} \\
+&\geq \myparanthese{d_{max} M_{q,p}\myparanthese{\myPhi} + \min_{k} \, \min \mybrace{1 , d_k^{\frac1q - \frac1p}}} \sum_{k \in S_b(\mybeta)} \frac{\mynorm{\boldsymbol{x}\mybracket{k}}_q}{d^{\frac1q}_{k}}.
+\end{aligned}}
+\end{gather*}
+\myhl{The above last line results from $\min_{k\in S} f(k) \sgeq \min_{k} f(k)$.
+Then, by dividing the both sides by $\Vert \boldsymbol{x} \Vert_{\boldsymbol{w};q,1}$, $\forall q \ssin \mathbb{R}_{>0}$, $\forall p \ssin \mathbb{R}_{\sgeq 1}$, and $\forall r \ssin \mathbb{R}_{\sgeq 0}$ we have:}
+\begin{gather*}  
+\mycolor{\begin{aligned}
+\forall \boldsymbol{x} \in \myKerMath, \qquad d_{max} M_{q,p}\myparanthese{\myPhi} \mynorm{\mybeta}_{r,0} &\geq 
+\myparanthese{d_{max} M_{q,p}\myparanthese{\myPhi} + \min_{k} \, \min \mybrace{1 , d_k^{\frac1q - \frac1p}}} \frac{\displaystyle\sum_{k \in S_b(\mybeta)} \frac{\mynorm{\boldsymbol{x}\mybracket{k}}_q}{d^{\frac1q}_{k}}}{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};q,1}},
+\end{aligned}}
+\end{gather*}
+\myhl{or}
+\begin{gather*}  
+\mycolor{\begin{aligned}
+\forall \boldsymbol{x} \in \myKerMath, \qquad d_{max} M_{q,p}\myparanthese{\myPhi} \mynorm{\mybeta}_{r,0} \myparanthese{d_{max} M_{q,p}\myparanthese{\myPhi} + \min_{k} \, \min \mybrace{1 , d_k^{\frac1q - \frac1p}}}^{-1} &\geq 
+ \frac{\displaystyle\sum_{k \in S_b(\mybeta)} \frac{\mynorm{\boldsymbol{x}\mybracket{k}}_q}{d^{\frac1q}_{k}}}{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};q,1}}.
+\end{aligned}}
+\end{gather*}
+\myhl{Since the above inequality holds true for $\forall \boldsymbol{x} \ssin \myKerMath$, it also holds for the maximiser of the right-hand side (because the left-hand side does not depend on $\boldsymbol{x}$).
+But that maximiser gives us exactly $Q_{\boldsymbol{w};p_1,p_2}(S_b(\mybeta),\myPhi)$ by its definition:}
+\begin{gather*} 
+\label{eq:Q-appears} 
+\mycolor{\begin{aligned} 
+d_{max} M_{q,p}\myparanthese{\myPhi} \mynorm{\mybeta}_{r,0} \myparanthese{d_{max} M_{q,p}\myparanthese{\myPhi} + \min_{k} \, \min \mybrace{1 , d_k^{\frac1q - \frac1p}}}^{-1} &\geq 
+\max_{\boldsymbol{x} \in \myKerMath} \frac{\displaystyle\sum_{k \in S_b(\mybeta)} \frac{\mynorm{\boldsymbol{x}\mybracket{k}}_q}{d^{\frac1q}_{k}}}{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};q,1}} \\
+&= Q_{\boldsymbol{w};q,1}\myparanthese{S_b\myparanthese{\mybeta},\myPhi}.
+\end{aligned}}
+\end{gather*}
+\myhl{where, $\forall (q,p) \ssin \mathbb{R}^2_{\sgeq 1}$ (constraint on $q$ was imposed by the Block-NSP condition), $\forall r \ssin \mathbb{R}_{\sgeq 0}$, and $w_k \seq d_k^{-1/q}$. 
+The above last line is obtained considering the definition of $Q_{\boldsymbol{w};p_1,p_2}(S_b(\mybeta),\myPhi)$ in Block-NSP (Theorem {\ref{th:BNSP}}, page {\pageref{th:BNSP}}).
+On the other hand, from the Block-NSP condition in Theorem 2.2, we have, if $Q_{\boldsymbol{w};q,1}(S_b(\mybeta),\myPhi) \sless 1/2$ then a solution $\mybetaz$ to the problem $P_{\boldsymbol{w};q,1}$ is the unique solution whenever $S_b(\mybetaz) {\ssubset} S_b(\mybeta)$.
+%Therefore, by meeting the Block-NSP condition, we get:
+Hence, we have that if:}
+\begin{gather*}  
+\mycolor{\forall (q,p) \in \mathbb{R}^2_{\geq 1}, \forall r \in \mathbb{R}_{\geq 0}, \qquad
+d_{max} M_{q,p}\myparanthese{\myPhi} \mynorm{\mybeta}_{r,0} \myparanthese{d_{max} M_{q,p}\myparanthese{\myPhi} + \min_{k} \, \min \mybrace{1 , d_k^{\frac1q - \frac1p}}}^{-1} < \frac12,}
+\end{gather*}
+\myhl{Then, the Block-NSP condition of Theorem 2.2 is met, hence any $\mybetaz$ solution to $\boldsymbol{y} \seq \myPhi \mybeta$ is unique if $S_b(\mybetaz) \ssubset S_b(\mybeta)$.
+Now, by rearranging the above inequality, we have}
+\begin{gather*} 
+\mycolor{\begin{aligned} 
+\forall (q,p) \in \mathbb{R}^2_{\geq 1}, \forall r \in \mathbb{R}_{\geq 0}, \qquad
+\mynorm{\mybeta}_{r,0} &<
+\frac{1 + \myparanthese{d_{max} M_{q,p}\myparanthese{\myPhi}}^{-1} \displaystyle\min_{k} \, \min \mybrace{1 , d_k^{\frac1q - \frac1p}}}{2}, \\
+%&= 
+%\frac{1 + \myparanthese{d_{max} M_{q,p}\myparanthese{\myPhi} \displaystyle\max_{k} \, \max \mybrace{1 , d_k^{\frac1p - \frac1q}}}^{-1} }{2}.
+\end{aligned}}
+\end{gather*}
+\myhl{and since $S_b(\mybetaz) \ssubset S_b(\mybeta)$, then $\Vert \mybetaz \Vert_{r,0} \sleq \Vert \mybeta \Vert_{r,0}$, so}
+\begin{gather*} 
+\mycolor{\begin{aligned} 
+\forall (q,p) \in \mathbb{R}^2_{\geq 1}, \forall r \in \mathbb{R}_{\geq 0}, \qquad
+\mynorm{\mybetaz}_{r,0} &<
+\frac{1 + \myparanthese{d_{max} M_{q,p}\myparanthese{\myPhi}}^{-1} \displaystyle\min_{k} \, \min \mybrace{1 , d_k^{\frac1q - \frac1p}}}{2},
+\end{aligned}}
+\end{gather*}
+\myhl{which is exactly the condition of the theorem.
+Therefore, the Block-NSP theory under the mentioned condition is actually met and the unique solution of the problem $P_{\boldsymbol{w};q,1}$ is ensured.}
+\end{proof}

@@ -1,0 +1,33 @@
+\addcontentsline{toc}{section}{\protect\numberline{}High-dimensional problem}
+\setcounter{challenge}{0}
+%As mentioned earlier in Section Introduction, the first challenge to be addressed is:
+\begin{tcolorbox}
+\begin{challenge}
+Many real-world inverse problems are vastly underdetermined, and classical sparse estimation techniques do no longer give acceptable recovery conditions.
+How can high-dimensional problems be adapted in favour of the coherence-based notion of conventional conditions?
+\end{challenge}
+\end{tcolorbox}
+
+%The first challenge as mentioned in Section Introduction is
+For vastly underdetermined systems of linear equations, which the columns of the coefficient matrix are great in number, the classical dictionary characterisations such as mutual coherence constant are more likely to be high.
+Because the classical dictionary characterisations measure the coherency of the columns of the dictionary.
+Naturally, increasing in the number of columns of the dictionary would be equivalent to increasing the probability of coherency between the columns of the dictionary.
+On the other hands, due to the inverse relationship between the sparsity level defined in the exact recovery conditions and the classical dictionary characterisation, high coherency leads to low sparsity level.
+Therefore, being vastly underdetermined has a negative effect on the exact recovery conditions.
+
+Assuming that the atomic entity in classical dictionary characterisations is \emph{columns} of the dictionary, one possible solution would be to decrease the number of atomic entities by changing the concept of atomic entity from columns to \emph{block of columns} of the dictionary.
+Therefore, in Chapter \ref{sec:Clustering} we proposed to cluster the coherent entities (columns or block of columns) of the dictionary.
+By the idea of clustering the coherent entities to build new entities, we are improving the exact recovery conditions by gaining two advantages at the same time: (1) reducing the number of entities, (2) building more incoherent entities.
+
+In the EEG/MEG source reconstruction problem, the initial entity is already a fixed-length block of columns (three columns), then we clustered the coherent blocks of columns.
+In order to determine the coherency between block of columns we utilised the dictionary characterisation block mutual coherence constant proposed in Chapter \ref{sec:BERC}.
+%In Chapter \ref{sec:Clustering}, with the aim of improving the block-sparse exact recovery conditions based on block mutual coherence constant proposed in Chapter \ref{sec:BERC} and consequently the conventional recovery condition, we proposed to cluster the coherent blocks determined by the value of block mutual coherence constant. 
+
+Then, for EEG/MEG source reconstruction problem we profited the idea of clustering the coherent blocks of columns, i.e., brain source lead-fields, to segment the brain source space.
+The proposed strategy for brain source space segmentation is in a general case, without being restricted to know any information about the sources activity and sensors measurement, only utilises EEG/MEG lead-field matrix.
+%in the domain of brain source space segmentation to without being restricted to have any information about the sources activities and sensors measurements being able to cluster the brain sources utilizing the EEG or MEG leadfield matrix. 
+In addition, at the same time by clustering the coherent sources and forming the brain regions, the number of brain regions in which it is ensured to have a unique solution in the EEG or MEG source reconstruction problem is improved.
+
+As perspective in this domain, different standard or customized clustering strategies can be investigated to find an optimum clustering strategy, which leads to improvement in the exact recovery conditions.
+One possible strategy in hierarchical clustering algorithm would be to update the similarity matrix at each clustering level, i.e., recompute the new distance of clusters and update the similarity matrix based on new clustering structure.
+%there would be the place to more improve the recovery conditions by applying different clustering strategies.

@@ -1,0 +1,28 @@
+In this chapter, we investigated the effect of clustering the coherent blocks of the dictionary on the Block-ERC and brain source space segmentation.
+The coherency is defined based on the proposed general characterisation of Block-MCC$_{q,p}$.
+To this aim, different experiments were done on synthetic dictionary and real EEG/MEG lead-field.
+
+In experiments with synthetic dictionary, 
+%in Section \ref{sec:Artificial simulated dictionary}, 
+we demonstrated in figure \ref{fig:SL_Hierarchical} the positive effect of clustering the coherent blocks of the dictionary on the sparsity levels.
+Then, block-sparse exact recovery condition based on the block mutual coherence constant improves by clustering the coherent blocks.
+Furthermore, in figure \ref{fig:SL_Hierarchical_conventional} we showed that this improvement in the proposed block-sparse exact recovery conditions due to hierarchical clustering, even holds to the conventional exact recovery condition.  
+
+%In other words, by applying clustering we can obtain weakened recovery conditions due to increased sparsity levels in comparison to the conventional one.
+
+Finally, in experiments with real EEG/MEG lead-field 
+%in Section \ref{sec:Real EEG/MEG leadfield},
+in figure \ref{fig:EMEG-LF-clustering-SL}, we showed that the sparsity levels in different cases increase by clustering coherent lead-fields, hence, improves the corresponding block-sparse exact recovery condition.
+In figure \ref{fig:EMEG-LF-clustering-regions}, we showed that even by the mentioned clustering method, some consistent brain regions appear.
+By utilising the MRI of a person in calculating the realistic volume conduction head model, subject-specific brain regions appear. 
+%in the second part we made use of leadfield which contains the anatomical and electrical properties of the head and clustered its coherent blocks based on the Block-MCC$_{q,p}$ similarity measure, and then attributed that clustering structure to the representation vector to group the sources on the brain.
+In fact, here we proposed a segmented structure of brain sources, making use of just the lead-field matrix in a general way, without being restricted to a special activity of dipoles $\mybetaz$ or EEG/MEG signals $\boldsymbol{y}$.
+
+Ultimately, in this chapter for identifying the block structure of the dictionary or lead-field, a general framework based on the proposed block mutual coherence constant Block-MCC$_{q,p}$ is proposed, which at the same time improves the block-sparse exact recovery condition and provides a brain source space segmentation strategy.
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../roque-phdthesis"
+%%% End: 

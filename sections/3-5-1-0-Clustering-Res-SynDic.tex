@@ -1,0 +1,23 @@
+Dictionaries $\myPhi \ssin \mathbb{R}^{m \stimes n}$, with equally-sized blocks of length $d_1 \seq \cdots \seq d_K \seq d$, are generated from independent and identically distributed (i.i.d.) random variables and all columns of the dictionaries are normalized to have unit $\ell_2$ norm.
+The idea to generate the whole dictionary is first to start from an initial block, next some representative blocks of clusters are generated, then from each representative block of a cluster, the blocks belonging to the same cluster are produced.
+To construct a second block from a first one, the random matrix $\exp((\boldsymbol{C} \sm \boldsymbol{C}^T) \sqrt{2} \varepsilon / \Vert \boldsymbol{C} \sm \boldsymbol{C}^T \Vert_F)$ is multiplied to the first block, where, $\boldsymbol{C}$ is a square random matrix of dimension $m$.
+Depending on the role of $\varepsilon$ whether to generate representative blocks of clusters or blocks of dictionary, it is named $\varepsilon_{inter}$ or $\varepsilon_{intra}$, respectively.
+
+%To generate a random dictionary, first an initial block of dimension $m$ by $d$ is considered.
+%Then, to create $N$ representatives of clusters $\boldsymbol{\mu}^1 , \cdots \boldsymbol{\mu}^N$,
+In figure \ref{fig:Dictionary_generating}, the process of generating a random dictionary $\myPhi$ with $N$ clusters and $K$ blocks is illustrated.
+First, from a random initial block $\boldsymbol{\mu}^0 \ssin \mathbb{R}^{m \stimes d}$, $N$ representatives of clusters $\boldsymbol{\mu}^1 , \cdots , \boldsymbol{\mu}^N$ are created, using the mentioned multiplier and parameter $\varepsilon_{inter}$.
+Then, from each representative $\boldsymbol{\mu}^i$, $\forall i$, the blocks $\myPhi^i\mybracket{j}$, $\forall j$, belonging to the same cluster $i$ are generated, using the mentioned multiplier and parameter $\varepsilon_{intra}$.
+The parameter $\varepsilon$ in the multiplier controls the amount of overlap and similarity between blocks.
+In fact, $\varepsilon_{inter}$ defines the overlap between the representative blocks of clusters, whereas $\varepsilon_{intra}$ controls the overlap between the blocks belonging to the same cluster.
+%It is possible to control the amount of overlap and similarity between blocks of the dictionary by tuning the parameters $\varepsilon_{inter}$ and $\varepsilon_{intra}$, which the former parameter defines the overlap between the average block of each cluster whereas the latter controls the overlap between the blocks belonging to the same cluster.  
+%Finally, length of blocks before clustering, number of rows and number of columns of the dictionary are equal to $2$, $10$, and $80$, respectively.
+Finally, the results are shown in terms of average and standard deviation over 100 repetitions of random dictionary $\myPhi \ssin \mathbb{R}^{10 \stimes 80}$ generation with $d_j \seq 2$, $\forall j$.
+\input{sections/3-5-1-0-Clustering-Res-SynDic-Fig7}
+\FloatBarrier
+%------------------------------------------------------
+\paragraph{Block-ERC in clustered representation and the number of clusters}
+\input{sections/3-5-1-1-Clustering-Res-SynDic-BSLClusterNb}
+%------------------------------------------------------
+\paragraph{Block-ERC in clustered representation and the conventional ERC}
+\input{sections/3-5-1-2-Clustering-Res-SynDic-SL}

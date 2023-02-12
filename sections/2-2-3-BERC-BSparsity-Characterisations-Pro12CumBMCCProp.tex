@@ -1,0 +1,32 @@
+The following property shows the cumulative Block-MCC$_{q,p}$ properties, which are similar to the cumulative MCC's one presented on page \pageref{txt:CMCC-properties}:
+\begin{property}[Cumulative Block-MCC$_{q,p}$ properties]
+\label{prp:CBMIC-BMIC}
+For any dictionary $\myPhi$ \myhl{with full column rank blocks,} and Block-MCC$_{q,p}$ $M_{q,p}(\myPhi)$, $\forall (q , p) \ssin \mathbb{R}^2_{\sg 0}$ we have:
+\begin{equation*}
+M_{q,p}\myparanthese{\myPhi , 1} = M_{q,p}\myparanthese{\myPhi},
+\end{equation*}
+and
+\begin{equation*}
+M_{q,p}\myparanthese{\myPhi , k} \leq k \, M_{q,p}\myparanthese{\myPhi}.
+\end{equation*}
+\end{property}
+\begin{proof}
+An investigation of the formula of cumulative Block-MCC$_{q,p}$, shows that $\forall (q , p) \ssin \mathbb{R}^2_{\sg 0}$ and for $k \seq 1$, it reduces to Block-MCC$_{q,p}$, i.e.,:
+\begin{gather*}
+\begin{aligned}
+M_{q,p}\myparanthese{\myPhi , 1} 
+= \max_{\myabs{\Lambda}=1} \max_{j \notin \Lambda} \sum_{i \in \Lambda} \frac{d_{i}^{-\frac1p} \, d_{j}^{\frac1q}}{d_{max}} \mynorm{\myPhi^\dagger\mybracket{i} \myPhi \mybracket{j}}_{q \to p} 
+=\max_{i} \max_{j \neq i} \frac{d_{i}^{-\frac1p} \, d_{j}^{\frac1q}}{d_{max}} \mynorm{\myPhi^\dagger\mybracket{i} \myPhi \mybracket{j}}_{q \to p} 
+= M_{q,p}\myparanthese{\myPhi}.
+\end{aligned}
+\end{gather*} 
+To prove the second part, similar to the proof of Proposition 2.1 in \cite{Tropp2004}, $\forall (q , p) \ssin \mathbb{R}^2_{\sg 0}$ we have:
+\begin{equation*}
+\begin{aligned}
+M_{q,p}\myparanthese{\myPhi , k} 
+= \max_{\myabs{\Lambda}=k} \max_{j \notin \Lambda} \sum_{i \in \Lambda} \frac{d_{i}^{-\frac1p} \, d_{j}^{\frac1q}}{d_{max}} \mynorm{\myPhi^\dagger\mybracket{i} \myPhi \mybracket{j}}_{q \to p} 
+\leq \max_{\myabs{\Lambda}=k} \sum_{i \in \Lambda} M_{q,p}\myparanthese{\myPhi}
+= k \, M_{q,p}\myparanthese{\myPhi}.
+\end{aligned}
+\end{equation*}
+\end{proof}

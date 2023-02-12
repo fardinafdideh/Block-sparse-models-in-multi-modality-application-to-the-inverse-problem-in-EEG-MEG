@@ -1,0 +1,157 @@
+In this chapter, the sufficient conditions for unique representation of block-sparse recovery of an arbitrary signal $\boldsymbol{y}$ in a general arbitrary dictionary $\myPhi$ using general weighted (pseudo-)mixed-norm $P_{\boldsymbol{w};p_1,p_2}$ (and also $P_{p_1,p_2}$ as explained in Remark \ref{Rmrk:TwoP}, $P_{\boldsymbol{w};p_1,p_2}$ v.s. $P_{p_1,p_2}$, page \pageref{Rmrk:TwoP}) optimisation problem, are proposed. 
+
+The dictionary is general (with full column rank blocks) and not restricted to be a union of two or more orthonormal bases, although we have some results in the special setting of the dictionary 
+%$\myPhi_{ort}$ 
+with intra-bock orthonormality. 
+For theoretical conditions, weighted optimisation problems of $P_{\boldsymbol{w};p_1,p_2}$ (and also $P_{p_1,p_2}$ for $0 \sleq p_2 \sleq 1 \sleq p_1$) and   
+$P_{\boldsymbol{w};p,0}$ (and also $P_{p,0}$ for $p \sg 0$) are defined in their general form.
+
+%$P_{\boldsymbol{w};p,1}$ (and also $P_{p,1}$ for $p \sgeq 1$) and also ordinary optimisation problems of $P_{p_1,p_2}$ ($0 \sleq p_2 \sleq 1 \sleq p_1$), $P_{p,0}$ ($p \sgeq 0$ and $p \sgeq 1$), and $P_{p,1}$ ($p \sgeq 1$) are defined in their general form.
+
+In addition, the proposed characterisations of $\myBSpkTxt$, 
+% ($\myBspk(\myPhi)$, Definition \ref{def:Block Spark}),
+Block-NSP, 
+% ($Q_{\boldsymbol{w};p_1,p_2}(S_b(\mybeta),\myPhi)$, Theorem \ref{th:BNSP}), 
+Block-MCC$_{q,p}$, 
+%($M_{q,p}(\myPhi)$, Definition \ref{def:BMIC}), 
+cumulative Block-MCC$_{q,p}$, 
+%($M_{q,p}(\myPhi,k)$, Definition \ref{def:CBMIC}) 
+and the properties 
+%(Property \ref{prp:CBMIC-BMIC}) 
+are introduced in the general case.
+% where $\myBspk(\myPhi)$ is defined for $p \sgeq 0$, $Q_{\boldsymbol{w};p_1,p_2}(S_b(\mybeta),\myPhi)$ for $p_1 \sgeq 1$ and $0 \sleq p_2 \sleq 1$, $M_{q,p}(\myPhi)$ and $M_{q,p}(\myPhi,k)$ for $q \sg 0$ and $p \sgeq 1$. 
+
+Then, we demonstrated the relationship between the proposed Block-MCC$_{q,p}$, and conventional MCC and block-coherence proposed by Eldar et al. \cite{Eldar2009b,Eldar2010b,Eldar2010}.
+%Then, we defined bounds of Block-MCC$_{q,p}$ in terms of the conventional MCC, 
+%(Property \ref{prp:BMIC-MIC}), 
+%and showed the relationship between Block-MCC$_{q,p}$ and the block-coherence proposed by Eldar \cite{Eldar2009b,Eldar2010b,Eldar2010}. 
+%(Property \ref{prp:BMIC-MEldar}).
+
+The proposed various properties and block-sparse uncertainty principles 
+%of Block-NSP (Theorem \ref{th:BNSP}), block-sparse uncertainty principle based on $\myBSpkTxt$ (Lemma \ref{lm:BUP-BS}), basic block-sparse uncertainty principle (Lemma \ref{lm:BBUP}), and block-sparse uncertainty principle based on Block-MCC$_{q,p}$ (Lemma \ref{lm:BUP-BMIC}, Corollary \ref{crl:BUP-BMIC}) 
+are defined in the general case and introduced to deduce recovery conditions for block-sparse representations.
+%We showed that the proposed BBUP, BUP-BS and BUP-BMIC in the special seting of $d=1$, reduce to their corresponding conventional properties.
+
+We defined basic block-sparse uncertainty principle based on the proposed basic Block-MCC$_{q,p}$, 
+%$M_{q,p}(\myPhiOne , \myPhiTwo)$ (Lemma \ref{lm:BBUP}),
+upper-bounded it in terms of its conventional basic MCC, 
+%corresponding $M(\myPhiOne , \myPhiTwo)$ (Property \ref{prp:DontKnow2}), 
+then lower-bounded in terms of $m$ and length of blocks, 
+%(Property \ref{prp:BMIC-LB}), 
+then showed its relationship with basic block-coherence of Eldar et al., 
+%the existing block-wise one proposed by Eldar (Property \ref{prp:DontKnow3}) 
+and in the end we showed in which conditions the dictionary can be more block-incoherent relative to the conventional and existing block-wise cases.
+% (Remark \ref{Rmrk:Basic BMIC II}, Remark \ref{Rmrk:Basic BMIC}).  
+
+We demonstrated that the proposed Block-ERC based on $\myBSpkTxt$ 
+%(Theorem \ref{th:BERC-BS}, corollaries \ref{crl:BERC-BNSP-BS-beta}, and \ref{crl:Double-proof-BERC-BS}) 
+improves the conventional ERC based on $\mySpkTxt$ \cite{Donoho2003,Gribonval2003a}.
+% (using Corollary \ref{prp:BS-S}).
+In addition, the proposed Block-NSP 
+%(Theorem \ref{th:BNSP}) 
+generalises the conventional NSP \cite{Donoho2001,Elad2001,Gribonval2003a,Feuer2003,Zhang2005a,Stojnic2008,Cohen2009}
+%\cite{Donoho2001,Elad2001,Elad2002a,Donoho2003,Gribonval2003a,Gribonval2003,Feuer2003,Gribonval2004a,Zhang2005a,Gribonval2007,Stojnic2008,Cohen2009}
+and another existing Block-wise NSP \cite{Stojnic2009a}, and Fusion NSP in special setting \cite{Boufounos2011}.
+
+Further, %to restate our proposed properties based on $\myBSpkTxt$ in terms of the introduced Block-MCC$_{q,p}$ 
+%$M_{q,p}(\myPhi)$ 
+%we proved the relationship between the two characterizations, 
+%$\myBspk(\myPhi)$ and $M_{q,p}(\myPhi)$ (Lemma \ref{lm:Block Spark Inequality}, Corollary \ref{crl:Block Spark Inequality}), 
+%and 
+we showed that the proposed Block-ERC based on Block-MCC$_{q,p}$ 
+%(Theorem \ref{th:BERC-BMIC}, Corollary \ref{crl:BERC-BMIC}) 
+improves the conventional ERC based on MCC \cite{Donoho2001}.
+%\cite{Donoho2001,Donoho2003,Gribonval2003,Tropp2004,Donoho2006a,Gribonval2007,Bruckstein2009} (Property \ref{prp:DontKnow1}, Remark \ref{Rmrk:DontKnow1}).
+
+Moreover, we improved the Block-ERC of Eldar et al. and demonstrated that our results algorithm-independently weaken the condition.
+%(Lemma \ref{lm:Eldar-BMIC}, Remark \ref{Rmrk:Eldar-BMIC-Rmrk}).
+In addition in special setting of $q \seq p \seq 2$, intra-block orthonormality and equally-sized blocks our proposed Block-ERC and the results of Eldar et al. are equivalent \cite{Eldar2009b}.
+%\cite{Eldar2009b,Eldar2010b,Eldar2010} (Remark \ref{Rmrk:Eldar-BMIC-equality}).
+
+Next, we proposed Block-MCC$_{q,p}$-based recovery conditions for convex problem $P_{\boldsymbol{w};p,1}$ (and $P_{p,1}$ for equally-sized blocks), where, $p \sgeq 1$.
+% (Theorem \ref{th:BERC-BMIC-Q}, Corollary \ref{crl:BERC-BMIC-Q} and Property \ref{prp:BERC-BMIC-Q-qq}).
+
+%Then we showed that, 
+%$\forall r \sgeq 0$ and $\forall p \sgeq 1$, 
+%if $\Vert \mybeta \Vert_{\boldsymbol{w};r,0} \sless (1 \spl d_{max}^{-1} M_{p,p}^{-1}(\myPhi))/2$, both non-convex $P_{r,0}$ 
+%(for $\forall r \sg 0$ and $P_{r,0}, \forall k, d_k \seq d$) 
+%and convex $P_{\boldsymbol{w};p,1}$ 
+%(and $P_{p,1}, \forall k, d_k \seq d$) 
+%problems can recover the true solution.
+% (Remark \ref{Rmrk:P1P0-Equivalence}).
+
+Finally, we introduced the cumulative version of the block-coherence of Eldar et al. \cite{Eldar2009b}, 
+%\cite{Eldar2009b,Eldar2010b,Eldar2010}
+named it cumulative inter-block coherence constant, 
+%(Definition \ref{def:CIIC}), 
+demonstrated its relationship with cumulative Block-MCC$_{q,p}$, and 
+%$M_{q,p}(\myPhi,k)$ (Property \ref{prp:BMIC-CIIC})and stated its relationship with 
+the inter-block coherence defined by Eldar et al., 
+%(Property \ref{prp:CIIC-Eldar})
+and proposed Block-ERC based on cumulative inter-block coherence constant.
+% (Theorem \ref{th:BERC-CIIC}).
+
+All the contributions of this work are the natural generalisation of the existing conventional concepts, thus, they all reduce to the conventional ones for the unit block size, i.e., $\forall k, \, d_k \seq 1$.
+Therefore, all the results are consistent with the previous findings.
+
+In numerical experiments in Section \ref{sec:Numerical_experiments}, we showed that in computation of sparsity level, there are three types of parameters: block length $d_k$, existence of intra-block orthonormality, and $\ell_{q {\to} p}$ operator-norm in Block-MCC$_{q,p}$.
+%, and type of Block-ERC.
+
+Then, by assuming that only two types of parameters are variable, we investigated the behaviour of sparsity level in three different experiments.
+
+In this part, we are going to investigate the sparsity levels while all the three mentioned parameters are variable.
+In figure \ref{fig:SL}, the first twelve bars for each block size $d$, indicate $(d \spl M^{-1}_{q,p}(\myPhi))/2$.
+\iffalse 
+%and $(d+d^{1/q \sm 1/p}M^{-1}_{q,p}(\myPhi))/2$ 
+for the most pessimistic 
+%and the most optimistic 
+case, following Corollary \ref{crl:BERC-BMIC}.
+\fi
+%Each bar has two pairs of mean and standard deviation values, which the lower one correspond to the most pessimistic and the higher one to the most optimistic case.
+%Remember that for $q \seq p$, two cases are equivalent and therefore only one pair of mean and standard deviation is seen on the corresponding bars.
+
+The proposed sparsity levels are calculated for the six tractable basic operator-norms of $\ell_{1 {\to} 1}$, $\ell_{1 {\to} 2}$, $\ell_{1 {\to} \infty}$, $\ell_{2 {\to} 2}$, $\ell_{2 {\to} \infty}$, and $\ell_{\infty {\to} \infty}$, based on the table \ref{table:OperatorNorm} (page \pageref{table:OperatorNorm}).
+Then, repeated for dictionaries without ($\myPhi$) and with ($\myPhi_{ort}$) intra-block orthonormality.
+
+The last four bars are the sparsity levels of the Block-ERC proposed by Eldar et al., i.e., $d$ times the right-hand side of the (\ref{BERC-Eldar}), and of the ERC proposed by Donoho et al., i.e., $(1 \spl M^{-1}(\myPhi)) / 2$ defined in (\ref{eq:ERC-M}), for two types of dictionary, i.e., $\myPhi$ and $\myPhi_{ort}$.
+
+%The two lines (not the bars) are conventional sparsity levels, which are constant by increasing $d$.
+As it can be seen in figure \ref{fig:SL}, all sparsity levels for $d \seq 1$ converge to the conventional sparsity level of Donoho et al., whereas by increasing $d$, the sparsity level related to the Block-ERC, whether ours or the condition of Eldar et al., are significantly increased, which practically demonstrates the claim of weakened recovery conditions in the block-wise domain, which has been proved theoretically in Property \ref{prp:DontKnow1} (SL v.s. $\myBSLqpTxt$, page \pageref{prp:DontKnow1}).
+\iffalse
+In Lemma \ref{lm:Eldar-BMIC}, it is theoretically proved that for $q \sgeq p$, if $M^{Eldar}_{Intra}(\myPhi)$ is sufficiently small, then the proposed Block-ERC outperforms the condition of Eldar and her co-workers. 
+However, it can be seen in figure \ref{fig:SL} that in practice even for $q \sleq p$ the sparsity level corresponding to the proposed Block-MCC$_{q,p}$ is higher than the sparsity level of Eldar and her co-workers.
+\fi
+
+In addition, it can be seen in figure \ref{fig:SL} that 
+%for $q \sless p$ and in the most optimistic (upper mean and standard deviation) case of the proposed Block-ERC, and also 
+for $q \seq p \seq 2$, our proposed sparsity level is equal to that of Eldar et al., which demonstrates the correctness of the claim in Lemma \ref{lm:Eldar-BMIC} and consequently Remark \ref{Rmrk:Eldar-BMIC-equality}.
+As discussed in Remark \ref{Rmrk:Eldar-BMIC-equality} and can be seen in figure \ref{fig:SL}, for $q \seq p \seq 2$ and intra-block orthonormality, the proposed sparsity level reduces to the sparsity level of Eldar and her co-workers.
+
+%As mentioned earlier, although there is not theoretically proved support for that, the improvement over Eldar's sparsity level can be true for all cases, even for those without theoretic proof, e.g., see the most pessimistic case for dictionary $\myPhi$ without intra-block orthonormality in figure \ref{fig:SL}.
+Furthermore, for all variable parameters, we have $SL_{1,\infty}(\myPhi) \sless SL_{1,2}(\myPhi) \sless SL_{1,1}(\myPhi)$, $SL_{1,\infty}(\myPhi) \sless SL_{1,2}(\myPhi) \sless SL_{2,2}(\myPhi)$, $SL_{1,\infty}(\myPhi) \sless SL_{2,\infty}(\myPhi) \sless SL_{2,2}(\myPhi)$, and $SL_{1,\infty}(\myPhi) < SL_{2,\infty}(\myPhi) < SL_{\infty,\infty}(\myPhi)$, which is in agreement with Property \ref{prp:BSLqp-relationships} ($\myBSLqpTxt$ inequalities).
+
+In addition, it can be seen that for a given $q$ and $p$ pairs, the sparsity level of dictionaries $\myPhi_{ort}$ with intra-block orthonormality is higher than the sparsity level of dictionaries $\myPhi$ without intra-block orthonormality, i.e., conditions based on $\myPhi_{ort}$ are weaker.
+\input{sections/2-5-Conclusion-Fig9}
+
+\newpage
+Future research should focus on:
+\begin{itemize}
+\item Introducing block-sparse recovery conditions based on the proposed cumulative Block-MCC$_{q,p}$ defined in Definition \ref{def:CBMIC}.
+\item Generalising the conventional dictionary characterisation of $\mu$ defined in \cite{Donoho2003}, to establish block-sparse recovery conditions.
+\item  Transforming all the previously mentioned block-sparse \emph{exact} recovery conditions to block-sparse \emph{stable} recovery conditions.
+In stable or robust recovery conditions we have, $\Vert \boldsymbol{y} \sm \myPhi \hat{\mybeta} \Vert_{2} \sless e$, where, $e$ is the noise level.
+\item Study on block-sparse optimisation algorithms, and the relationship between the \emph{theoretical} and \emph{algorithmic} block-sparse recovery conditions.
+\end{itemize}
+\newpage
+%and considering the case of multiple dictionaries sharing the same representation.
+
+
+
+%------------------------------------------------------
+%\subsection{Numerical experiments at a glance}
+%\label{prf:Numerical experiments at a glance} 
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../roque-phdthesis"
+%%% End: 

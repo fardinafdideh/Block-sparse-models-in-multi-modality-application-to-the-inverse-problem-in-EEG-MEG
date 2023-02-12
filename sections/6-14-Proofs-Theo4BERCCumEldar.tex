@@ -1,0 +1,79 @@
+\begin{proof}
+The proof is similar to the proof of Theorem 3 in \cite{Eldar2010}.
+First, divide the whole matrix $\myPhi$ into two complementary matrices $\myPhi_{opt}$ and $\myPhi_{\overline{opt}}$. 
+Suppose $\myPhi_{opt}$ is a \myhl{full column rank} $m$ by $kd$ matrix whose blocks correspond to non-zero blocks of $\mybetaz$, and let $\myPhi_{\overline{opt}}$ be its complementary matrix. 
+From Theorem 2 in \cite{Eldar2010}, a sufficient condition for block orthogonal matching pursuit and $\ell_2/\ell_1$-optimisation program algorithms to correctly recover the block $k$-sparse $\mybetaz$, is that $\rho_c(\myPhi_{opt}^\dagger \myPhi_{\overline{opt}}) \sless 1$, where,  $\rho_c(\boldsymbol{A}) \seq \max_j \sum_i \Vert \boldsymbol{A}[i,j] \Vert_{2 {\to} 2}$ and $\boldsymbol{A}[i,j]$ is the $(i,j)^{th}$ $d \stimes d$ block of $\boldsymbol{A}$.
+Using Moore-Penrose pseudo-inverse property of matrices and the submultiplicativity property of $\rho_c(\cdot)$ been proved in Lemma 2 in \cite{Eldar2010}, we have:
+\begin{gather*}
+\begin{aligned}
+\rho_c \myparanthese{\myPhi_{opt}^\dagger \myPhi_{\overline{opt}}} &=
+\rho_c \myparanthese{\myparanthese{\myPhi_{opt}^T \myPhi_{opt}}^{-1} \myPhi_{opt}^T \myPhi_{\overline{opt}}} \\
+&\leq \rho_c \myparanthese{\myparanthese{\myPhi_{opt}^T \myPhi_{opt}}^{-1}} \rho_c \myparanthese{\myPhi_{opt}^T \myPhi_{\overline{opt}}}. \\
+\end{aligned}
+\end{gather*}
+On the other hand, we have:
+\begin{gather*}
+\begin{aligned}
+\rho_c \myparanthese{\myPhi_{opt}^T \myPhi_{\overline{opt}}} 
+&= \max_{j} \sum_{i} \mynorm{\myPhi_{opt}^T \myPhi_{\overline{opt}} \mybracket{i,j}}_{2 \to 2} \\
+&= \max_{j \notin \Lambda} \sum_{i \in \Lambda} \mynorm{\myPhi^T \myPhi \mybracket{i,j}}_{2 \to 2} \\
+&=  \max_{j \notin \Lambda} \sum_{i \in \Lambda} \mynorm{\myPhi^T \mybracket{i} \myPhi \mybracket{j}}_{2 \to 2} \\
+&\leq d \, M_{Inter}^{Eldar}\myparanthese{\myPhi , k},
+\end{aligned}
+\end{gather*}
+where, $\Lambda$ is the set of indices of blocks of $\myPhi$ which are in $\myPhi_{opt}$, and by Definition \ref{def:CIIC} $M_{Inter}^{Eldar}(\myPhi , k) {\myeq}
+\max_{\vert \Lambda \vert =k} \max_{j \notin \Lambda} \sum_{i \in \Lambda} \Vert \myPhi^T[i] \myPhi[j] \Vert_{2 \to 2} /d$.
+Therefore, we have:
+\begin{gather*}
+\rho_c \myparanthese{\myPhi_{opt}^\dagger \myPhi_{\overline{opt}}} \leq \rho_c \myparanthese{\myparanthese{\myPhi_{opt}^T \myPhi_{opt}}^{-1}} d \, M_{Inter}^{Eldar}\myparanthese{\myPhi , k}.
+\end{gather*}
+Now it remains to upper-bound $\rho_c((\myPhi_{opt}^T \myPhi_{opt})^{-1})$.
+To this aim, we decompose $\myPhi_{opt}^T \myPhi_{opt}$ as $\myPhi_{opt}^T \myPhi_{opt} \seq \boldsymbol{I}_{kd} \spl \boldsymbol{F}$, where, $\boldsymbol{F}$ is a $kd$ by $kd$ matrix with blocks $\boldsymbol{F} [i,j]$ of size $d \stimes d$, that
+\begin{equation*}
+\begin{aligned}
+\boldsymbol{F} \mybracket{i,j} = 
+  \begin{cases}
+
+    \myPhi_{opt}^T \mybracket{i} \myPhi_{opt} \mybracket{j}-\boldsymbol{I}_{d},   \quad &\text{if }i = j\\
+        \myPhi_{opt}^T \mybracket{i} \myPhi_{opt} \mybracket{j},   \quad   &\text{if }i \neq j.
+  \end{cases} 
+  \end{aligned}
+\end{equation*}
+All the main diagonal entries of $\boldsymbol{F}$ are zero.
+Then, we have:
+\begin{gather*}
+\begin{aligned}
+\rho_c \myparanthese{\boldsymbol{F}} &=
+\max_j \sum_i \mynorm{\boldsymbol{F}\mybracket{i,j}}_{2 \to 2} \\
+&\leq \max_j \mynorm{\boldsymbol{F}\mybracket{j,j}}_{2 \to 2} + \max_j \sum_{i \neq j} \mynorm{\boldsymbol{F}\mybracket{i,j}}_{2 \to 2} \\
+&\leq \myparanthese{d-1} M^{Eldar}_{Intra}\myparanthese{\myPhi} + d \, M^{Eldar}_{Inter}\myparanthese{\myPhi , k-1},
+\end{aligned}
+\end{gather*}
+where, the first term is obtained by applying Ger\v{s}gorin's disc theorem \cite{HornR.A.2012}, and using the definition of sub-coherence proposed by Eldar \cite{Eldar2010}.
+{
+\label{cmmnt:79} 
+\myhl{Precisely, from the definition of $\boldsymbol{F}[k,k] \ssin \mathbb{R}^{d \stimes d}$, we have $\forall k$, $\boldsymbol{F}_{i,j{\neq}i}[k,k] \sleq M^{Eldar}_{Intra}(\myPhi)$, while $\boldsymbol{F}_{i,i}[k,k] \seq 0$.
+On the other hand, from Corollary 6.1.5 in {\cite{HornR.A.2012}} (Ger\v{s}gorin's disc theorem), we have $\forall \boldsymbol{A} \ssin \mathbb{R}^{m \stimes m}$, $\Vert \boldsymbol{A} \Vert_{2 {\to} 2} \sleq \min \{ \Vert \boldsymbol{A} \Vert_{1 {\to} 1} , \Vert \boldsymbol{A} \Vert_{\infty {\to} \infty} \} $.
+Therefore, $\max_j \Vert \boldsymbol{F}\mybracket{j,j} \Vert_{2 \to 2} \sleq (d \sm 1) M^{Eldar}_{Intra}(\myPhi)$.}
+}
+The second term follows from the definition of the cumulative inter-block coherence constant, defined in Definition \ref{def:CIIC}. 
+Using Lemma 4 in \cite{Eldar2010} and considering the assumption of Theorem \ref{th:BERC-CIIC} which indicates that $\rho_c (\boldsymbol{F}) \sless 1$, we have:
+\begin{gather*}
+\begin{aligned}
+\rho_c \myparanthese{\myparanthese{\myPhi_{opt}^T \myPhi_{opt}}^{-1}} &=
+\rho_c \myparanthese{\sum_{i=0}^\infty \myparanthese{-\boldsymbol{F}}^i} \\
+ &\leq \sum_{i=0}^\infty \myparanthese{\rho_c\myparanthese{\boldsymbol{F}}}^i \\
+ &= \frac{1}{1-\rho_c \myparanthese{\boldsymbol{F}}} \\
+ &\leq \frac{1}{1-\myparanthese{d-1} M^{Eldar}_{Intra}\myparanthese{\myPhi} - d \, M^{Eldar}_{Inter}\myparanthese{\myPhi , k-1}},
+\end{aligned}
+\end{gather*}
+where, the first inequality follows from the triangle inequality and submultiplicativity properties.
+Then we have the following inequality, which is a simple rearrangement of the equation in Theorem \ref{th:BERC-CIIC}:
+\begin{gather*}
+\begin{aligned}
+\rho_c \myparanthese{\myPhi_{opt}^\dagger \myPhi_{\overline{opt}}} &\leq \frac{d \, M^{Eldar}_{Inter}\myparanthese{\myPhi , k}}{1-\myparanthese{d-1} M^{Eldar}_{Intra}\myparanthese{\myPhi} - d \, M^{Eldar}_{Inter}\myparanthese{\myPhi , k-1}} \\
+&< 1.
+\end{aligned}
+\end{gather*}
+%which is a simple rearrangement of the equation in Theorem \ref{th:BERC-CIIC}.
+\end{proof}

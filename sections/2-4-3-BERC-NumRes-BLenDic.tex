@@ -1,0 +1,13 @@
+In this experiment, assume that the dictionary characterisation of Block-MCC$_{2,2}$ is used.
+The goal is to investigate the sparsity levels for two types of random dictionaries without and with intra-block orthonormality, and for different dictionaries with equally-sized blocks $d \seq \{ 1,2,4,5,8,10 \}$.
+Finally, the sparsity levels for two types of random dictionaries computed for different values of $d$, are compared to the conventional sparsity levels of Donoho et al. and Eldar and her co-workers.
+
+As it can be seen in figure \ref{fig:SL_1Inf_Opt_Eldar_Donoho}, for Block-MCC$_{2,2}$ as dictionary characterisation, the proposed sparsity levels for random dictionaries without intra-block orthonormality and with full column rank blocks ($\myPhi$, hollow downward orange triangles) are higher than the conventional sparsity levels introduced by Donoho et al. ($\myPhi$, hollow green circles) and Eldar et al. ($\myPhi$, hollow upward blue triangles) for all values of $d$.
+
+% both two types of random dictionaries without ($\myPhi$, hollow circles) and with ($\myPhi_{ort}$, filled circles) intra-block orthonormality are higher than the conventional sparsity levels introduced by Eldar and Donoho.
+Except for the results of Donoho et al., the sparsity levels for random dictionaries with intra-block orthonormality are higher than for random dictionaries without intra-block orthonormality (with full column rank blocks).
+Sparsity level of Donoho et al. is invariable to two types of dictionaries $\myPhi$ and $\myPhi_{ort}$, and also to changes in $d$ (the corresponding two set of markers are superimposed).
+%In addition, Eldar's sparsity levels for random dictionaries without intra-block orthonormality ($\myPhi$, hollow squares), for $d \sgeq 5$ cannot be computed, because the implicit condition $d \sleq 1 \spl (M^{Eldar}_{Intra})^{-1}$ in (\ref{BERC-Eldar}) does no longer hold true.
+At last, for $d \seq 1$, the sparsity levels in block domain are equal to the scalar domain.
+\input{sections/2-4-3-BERC-NumRes-BLenDic-Fig8}
+\FloatBarrier

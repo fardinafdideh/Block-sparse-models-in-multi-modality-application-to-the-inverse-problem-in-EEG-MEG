@@ -1,0 +1,13 @@
+%In the following property, the relationship between our proposed two cumulative coherences is stated:
+In the following property, the relationship between our two proposed cumulative coherences, i.e., cumulative Block-MCC$_{q,p}$ (Definition \ref{def:CBMIC}) and Eldar's cumulative coherence (Definition \ref{def:CIIC}), is investigated:
+\begin{property}[Cumulative Block-MCC$_{q,p}$ v.s. Eldar's cumulative coherence]
+\label{prp:BMIC-CIIC} 
+For a dictionary $\myPhi$ with orthonormal equally-sized blocks, we have:
+\begin{equation*}
+M_{2,2}\myparanthese{\myPhi,k} = M_{Inter}^{Eldar}\myparanthese{\myPhi , k}
+\end{equation*}
+\end{property}
+\begin{proof}
+From Definition \ref{def:CBMIC} (cumulative Block-MCC$_{q,p}$), we have $\forall (q , p) \ssin \mathbb{R}^2_{\sg 0} : M_{q,p} (\myPhi , k) {\myeq} d_{max}^{-1} \max_{\vert \Lambda \vert =k} \max_{j \notin \Lambda} \sum_{i \in \Lambda} d_{i}^{-1/p} d_{j}^{1/q} \Vert \myPhi^\dagger [i] \myPhi [j] \Vert_{q \to p}$.
+On the other hand, for orthonormal blocks we have $\myPhi^\dagger [i] \seq \myPhi^T [i]$, and by selecting $q \seq p\seq 2$ for an equally-sized block structure, i.e., $d_1 \seq \cdots \seq d_K \seq d$, we get $M_{q,p} (\myPhi , k) \seq d^{-1} \max_{\vert \Lambda \vert =k} \max_{j \notin \Lambda} \sum_{i \in \Lambda} \Vert \myPhi^T [i] \myPhi [j] \Vert_{2 \to 2} \seq M_{Inter}^{Eldar} (\myPhi , k)$. % in a special setting of
+\end{proof}

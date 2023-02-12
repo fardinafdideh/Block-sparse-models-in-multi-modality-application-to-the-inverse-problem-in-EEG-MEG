@@ -1,0 +1,40 @@
+It was explained in Section \ref{sec:Leadfield} that the solution of the  EEG/MEG forward problem is called lead-field, denoted by $\myPhi_{\boldsymbol{\mathrm{{EEG/MEG}}}} \ssin \mathbb{R}^{m \stimes n}$ , which linearly relates the activities in source, denoted by $\mybeta$, and EEG/MEG sensor space, denoted by $\boldsymbol{y_\mathrm{{EEG/MEG}}}$.
+In other words, we have $\boldsymbol{y_\mathrm{{EEG/MEG}}} \seq \myPhi_{\boldsymbol{\mathrm{{EEG/MEG}}}} \mybeta$.
+ 
+As mentioned earlier in Section \ref{sec:ForwardInverseProblem}, the inverse problem involves computing the parameters of the brain sources.
+Since the number of the sensors, i.e., $m$, is much less than the number of the brain sources, i.e., $K$, there would be infinitely many states of the sources that lead to the same electromagnetic fields, i.e., $\boldsymbol{y_\mathrm{{EEG/MEG}}} \seq \myPhi_{\boldsymbol{\mathrm{{EEG/MEG}}}} \mybeta_i$, where $i \ssin \{\boldsymbol{1}, \cdots , \boldsymbol{\infty} \}$.
+Hence, the EEG/MEG source reconstruction problem is ill-posed. 
+
+To make the problem solvable with a unique solution, a dipole source model can be applied to the brain current sources.
+In other words, a population of cerebral neurons can be represented by a single dipole.
+A dipole can be represented mathematically as a vector.
+Considering the 3D Cartesian coordination, for each dipole we have six parameters to be determined.
+\begin{itemize}
+\item 
+Three parameters are related to the dipole position in $\boldsymbol{i}$, $\boldsymbol{j}$, and $\boldsymbol{k}$ direction, which by meshing the brain, these positions can be also limited to some predefined discrete values placed in the vertices of brain mesh.
+\item 
+Three parameters characterise the power of the dipole in each of three directions, i.e., the magnitudes of the dipole moment in $\boldsymbol{i}$, $\boldsymbol{j}$, and $\boldsymbol{k}$ direction.
+\end{itemize}
+
+%The other 
+For instance in figure \ref{fig:EEG_MEG_LF}, the dipole located in $s_4$ is related to three consecutive entries in the source activity vector $\mybeta \ssin \mathbb{R}^n$, where $K \seq n {/} 3$.
+
+
+
+Assuming only four brain source positions $s_1 , \cdots , s_4$ and three electric or magnetic sensors in a simple case, figure \ref{fig:EEG_MEG_LF} represents EEG and MEG linear models.
+%two leadfield matrices for EEG and MEG.
+
+As it can be seen in figure \ref{fig:EEG_MEG_LF}, \myhl{regardless of the head electromagnetic properties, and in terms of the parameters of the dipole source model,} each element of EEG lead-field is a function $f$ of direction vectors $\boldsymbol{i}$, $\boldsymbol{j}$, or $\boldsymbol{k}$ and the distance between the position of corresponding source and sensor, e.g., the EEG lead-field for source $s_1$ is represented in figure \ref{fig:EEG_MEG_LF}.
+Each consecutive three elements in a row belongs to a certain sensor and source.
+Similarly, %as can be seen in the right part of figure \ref{fig:EEG_MEG_LF}, 
+\myhl{in terms of the parameters of the dipole source model,} each element of MEG lead-field is a function $g$ of direction vectors $\boldsymbol{i}$, $\boldsymbol{j}$, or $\boldsymbol{k}$ and the distance between the position of corresponding source and sensor, e.g., the MEG lead-field for source $s_2$ is represented in figure \ref{fig:EEG_MEG_LF}.
+
+Therefore, due to discretising and linearising effect of lead-field and having much less sensors than sources, an EEG/MEG source reconstruction problem can be stated in a form of USLE.
+\newpage
+\input{sections/3-4-0-Clustering-EMEGSourceReconst-Fig4}
+\FloatBarrier
+\newpage
+%------------------------------------------------------
+\subsection{EEG/MEG source space segmentation} % using clustering of leadfield
+\label{sec:EMEG segmentation} 
+\input{sections/3-4-1-Clustering-EMEGSourceReconst-Seg}

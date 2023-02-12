@@ -1,0 +1,49 @@
+The maximum pairwise absolute correlation between the normalized atoms of a dictionary can be used as a characterization of the dictionary, which is called Mutual Coherence Constant (MCC) \cite{Donoho2001}.
+%The Mutual Coherence Constant (MCC) of a dictionary is the maximum pairwise absolute correlation between the normalized atoms of the dictionary \cite{Donoho2001}.
+%\cite{Donoho2001,Elad2001,Elad2002a,Donoho2003,Gribonval2003a,Tropp2004,Fuchs2004a,Fuchs2005,Donoho2006a,Tropp2006,Gribonval2007}. 
+From computational point of view, MCC can be considered as the maximum element of off-diagonal absolute Gram (Gramian) matrix $\boldsymbol{G}(\myPhi) \myeq \myPhi^T\myPhi$ \cite{Donoho2003,Donoho2003a}, i.e.,
+\begin{equation*}
+\begin{aligned}
+\label{eq:MIC}
+M\myparanthese{\myPhi} \myeq 
+\max_{k,k' \neq k} \myabs{ \left\langle \boldsymbol{\varphi}_k , \boldsymbol{\varphi}_{k'} \right\rangle}
+&= \max_{k,k' \neq k} \myabs{\boldsymbol{\varphi}^T_k \boldsymbol{\varphi}^{ }_{k'}} \\
+&= \max_{k,k' \neq k} \myabs{\boldsymbol{G}_{k,k'}\myparanthese{\myPhi}},
+\end{aligned}
+\end{equation*}
+where, $\left\langle \boldsymbol{a} , \boldsymbol{b} \right\rangle$ computes the inner product of the vectors $\boldsymbol{a}$ and $\boldsymbol{b}$.
+Obviously, the main diagonal of $\boldsymbol{G}(\myPhi)$ is composed of $1$s, due to the $\ell_2$-normalization of the atoms of the dictionary.
+Since it is assumed that the atoms of the dictionary have unit $\ell_2$ norm, MCC satisfies $M(\myPhi) \sleq 1$, because of the Cauchy-Schwarz inequality $\vert \langle \boldsymbol{\varphi}_k , \boldsymbol{\varphi}_{k'} \rangle \vert \sleq \Vert \boldsymbol{\varphi}_k \Vert_2  \Vert\boldsymbol{\varphi}_{k'} \Vert_2 $.
+For a dictionary as an orthonormal basis, $M(\myPhi) \seq 0$, whereas for a dictionary consisting two or $m$ orthonormal bases, $M(\myPhi)$ is bounded by \cite{Heath2006}:
+\begin{equation}
+\label{eq:M-bounds}
+\frac{1}{\sqrt{m}} \leq M\myparanthese{\myPhi} \leq 1.
+\end{equation}
+
+For an equiangular tight frame deterministic dictionary, which satisfies the following three conditions \cite{Foucart2013}:
+%For a general dictionary the lower-bound of $M(\myPhi)$ is $\sqrt{(n \sm m)/(m(n \sm 1))}$ \cite{Welch1974,Strohmer2003}.
+%%\cite{Welch1974,Rosenfeld1997,Strohmer2003}.
+%This lower bound is also known as the \emph{Welch bound}, and is achieved when the deterministic dictionary is equiangular tight frame, which satisfies the following three conditions \cite{Foucart2013}:
+\begin{equation*}
+\begin{aligned}
+&&\mynorm{\boldsymbol{\varphi}_k}_2 = 1, \qquad & \text{for } k = 1, \cdots, n, \\
+&&\myabs{\left\langle \boldsymbol{\varphi}_k , \boldsymbol{\varphi}^{ }_{k'} \right\rangle}=c, \qquad & \forall k \neq k' \text{ and constant c}, \\
+&&\frac{m}{n} \sum_{k=1}^n \left\langle \boldsymbol{\varphi} , \boldsymbol{\varphi}^{ }_{k} \right\rangle \boldsymbol{\varphi}^{ }_{k} = \boldsymbol{\varphi}, \qquad & \forall \boldsymbol{\varphi} \in \mathbb{R}^m.
+\end{aligned}
+\end{equation*}
+the lower-bound of $M(\myPhi)$ or the \emph{Welch bound} is $\sqrt{(n \sm m)/(m(n \sm 1))}$ \cite{Welch1974,Strohmer2003}.
+The Welch bound defined for equiangular tight frame deterministic dictionaries is even less than the lower-bound of $M(\myPhi)$ for a general random dictionary in (\ref{eq:M-bounds}), unless $m \seq 1$, \myhl{for} which the two lower-bounds are equal.
+
+MCC was first computed for two orthonormal bases $\myPhiOne$ and $\myPhiTwo$, 
+which is called \emph{basic MCC}:
+%, i.e., $\overbar{M}(\myPhiOne,\myPhiTwo)$, is the maximal inner product between the columns of the orthonormal bases $\myPhiOne$ and $\myPhiTwo$, i.e.,:
+\begin{equation*}
+\overbar{M} \myparanthese{\myPhiOne,\myPhiTwo} = \max_{k,k'} \myabs{\boldsymbol{\varphi}_{{\boldsymbol{1}}_k}^T \boldsymbol{\varphi}_{{\boldsymbol{2}}_{k'}}^{ }}.
+\end{equation*}
+
+{
+\label{txt:BasicMCCBounds} 
+Notice that for orthonormal bases $\myPhiOne$ and $\myPhiTwo$ and their concatenation $[\myPhiOne , \myPhiTwo]$, we have $\overbar{M}\myparanthese{\myPhiOne,\myPhiTwo} \seq M\myparanthese{\mybracket{\myPhiOne,\myPhiTwo}}$.
+Supposing the dimension of two orthonormal bases $\myPhiOne$ and $\myPhiTwo$ is $m$ by $m$, it is proved that $1/\sqrt{m} \sleq \overbar{M}(\myPhiOne,\myPhiTwo) \sleq 1$ \cite{Donoho2001,Elad2001,Elad2002a}.
+The lower-bound is achieved when the pair of orthonormal bases are spikes and sines \cite{Donoho2001} or Identity and Hadamard \cite{Elad2002a} matrices or any other orthonormal matrices corresponding to the orthonormal bases, whereas the upper-bound is achieved when at least one of the columns in each of two orthonormal bases is common.
+}

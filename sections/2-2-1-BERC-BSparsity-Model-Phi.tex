@@ -1,0 +1,12 @@
+Similarly, the following block-wise structure is assumed for the dictionary $\myPhi$, which can be viewed as a concatenation of all $K$ individual blocks:
+\begin{equation*}
+\label{eq:Phi Structure-whole}
+\myPhi = \mybracket{\myPhi\mybracket{1},  \cdots, \myPhi\mybracket{k}, \cdots, \myPhi\mybracket{K}},
+\end{equation*}
+where, $\myPhi[k] \ssin \mathbb{R}^{m \stimes d_k}$, and as it is mentioned there is not any imposed relationship between $m$ and $n$, other than $m \sless n$.   
+The $k^{th}$ block is defined as the $d_k$ columns of matrix $\myPhi$:
+\begin{equation*}
+\label{eq:Phi Structure-block}
+\myPhi \mybracket{k} = \mybracket{\myphi_1\mybracket{k}, \cdots, \myphi_{d_k}\mybracket{k}},
+\end{equation*}
+with $\myphi_{j}[k] \ssin \mathbb{R}^{m}$, and without loss of generality, it is assumed that $\myphi_{j}[k]$ has unit Euclidean norm, i.e., $\forall j, k : \Vert \myphi_{j}[k] \Vert_2 \seq 1$.

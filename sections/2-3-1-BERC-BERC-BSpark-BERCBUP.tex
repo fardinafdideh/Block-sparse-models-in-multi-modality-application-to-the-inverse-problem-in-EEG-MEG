@@ -1,0 +1,25 @@
+Using the proposed Lemma \ref{lm:BUP-BS} (Block-UP based on $\myBSpkTxt$), we introduce the following \emph{Block-ERC based on Block-Spark}:
+\begin{tcolorbox}
+\begin{theorem}[Block-ERC based on $\boldsymbol{\myBSpkTxt}$]
+\label{th:BERC-BS}
+For any general dictionary $\myPhi$, \myhl{such that $\boldsymbol{y} \seq \myPhi \mybetaz$, $\forall p \sgeq 0$, if}
+%\begin{equation*}
+%\label{eq:BERC-BS}
+%\forall p > 0, \quad \mynorm{\mybetaz}_{\boldsymbol{w};p,0} < \frac{\myBSpkMath}{2},
+%\end{equation*}
+%then $\mybetaz$ is the unique solution to the $P_{\boldsymbol{w};p,0}$ optimisation problem, whereas for equally-sized blocks, , i.e., $d_1 \seq \cdots \seq d_K$, if
+\begin{equation*}
+%\label{eq:BERC-BS2}
+\mynorm{\mybetaz}_{p,0} < \frac{\myBSpkMath}{2},
+\end{equation*}
+then $\mybetaz$ is the unique solution to the $P_{p,0}$ optimisation problem.
+\end{theorem}
+\end{tcolorbox}
+%\newpage
+\begin{proof}
+Considering Lemma \ref{lm:BUP-BS} (Block-UP based on $\myBSpkTxt$), suppose that in addition to $\mybetaz$ there is another solution $\mybetao$, that satisfies the same linear model, i.e., $\boldsymbol{y} \seq \myPhi\mybetaz \seq \myPhi\mybetao$. 
+
+Since it is assumed that the number of active blocks of the candidate solution $\mybetaz$ is less than $\myBSpkMath/2$, from Lemma \ref{lm:BUP-BS} it can be deduced that any alternative solution such as $\mybetao$ necessarily is denser and has more than $\myBSpkMath/2$ active blocks.
+\end{proof}
+
+As expected, for $d_1 \seq \cdots \seq d_K \seq 1$, Theorem \ref{th:BERC-BS} (Block-ERC based on $\myBSpkTxt$) is equivalent to the conventional $\mySpkTxt$-based ERC of (\ref{eq:ERC-S}) on page \pageref{eq:ERC-S}, i.e., $\Vert \mybetaz \Vert_0 \sless \mySpkMath/2$.

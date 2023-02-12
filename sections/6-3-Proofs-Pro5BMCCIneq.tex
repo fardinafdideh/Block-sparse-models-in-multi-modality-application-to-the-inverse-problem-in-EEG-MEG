@@ -1,0 +1,82 @@
+\begin{proof}
+From Block-MCC$_{q,p}$ (Definition \ref{def:BMIC}, page \pageref{def:BMIC}) we have:
+\begin{equation*}
+\begin{aligned}
+\forall (q , p) \in \mathbb{R}^2_{>0}, \qquad
+M_{q,p}\myparanthese{\myPhi} 
+\myeq \max_{k,k' \neq k} \frac{d_{k}^{-\frac1p} \, d_{k'}^{\frac1q}}{d_{max}} \mynorm{\myPhi^\dagger\mybracket{k} \myPhi \mybracket{k'}}_{q \to p}.
+\end{aligned}
+\end{equation*}
+Next, considering the relationship between the $\ell_{1 \to 1}$ and $\ell_{1 \to 2}$, and also $\ell_{1 \to 2}$ and $\ell_{1 \to \infty}$ operator-norms, which are presented in general in Property \ref{prp:OperatorProperties} ($\ell_{q {\to} p}$ operator-norm properties) and for certain ($q,p$) pairs in table \ref{table:OperatorNormRelations}, the proof is straightforward, as follows:
+\begin{equation*}
+\begin{aligned}
+M_{1,1}\myparanthese{\myPhi} 
+&\myeq \max_{k,k' \neq k} &&\frac{d_{k}^{-1} \, d_{k'}}{d_{max}} \mynorm{\myPhi^\dagger\mybracket{k} \myPhi \mybracket{k'}}_{1 \to 1} \\
+&\leq \max_{k,k' \neq k} &&\frac{d_{k}^{-1} \, d_{k'}}{d_{max}} d_{k}^{\frac12} \mynorm{\myPhi^\dagger\mybracket{k} \myPhi \mybracket{k'}}_{1 \to 2} \\
+&= \max_{k,k' \neq k} &&\frac{d_{k}^{-\frac12} \, d_{k'}}{d_{max}} \mynorm{\myPhi^\dagger\mybracket{k} \myPhi \mybracket{k'}}_{1 \to 2} \\
+&= M_{1,2}\myparanthese{\myPhi} 
+&&\leq \max_{k,k' \neq k} \frac{d_{k}^{-\frac12} \, d_{k'}}{d_{max}} d_{k}^{\frac12} \mynorm{\myPhi^\dagger\mybracket{k} \myPhi \mybracket{k'}}_{1 \to \infty} \\
+& &&= \max_{k,k' \neq k} \frac{d_{k'}}{d_{max}} \mynorm{\myPhi^\dagger\mybracket{k} \myPhi \mybracket{k'}}_{1 \to \infty} \\
+& &&= M_{1,\infty}\myparanthese{\myPhi}.
+\end{aligned}
+\end{equation*}
+
+Similarly, for the second inequality taking into account the relationship between the $\ell_{2 \to 2}$ and $\ell_{1 \to 2}$ operator-norms, we have:
+\begin{equation*}
+\begin{aligned}
+M_{2,2}\myparanthese{\myPhi} 
+&\myeq \max_{k,k' \neq k} \frac{d_{k}^{-\frac12} \, d_{k'}^{\frac12}}{d_{max}} \mynorm{\myPhi^\dagger\mybracket{k} \myPhi \mybracket{k'}}_{2 \to 2} \\
+&\leq \max_{k,k' \neq k} \frac{d_{k}^{-\frac12} \, d_{k'}^{\frac12}}{d_{max}} d_{k'}^{\frac12} \mynorm{\myPhi^\dagger\mybracket{k} \myPhi \mybracket{k'}}_{1 \to 2} \\
+&= \max_{k,k' \neq k} \frac{d_{k}^{-\frac12} \, d_{k'}}{d_{max}} \mynorm{\myPhi^\dagger\mybracket{k} \myPhi \mybracket{k'}}_{1 \to 2} \\
+&= M_{1,2}\myparanthese{\myPhi}.
+\end{aligned}
+\end{equation*}
+
+Then, for the third inequality considering the relationship between the $\ell_{2 \to 2}$ and $\ell_{2 \to \infty}$, and also $\ell_{2 \to \infty}$ and $\ell_{1 \to \infty}$ operator-norms, we have:
+\begin{equation*}
+\begin{aligned}
+M_{2,2}\myparanthese{\myPhi} 
+&\myeq \max_{k,k' \neq k} &&\frac{d_{k}^{-\frac12} \, d_{k'}^{\frac12}}{d_{max}} \mynorm{\myPhi^\dagger\mybracket{k} \myPhi \mybracket{k'}}_{2 \to 2} \\
+&\leq \max_{k,k' \neq k} &&\frac{d_{k}^{-\frac12} \, d_{k'}^{\frac12}}{d_{max}} d_{k}^{\frac12} \mynorm{\myPhi^\dagger\mybracket{k} \myPhi \mybracket{k'}}_{2 \to \infty} \\
+&= \max_{k,k' \neq k} &&\frac{d_{k'}^{\frac12}}{d_{max}} \mynorm{\myPhi^\dagger\mybracket{k} \myPhi \mybracket{k'}}_{2 \to \infty} \\
+&= M_{2 , \infty}\myparanthese{\myPhi} 
+&&\leq \max_{k,k' \neq k} \frac{d_{k'}^{\frac12}}{d_{max}} d_{k'}^{\frac12} \mynorm{\myPhi^\dagger\mybracket{k} \myPhi \mybracket{k'}}_{1 \to \infty} \\
+& &&= \max_{k,k' \neq k} \frac{d_{k'}}{d_{max}} \mynorm{\myPhi^\dagger\mybracket{k} \myPhi \mybracket{k'}}_{1 \to \infty} \\
+& &&= M_{1,\infty}\myparanthese{\myPhi}.
+\end{aligned}
+\end{equation*}
+
+Finally, for the last inequality we need to know the relationship between the $\ell_{\infty \to \infty}$ and $\ell_{2 \to \infty}$ operator-norms:
+\begin{equation*}
+\begin{aligned}
+M_{\infty,\infty}\myparanthese{\myPhi} 
+&\myeq \max_{k,k' \neq k} \frac{1}{d_{max}} \mynorm{\myPhi^\dagger\mybracket{k} \myPhi \mybracket{k'}}_{\infty \to \infty} \\
+&\leq \max_{k,k' \neq k} \frac{1}{d_{max}} d_{k'}^{\frac12} \mynorm{\myPhi^\dagger\mybracket{k} \myPhi \mybracket{k'}}_{2 \to \infty} \\
+&= \max_{k,k' \neq k} \frac{d_{k'}^{\frac12}}{d_{max}} \mynorm{\myPhi^\dagger\mybracket{k} \myPhi \mybracket{k'}}_{2 \to \infty} \\
+&= M_{2 , \infty}\myparanthese{\myPhi}.
+\end{aligned}
+\end{equation*}
+
+For the proof of general relationships of figure \ref{fig:BMCC_Inequalities}, utilising the upper-bound of second set of bounds in Property \ref{prp:OperatorProperties} ($\ell_{q {\to} p}$ operator-norm properties), i.e., $\forall \myparanthese{q , p , q' , p'} \ssin \mathbb{R}^4_{>0} , \forall \boldsymbol{A} \ssin \mathbb{R}^{m \stimes n} : \Vert \boldsymbol{A} \Vert_{q \to p} \sleq \max \{1 , m^{1/p \sm 1/{p'}} \} \max \{1 , n^{1/{q'} \sm 1/q} \} \Vert \boldsymbol{A} \Vert_{q' \to p'}$, and for a fixed $p \seq p'$, and $q' \sleq q$, which yields $\Vert \boldsymbol{A} \Vert_{q \to p} \sleq n^{1/{q'} \sm 1/q} \Vert \boldsymbol{A} \Vert_{q' \to p}$, we get the following inequalities:
+\begin{equation*}
+\begin{aligned}
+\forall (q , p , q') \in \mathbb{R}^3_{>0}, q' \leq q, \qquad
+M_{q,p}\myparanthese{\myPhi} 
+&\myeq \max_{k,k' \neq k} \frac{d_{k}^{-\frac1p} \, d_{k'}^{\frac1q}}{d_{max}} \mynorm{\myPhi^\dagger\mybracket{k} \myPhi \mybracket{k'}}_{q \to p} \\
+&\leq \max_{k,k' \neq k} \frac{d_{k}^{-\frac1p} \, d_{k'}^{\frac1q}}{d_{max}} \, d_{k'}^{\frac{1}{q'} - \frac1q} \, \mynorm{\myPhi^\dagger\mybracket{k} \myPhi \mybracket{k'}}_{q' \to p} \\
+&= \max_{k,k' \neq k} \frac{d_{k}^{-\frac1p} \, d_{k'}^{\frac{1}{q'}}}{d_{max}} \mynorm{\myPhi^\dagger\mybracket{k} \myPhi \mybracket{k'}}_{q' \to p} \\
+&= M_{q',p}\myparanthese{\myPhi}.
+\end{aligned}
+\end{equation*}
+Similarly, using the same upper-bound of Property \ref{prp:OperatorProperties}, this time for a fixed $q \seq q'$, and $p \sleq p'$, which yields $\Vert \boldsymbol{A} \Vert_{q \to p} \sleq m^{1/p \sm 1/{p'}} \Vert \boldsymbol{A} \Vert_{q \to p'}$, we get the following inequalities:
+\begin{equation*}
+\begin{aligned}
+\forall (q , p , p') \in \mathbb{R}^3_{>0}, p \leq p', \qquad
+M_{q,p}\myparanthese{\myPhi} 
+&\myeq \max_{k,k' \neq k} \frac{d_{k}^{-\frac1p} \, d_{k'}^{\frac1q}}{d_{max}} \mynorm{\myPhi^\dagger\mybracket{k} \myPhi \mybracket{k'}}_{q \to p} \\
+&\leq \max_{k,k' \neq k} \frac{d_{k}^{-\frac1p} \, d_{k'}^{\frac1q}}{d_{max}} \, d_{k}^{\frac1p - \frac{1}{p'}} \, \mynorm{\myPhi^\dagger\mybracket{k} \myPhi \mybracket{k'}}_{q \to p'} \\
+&= \max_{k,k' \neq k} \frac{d_{k}^{-\frac{1}{p'}} \, d_{k'}^{\frac1q}}{d_{max}} \mynorm{\myPhi^\dagger\mybracket{k} \myPhi \mybracket{k'}}_{q \to p'} \\
+&= M_{q,p'}\myparanthese{\myPhi}.
+\end{aligned}
+\end{equation*}
+\end{proof}

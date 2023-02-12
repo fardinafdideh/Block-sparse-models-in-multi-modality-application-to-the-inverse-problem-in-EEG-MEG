@@ -1,0 +1,56 @@
+% Block-ERC based on Block-MCC$_{q,p}$ which is introduced in Corollary \ref{crl:BERC-BMIC} of section \ref{sec:BERC_BNSP}
+%Notice that in a dictionary with equally-sized blocks, i.e., $d_1 \seq \cdots \seq d_K \seq d$, the $\mySLTxt$ 
+%\footnote{\emph{Sparsity Level}} 
+%can be simply obtained by multiplying $\myBSLTxt$ by the length of each of the blocks, i.e., $d \stimes \myBSL$ or $\sum_{k \seq 1}^{\myBSL} d_k$.
+%$\mySLMath \seq d \stimes \myBSLMath \seq \sum_{k \seq 1}^{\myBSLMath} d_k$.
+In a dictionary with differently-sized blocks, i.e., $d_1 \sneq \cdots \sneq d_K$, it can be assumed a range of sparsity levels between $\mySL_{min}(\myPhi) \seq \sum_{k \seq 1}^{\myBSLqpMath} d_{\myparanthese{k}}$ and $\mySL_{max}(\myPhi) \seq \sum_{k \seq K \sm \myBSLqpMath \spl 1}^{K}d_{(k)}$, where, $d_{\myparanthese{k}}$ are elements of the ascendingly-sorted $\boldsymbol{d}$, i.e., $d_{(1)} \sleq \cdots \sleq d_{(K)}$.
+In other words, $\mySLTxt_{min}$ and $\mySLTxt_{max}$ are sum of the $\myBSLqpTxt$ minimum and maximum elements of $\boldsymbol{d}$, respectively, as shown in figure \ref{fig:Sorted-d}. 
+\input{sections/3-3-1-Clustering-BERCRep-SL-Fig3}
+
+%On the other hand, according to Corollary \ref{crl:BERC-BMIC}, there are two block-sparsity levels to Block-ERC $\Vert \mybetaz \Vert_{\boldsymbol{w};r,0} \sless (1 \spl d^{-1}_{max} M_{q,p}^{-1}(\myPhi) (\Vert \boldsymbol{x} \Vert_{\boldsymbol{w};p,1} / \Vert \boldsymbol{x} \Vert_{\boldsymbol{w};q,1}))/2$, based on the bounds of the fraction $\Vert \boldsymbol{x} \Vert_{\boldsymbol{w};p,1} / \Vert \boldsymbol{x} \Vert_{\boldsymbol{w};q,1}$: one in the most pessimistic case and the other in the most optimistic case.
+
+%Considering the range of sparsity level for each case, whether pessimistic or optimistic, we will end up with four sparsity levels of (1) the minimum sparsity level in the most pessimistic case denoted by $\mySL^{pes}_{min}(\myPhi)$, (2) maximum sparsity level in the most pessimistic case denoted by $\mySL^{pes}_{max}(\myPhi)$, (3) minimum sparsity level in the most optimistic case denoted by $\mySL^{opt}_{min}(\myPhi)$, and (4) maximum sparsity level in the most optimistic case denoted by $\mySL^{opt}_{max}(\myPhi)$.
+\input{sections/3-3-1-Clustering-BERCRep-SL-Rmrk1}
+In some cases like figure \ref{fig:Clustered_Representation}, a block in clustered representation is in fact a concatenated version of a set of other blocks with the same size $d$, and not columns necessarily, i.e., $d \seq 1$.
+This is the case in our real-world EEG and/or MEG source reconstruction problem, where, the initial blocks are lead-fields with the same size of three. 
+In this type of problem, the number of blocks of size $d$ or the blocks themselves have meaningful information.
+For instance, in our problem, each block of size $d \seq 3$ represents a brain source.
+
+Therefore, we can simply divide the number of elements to the length $d$ to provide another means of representing the results, which is the number of initial blocks.
+Then, considering maximum sparsity level in the most pessimistic case, i.e., $\mySLTxt_{max}$, we can also represent the results in terms of maximum block-sparsity level, i.e., $\myBSLTxt_{max}$, which is $\mySL_{max}(\myPhi) {/} d$. 
+
+Therefore, we can consider the following basic types of sparsity level and $\myBSLqpTxt$ for the maximum range:
+\begin{itemize}
+%\item $\myBSLTxt^{pes}$
+\item $\myBSLqpTxt$: Number of differently-sized blocks resulted from $(1 \spl (d_{max} M_{q,p}(\myPhi))^{-1} \min_k \min \{1 , d_k^{1/q \sm 1/p} \} )/2$, (Theorem \ref{th:BERC-BMIC}, page \pageref{th:BERC-BMIC}).
+%\item $\mySLTxt^{pes}_{min}$
+%\item $\mySLTxt^{pes}_{max}$
+%\item $\mySLTxt^{opt}_{min}$
+\begin{itemize}
+\item $\mySLTxt_{min}$: Number of columns resulted from $\sum_{k \seq 1}^{\myBSLqpMath} d_{\myparanthese{k}}$.
+\begin{itemize}
+\item $\myBSLTxt_{min}$: Number of equally-sized blocks of size $d$ resulted from $\mySL_{min}(\myPhi) {/} d$.
+\end{itemize}
+\end{itemize}
+\begin{itemize}
+\item $\mySLTxt_{max}$: Number of columns resulted from $\sum_{k \seq K \sm \myBSLqpMath \spl 1}^{K}d_{(k)}$.
+\begin{itemize}
+\item $\myBSLTxt_{max}$: Number of equally-sized blocks of size $d$ resulted from $\mySL_{max}(\myPhi) {/} d$.
+\end{itemize}
+\end{itemize}
+%\item $\myBSLTxt^{pes}_{min}$
+%\item $\myBSLTxt^{pes}_{max}$
+%\item $\myBSLTxt^{opt}_{min}$
+\end{itemize}
+%Similar sparsity levels for 
+%$\myBSLTxt^{pes}$, $\mySLTxt^{pes}_{min}$, $\mySLTxt^{pes}_{max}$, 
+%$\mySLTxt_{min}$, 
+%$\myBSLTxt^{pes}_{min}$, $\myBSLTxt^{pes}_{max}$, 
+%and $\myBSLTxt_{min}$ can be computed.
+As an example, consider the dictionary in figure \ref{fig:Clustered_Representation} with 
+%$\myBSLTxt^{pes}$ and
+$\myBSLqpTxt$ equal to one. 
+%and two, respectively.
+Then, the mentioned different sparsity levels are shown in table \ref{table:SLs}.
+\input{sections/3-3-1-Clustering-BERCRep-SL-Table1}
+%\FloatBarrier

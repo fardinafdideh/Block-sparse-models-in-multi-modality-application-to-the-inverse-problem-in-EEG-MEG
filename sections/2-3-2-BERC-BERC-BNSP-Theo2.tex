@@ -1,0 +1,40 @@
+By refining and generalising the ideas from Donoho et al. \cite{Donoho2001,Donoho2003}, Elad and Bruckstein \cite{Elad2001,Elad2002a}, Gribonval and Nielsen \cite{Gribonval2003,Gribonval2003a,Gribonval2004a,Gribonval2007}, Feuer and Nemirovski \cite{Feuer2003}, Zhang \cite{Zhang2005a}, Cohen et al. \cite{Cohen2009}, Stojnic et al. \cite{Stojnic2008,Stojnic2009a} and Boufounos et al. \cite{Boufounos2011}, we propose the following theorem, called \emph{Block Null Space Property (Block-NSP)}.
+
+Block-NSP includes more general case of differently-sized blocks, i.e., $d_1 {\neq} \cdots {\neq} d_K$, arbitrary dictionary and integrating the block-structure information into the proposed characterisation, e.g., $Q_{\boldsymbol{w};p_1,p_2}(S_b(\mybeta),\myPhi)$, and problems, e.g., $P_{\boldsymbol{w};p_1,p_2}$ and $P_{p_1,p_2}$, where, $0 \sleq p_2 \sleq 1 \sleq p_1$.
+\begin{tcolorbox}
+\begin{theorem}[Block-NSP]
+\label{th:BNSP}
+Let $\myPhi$ \myhl{be} a general dictionary \myhl{in $\boldsymbol{y} \seq \myPhi \mybetaz$} and $S_b(\mybeta) \ssubset\{1, \cdots , K\}$ a set of block indices. 
+For $0 \sleq p_2 \sleq 1 \sleq p_1$ and $\myBSuppTxt$ $S_b(\mybetaz)$, define:
+\iffalse
+\begin{gather*}
+\label{eq:BNSP}
+Q_{\boldsymbol{w};p_1, p_2}\myparanthese{S_b\myparanthese{\mybeta},\myPhi} \myeq \max_{\boldsymbol{x} \in \myKerMath \backslash\left\{\boldsymbol{0}\right\}} \frac{\displaystyle\sum_{k \in S_b\myparanthese{\mybeta}} \myabs{\frac{\displaystyle\sum_{j=1}^{d_k} \myabs{x_{j}[k]} ^{p_1}}{d_k}} ^{\frac{p_2}{p_1}}}{\displaystyle\sum_{k=1}^{K} \myabs{\frac{\displaystyle\sum_{j=1}^{d_k} \myabs{x_{j}[k]} ^{p_1}}{d_k}} ^{\frac{p_2}{p_1}}},
+\end{gather*}
+\fi
+\begin{gather*}
+\label{eq:BNSP}
+Q_{\boldsymbol{w};p_1, p_2}\myparanthese{S_b\myparanthese{\mybeta},\myPhi} \myeq \max_{\boldsymbol{x} \in \myKerMath \backslash\left\{\boldsymbol{0}\right\}} \frac{\displaystyle\sum_{k \in S_b\myparanthese{\mybeta}} {\mycolor{w_k}}^{p_2} \myabs{\displaystyle\sum_{j=1}^{d_k} \myabs{x_{j}[k]} ^{p_1}} ^{\frac{p_2}{p_1}}}{\displaystyle\sum_{k=1}^{K} \mycolor{w_k}^{p_2} \myabs{\displaystyle\sum_{j=1}^{d_k} \myabs{x_{j}[k]} ^{p_1}} ^{\frac{p_2}{p_1}}},
+\end{gather*}
+with the convention of  $x^0 \seq \displaystyle\lim_{i {\to} 0^+} x^i \seq
+  \begin{cases}
+    1   \quad  x {\neq} 0\\
+    0   \quad x \seq 0\\
+  \end{cases} $ \myhl{and $w_k \seq d_k^{-1/{p_1}} , \forall k$ are the elements of the weight vector $\boldsymbol{w}$.}
+  
+If $Q_{\boldsymbol{w};p_1,p_2}(S_b(\mybeta),\myPhi) \sless 1/2$, then for all $\mybetaz$ whose $\myBSuppTxt$ lies within $S_b(\mybeta)$, i.e., $S_b(\boldsymbol{\beta_0}) \ssubset S_b(\mybeta)$, $\mybetaz$ is the unique solution to the $P_{\boldsymbol{w};p_1,p_2}$.
+\\
+
+Notice that for the case of equally-sized blocks, i.e., $d_1 \seq \cdots \seq d_K \seq d$, if $Q_{p_1,p_2}(S_b(\mybeta),\myPhi) \sless 1/2$ and $S_b(\boldsymbol{\beta_0}) \ssubset S_b(\mybeta)$, then $\mybetaz$ is the unique solution to the $P_{p_1,p_2}$, where, $Q_{p_1,p_2}(S_b(\mybeta),\myPhi)$ is the unweighted variant of $Q_{\boldsymbol{w};p_1,p_2}(S_b(\mybeta),\myPhi)$:
+\begin{gather*}
+%\label{eq:BNSP2}
+Q_{p_1, p_2}\myparanthese{S_b\myparanthese{\mybeta},\myPhi} \myeq \max_{\boldsymbol{x} \in \myKerMath \backslash\left\{\boldsymbol{0}\right\}} \frac{\displaystyle\sum_{k \in S_b\myparanthese{\mybeta}} \myabs{\displaystyle\sum_{j=1}^{d} \myabs{x_{j}\mybracket{k}} ^{p_1}} ^{\frac{p_2}{p_1}}}{\displaystyle\sum_{k=1}^{K} \myabs{\displaystyle\sum_{j=1}^{d} \myabs{x_{j}\mybracket{k}} ^{p_1}} ^{\frac{p_2}{p_1}}}.
+\end{gather*}
+\end{theorem}
+\end{tcolorbox}
+\newpage
+The proof of Theorem \ref{th:BNSP} is provided in Section \ref{prf:BNSP} (page \pageref{prf:BNSP}).
+
+As expected, for $d_1 \seq \cdots \seq d_K$ equal to $1$, $p_2$ equal to $p$, and for all $p_1 \sgeq 1$, Block-NSP (Theorem \ref{th:BNSP}) is equivalent to the conventional NSP (page \pageref{txt:NSP}).
+
+Theorem \ref{th:BNSP} (Block-NSP) determines sufficient conditions on $S_b(\mybeta)$ by determining a $50\%$ upper threshold on the concentration of the $\ell_{p_1}$ norm of blocks of $\myKerTxt$ $\boldsymbol{x}$ in $\myBSuppTxt$ $S_b(\mybeta)$, such that guarantee the uniqueness of the solution to the $P_{\boldsymbol{w};p_1,p_2}$ minimisation problem.

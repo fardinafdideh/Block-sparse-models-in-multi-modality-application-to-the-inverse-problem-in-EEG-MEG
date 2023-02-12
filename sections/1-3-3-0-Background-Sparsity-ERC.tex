@@ -1,0 +1,43 @@
+One of the fundamental contributions of the overcomplete signal representations community is theoretically-proved necessary and sufficient conditions for exact or stable signal recovery problems.
+In other words, if based on some regularity conditions for sparsity assumption the representation vector is sufficiently sparse, then it can be recovered exactly or stably \cite{Vaiter2015}. 
+Therefore, ill-posedness issue of the USLE can be solved \cite{Donoho2006a}.
+
+The importance of the \emph{Exact Recovery Condition(s) (ERC)} or \emph{stable recovery condition} is in guaranteeing the uniqueness or faithful approximation of the solution of the model through the sparse optimisation problem, otherwise, different optimisation algorithms may return different or significantly different solutions. 
+
+The theoretical ERC and stable recovery conditions guarantee that the solution can be found independent of the algorithm used, i.e., supposing the existence of a sparse enough solution, it is possible to derive necessary and sufficient conditions for the recovery of the desired solution, regardless of the recovery algorithm used.
+
+As mentioned earlier, in this study we concentrate on the ERC, i.e., the noiseless model in (\ref{eq:Model_Noiseless}), i.e., $\boldsymbol{y} \seq \myPhi \mybetaz$.
+
+The aforementioned sufficient sparsity condition, which sometimes can be applied explicitly on the representation vector, is determined by a so-called \emph{Sparsity Level (SL)} or \emph{sparsity bound}, which is the upper-bound for the number of non-zero entries of the representation vector, and is derived from the dictionary. 
+\myhl{The sparsity level of a dictionary is represented by $SL(\myPhi)$.}
+
+In other words, when the representation vector is very sparse, the sparsity level is low and vice versa \cite{Donoho2001,Cand`es2005b,Chartrand2007,Cai2010}.
+%\cite{Donoho2001,Elad2001,Elad2002a,Donoho2003,Gribonval2003a,Cand`es2005b,Donoho2006a,Cand`es2006,Chartrand2007,Cand`es2007a,Cand`es2008a,Foucart2009a,Davies2008,Davies2009,Cai2009,Foucart2010,Cai2010}.
+
+A representation is said to be \emph{$k$-sparse} if it has at most $k$ non-zero entries, which can be arbitrarily placed anywhere in the representation.
+In other words, $k$ is less than sparsity level, so for a $k$-sparse representation $\mybetaz$, we have $\Vert \mybetaz \Vert_0 \sleq k \sless SL(\myPhi)$.
+
+In this section, we briefly explain the main following ERC:
+\begin{itemize}
+\item ERC based on $\mySpkTxt$,
+\item ERC based on null space property,
+\item ERC based on mutual coherence constant, and
+\item ERC based on cumulative coherence constant.
+\end{itemize}
+\newpage
+\paragraph{ERC based on $\boldsymbol{\mySpkTxt}$}
+\input{sections/1-3-3-1-Background-Sparsity-ERC-Spark}
+\newpage
+%------------------------------------------------------ 
+\paragraph{ERC based on null space property}
+\label{txt:NSP} 
+\input{sections/1-3-3-2-Background-Sparsity-ERC-NSP}
+\newpage
+%------------------------------------------------------
+\paragraph{ERC based on mutual coherence constant}
+\label{sec:Sparsity-ERC-MIC} 
+\input{sections/1-3-3-3-Background-Sparsity-ERC-MCC}
+\newpage
+%------------------------------------------------------
+\paragraph{ERC based on cumulative coherence constant}
+\input{sections/1-3-3-4-Background-Sparsity-ERC-CCC}

@@ -1,0 +1,64 @@
+\begin{property}[Bounds of two (pseudo-)mixed-norms division]
+\label{lm:FractionBound} %$0 \sless q \sless p$, 
+\myhl{$\forall (q , p) \ssin \mathbb{R}^2_{>0}$,} for $\boldsymbol{a} \seq \mybracket{\boldsymbol{a}\mybracket{1},\ldots,\boldsymbol{a}\mybracket{K}}$ and $\forall k ,\, \boldsymbol{a}\mybracket{k} \ssin \mathbb{R}^{d_k}$, and for weighted (pseudo-)mixed-norms we have: % \cite{Golub2013}
+\begin{gather*}
+\begin{aligned}
+&\frac{\mynorm{\boldsymbol{a}}_{\boldsymbol{w};p,1}}{\mynorm{\boldsymbol{a}}_{\boldsymbol{w};q,1}} \geq
+\min_k \, \min \mybrace{1 , d_k^{\frac1q - \frac1p}} = 
+\begin{cases}
+\begin{aligned}
+  &1, \quad &&\text{if } 0 < q \leq p \\
+  &d_{max}^{\frac1q - \frac1p}, \quad &&\text{if } 0 < p < q
+\end{aligned}
+\end{cases}, \\
+&\frac{\mynorm{\boldsymbol{a}}_{\boldsymbol{w};p,1}}{\mynorm{\boldsymbol{a}}_{\boldsymbol{w};q,1}} \leq
+\max_k \, \max \mybrace{1 , d_k^{\frac1q - \frac1p}} = 
+\begin{cases}
+\begin{aligned}
+  &d_{max}^{\frac1q - \frac1p}, \quad &&\text{if } 0 < q \leq p \\
+  &1, \quad &&\text{if } 0 < p < q
+\end{aligned}
+\end{cases}.
+\end{aligned}
+\end{gather*}
+Similarly, for non-weighted (pseudo-)mixed-norms we have: % \cite{Golub2013}
+\begin{gather*}
+\begin{aligned}
+&\frac{\mynorm{\boldsymbol{a}}_{p,1}}{\mynorm{\boldsymbol{a}}_{q,1}} \geq
+\min_k \, \min \mybrace{1 , d_k^{\frac1p - \frac1q}} = 
+\begin{cases}
+\begin{aligned}
+  &d_{max}^{\frac1p - \frac1q}, \quad &&\text{if } 0 < q \leq p \\
+  &1, \quad &&\text{if } 0 < p < q
+\end{aligned}
+\end{cases}, \\
+&\frac{\mynorm{\boldsymbol{a}}_{p,1}}{\mynorm{\boldsymbol{a}}_{q,1}} \leq
+\max_k \, \max \mybrace{1 , d_k^{\frac1p - \frac1q}} = 
+\begin{cases}
+\begin{aligned}
+  &1, \quad &&\text{if } 0 < q \leq p \\
+  &d_{max}^{\frac1p - \frac1q}, \quad &&\text{if } 0 < p < q
+\end{aligned}
+\end{cases}.
+\end{aligned}
+\end{gather*}
+\end{property}
+\begin{proof}
+For any real fractions $x_1/y_1,\,\ldots,\,x_K/y_K$ with positive denominators, we have \cite{pahio2005}:
+\begin{gather*}
+\min\mybrace{\frac{x_1}{y_1},\,\ldots,\,\frac{x_K}{y_K}} \leq \frac{x_1+\ldots+x_K}{y_1+\ldots+y_K} \leq \max\mybrace{\frac{x_1}{y_1},\,\ldots,\,\frac{x_K}{y_K}},
+\end{gather*}
+where, equality happens if and only if all fractions $x_1/y_1,\,\ldots,\,x_K/y_K$ are equal.
+Then, for any $k$, considering $x_k \seq \Vert \boldsymbol{a}[k] \Vert_p / d_k^{1/p}$ and $y_k \seq \Vert \boldsymbol{a}[k] \Vert_q / d_k^{1/q}$, we have $x_k / y_k \seq d_k^{1/q-1/p} \Vert \boldsymbol{a}[k] \Vert_p {/} \Vert \boldsymbol{a}[k] \Vert_q$.
+On the other hand, from Property \ref{prp:VectorDivisionBound} (bounds of two vector norms division), we have $\forall (q , p) \ssin \mathbb{R}^2_{\sg 0} , \forall \boldsymbol{b} \ssin \mathbb{R}^d : \min \{1 , d^{1/p - 1/q} \} \sleq \Vert \boldsymbol{b} \Vert_p / \Vert \boldsymbol{b} \Vert_q \sleq \max \{1 , d^{1/p - 1/q} \}$. 
+%for $0 \sless q \sless p$, and $\boldsymbol{a} \ssin \mathbb{R}^{d}$ we have $1 \sleq \Vert\boldsymbol{a} \Vert_q {/} \Vert \boldsymbol{a} \Vert_p \sleq d^{1/q \sm 1/p}$ \cite{Golub2013}. 
+%Then, similarly, we have $d^{1/p \sm 1/q} \sleq \Vert \boldsymbol{a} \Vert_p {/} \Vert \boldsymbol{a} \Vert_q \sleq 1$.
+Consequently, $\min \{1 , d_k^{1/q - 1/p} \} \sleq x_k / y_k \sleq \max \{1 , d_k^{1/q - 1/p} \}$, which by considering the above-mentioned inequality, we have:
+\begin{gather*}
+\min_k \, \min \mybrace{1 , d_k^{\frac1q - \frac1p}} 
+\leq \frac{\displaystyle\sum_k x_k}{\displaystyle\sum_k y_k}
+\leq \max_k \, \max \mybrace{1 , d_k^{\frac1q - \frac1p}}.
+\end{gather*}
+On the other hand, from Definition \ref{def:Weighted mixed norm} (weighted (pseudo-)mixed-norm) we have $\sum_k x_k \seq \Vert \boldsymbol{a} \Vert_{\boldsymbol{w};p,1}$ and $\sum_k y_k \seq \Vert \boldsymbol{a} \Vert_{\boldsymbol{w};q,1}$, which proves the bounds.
+Similarly, for any $k$, considering $x_k \seq \Vert \boldsymbol{a}[k] \Vert_p$ and $y_k \seq \Vert \boldsymbol{a}[k] \Vert_q$, the bounds for division of two non-weighted (pseudo-)mixed-norms can be obtained.
+\end{proof}

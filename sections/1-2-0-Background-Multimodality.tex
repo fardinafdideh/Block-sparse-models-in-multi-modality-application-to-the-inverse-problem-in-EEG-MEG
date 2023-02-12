@@ -1,0 +1,187 @@
+\subsection{Introduction}
+\input{sections/1-2-1-Background-Multimodality-Intro}
+%------------------------------------------------------
+%\subsection{Physiological basis of electrophysiological recordings: EEG and MEG}
+\subsection{Physiological basis of EEG and MEG}
+\label{sec:Physiological_basis} 
+The main direct neuronal source of EEG and MEG signals is pyramidal neuron.  
+%(cell) 
+%which
+%is named for its shape and
+Task of a pyramidal neuron is to take synaptic inputs and produce patterned output of action potential \cite{Okada1993}.
+% cite{Okada1993,Okada1997,Murakami2002,Murakami2003,Murakami2006,Blagoev2007,Jones2007,Cassara2008,Cassara2009,Jones2009}. 
+As can be seen in figure \ref{fig:ECD}, the postsynaptic dendrite part is polarized due to the concentration discrepancy of ions.
+When the action current reaches the presynaptic axon terminal, the glands of neurotransmitters are released into the synapse and bind to the receptors on the postsynaptic dendrite, and this leads to a flow of ions of $Na^+$ from outside of cell to inside, and producing post synaptic current as shown in figure \ref{fig:ECD}.
+As shown in figure \ref{fig:ECD}, by spreading this ions, intracellular current (primary current) and extracellular current (secondary current)
+%, or volume current) 
+ are produced.
+A small patch of brain cortex which comprises thousands of these simultaneously activated parallel pyramidal neurons can be represented by a current dipole \cite{Cohen2003}.%,Oosterom2012}.
+This relationship between the macroscopic representation and the corresponding microscopic neuronal activity is important \cite{Okada1997}.
+%,LopesdaSilva2010,Andino2011,Ahlfors2015}. 
+These pyramidal neurons are oriented perpendicular to the brain cortex, but since the cortex is folded, 'radial', 'tangential', and 'oblique' dipole orientations defined with respect to the local curvature of the skull, must be considered. 
+\begin{figure}[htpb]
+\centering
+\includegraphics[width=1\textwidth]{images/ECD.png} % width=0.5\textwidth  scale=0.49
+\caption{Action current leads to releasing neurotransmitters into the synapse and producing post synaptic current inside the cell. A current dipole is a representation of thousands of simultaneously firing neighbouring neurons and can have different 
+%types, according to its 
+orientations.}
+\label{fig:ECD}
+\end{figure}
+\FloatBarrier
+%------------------------------------------------------
+\subsection{EEG/MEG forward and inverse problems}
+\label{sec:ForwardInverseProblem} 
+The goal in EEG/MEG source analysis is finding the appropriate sources based on the electric/magnetic measurements, which is also called the \emph{inverse problem}.
+It is called an inverse problem because it exploits the information at the results stage and then leads to the causes.
+
+Inverse problems are not specific to the EEG/MEG source analysis research field and are considered as one of the most important mathematical problems in science.
+The importance of the inverse problems is due to the fact that by solving the problems inversely, it would be possible to discover the latent parameters, which are not measurable directly.
+
+In order to solve inverse problem, one must first solve the so-called \emph{forward problem}, i.e., what would be the electromagnetic fields of a known source?
+This is the inverse of a inverse problem, which exploits the information of the causes and then leads to the results.
+
+In figure \ref{fig:ForwardInverse}, the forward problem is to determine EEG/MEG measurements in sensor space resulted from three active dipoles in source space, whereas, the inverse problem is to estimate the activity of dipoles in source space given EEG/MEG measurements in sensor space.
+\begin{figure}[!b]
+\centering
+\includegraphics[width=1\textwidth]{images/ForwardInverse.png} % width=0.5\textwidth  scale=0.49
+\caption{The forward and inverse problems in EEG/MEG source analysis.}
+\label{fig:ForwardInverse}
+\end{figure}
+\FloatBarrier
+%------------------------------------------------------
+\subsection{Volume conduction head model}
+In 
+%cerebroelectromagnetism
+bioelectromagnetism, the transmission of electromagnetic fields from a current dipole through the head tissues towards measurement sensors is called volume conduction head model, which contains the electrical conduction properties of the head.
+In frequencies below 1 kHz, the quasi-static approximation of Maxwell's equations can be used for modelling the volume conduction head model \cite{Plonsey1967}.
+%,Sarvas1987,Munck1991}.
+Therefore, the level of realism of the volume conduction head model determines the quality of EEG/MEG source analysis \cite{Haueisen2014}.
+%\cite{vandenBroek1998,Wolters2004,Haueisen2014}.
+
+The volume conduction head model can be modelled analytically, 
+%quasi-analytical, 
+or numerically.
+In other words, for the EEG/MEG, the head can be modelled analytically by a single sphere or three or even four concentric spheres corresponding to brain, cerebrospinal fluid, skull, and scalp \cite{Hosek1978}.
+% \cite{Frank1952,Geselowitz1967,Sarvas1987,Hosek1978,Huang1999}.
+%The attempts for solving quasi-analytically are \cite{deMunck1988,Munck1993,Nolte1999,Nolte2001}. 
+The boundary element methods and finite element methods have been developed to numerically model the head and to better represent the realistic shape of the head \cite{Yan1991,Akalin-Acar2004}.
+%\cite{Yan1991,Awada1997,Buchner1997,vandenBroek1998,Marin1998,Akalin-Acar2004,Wolters2006}.
+Although utilising numerically-modelled head models lead to increased accuracy in the source localization problem, it is computationally heavy.
+Therefore, based on the requirements of the problem a trade-off between computational burden and source localization accuracy should be taken into account.
+
+In figure \ref{fig:HeadModel}, the three-layer analytical and numerical volume conduction head models are shown.
+The three layers correspond to scalp, skull, and brain, respectively.
+The head model in figure \ref{fig:HeadModel}(a) is computed analytically, whereas the ones in (b) and (c) are computed numerically.
+The realistic brain layer in figure \ref{fig:HeadModel}(b) is an inflated cortical sheet, whereas in figure \ref{fig:HeadModel}(c) it is a highly-folded cortical sheet.
+
+Naturally, in order to build realistic head models we need to structural information of head, which is provided by MRI\footnote{\emph{Magnetic Resonance Imaging}}.
+\begin{figure}[!b]
+\centering
+\includegraphics[width=1\textwidth]{images/HeadModel.png} % width=0.5\textwidth  scale=0.49
+\caption{Three-layer (scalp, skull, and brain) head models modelled (a) analytically, and (b,c) numerically.
+In (b), the cortical sheet is inflated, whereas in (c) it is highly-folded.}
+\label{fig:HeadModel}
+\end{figure}
+\FloatBarrier
+%------------------------------------------------------
+\subsection{Lead-field}
+\label{sec:Leadfield} 
+The transmission of electromagnetic fields from sources space through head tissues towards sensors space can be modelled with quasi-static approximations of Maxwell’s equations \cite{Sarvas1987}.
+
+The quasi-static approximations of Maxwell’s equations, which allows to ignore the time derivatives, can be divided into two groups of: 
+\begin{itemize}
+\item quasi-electrostatics, which are describing electric field $\boldsymbol{E}$, and
+\item quasi-magnetostatics, which are describing magnetic field $\boldsymbol{B}$.
+\end{itemize} 
+
+The mentioned quasi-static approximations with electric potential $\boldsymbol{V}$ and magnetic field $\boldsymbol{B}$ in distance $\boldsymbol{r}$ in an infinite homogeneous medium with permittivity $\varepsilon_0$ and permeability $\mu_0$ for a dipole $\boldsymbol{p}$ with electric charge density $\rho$ and electric current density $\boldsymbol{J}$ are shown in figure \ref{fig:quasi-static}, and table \ref{table:quasi-static}.
+
+The quasi-static approximations of Maxwell’s equations in addition to the assumed discrete positions of the brain sources lead to a discretised and linearised relationship between electromagnetic signals and the source activities.
+The mentioned relationship is realised through the so-called \emph{lead-field} matrix which contains the electromagnetic and geometrical properties of the head.
+\\
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.6\textwidth,keepaspectratio]{images/Quasi-statics.png} % width=0.5\textwidth  scale=0.49
+\centering
+\caption{Electromagnetic fields ($\boldsymbol{E}$, $\boldsymbol{B}$) at distance $\boldsymbol{r}$ of dipole $\boldsymbol{p}$.}
+\label{fig:quasi-static}
+\end{figure}
+\begin{table*}[b]
+\begin{adjustbox}{width=\textwidth} % ,totalheight=\textheight,.5
+\centering
+%\tiny
+\begin{tabularx}{\textwidth}{Y Y Y Y}% cccc p{3 cm}  *{6}{Y|} 
+\toprule
+%\cline{2-4}
+\multicolumn{2}{c}{Quasi-electrostatics} & \multicolumn{2}{c}{Quasi-magnetostatics} \\ \midrule %\hline
+Gauss’s law & $\nabla \cdot \boldsymbol{E} = \frac{\rho}{\varepsilon_0}$ & Gauss’s law & $\nabla \cdot \boldsymbol{B} = 0$ \\ %\cline{1-1}%\hline
+Faraday’s law & $\nabla \times \boldsymbol{E} = \boldsymbol{0}$ 
+ & Ampère’s law & $\nabla \times \boldsymbol{B} = \mu_0 \boldsymbol{J}$ \\  \midrule%\hline
+\multicolumn{2}{c}{$V = \frac{1}{4 \pi \varepsilon_0} \boldsymbol{p} \cdot \frac{\boldsymbol{r}}{\myabs{\boldsymbol{r}}^3}$} & \multicolumn{2}{c}{$\boldsymbol{B} = \frac{\mu_0}{4 \pi} \boldsymbol{p} \times \frac{\boldsymbol{r}}{\myabs{\boldsymbol{r}}^3}$} \\
+\bottomrule
+\multicolumn{4}{c}{where, $\nabla \cdot$, $\nabla \times$, $\cdot$, and $\times$ are divergence, curl, dot and cross product operators, respectively.} \\ % 
+\end{tabularx}
+\end{adjustbox}
+\caption{The quasi-static approximations of Maxwell’s equations.}
+%\caption{The quasi-static approximations of Maxwell’s equations with electric potential $\boldsymbol{V}$ and magnetic field $\boldsymbol{B}$ in an infinite homogeneous medium.}
+\label{table:quasi-static}
+\end{table*}
+\newpage
+
+The lead-field matrix, which is also considered as the solution of the forward problem, is computed when the volume conduction head model, source model, and sensor model is given.
+%The forward problem can be solved when the volume conduction head model, source model, and sensor model is given.
+%The solution of the forward problem is called \emph{leadfield}, which linearly relates the activities in source and EEG/MEG sensor space.
+%This relationship holds true for a fixed and discrete distribution of positions of each source-sensor pair.
+%which is a matrix of dimensions sensors' number by three times of the number of sources.
+
+As shown in figure \ref{fig:LF}, knowing the volume conduction head model including scalp, skull, and brain models with $K$ source positions in source space and $m$ sensors in sensor space makes possible the computation of the lead-field matrix of dimension $m$ by $3K$.
+
+Each block of \emph{three columns} in lead-field matrix, consists of the response of all sensors to a specific probing dipole in the source space.
+Actually, it is a block of three canonical probing vectors.
+%the forward and inverse problems and geometrical models are illustrated.
+\begin{figure}[!b]
+\centering
+\includegraphics[width=1\textwidth]{images/LF.png} % width=0.5\textwidth  scale=0.49
+\caption{Forward problem is solved when the head (scalp, skull, and brain layers), source ($K$ source positions), and sensor ($m$ sensors) models are given.
+The lead-field matrix $\myPhi$ of dimension $m$ by $3K$ is resulted from concatenation of $K$ three-column matrices corresponding to $K$ source positions in source space.
+%Then with the resulted leadfield matrix, the inverse problem can be solved, i.e., given a measurement on sensors, the corresponding active dipole(s) can be estimated.
+}
+\label{fig:LF}
+\end{figure}
+\FloatBarrier
+%------------------------------------------------------
+\subsection{EEG and MEG complementarities}
+\label{sec:EMEG_Complementarities} 
+In recent years, the partial independence of bioelectric and biomagnetic measurements has been studied and the added value of their combination under a multi-modal signal processing framework has been the subject of some researches.
+In this section, some relative merits of cerebral bioelectromagnetic measurements, i.e., EEG and MEG, are reviewed.
+\begin{itemize}
+\item \textbf{Dimension of measurement.} MEG measurement is vectorial, whereas EEG measurement is scalar.
+\item \textbf{Reference measurement.} MEG measures magnetic field, whereas EEG measures potential \emph{differences}.
+In other words, the existence of reference electrode is essential in EEG contrary to MEG (figure \ref{fig:Complementarities}(a)).
+\item \textbf{Sensor position.} MEG sensors are located outside but near the head, whereas EEG sensors are placed on the surface of the head.
+Therefore, MEG makes a contact-less recording indicating that it has the advantage of very low pre-recording preparation time and the disadvantage of necessity of existence of helmet for localization of the head position (figure \ref{fig:Complementarities}(b)).
+\item \textbf{Sensitivity to cerebral currents.} MEG is mostly sensitive to primary currents, whereas EEG is sensitive to secondary currents (figure \ref{fig:Complementarities}(c)).
+The cerebral currents were briefly discussed in Section \ref{sec:Physiological_basis}.
+\item \textbf{Sensitivity to orientation of dipole.} MEG has very low sensitivity to radial dipoles and is zero for spherical head model \cite{Ahlfors2010} (figure \ref{fig:Complementarities}(d)).
+\item \textbf{Sensitivity to depth of dipole.} MEG has low sensitivity to deep sources, because deeper sources become more quasi-radial (figure \ref{fig:Complementarities}(e)).
+\item \textbf{Sensitivity to head tissues.} In contrast to MEG, EEG is highly sensitive to the geometry and conductivity of media \cite{Acar2003,Gencer2004}.
+Therefore, EEG is distorted while passing through the brain tissues, especially the skull because of its low conductivity, i.e., high resistivity.
+
+On the other hand, MEG is \myhl{far less sensitive} to internal heterogeneities \cite{Hari2017}.
+For instance in figure \ref{fig:Complementarities}(f), for a same source model, which is realistic highly-folded cortical sheet, MEG is quite equal for the two head models, while EEG is significantly different.
+
+Because of the transparency of the skull to magnetic fields, MEG is able to measure the cerebral activity of smaller brain regions \cite{Malmivuo2011}.
+\item \textbf{Topography.} EEG and MEG topographies for a same source activity are almost orthogonal to each other (figure \ref{fig:Complementarities}(g)).
+\end{itemize}
+%MEG measures vectorial magnetic field outside but near the head, whereas EEG measures scalar scalp potential differences on the surface of the head, i.e., the existence of reference electrode is essential in EEG contrary to MEG.
+%MEG has very low sensitivity to radial dipoles and is zero for spherical head model \cite{Ahlfors2010}, also it has low sensitivity to deep sources, because deeper sources become more quasi-radial (figure \ref{fig:Complementarities}(c)).
+%In contrast to MEG, EEG is highly sensitive to the geometry and conductivity of media \cite{Acar2003,Gencer2004}, therefore it is distorted while passing through the brain tissues, especially the skull because of its low conductivity, while MEG is blind to internal heterogeneities (figure \ref{fig:Complementarities}(d)).
+\begin{figure}[!b]
+\centering
+\includegraphics[width=1\textwidth]{images/Complementarities.png} % width=0.5\textwidth  scale=0.49
+\caption{(a) MEG measures vectorial magnetic field, whereas EEG measures scalar potential differences, (b) MEG sensors are located outside the head, whereas EEG sensors are placed on the surface of the head, (c) MEG is mostly sensitive to primary currents, whereas EEG is sensitive to secondary currents, (d) MEG has very low sensitivity to radial dipoles, (e) MEG has low sensitivity to deep sources, (f) EEG is highly sensitive to the geometry and conductivity of media, and (g) EEG and MEG topographies for a same source activity are almost orthogonal to each other.
+%Nature and requirements of EEG and MEG recordings are different, (b) MEG is sensitive to primary currents, whereas EEG is sensitive to secondary currents, (c) MEG is blind to radial and deep sources, (d) EEG is highly sensitive to the geometry and conductivity of tissues, and (e) EEG and MEG topographies are almost orthogonal
+.}
+\label{fig:Complementarities}
+\end{figure}
+\FloatBarrier

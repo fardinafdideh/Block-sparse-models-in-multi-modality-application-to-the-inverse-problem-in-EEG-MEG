@@ -1,0 +1,127 @@
+In this section, the block-sparsity levels resulted from the proposed Block-ERC based on Block-MCC$_{q,p}$ \myhl{(Theorem {\ref{th:BERC-BMIC}}, page {\pageref{th:BERC-BMIC}}), i.e., $\myBSLqpMath \seq (1 \spl  (d_{max}M_{q,p}(\myPhi))^{-1} \min_{k} \, \min \{1 , d_k^{1/q \sm 1/p} \}) / 2$,} are going to be calculated.
+Block-MCC$_{q,p}$ is selected, because it is computationally tractable. 
+In all of the numerical simulations performed below, we have:
+\begin{enumerate}
+\item Dictionaries are generated from independent and identically distributed (i.i.d.) random variables, with 40 rows and 400 columns.
+\item All columns of the dictionaries are normalized to have unit $\ell_2$ norm.
+\item The results are shown in terms of average and standard deviation over 100 repetitions of random dictionary generation.
+\item All blocks share the same length $d$, i.e., $d_1 \seq \cdots \seq d_K \seq d$.
+\item Only the basic tractable operator-norms of table \ref{table:OperatorNorm} (page \pageref{table:OperatorNorm}) are considered for the calculation of the Block-MCC$_{q,p}$.
+\end{enumerate}
+%\iffalse
+%(1) dictionaries are generated from independent and identically distributed (i.i.d.) random variables, with 40 rows and 400 columns 
+%(2) 
+%%dictionaries with intra-block orthonormality are denoted as $\myPhi_{ort}$ and 
+%all columns of the dictionaries are normalized to have unit $\ell_2$ norm, 
+%(3) the results are shown in terms of average and standard deviation over 100 repetitions of random dictionary generation, 
+%(4) all blocks share the same length $d$, i.e., $d_1 \seq \cdots \seq d_K \seq d$, 
+%and (5) only the basic tractable operator-norms of table \ref{table:OperatorNorm} 
+%%for $q \sleq p$ 
+%are considered for the calculation of the Block-MCC$_{q,p}$.
+%\fi
+In Definition \ref{def:BMIC} (page \pageref{def:BMIC}), we proposed the characterisation Block-MCC$_{q,p}$ in a general format, which has three main free parameters of $d_k$, $\myPhi$, and  $\ell_{q {\to} p}$ operator-norm, i.e., $M_{q,p}(\myPhi) \seq \max_{k,k' \neq k} (d_{k}^{-1/p} d_{k'}^{1/q}) / d_{max} \Vert \myPhi^\dagger [k] \myPhi [k'] \Vert_{q \to p}$.
+%On the other hand, the condition in Block-ERC based on Block-MCC$_{q,p}$ proposed in Theorem \ref{th:BERC-BMIC}, i.e., $\Vert \mybetaz \Vert_{r,0} \sless (1 \spl d^{-1}_{max} M_{q,p}^{-1}(\myPhi) (\Vert \boldsymbol{x} \Vert_{\boldsymbol{w};p,1} / \Vert \boldsymbol{x} \Vert_{\boldsymbol{w};q,1}))/2$, can be defined in the most pessimistic and the most optimistic cases, explained in Corollary \ref{crl:BERC-BMIC}.
+Therefore, 
+%based on the mentioned cases, 
+following parameters can be considered in the computation of sparsity level: 
+\begin{itemize}
+\item Block length $d_k$: Block-MCC$_{q,p}$ is a function of the length of each block, i.e. $d_k$, $\forall k$.
+\item Type of dictionary $\myPhi$: Although Block-MCC$_{q,p}$ is defined for a dictionary in general, but in Property \ref{prp:IntraBlkO} (Block-MCC$_{q,p}$ for intra-block orthonormality, page \pageref{prp:IntraBlkO}), we investigated a special case, where, there is intra-block orthonormality, i.e.,  $\myPhi^T[k] \myPhi[k] \seq \boldsymbol{I}_d$, $\forall k$.
+\item $\ell_{q {\to} p}$ operator-norm in Block-MCC$_{q,p}$: Based on the table \ref{table:OperatorNorm} (page \pageref{table:OperatorNorm}), only six tractable operator-norms of $\ell_{1 {\to} 1}$, $\ell_{1 {\to} 2}$, $\ell_{1 {\to} \infty}$, $\ell_{2 {\to} 2}$, $\ell_{2 {\to} \infty}$, and $\ell_{\infty {\to} \infty}$ are considered in the numerical experiments.
+%\item Type of Block-ERC: The proposed Block-ERC based on Block-MCC$_{q,p}$ can be calculated for the most pessimistic and the most optimistic cases.
+\end{itemize}
+In order to investigate the behaviour of sparsity level in Block-ERC based on Block-MCC$_{q,p}$ as a function of the three above-mentioned parameters, in each of the following three experiments, one parameter out of three is kept fixed. 
+Finally, for comparison with the existing results, the sparsity level in the sparsity domain introduced by Donoho et al. (equation (\ref{eq:ERC-M}), page \pageref{eq:ERC-M}), i.e., $SL^{Donoho} \seq (1 \spl M^{-1}(\myPhi)) / 2$, and in the block-sparsity domain introduced by Eldar et al. (equation (\ref{BERC-Eldar}), page \pageref{BERC-Eldar}), i.e., $SL^{Eldar} \seq (d \spl (M^{Eldar}_{Inter} (\myPhi))^{-1} (1 \sm (d \sm 1)M^{Eldar}_{Intra}(\myPhi)) / 2$, are provided. 
+Notice, in order to compare to the conventional sparsity level of Donoho et al., the block-sparsity level resulted in the Block-ERC, whether ours or the results of Eldar et al., are multiplied by $d$ to be transformed to the sparsity level, because the dictionary consists of equally-sized blocks.
+%In Section \ref{prf:Numerical experiments at a glance}, the behaviour of sparsity levels are shown while all the four above-mentioned parameters are variable.
+At last, the higher the sparsity level, the more improved the recovery condition.
+\newpage
+%\iffalse
+%%------------------------------------------------------
+%\subsection{Dictionary with equally-sized blocks and without intra-block orthonormality} 
+%In this experiment, assume that the block length $d$ is fixed and the dictionary does not have intra-block orthonormality.
+%The goal is to investigate the sparsity levels $(d \spl M^{-1}_{q,p}(\myPhi))/2$ and $(d \spl d^{1/q \sm 1/p}M^{-1}_{q,p}(\myPhi))/2$ in the most pessimistic and the most optimistic cases, respectively, for the six pairs of $q$ and $p$ with tractable operator-norms.
+%
+%Finally, the sparsity levels in the most pessimistic and optimistic cases each with six different pairs of $q$ and $p$ are compared to the conventional sparsity levels of Eldar and Donoho.
+%The result of the experiment is shown in figure \ref{fig:SL_d_PhiOrt_Eldar_Donoho} for (a) $d \seq 2$ and (b) $d \seq 4$.
+%
+%The first six bars in figure \ref{fig:SL_d_PhiOrt_Eldar_Donoho}(a) and (b) correspond to the proposed sparsity levels in the most pessimistic (orange colour) and optimistic (blue colour) cases.
+%Remember that for $q \seq p$, the two cases are equal.
+%For the last two bars in figure \ref{fig:SL_d_PhiOrt_Eldar_Donoho}(a) and (b), which correspond to conventional sparsity levels, the notion of the most pessimistic and optimistic is meaningless, so one value is shown.
+%
+%As it can be seen in figure \ref{fig:SL_d_PhiOrt_Eldar_Donoho}(a) and (b), for dictionaries without intra-block orthonormality, the proposed sparsity levels for six different tractable Block-MCC$_{q,p}$, in the most pessimistic and optimistic cases are higher than the conventional sparsity levels introduced by Eldar and Donoho.
+%\begin{figure}[!b]
+%\centering
+%\includegraphics[width=1\textwidth,keepaspectratio]{images/SL_d_PhiOrt_Eldar_Donoho.png}
+%\centering
+%\caption{Sparsity levels for six tractable Block-MCC$_{q,p}$, in the most pessimistic (BERC$^{pes}$) and optimistic (BERC$^{opt}$) cases compared to two conventional sparsity levels for (a) $d \seq 2$, and (b) $d \seq 4$.}
+%\label{fig:SL_d_PhiOrt_Eldar_Donoho}
+%\end{figure}
+%\FloatBarrier
+%%------------------------------------------------------
+%\subsection{Dictionary with equally-sized blocks and characterisation $M_{1,\infty}(\myPhi)$} 
+%In this experiment, assume that the block length $d$ is fixed and the dictionary characterisation of Block-MCC$_{1,\infty}$ is used.
+%The goal is to investigate the sparsity levels $(d \spl M^{-1}_{q,p}(\myPhi))/2$ and $(d \spl d^{1/q \sm 1/p}M^{-1}_{q,p}(\myPhi))/2$ in the most pessimistic and the most optimistic cases, respectively, for two types of random dictionaries without and with intra-block orthonormality.
+%%Finally, the sparsity levels in the most pessimistic and optimistic cases and for random dictionaries without and with intra-block orthonormality, are compared to the conventional sparsity levels of Eldar and Donoho.
+%The result of the experiment is shown in figure \ref{fig:SL_1Inf_d_Eldar_Donoho} for (a) $d \seq 2$ and (b) $d \seq 4$.
+%The first group of three bars in figure \ref{fig:SL_1Inf_d_Eldar_Donoho}(a) and (b) correspond to the sparsity levels in the most pessimistic case (BERC$^{pes}$), whereas the second group correspond to the most optimistic case (BERC$^{opt}$).
+%Each group includes the sparsity levels based on the proposed Block-MCC$_{1,\infty}$ (orange colour), Eldar (blue colour), and Donoho (green colour).
+%Each bar conveys two sparsity values correspond to a dictionary without ($\myPhi$) and with ($\myPhi_{ort}$, transparent colour) intra-block orthonormality.
+%Remember that for Donoho's conventional case, the sparsity levels for dictionaries without and with intra-block orthonormality are equal.
+%In addition, for conventional sparsity levels, the notion of the most pessimistic and optimistic is meaningless, so equal values are shown.
+%As it can be seen in figure \ref{fig:SL_1Inf_d_Eldar_Donoho}(a) and (b), the proposed sparsity level based on Block-MCC$_{1,\infty}$ in the most pessimistic case for dictionaries without intra-block orthonormality is higher than the conventional sparsity levels introduced by Eldar and Donoho, whereas for dictionaries with intra-block orthonormality is only higher than the Donoho' sparsity levels.
+%However, in the most optimistic case the proposed sparsity level is higher than both conventional ones for both types of dictionaries. 
+%\begin{figure}[!b]
+%\centering
+%\includegraphics[width=1\textwidth,keepaspectratio]{images/SL_1Inf_d_Eldar_Donoho.png}
+%\centering
+%\caption{Sparsity levels using Block-MCC$_{1,\infty}$ for dictionaries without ($\myPhi$) and with ($\myPhi_{ort}$) intra-block orthonormality, in the most pessimistic (BERC$^{pes}$) and optimistic (BERC$^{opt}$) cases compared to two conventional sparsity levels for (a) $d \seq 2$, and (b) $d \seq 4$.}
+%\label{fig:SL_1Inf_d_Eldar_Donoho}
+%\end{figure}
+%\FloatBarrier
+%\fi
+%------------------------------------------------------
+\subsection{Effect of dictionary and operator-norm type}  % Dictionary with equally-sized blocks
+\input{sections/2-4-1-BERC-NumRes-DicOpNorm}
+%\iffalse
+%%------------------------------------------------------
+%\subsection{Dictionary with intra-block orthonormality and characterisation $M_{1,\infty}(\myPhi)$}
+%In this experiment, assume that the dictionary has intra-block orthonormality and the dictionary characterisation of Block-MCC$_{1,\infty}$ is used.
+%The goal is to investigate the sparsity levels in the most optimistic and pessimistic cases of Block-ERC and for different dictionaries with equally-sized blocks $d \seq \{ 1,2,4,5,8,10 \}$.
+%
+%Finally, the sparsity levels for two cases of Block-ERC computed for different values of $d$, are compared to the conventional sparsity levels of Eldar and Donoho.
+%In figure \ref{fig:SL_1Inf_PhiOrt_Eldar_Donoho}, the proposed sparsity levels in the most optimistic and pessimistic cases are shown by orange circles, and the range between the two cases are shaded by orange colour.
+%
+%As it can be seen in figure \ref{fig:SL_1Inf_PhiOrt_Eldar_Donoho}, for dictionaries with intra-block orthonormality and characterisation Block-MCC$_{1,\infty}$, all the proposed sparsity levels for the most optimistic case are higher than the conventional sparsity levels introduced by Eldar and Donoho, whereas for the most pessimistic case the proposed sparsity levels are only higher than Donoho's.
+%In addition, in contrast to Donoho's condition, increasing the $d$ leads to increment in the proposed and Eldar's sparsity levels.
+%At last, for $d \seq 1$, the sparsity levels in block domain are equal to the scalar domain.
+%\begin{figure}[!b]
+%\centering
+%\includegraphics[width=0.8\textwidth,keepaspectratio]{images/SL_1Inf_PhiOrt_Eldar_Donoho.png}
+%\centering
+%\caption{Sparsity levels for different values of block length $d$, in the most pessimistic (BERC$^{pes}$) and optimistic (BERC$^{opt}$) cases compared to two conventional sparsity levels.
+%The region between BERC$^{pes}$ (lower) and BERC$^{opt}$ (upper) is shaded.}
+%\label{fig:SL_1Inf_PhiOrt_Eldar_Donoho}
+%\end{figure}
+%\FloatBarrier
+%\fi
+%------------------------------------------------------
+\subsection{Effect of block length and operator-norm type} %Dictionary with intra-block orthonormality
+\input{sections/2-4-2-BERC-NumRes-BLenOpNorm}
+%------------------------------------------------------
+\subsection{Effect of block length and dictionary type} % Dictionary characterisation $M_{2,2}(\myPhi)$
+\input{sections/2-4-3-BERC-NumRes-BLenDic}
+%------------------------------------------------------
+%\subsection{Cumulative Block-MCC$_{q,p}$}
+%In this part, the numerical values of cumulative Block-MCC$_{q,p}$ of a dictionary is calculated using Definition \ref{def:CBMIC}, for different values of block size $d$ and tractable mixed norms ($q,p$).
+%The whole process is then repeated for the dictionary with intra-block orthonormality, i.e., $\myPhi_{ort}$.
+%In figure \ref{fig:CBMIC}, for each of the block sizes of $d \seq \{2,4,5,8\}$, $M_{q,p}(\myPhi , k)$ is calculated for different tractable mixed norms once for ordinary dictionaries $\myPhi$ shown in solid lines, and once for dictionaries with intra-block orthonormality $\myPhi_{ort}$ shown in dotted lines.
+%As it can be seen in figure \ref{fig:CBMIC}, for all $k$ and $d$, $M_{2,2}(\myPhi_{ort} , k)$ and $M_{1,\infty}(\myPhi , k)$ have the minimum and maximum values, respectively.
+%In addition, for all $k$, $q$, $p$ and $d$, $M_{q,p}(\myPhi_{ort} , k)$ is less than $M_{q,p}(\myPhi , k)$.
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=0.5\textwidth,keepaspectratio]{images/CBMIC.png}
+%\centering
+%\caption{Cumulative Block-MCC$_{q,p}$ as a function of $k$ for different values of $q$, $p$, and $d$, with $m \seq 10$ and $n \seq 40$.}
+%\label{fig:CBMIC}
+%\end{figure}

@@ -1,0 +1,27 @@
+By selecting even or odd rows of USLE, we are assuring that the sensors are uniformly distributed all over the head.
+Otherwise, by selecting for example the first half of one mono-modal sensors and the second half of the other mono-modal sensors, although the multi-modal sensors cover whole parts of the head, we would lose the information of one part of brain in mono-modality.
+%\section{Combined random dictionaries or EEG and MEG leadfields}
+
+Therefore, considering the three mentioned reasons in multi-modality strategy, we are eliminating or reducing the side effects of increased observation, and optimum sensor position, so we can investigate the impact of multi-modality itself.
+
+As mentioned before, the purpose of this chapter is to investigate the impact of multi-modal lead-field matrix within the block structure identification framework introduced in Chapter \ref{sec:Clustering} with application to brain source space segmentation.
+Therefore, from the multi-modal USLE in (\ref{eq:multimodal-model}), we only need to lead-field matrices $\myPhi_{\boldsymbol{\mathrm{EEG}}}$ and $\myPhi_{\boldsymbol{\mathrm{MEG}}}$, or precisely $\myPhi_{\boldsymbol{\mathrm{EEG}}}^O$ and $\myPhi_{\boldsymbol{\mathrm{MEG}}}^E$.
+In figure \ref{fig:EMEG-LF}(c), the multi-modal lead-field $\myPhi_{\boldsymbol{\mathrm{EMEG}}}$ is built by concatenating the odd rows of $\myPhi_{\boldsymbol{\mathrm{EEG}}}$ (blue lead-field) and the even rows of $\myPhi_{\boldsymbol{\mathrm{MEG}}}$ (green lead-field).
+%the proposed multi-modality framework, we only need the leadfield matrices.
+% or dictionaries.
+%Therefore, only leadfield matrices $\myPhi_{\boldsymbol{\mathrm{EEG}}}$ and $\myPhi_{\boldsymbol{\mathrm{MEG}}}$ are enough to segment the brain source space.
+%The key aim in this chapter is to integrate the complementary information of EEG and MEG modalities within the block structure identification framework introduced in Chapter \ref{sec:Clustering} with application to brain source space segmentation.
+
+As represented graphically in figure \ref{fig:EMEG-LF}, number of multi-modal EMEG sensors in figure \ref{fig:EMEG-LF}(c) is equal to the number of mono-modal EEG and MEG sensors in figure \ref{fig:EMEG-LF}(a) and (b), which is equal to the number of rows of the lead-field matrices, i.e. $m$.
+
+As mentioned before, the MEG sensors in figure \ref{fig:EMEG-LF} are the closest sensors to EEG sensors, e.g., MEG sensor $\#1$ is the closest MEG sensor to EEG sensor $\#1$, and so on.
+
+The minimal change in sensors position in figure \ref{fig:EMEG-LF}(c) in comparison to figure \ref{fig:EMEG-LF}(a) and (b), also the uniform distribution of sensors, would be more evident by increasing the density of sensors.
+
+%On the other hand, in order to combine the electromagnetic properties of the head, latent in the EEG and MEG leadfield matrices, 
+% which results in improved source reconstruction problem, 
+%one can simply replace one in a row the rows of one modality with the other one, while the total number of the sensors in mono-modal and multi-modal leadfields are equal, as shown in figure \ref{fig:EMEG-LF}(b).
+
+
+\input{sections/4-2-1-3-Multimodality-LF-Model-SensorSample-Fig1}
+\FloatBarrier

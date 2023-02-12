@@ -1,0 +1,18 @@
+To introduce the Block-ERC we need a block-wise version of the conventional uncertainty principle defined in (\ref{eq:UP-S}) page \pageref{eq:UP-S}.
+Therefore, generalising the ideas from \cite{Gorodnitsky1997,Donoho1989,Donoho2001,Elad2001,Elad2002a,Donoho2003,Donoho2003a,Gribonval2003a,Gribonval2003,Bruckstein2009}, we propose the following lemma which is called \emph{block-sparse uncertainty principle based on Block-Spark}:
+\begin{lemma}[Block-UP\footnote{\emph{Block-sparse Uncertainty Principle}} based on $\boldsymbol{\myBSpkTxt}$]
+\label{lm:BUP-BS}
+For any arbitrary non-zero signal $\boldsymbol{y}$ with two distinct representations $\mybetaz$ and $\mybetao$ in any general dictionary $\myPhi$, i.e., $\boldsymbol{y} \seq \myPhi\mybetaz \seq \myPhi\mybetao$, we have:
+%\begin{equation*}
+%\label{eq:BUP-BS}
+%\forall p > 0, \quad \mynorm{\mybetaz}_{\boldsymbol{w};p,0}+ \mynorm{\mybetao}_{\boldsymbol{w};p,0} \geq \myBSpkMath.
+%\end{equation*}
+%The above inequality also holds true for $\ell_{p,0}$ pseudo-mixed-norm:
+\begin{equation*}
+%\label{eq:BUP-BS2}
+\forall p \geq 0, \quad \mynorm{\mybetaz}_{p,0}+ \mynorm{\mybetao}_{p,0} \geq \myBSpkMath.
+\end{equation*}
+\end{lemma}
+The proof of Lemma \ref{lm:BUP-BS} is provided in Section \ref{sec:BUP-BS} (page \pageref{sec:BUP-BS}).
+
+As expected, for conventional element-wise sparse recovery case, i.e., $d_1 \seq \cdots \seq d_K \seq 1$, block-sparse uncertainty principle based on $\myBSpkTxt$ is equivalent to the conventional $\mySpkTxt$-based uncertainty principle of (\ref{eq:UP-S}) on page \pageref{eq:UP-S}, i.e., $\Vert \mybetaz \Vert_0 \spl \Vert \mybetao \Vert_0 \sgeq \mySpkMath$.

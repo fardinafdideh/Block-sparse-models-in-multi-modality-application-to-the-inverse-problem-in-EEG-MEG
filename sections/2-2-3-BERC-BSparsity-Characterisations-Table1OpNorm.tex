@@ -1,0 +1,17 @@
+Table \ref{table:OperatorNorm} explains these basic operator-norms.
+\begin{table*}[bp]
+\begin{adjustbox}{width=\textwidth} % ,totalheight=\textheight,.5
+\centering
+%\tiny
+\begin{tabular}{cccc}
+\toprule
+%\cline{2-4}
+                              & \multicolumn{1}{c}{$p=1$}  & \multicolumn{1}{c}{$p=2$} & \multicolumn{1}{c}{$p=\infty$} \\ \midrule %\hline
+\multicolumn{1}{l}{$q=1$} & \multicolumn{1}{c}{Maximum $\ell_1$ norm of a column} & \multicolumn{1}{c}{Maximum $\ell_2$ norm of a column} & Maximum absolute entry of matrix \\ %\cline{1-1}%\hline
+\multicolumn{1}{l}{$q=2$} & \multicolumn{1}{c}{NP-hard} & \multicolumn{1}{c}{Maximum singular value} & Maximum $\ell_2$ norm of a row    \\ %\cline{1-1} %\hline
+\multicolumn{1}{l}{$q=\infty$}   & \multicolumn{1}{c}{NP-hard} & \multicolumn{1}{c}{NP-hard} & Maximum $\ell_1$ norm of a row    \\ \bottomrule %\hline
+\end{tabular}
+\end{adjustbox}
+\caption{Computational complexity of $\ell_{q \to p}$ operator-norm for different basic $(q,p)$ pairs \cite{Tropp2004b}.}
+\label{table:OperatorNorm}
+\end{table*}

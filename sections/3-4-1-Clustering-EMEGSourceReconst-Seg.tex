@@ -1,0 +1,20 @@
+As mentioned earlier, the EEG/MEG source reconstruction problem can be modelled as an USLE.
+In our real-world problem, the dictionary in USLE is called the lead-field matrix.
+the whole lead-field matrix, is built by horizontal concatenation of lead-fields of all sources in the source space.
+As described before, the lead-field matrix of a single source is a $m$ by 3 matrix, where, $m$ is the number of sensors in the sensor space.
+Hence, a whole lead-field matrix is composed of consecutive three-column individual lead-field matrices.
+
+On the other hands, as mentioned before, in the EEG/MEG linear model each of three-column individual lead-field matrices $\myPhi [k]$, $\forall k$, are multiplied to the activity of corresponding dipole in the source vector $\mybeta$ to construct the activity of the sensor space, i.e., $\boldsymbol{y} \seq \sum_{k \seq 1}^K \myPhi [k] \mybeta [k]$.
+Then, each block of dictionary, $\myPhi [k]$, $\forall k$, is the direct coefficient of its corresponding source activity.
+
+% each block of length three in the dictionary represents the leadfield matrix of a source in the source space where each source lie into the representation vector $\mybeta$.
+Therefore, by clustering the coherent lead-field matrices $\myPhi [k]$ of the whole lead-field matrix $\myPhi$, their corresponding blocks in the source activity vector $\mybeta$ will also be clustered.
+Hence, the sources will be grouped and will form some segments in the source space.
+
+To realise the mentioned idea, we propose the general Block-MCC$_{q,p}$ dictionary characterisation, which measures the similarity between the blocks of the dictionary.
+Then, Block-MCC$_{q,p}$ can be used in the clustering step to make similarity matrix.
+
+As represented graphically in figure \ref{fig:Source_Segmentation_Schematic}, the six sources in the brain are clustered in different three segments based on the clustering of their corresponding lead-fields in the lead-field matrix.
+In other words, clustering of the coherent lead-field matrices $\myPhi [1]$, $\myPhi [4]$, and $\myPhi [6]$ leads to clustering of their corresponding sources $\mybeta [1]$, $\mybeta [2]$, and $\mybeta [3]$, and so on.
+\input{sections/3-4-1-Clustering-EMEGSourceReconst-Seg-Fig5}
+\FloatBarrier

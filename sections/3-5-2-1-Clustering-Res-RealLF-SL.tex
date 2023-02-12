@@ -1,0 +1,22 @@
+As explained in Section \ref{sec:Sparsity level for clustered blocks of a dictionary}, generally, in transforming the $\myBSLqpTxt$, which is determined by Block-ERC, into the conventional sparsity level, different types of sparsity levels can be appeared, e.g., minimum sparsity level 
+%in the most pessimistic case 
+$\mySLTxt_{min}$, and maximum sparsity level 
+%in the most pessimistic case 
+$\mySLTxt_{max}$.
+%, minimum sparsity level in the most optimistic case $\mySLTxt^{opt}_{min}$, and maximum sparsity level in the most optimistic case $\mySLTxt^{opt}_{max}$.
+On the other hand, as described earlier in the Section \ref{sec:hierarchical_cluster_estim}, number of branches in a clustering level with maximum inter-node distance in a clustering tree resulted from a hierarchical clustering algorithm can be used as an estimation of the number of clusters of a dictionary.
+
+Assume the sparsity level computed in the clustering level corresponding to the maximum inter-node distance in the clustering tree is shown by $\mySLTxt_2$, whereas the sparsity level computed for the lead-field without clustering is called $\mySLTxt_1$.
+In order to investigate the effect of clustering the coherent blocks of the lead-field on sparsity levels, we compute the relative change quantity, i.e., $(\mySL_2(\myPhi) \sm \mySL_1(\myPhi)) {/} \mySL_1(\myPhi)$.
+
+In figure \ref{fig:EMEG-LF-clustering-SL}, the relative change of sparsity levels $\mySLTxt_{min}$, and $\mySLTxt_{max}$ is shown.
+%, $\mySLTxt^{opt}_{min}$, and $\mySLTxt^{opt}_{max}$ is shown.
+In addition, the experiment is repeated for two modalities of EEG and MEG, and three head models with spherical, realistic inflated and realistic highly-folded cortical sheets.
+
+As it can be seen in figure \ref{fig:EMEG-LF-clustering-SL}, by clustering coherent blocks of the lead-field (whether EEG/MEG or spherical/realistic cortical sheet) using the proposed Block-MCC$_{2,2}$, all sparsity levels significantly increase, especially $\mySLTxt_{max}$.
+% and $\mySLTxt^{opt}_{max}$.
+Hence, clustering coherent blocks of lead-field using the proposed Block-MCC$_{q,p}$ coherence measure leads to improved Block-ERC.
+
+%In addition to the segmentation effect mentioned in previous part, the relative improvement of $\mySLTxt^{pes}_{min}$, $\mySLTxt^{pes}_{max}$, $\mySLTxt^{opt}_{min}$, and $\mySLTxt^{opt}_{max}$ in the estimated clustering level in comparison to the last level of clustering where the number of clusters is equal to the number of blocks, is shown in figure \ref{fig:EMEG-LF-clustering-SL} as bar charts, which indicates a significant increase on values, i.e., clustering coherent blocks of leadfield results in weakened recovery conditions.
+\input{sections/3-5-2-1-Clustering-Res-RealLF-SL-Fig11}
+\FloatBarrier

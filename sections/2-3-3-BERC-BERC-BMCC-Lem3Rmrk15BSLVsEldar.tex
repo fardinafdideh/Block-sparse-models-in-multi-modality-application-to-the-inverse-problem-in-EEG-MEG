@@ -1,0 +1,192 @@
+%\iffalse
+%Next, we rewrite the bound in Theorem \ref{th:BERC-BMIC}:
+%% in two cases of pessimistic and optimistic: 
+%%based on the bounds of $\Vert \boldsymbol{x} \Vert_{\overbar{p},1}/ \Vert\boldsymbol{x} \Vert_{\overbar{q},1}$ for $0 \sless q \sless p$:
+%\begin{corollary}
+%\label{crl:BERC-BMIC}
+%%For $0 \sless q \sless p$, 
+%The bound of inequality of Block-ERC based on Block-MCC$_{q,p}$ in Theorem \ref{th:BERC-BMIC} is obtained as follows:
+%\begin{equation*}
+%\begin{aligned}
+%\mynorm{\mybetaz}_{r,0} &<
+%\min_{\boldsymbol{x}} \frac{1+ \myparanthese{d_{max} M_{q,p}\myparanthese{\myPhi} \frac{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};q,1}}{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};p,1}}}^{-1}}{2} \\
+%&= \frac{1+ \myparanthese{d_{max} M_{q,p}\myparanthese{\myPhi} \displaystyle\max_k d_k^{\frac1p - \frac1q} \max \mybrace{1 , d_k^{\frac1q - \frac1p}}}^{-1}}{2} \\
+%&\leq \min_{\boldsymbol{x} \in \myKerMath} \frac{1+ \myparanthese{d_{max} M_{q,p}\myparanthese{\myPhi} \frac{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};q,1}}{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};p,1}}}^{-1}}{2}.
+%\end{aligned}
+%\end{equation*}
+%whereas for equally-sized blocks, i.e., $d_1 \seq \cdots \seq d_K \seq d$, we have:
+%\begin{equation*}
+%\begin{aligned}
+%\mynorm{\mybetaz}_{r,0} &<
+%\min_{\boldsymbol{x}} \frac{1+ \myparanthese{d^{1 + \frac1p - \frac1q} M_{q,p}\myparanthese{\myPhi} \frac{\mynorm{\boldsymbol{x}}_{q,1}}{\mynorm{\boldsymbol{x}}_{p,1}}}^{-1}}{2} \\
+%&= \frac{1+ \myparanthese{d^{1+\frac1p-\frac1q} M_{q,p}\myparanthese{\myPhi} \max \mybrace{1 , d^{\frac1q - \frac1p}}}^{-1}}{2} \\
+%&\leq \min_{\boldsymbol{x} \in \myKerMath} \frac{1+ \myparanthese{d^{1 + \frac1p - \frac1q} M_{q,p}\myparanthese{\myPhi} \frac{\mynorm{\boldsymbol{x}}_{q,1}}{\mynorm{\boldsymbol{x}}_{p,1}}}^{-1}}{2}.
+%\end{aligned}
+%\end{equation*}
+%\end{corollary}
+%\begin{proof}
+%Similar to proof of Block-ERC based on $\myBSpkTxt$ in Theorem \ref{th:BERC-BS}, and using Corollary \ref{crl:BUP-BMIC} instead of block-sparse uncertainty principle based on $\myBSpkTxt$.
+%\end{proof}
+%
+%As it can be seen in Corollary \ref{crl:BERC-BMIC}, the block-sparsity level can be obtained through a minimisation problem, which can be approximated by a closed-form lower-bound, i.e., $(1 \spl (d_{max} M_{q,p}(\myPhi) \max_k d_k^{1/p \sm 1/q} \max \{1 , d_k^{1/q \sm 1/p} \} )^{-1} )/2$ and $(1 \spl (d^{1 \spl 1/p \sm 1/q} M_{q,p}(\myPhi) \max \{1 , d^{1/q \sm 1/p} \} )^{-1} )/ 2$, for differently and equally-sized block structures, respectively.
+%\fi
+Now Block-ERC of Eldar et al., i.e., $\Vert \mybetaz \Vert_{2,0} \sless (1 \spl (d M^{Eldar}_{Inter}(\myPhi))^{-1} (1 \sm (d \sm 1)M^{Eldar}_{Intra}(\myPhi)))/2$, explained in (\ref{BERC-Eldar}) on page \pageref{BERC-Eldar}, can be compared to our Block-ERC proposed in Theorem \ref{th:BERC-BMIC} (Block-ERC based on Block-MCC$_{q,p}$, page \pageref{th:BERC-BMIC}).
+%In order to do that, we consider the proposed most pessimistic closed-form block-sparsity level.
+Supposing that all blocks sharing the same block length $d$, it is clear that the relationship between $(M^{Eldar}_{Inter}(\myPhi))^{-1} (1 \sm (d \sm 1)M^{Eldar}_{Intra}(\myPhi))$ and $M_{q,p}^{-1}(\myPhi) \min \{1 , d^{1/q \sm 1/p} \} $ 
+%in the most pessimistic case, and $(d^{1/p \sm 1/q} M_{q,p}(\myPhi) \min \{1 , d^{1/q \sm 1/p} \} )^{-1}$ in the most optimistic case 
+should be investigated.
+%First, in the following lemma, we show the lower-bound of $M_{q,p}^{-1}(\myPhi)$ to $(M^{Eldar}_{Inter}(\myPhi))^{-1} (1 \sm (d \sm 1)M^{Eldar}_{Intra}(\myPhi))$:
+\begin{lemma}[\myhl{Eldar et al.\textquotesingle s v.s. proposed $\boldsymbol{\myBSLqpTxt}$}]
+\label{lm:Eldar-BMIC} 
+%$\forall p \sgeq 1$ 
+%\iffalse
+%Suppose $M^{Eldar}_{Inter}(\myPhi)$, $M^{Eldar}_{Intra}(\myPhi)$, and $M_{q,p}(\myPhi)$ are inter-block and intra-block coherence of Eldar et al., and our proposed Block-MCC$_{q,p}$, respectively. \\
+%1) For a dictionary $\myPhi$ with full column rank blocks, and for $q \sgeq p \sgeq 1$, if: 
+%\begin{gather*}
+%M^{Eldar}_{Intra}\myparanthese{\myPhi} \leq 
+%\frac{1 - \max \mybrace{1 , d^{\frac1p - \frac12}} \max \mybrace{1 , d^{\frac12 - \frac1q}}}{d^{2 - \frac1q} \myparanthese{d - 1}^\frac12 - \myparanthese{d - 1} \max \mybrace{1 , d^{\frac1p - \frac12}} \max \mybrace{1 , d^{\frac12 - \frac1q}}},
+%\end{gather*}
+%then, the Block-ERC proposed in Theorem \ref{th:BERC-BMIC} improves Block-ERC of Eldar et al., i.e., $d^{1/q \sm 1/p} M_{q,p}^{-1}(\myPhi) \sgeq (M^{Eldar}_{Inter}(\myPhi))^{-1} (1 \sm (d \sm 1)M^{Eldar}_{Intra}(\myPhi))$. \\
+%\iffalse
+%, whereas if 
+%\begin{gather*}
+%M^{Eldar}_{Intra}\myparanthese{\myPhi} \leq 
+%\min \mybrace{\frac{1}{d^{2 - \frac1q} \myparanthese{d - 1}^\frac12} , \frac{1 - d^{\frac1q - \frac1p} \max \mybrace{1 , d^{\frac1p - \frac12}} \max \mybrace{1 , d^{\frac12 - \frac1q}}}{d^{2 - \frac1q} \myparanthese{d - 1}^\frac12 - \myparanthese{d - 1} d^{\frac1q - \frac1p} \max \mybrace{1 , d^{\frac1p - \frac12}} \max \mybrace{1 , d^{\frac12 - \frac1q}}}}
+%\end{gather*}
+%then, the Block-ERC proposed in Corollary \ref{crl:BERC-BMIC} in the most optimistic case improves Eldar's Block-ERC, i.e., $M_{q,p}^{-1}(\myPhi) \sgeq (M^{Eldar}_{Inter}(\myPhi))^{-1} (1 \sm (d \sm 1)M^{Eldar}_{Intra}(\myPhi))$.\\
+%\fi
+%\fi
+For a dictionary with intra-block orthonormality, Block-ERC proposed in Theorem \ref{th:BERC-BMIC} (Block-ERC based on Block-MCC$_{q,p}$, page \pageref{th:BERC-BMIC}) for $q \seq p \seq 2$ as the best case is equal to Block-ERC of Eldar et al. (equation (\ref{BERC-Eldar}), page \pageref{BERC-Eldar}). 
+\end{lemma}
+%\FloatBarrier
+The proof of Lemma \ref{lm:Eldar-BMIC} is provided in Section \ref{prf:Eldar-BMIC} (page \pageref{prf:Eldar-BMIC}).
+%\iffalse
+%\begin{remark}
+%\label{Rmrk:Eldar-BMIC-Rmrk} 
+%Lemma \ref{lm:Eldar-BMIC} demonstrates that for $q \sgeq p$, if $M^{Eldar}_{Intra}(\myPhi)$ is small enough, then the proposed Block-ERC in Theorem \ref{th:BERC-BMIC} improves Block-ERC of Eldar et al. in (\ref{BERC-Eldar}) through increasing the block-sparsity level.
+%\end{remark}
+%\fi
+\begin{remark}
+\label{Rmrk:Eldar-BMIC-equality}
+It is worth mentioning that in dictionaries with intra-block orthonormality, by definition of intra-block coherence of Eldar et al., $M^{Eldar}_{Intra}(\myPhi)$ is equal to zero in Block-ERC of Eldar et al. (equation (\ref{BERC-Eldar}), page \pageref{BERC-Eldar}), i.e., $\Vert \mybetaz \Vert_{2,0} \sless (1 \spl (d M^{Eldar}_{Inter}(\myPhi))^{-1} (1 \sm (d \sm 1)M^{Eldar}_{Intra}(\myPhi)))/2 \seq (1 \spl (d M^{Eldar}_{Inter}(\myPhi))^{-1})/2$.
+On the other hand, based on lemma \ref{lm:Eldar-BMIC}, the proposed Block-ERC for $q \seq p \seq 2$ is equivalent to the condition of Eldar and her co-workers.
+Therefore, our proposed Block-ERC in Theorem \ref{th:BERC-BMIC} (page \pageref{th:BERC-BMIC}) in the following special setting, reduces to Block-ERC of Eldar et al.: 
+\begin{itemize}
+\item $q \seq p \seq 2$,
+\item equally-sized blocks, i.e., $d_1 \seq \cdots \seq d_K \seq d$, and
+\item intra-block orthonormality of dictionary, i.e., for $1 \sleq k \sleq K$, $\myPhi^T[k] \myPhi[k] \seq \boldsymbol{I}_d$.
+\end{itemize}
+%\iffalse
+%\begin{itemize}
+%\item $q \seq p \seq 2$, 
+%\item equally-sized blocks, i.e., $d_1 \seq \cdots \seq d_K \seq d$, and
+%\item intra-block orthonormality of dictionary, i.e., for $1 \sleq k \sleq K$, $\myPhi^T[k] \myPhi[k] \seq \boldsymbol{I}_d$.
+%\end{itemize}
+%\fi
+In other words, in the mentioned special setting, \emph{theoretically and independent of the recovery algorithm, the same Block-ERC can be achieved}.
+\end{remark}
+%\iffalse
+%In the above mentioned recovery condition based on the Block-MCC$_{q,p}$ in Theorem \ref{th:BERC-BMIC}, the corresponding optimisation problem $P_{r,0}$ is non-convex.
+%Using Block-NSP, we propose the following recovery condition for convex problems:
+%%\newpage
+%\begin{tcolorbox}
+%\begin{theorem}[Block-ERC based on Block-NSP]
+%\label{th:BERC-BMIC-Q}
+%For any general dictionary $\myPhi$ with Block-MCC$_{q,p}$ $M_{q,p}(\myPhi)$, characterisation $Q_{\boldsymbol{w};p_1,p_2}\myparanthese{S_b\myparanthese{\mybeta},\myPhi}$ defined in Block-NSP, $\forall p \sgeq 1$, $\forall q \sgeq 1$, and $\forall r \sgeq 0$, if 
+%\begin{gather*}
+%\forall \boldsymbol{x} \in \myKerMath, \qquad \mynorm{\mybeta}_{r,0} < 
+%Q_{\boldsymbol{w};q,1}\myparanthese{S_b\myparanthese{\mybeta},\myPhi} +
+%\myparanthese{2 \, d_{max} M_{q,p}\myparanthese{\myPhi} \frac{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};q,1}}{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};p,1}}}^{-1},
+%\end{gather*}
+%then $\mybeta$ is the unique solution to the $P_{\boldsymbol{w};p,1}$ problem.
+%Notice that for equally-sized blocks, i.e., $d_1 \seq \cdots \seq d_K \seq d$, if
+%\begin{gather*}
+%\forall \boldsymbol{x} \in \myKerMath, \qquad \mynorm{\mybeta}_{r,0} < 
+%Q_{q,1}\myparanthese{S_b\myparanthese{\mybeta},\myPhi} +
+%\myparanthese{2 \, d^{1+\frac1p-\frac1q} M_{q,p}\myparanthese{\myPhi} \frac{\mynorm{\boldsymbol{x}}_{q,1}}{\mynorm{\boldsymbol{x}}_{p,1}}}^{-1},
+%\end{gather*}
+%then $\mybeta$ is the unique solution to the $P_{p,1}$ problem.
+%\end{theorem}
+%\end{tcolorbox}
+%The proof of Theorem \ref{th:BERC-BMIC-Q} is provided in Section \ref{prf:BERC-BMIC-Q}.
+%Again, in the following we rewrite the recovery condition in Theorem \ref{th:BERC-BMIC-Q} in terms of the bound of $\Vert \boldsymbol{x} \Vert_{\boldsymbol{w};p,1}/ \Vert\boldsymbol{x} \Vert_{\boldsymbol{w};q,1}$ and $\Vert \boldsymbol{x} \Vert_{p,1}/ \Vert\boldsymbol{x} \Vert_{q,1}$ introduced in Property \ref{lm:FractionBound}: % for $0 \sless q \sless p$:
+%\begin{corollary}
+%\label{crl:BERC-BMIC-Q}
+%%For $1 \sleq q \sless p$, 
+%The bound of recovery condition in Theorem \ref{th:BERC-BMIC-Q} 
+%%in the most pessimistic and optimistic cases 
+%can be obtained as follows:
+%\begin{gather*}
+%\begin{aligned}
+%\mynorm{\mybetaz}_{r,0} 
+%&< \min_{\boldsymbol{x}} Q_{\boldsymbol{w};q,1}\myparanthese{S_b\myparanthese{\mybeta},\myPhi} +
+%\myparanthese{2 \, d_{max} M_{q,p}\myparanthese{\myPhi} \frac{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};q,1}}{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};p,1}}}^{-1} \\
+%&= Q_{\boldsymbol{w};q,1}\myparanthese{S_b\myparanthese{\mybeta},\myPhi} +
+%\myparanthese{2 \, d_{max} M_{q,p}\myparanthese{\myPhi} \max_k d_k^{\frac1p - \frac1q} \max \mybrace{1 , d_k^{\frac1q - \frac1p}}}^{-1} \\
+%&\leq \min_{\boldsymbol{x} \in \myKerMath} Q_{\boldsymbol{w};q,1}\myparanthese{S_b\myparanthese{\mybeta},\myPhi} +
+%\myparanthese{2 \, d_{max} M_{q,p}\myparanthese{\myPhi} \frac{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};q,1}}{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};p,1}}}^{-1}.
+%%\text{Pessimistic} &: \quad \mynorm{\mybetaz}_{r,0} <
+%%Q_{\boldsymbol{w};q,1}\myparanthese{S_b\myparanthese{\mybeta},\myPhi} +
+%%\myparanthese{2 \, d_{max} M_{q,p}\myparanthese{\myPhi} \max_k d_k^{\frac1p - \frac1q} \max \mybrace{1 , d_k^{\frac1q - \frac1p}}}^{-1}, \\
+%%\text{Optimistic} &: \quad  \mynorm{\mybetaz}_{r,0} <
+%%Q_{\boldsymbol{w};q,1}\myparanthese{S_b\myparanthese{\mybeta},\myPhi} +
+%%\myparanthese{2 \, d_{max} M_{q,p}\myparanthese{\myPhi} \min_k d_k^{\frac1p - \frac1q} \min \mybrace{1 , d_k^{\frac1q - \frac1p}}}^{-1}.
+%\end{aligned}
+%\end{gather*}
+%whereas for equally-sized blocks, i.e., $d_1 \seq \cdots \seq d_K \seq d$, we have:
+%%the most pessimistic and optimistic cases reduce to:
+%\begin{equation*}
+%\begin{aligned}
+%\mynorm{\mybetaz}_{r,0} 
+%&< \min_{\boldsymbol{x}} Q_{q,1}\myparanthese{S_b\myparanthese{\mybeta},\myPhi} +
+%\myparanthese{2 \, d^{1+\frac1p-\frac1q} M_{q,p}\myparanthese{\myPhi} \frac{\mynorm{\boldsymbol{x}}_{q,1}}{\mynorm{\boldsymbol{x}}_{p,1}}}^{-1} \\
+%&= Q_{q,1}\myparanthese{S_b\myparanthese{\mybeta},\myPhi} + \myparanthese{2 \, d^{1+\frac1p-\frac1q} M_{q,p}\myparanthese{\myPhi} \max \mybrace{1 , d^{\frac1q - \frac1p}}}^{-1} \\
+%&\leq \min_{\boldsymbol{x} \in \myKerMath} Q_{q,1}\myparanthese{S_b\myparanthese{\mybeta},\myPhi} +
+%\myparanthese{2 \, d^{1+\frac1p-\frac1q} M_{q,p}\myparanthese{\myPhi} \frac{\mynorm{\boldsymbol{x}}_{q,1}}{\mynorm{\boldsymbol{x}}_{p,1}}}^{-1}
+%%\text{Pessimistic} &: \quad \mynorm{\mybetaz}_{r,0} <
+%%Q_{q,1}\myparanthese{S_b\myparanthese{\mybeta},\myPhi} +
+%%\myparanthese{2 \, d^{1+\frac1p-\frac1q} M_{q,p}\myparanthese{\myPhi} \max \mybrace{1 , d^{\frac1q - \frac1p}}}^{-1}, \\
+%%\text{Optimistic} &: \quad \mynorm{\mybetaz}_{r,0} <
+%%Q_{q,1}\myparanthese{S_b\myparanthese{\mybeta},\myPhi} +
+%%\myparanthese{2 \, d^{1+\frac1p-\frac1q} M_{q,p}\myparanthese{\myPhi} \min \mybrace{1 , d^{\frac1q - \frac1p}}}^{-1}.
+%\end{aligned}
+%\end{equation*}
+%\end{corollary}
+%\begin{proof}
+%Replacing the bound of $\Vert \boldsymbol{x} \Vert_{\boldsymbol{w};p,1}/\Vert \boldsymbol{x} \Vert_{\boldsymbol{w};q,1}$ and $\Vert \boldsymbol{x} \Vert_{p,1}/\Vert \boldsymbol{x} \Vert_{q,1}$ in Theorem \ref{th:BERC-BMIC-Q} utilising Property \ref{lm:FractionBound}, the proof is done.
+%\end{proof}
+%\begin{property}
+%\label{prp:BERC-BMIC-Q-qq}
+%The condition of Theorem \ref{th:BERC-BMIC-Q} in special setting of $q \seq p$ reduces to:
+%\begin{gather*}
+%\mynorm{\mybeta}_{r,0} < 
+%\frac{1 + \myparanthese{d_{max} M_{p,p}\myparanthese{\myPhi}}^{-1}}{2}.
+%\end{gather*}
+%%whereas for equally-sized blocks, i.e., $d_1 \seq \cdots \seq d_K \seq d$:
+%%\begin{gather*}
+%%\forall r \geq 0, \quad \mynorm{\mybeta}_{r,0} < 
+%%\frac{1 + \myparanthese{d \, M_{p,p}\myparanthese{\myPhi}}^{-1}}{2}.
+%%\end{gather*}
+%\end{property}
+%\begin{proof}
+%Continuing from (\ref{eq:DontKnow6}) in the proof of Lemma \ref{lm:Block Spark Inequality}, where, $q \seq p$, we get:
+%\begin{gather*}
+%\begin{aligned}
+%d_{max} M_{p,p}\myparanthese{\myPhi} Q_{\boldsymbol{w};p,1} \mynorm{\boldsymbol{x}}_{\boldsymbol{w};p,1} + Q_{\boldsymbol{w};p,1} \mynorm{\boldsymbol{x}}_{\boldsymbol{w};p,1} &\leq 
+% d_{max} M_{p,p}\myparanthese{\myPhi} \mynorm{\boldsymbol{x}}_{\boldsymbol{w};p,1} \mynorm{\mybeta}_{r,0}, \\
+%Q_{\boldsymbol{w};p,1} &\leq 
+%\frac{d_{max} M_{p,p}\myparanthese{\myPhi} \mynorm{\mybeta}_{r,0}}{d_{max} M_{p,p}\myparanthese{\myPhi} + 1} \\
+%&< \frac12.
+%\end{aligned}
+%\end{gather*}
+%The above last inequality comes from the Block-NSP condition in Theorem \ref{th:BNSP} and the proof is done.
+%%Similarly, from (\ref{eq:DontKnow7}) the results for equally-sized blocks can be proved.
+%\end{proof}
+%For $d_1 \seq \cdots \seq d_K \seq 1$, Property \ref{prp:BERC-BMIC-Q-qq} converges to its conventional element-wise counterpart in (\ref{eq:ERC-M}), i.e., $\Vert \mybetaz \Vert_0 \sless (1 \spl M^{-1} (\myPhi))/2$.
+%\begin{remark}[Equivalence]
+%\label{Rmrk:P1P0-Equivalence} 
+%From Corollary \ref{crl:BERC-BMIC} and Property \ref{prp:BERC-BMIC-Q-qq}, it can be deduced that for $1 \sleq q \seq p$ the 
+%%both pessimistic and optimistic 
+%condition of $\forall r \sgeq 0, \, \Vert \mybeta \Vert_{r,0} \sless (1 \spl d_{max}^{-1} M_{p,p}^{-1}(\myPhi))/2$, guarantees the uniqueness of the solution $\mybeta$ to both non-convex $P_{r,0}$ and convex $P_{\boldsymbol{w};p,1}$ problems.
+%\end{remark}
+%\fi

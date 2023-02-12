@@ -1,0 +1,14 @@
+According to Tropp, for more than a century, sparsity constraint has been utilised to recover the sparsest unique solution of a proper optimisation problem and to derive the corresponding recovery conditions \cite{Tropp2004b}.
+As described in Section \ref{sec:Sparsity}, sparsity constraint penalizes the non-zero coefficients; 
+however, in some real-world engineering problems and applications, which some of them are gathered in table \ref{table:Block-sparsity_applications}, applying penalty on non-zero coefficients does not lead to a proper solution compatible to the real-world conditions.
+\input{sections/1-4-1-0-Background-BSparsity-Intro-Table3}
+%\FloatBarrier
+
+In these kinds of problems, in addition to sparsity, structural, geometrical, or categorical constraints or a priori knowledge may be available that leads to block sparsity \cite{Eldar2010}, 
+%\cite{Eldar2009b,Eldar2009c,Eldar2009d,Eldar2010b,Eldar2010}, 
+group sparsity \cite{Rao2012a} and joint sparsity \cite{Fornasier2008}.
+Therefore, a block of coefficients need to be penalized and recovery conditions determine the maximum number of active blocks, and not coefficients, to ensure the uniqueness of the block-sparse solution of the corresponding optimisation problem.
+
+On demonstrating the benefits of the block structure constraint, Kwon and Rao showed that for exact $\mySuppTxt$ recovery in the presence of noise, block-sparsity leads to the reduced number of measurements by the factor of at least the inverse of block length, compared to the conventional element-wise sparse recovery \cite{Kwon2012}.
+If each block of columns in the dictionary corresponding to each block in the representation vector is composed of linearly dependent columns, the blocks are said to be \emph{redundant} blocks, whereas if the columns are not linearly dependent, the blocks are referred to as \emph{non-redundant} blocks \cite{Elhamifar2012b}.
+Section \ref{sec:Block-sparse_representation_theory} defines the block-sparse representation theory, next in Section \ref{sec:Block-sparse_exact_recovery_condition}, recovery conditions are reviewed.

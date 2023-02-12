@@ -1,0 +1,20 @@
+\begin{table*}[b]
+\begin{adjustbox}{width=\textwidth} % ,totalheight=\textheight,.5
+\centering
+%\tiny
+\begin{tabularx}{\textwidth}{Y Y Y Y}% cccc p{3 cm}  *{6}{Y|} 
+\toprule
+%\cline{2-4}
+\multicolumn{2}{c}{Quasi-electrostatics} & \multicolumn{2}{c}{Quasi-magnetostatics} \\ \midrule %\hline
+Gauss’s law & $\nabla \cdot \boldsymbol{E} = \frac{\rho}{\varepsilon_0}$ & Gauss’s law & $\nabla \cdot \boldsymbol{B} = 0$ \\ %\cline{1-1}%\hline
+Faraday’s law & $\nabla \times \boldsymbol{E} = \boldsymbol{0}$ 
+ & Ampère’s law & $\nabla \times \boldsymbol{B} = \mu_0 \boldsymbol{J}$ \\  \midrule%\hline
+\multicolumn{2}{c}{$V = \frac{1}{4 \pi \varepsilon_0} \boldsymbol{p} \cdot \frac{\boldsymbol{r}}{\myabs{\boldsymbol{r}}^3}$} & \multicolumn{2}{c}{$\boldsymbol{B} = \frac{\mu_0}{4 \pi} \boldsymbol{p} \times \frac{\boldsymbol{r}}{\myabs{\boldsymbol{r}}^3}$} \\
+\bottomrule
+\multicolumn{4}{c}{where, $\nabla \cdot$, $\nabla \times$, $\cdot$, and $\times$ are divergence, curl, dot and cross product operators, respectively.} \\ % 
+\end{tabularx}
+\end{adjustbox}
+\caption{The quasi-static approximations of Maxwell’s equations.}
+%\caption{The quasi-static approximations of Maxwell’s equations with electric potential $\boldsymbol{V}$ and magnetic field $\boldsymbol{B}$ in an infinite homogeneous medium.}
+\label{table:quasi-static}
+\end{table*}

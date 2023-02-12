@@ -1,0 +1,248 @@
+\begin{proof}
+1) Since the operator-norm is nonnegative (Property \ref{prp:OperatorProperties}), it can be seen that $\forall k , k' {\neq} k , \forall (q , p) \ssin \mathbb{R}^2_{\sgeq 0} : \Vert \myPhi^\dagger [k] \myPhi [k'] \Vert_{q \to p} \sgeq 0 \Rightarrow \forall (q , p) \ssin \mathbb{R}^2_{\sg 0} : M_{q,p}(\myPhi) \sgeq 0$.
+Considering that for all $k$ the blocks $\myPhi [k]$ are full column rank, using the Moore-Penrose pseudo-inverse property of matrices, $\forall (q , p) \ssin \mathbb{R}^2_{\sg 0}$ we have:
+\begin{gather*}
+\begin{aligned}
+M_{q,p}\myparanthese{\myPhi} &= \max_{k,k' \neq k} \frac{d_{k}^{-\frac1p} \, d_{k'}^{\frac1q}}{d_{max}} \mynorm{\myPhi^\dagger \mybracket{k} \myPhi \mybracket{k'}}_{q \to p} \\
+&= \max_{k,k' \neq k} \frac{d_{k}^{-\frac1p} \, d_{k'}^{\frac1q}}{d_{max}} \mynorm{\myparanthese{\myPhi^T \mybracket{k} \myPhi\mybracket{k}}^{-1}\myPhi^T \mybracket{k} \myPhi \mybracket{k'}}_{q \to p}.
+\end{aligned}
+\end{gather*}
+Applying the general format of submultiplicativity property of operator-norm of a matrix, which is introduced in the Property \ref{prp:OperatorProperties} ($\ell_{q {\to} p}$ operator-norm properties) $\forall (q , p) \ssin \mathbb{R}^2_{\sg 0}$, on the above last equality, $\forall (q , p) \ssin \mathbb{R}^2_{\sg 0}$ we have:
+\begin{gather}
+\label{eq:temp0}
+\begin{aligned}
+M_{q,p}\myparanthese{\myPhi} &\leq 
+\max_{k,k' \neq k} \frac{d_{k}^{-\frac1p} \, d_{k'}^{\frac1q}}{d_{max}} 
+\mynorm{\myparanthese{\myPhi^T \mybracket{k} \myPhi \mybracket{k}}^{-1}}_{q \to p} \, \mynorm{\myPhi^T \mybracket{k} \myPhi \mybracket{k'}}_{q \to p} \max \mybrace{1 , d_k^{\frac1q - \frac1p}}. \\
+%&= \max_{k,k' \neq k} \frac{d_{k}^{-\frac1p} \, d_{k'}^{\frac1q}}{d_{max}} 
+%\mynorm{\myparanthese{\myPhi^T \mybracket{k} \myPhi \mybracket{k}}^{-1}}_{q \to p} \, \mynorm{\myPhi^T \mybracket{k} \myPhi \mybracket{k'}}_{q \to p}.
+\end{aligned}
+\end{gather}
+%The above last line is obtained by considering that for $q \sgeq p$, we have $\max \{1 , d_k^{1/q \sm 1/p} \} \seq 1$.
+
+\myhl{Since each element of the $\myPhi^T [k] \myPhi [k']$ is the pairwise correlation between the columns of the $k$ and $k' {\neq} k$ blocks, for any $k$ and $k' {\neq} k$ the $\myPhi^T [k] \myPhi [k']$ can be upper bounded by $M(\myPhi) \, \boldsymbol{1}_{d_k \stimes d_{k'}}$, so it is true for their operator-norms, because using Property {\ref{prp:OperatorProperties}} ($\ell_{q {\to} p}$ operator-norm properties) for comparison of $\ell_{q {\to} p}$ operator-norm of two matrices (the forth property of the part Bounds), we have the following first line (based on table {\ref{table:OperatorNorm}}, the maximum absolute entry of a matrix is represented by its $\ell_{1 {\to} \infty}$ operator-norm), whereas by the homogeneity property of $\ell_{q {\to} p}$ operator-norm defined in Property {\ref{prp:OperatorProperties}} $\forall q \sgeq 0$ and $\forall p \sg 0$, the following second line is obtained $\forall (q , p) \ssin \mathbb{R}^2_{\sg 0}$:}
+\begin{gather*}
+\mycolor{\begin{aligned}
+\forall k , k' \neq k, \qquad \mynorm{\myPhi^T \mybracket{k} \myPhi \mybracket{k'}}_{q \to p} &\leq 
+\mynorm{\mynorm{\myPhi^T \mybracket{k} \myPhi \mybracket{k'}}_{1 \to \infty} \, \boldsymbol{1}_{d_k \times d_{k'}}}_{q \to p} \\
+&= \mynorm{\myPhi^T \mybracket{k} \myPhi \mybracket{k'}}_{1 \to \infty} \mynorm{\boldsymbol{1}_{d_k \times d_{k'}}}_{q \to p} \\
+&\leq M\myparanthese{\myPhi} \mynorm{\boldsymbol{1}_{d_k \times d_{k'}}}_{q \to p}.
+\end{aligned}}
+\end{gather*}
+\myhl{The above last line comes from the fact that $\forall k , k' {\neq} k$, the maximum absolute value of multiplication of blocks $k$ and $k'$ is less than or equal to $M(\myPhi)$, which is by definition the maximum off-diagonal absolute value of multiplication of the whole dictionary to itself, i.e., $M(\myPhi) {\myeq} \max_{k , k' \neq k} \vert \boldsymbol{G}_{k,k'}(\myPhi) \vert$, where $\boldsymbol{G}(\myPhi) {\myeq} \myPhi^T \myPhi$.}
+
+Then, using the upper-bound of the third set of bounds in Property {\ref{prp:OperatorProperties}}, we will have the following second line.
+Then, by computing the Frobenius norm in the second line, $\forall k , k' {\neq} k$ and $\forall (q , p , q' , p') \ssin \mathbb{R}^4_{\sg 0}$ we get the following third line:
+
+%, in which by substituting $q' \seq p' \seq 1$ (because $q$ and $p$ are lower-bounded by 1), and Frobenius norm the following third line is achieved.
+%Finally, considering that $q \sgeq p \sgeq 1$, the following last line of inequalities will be obtained:
+\iffalse
+Then, using the upper-bound of second set of bounds in Property \ref{prp:OperatorProperties}, i.e., $\Vert \boldsymbol{A} \Vert_{q \to p} \sleq \max \{1 , m^{1/p \sm 1/{p'}} \} \max \{1 , n^{1/{q'} \sm 1/q} \} \Vert \boldsymbol{A} \Vert_{q' \to p'}$, $\boldsymbol{A} \ssin \mathbb{R}^{m \stimes n}$, and for $q' \seq p' \seq 1$, we will have the following second line of inequalities.
+On the other hand, for $q \sgeq p$ and $p \sgeq 1$, we have $\max \{1 , d_k^{1/p - 1} \} \seq 1$ and $\max \{1 , d_{k'}^{1 - 1/q} \} \seq d_{k'}^{1 - 1/q}$, which leads to the following third line of inequalities.
+Again, using the the upper-bound of second set of bounds in Property \ref{prp:OperatorProperties}, we have $\boldsymbol{A} \ssin \mathbb{R}^{m \stimes n}$, $\Vert \boldsymbol{A} \Vert_{1 \to 1} \sleq  m^{1/2} \Vert \boldsymbol{A} \Vert_{2 \to 2}$, and from \cite{Golub2013} we have $\Vert \boldsymbol{A} \Vert_{2 \to 2} \sleq \Vert \boldsymbol{A} \Vert_F \seq (\sum_{i \seq 1}^m \sum_{j \seq 1}^n |a_{i,j}|^2)^{1/2}$, which produces the following fourth and fifth lines of inequalities.
+\begin{gather*}
+%\label{eq:temp2}
+\begin{aligned}
+\mynorm{\myPhi^T \mybracket{k} \myPhi \mybracket{k'}}_{q \to p} &\leq 
+M\myparanthese{\myPhi} \mynorm{\boldsymbol{1}_{d_k \times d_{k'}}}_{q \to p} \\
+&\leq M\myparanthese{\myPhi} \max \mybrace{1 , d_k^{\frac1p - \frac{1}{p'}}} \max \mybrace{1 , d_{k'}^{\frac{1}{q'} - \frac1q}} \max \mybrace{1 , d_k^{\frac{1}{p'} -\frac12}} \max \mybrace{1 , d_{k'}^{\frac{1}{2} - \frac{1}{q'}}} \mynorm{\boldsymbol{1}_{d_k \times d_{k'}}}_F \\
+&= M\myparanthese{\myPhi} \max \mybrace{1 , d_k^{\frac1p - 1}} \max \mybrace{1 , d_{k'}^{1 - \frac1q}} \max \mybrace{1 , d_k^{1 -\frac12}} \max \mybrace{1 , d_{k'}^{\frac{1}{2} - 1}} \myparanthese{d_k \, d_{k'}}^{\frac12}\\
+&= M\myparanthese{\myPhi} d_{k'}^{1 - \frac1q} \, d_k^{\frac12} \, \myparanthese{d_k \, d_{k'}}^{\frac12} \\
+&=  M\myparanthese{\myPhi} d_{k'}^{\frac32 - \frac1q} \, d_k.
+\end{aligned}
+\end{gather*}
+\fi
+\begin{gather}
+\label{eq:UB-kk'}
+\begin{aligned}
+\mynorm{\myPhi^T \mybracket{k} \myPhi \mybracket{k'}}_{q \to p} &\leq 
+M\myparanthese{\myPhi} \mynorm{\boldsymbol{1}_{d_k \times d_{k'}}}_{q \to p} \\
+&\leq M\myparanthese{\myPhi} \, \max \mybrace{1 , d_k^{\frac1p - \frac{1}{p'}}} \, \max \mybrace{1 , d_{k'}^{\frac{1}{q'} - \frac1q}} \, \max \mybrace{1 , d_k^{\frac{1}{p'} -\frac12}} \, \max \mybrace{1 , d_{k'}^{\frac{1}{2} - \frac{1}{q'}}} \mynorm{\boldsymbol{1}_{d_k \times d_{k'}}}_F \\
+&= \myparanthese{d_k \, d_{k'}}^{\frac12} \, M\myparanthese{\myPhi} \, \max \mybrace{1 , d_k^{\frac1p - \frac{1}{p'}}} \, \max \mybrace{1 , d_{k'}^{\frac{1}{q'} - \frac1q}} \, \max \mybrace{1 , d_k^{\frac{1}{p'} -\frac12}} \, \max \mybrace{1 , d_{k'}^{\frac{1}{2} - \frac{1}{q'}}}. \\
+%&= M\myparanthese{\myPhi} d_{k'}^{1 - \frac1q} \, d_k^{\frac12} \, \myparanthese{d_k \, d_{k'}}^{\frac12} \\
+%&=  M\myparanthese{\myPhi} d_{k'}^{\frac32 - \frac1q} \, d_k.
+\end{aligned}
+\end{gather}
+%This upper bound explains the choice of $d_{max}^{-1}$ in Definition \ref{def:BMIC}. 
+Therefore, substituting $\Vert \myPhi^T [k] \myPhi [k'] \Vert_{q \to p}$ with its upper-bound in the (\ref{eq:temp0}), $\forall (q , p , q' , p') \ssin \mathbb{R}^4_{\sg 0}$ we get: 
+\begin{gather}
+\begin{aligned}
+\label{eq:temp1} 
+M_{q,p}\myparanthese{\myPhi} \leq 
+M\myparanthese{\myPhi} \displaystyle\max_{k,k' \neq k} &\frac{d_{k}^{\frac12 - \frac1p} \, d_{k'}^{\frac1q + \frac12}}{d_{max}} \mynorm{\myparanthese{\myPhi^T \mybracket{k} \myPhi \mybracket{k}}^{-1}}_{q \to p} \times \\
+&\max \mybrace{1 , d_k^{\frac1p - \frac{1}{p'}}} \, \max \mybrace{1 , d_{k'}^{\frac{1}{q'} - \frac1q}} \, \max \mybrace{1 , d_k^{\frac{1}{p'} -\frac12}}  \, \max \mybrace{1 , d_{k'}^{\frac{1}{2} - \frac{1}{q'}}} \, \max \mybrace{1 , d_k^{\frac1q - \frac1p}}.
+\end{aligned}
+\end{gather}
+
+{
+\label{cmmnt:77} 
+Now an upper bound for $\Vert (\myPhi^T[k] \myPhi[k])^{-1} \Vert_{q \to p}$ should be developed.
+}
+As part of the required tools to reach this aim we will utilise the following property:
+\begin{property}
+\label{lm:Horn} 
+For $q \sgeq p \sgeq 1$, if $\Vert\boldsymbol{A} \Vert_{q \to p} \sless 1$, then \cite{HornR.A.2012}
+\begin{gather*}
+\myparanthese{\boldsymbol{I} + \boldsymbol{A}}^{-1} = \displaystyle\sum_{i=0}^\infty \myparanthese{-\boldsymbol{A}}^i.
+\end{gather*}
+\end{property}
+\begin{proof}
+It follows from Corollary 5.6.16 of \cite{HornR.A.2012}. 
+Based on the Corollary 5.6.16 of \cite{HornR.A.2012}, the \emph{matrix norm} of $\boldsymbol{A}$ should be less than one.
+Therefore, we imposed the constraint $q \sgeq p \sgeq 1$, because according to Remark \ref{rmrk:Oprtr-nrm-matrx} (matrix norm) on page \pageref{rmrk:Oprtr-nrm-matrx} the $\ell_{q {\to} p}$ operator-norm for $q \sgeq p \sgeq 1$ satisfies all the required properties to be conceived as a matrix norm. 
+%to make the operator-norm a multiplicative norm according to Property \ref{prp:OperatorProperties}.
+\end{proof}
+Therefore, according to Property \ref{lm:Horn}, we need to decompose the $\myPhi^T[k] \myPhi[k]$ into a sum of two matrices, which one of them is an identity matrix.
+For now we continue with the current constraints on $q$ and $p$, i.e., $\forall (q , p) \ssin \mathbb{R}^2_{\sg 0}$, but as soon as we use the above property the constraints will change to $q \sgeq p \sgeq 1$.
+
+$\myPhi^T[k] \myPhi[k]$ is a $d_k \stimes d_k$ matrix which all of its diagonal elements are one, and its off-diagonal elements measure pairwise correlation between the columns of the same block $k$. 
+Therefore, $\myPhi^T[k] \myPhi[k]$ can be decomposed as $\myPhi^T[k] \myPhi[k] \seq \boldsymbol{I}_{d_k} \spl \boldsymbol{F}[k] $, where:
+\begin{equation*}
+\forall k, \qquad \begin{aligned}
+f_{i,j} \mybracket{k} = 
+  \begin{cases}
+    0,   \quad   &\text{if }i = j\\
+    \myphi_i^T[k] \myphi_j[k],   \quad &\text{if }i \neq j.\\
+  \end{cases} 
+  \end{aligned}
+\end{equation*} 
+
+But we are interested in the upper-bound of $\Vert (\myPhi^T[k] \myPhi[k])^{-1} \Vert_{q \to p}$.
+By the mentioned decomposition we have the following first line of inequalities.
+Then, utilising the Property \ref{lm:Horn}, assuming $q \sgeq p \sgeq 1$ and $\Vert \boldsymbol{F} [k] \Vert_{q \to p} \sless 1$ (its veracity will be investigated) the following second line is obtained.
+Next utilising the generalisation (from two matrices to more than two matrices) of the triangle inequality property of the $\ell_{q {\to} p}$ operator-norm introduced in Property \ref{prp:OperatorProperties} ($\ell_{q {\to} p}$ operator-norm properties) $\forall q \ssin \mathbb{R}_{\sgeq 0} , \forall p \ssin \mathbb{R}_{\sgeq 1}$, or for $p \seq 0$, the following third line is obtained.
+Then utilising the generalisation (from two matrices to more than two matrices) of the submultiplicativity property of the $\ell_{q {\to} p}$ operator-norm introduced in Property \ref{prp:OperatorProperties} for $q \sgeq p \sg 0$, the following forth line is obtained. 
+Finally, utilising the sum of an infinite geometric series, i.e., $\sum_{i \seq 0}^{\infty} r ^i \seq 1 /(1 - r)$, where $|r| \sless 1$, the following last line is obtained, considering the assumption $\Vert\boldsymbol{F}[k] \Vert_{q \to p} \sless 1$ (to be investigated).
+\begin{equation}
+\label{eq:UB-invPhik} 
+\begin{aligned}
+\forall k, q \geq p \geq 1, \qquad
+\mynorm{\myparanthese{\myPhi^T \mybracket{k} \myPhi \mybracket{k}}^{-1}}_{q \to p} &= 
+\mynorm{\myparanthese{\boldsymbol{I}_{d_k} + \boldsymbol{F}\mybracket{k}}^{-1}}_{q \to p} \\
+&= \mynorm{\displaystyle\sum_{i=0}^\infty \myparanthese{-\boldsymbol{F}\mybracket{k}}^i}_{q \to p} \\
+&\leq \displaystyle\sum_{i=0}^\infty \mynorm{\myparanthese{-\boldsymbol{F}\mybracket{k}}^i}_{q \to p} \\
+&\leq \displaystyle\sum_{i=0}^\infty \mynorm{\boldsymbol{F}\mybracket{k}}_{q \to p}^i \\
+&= \frac{1}{1-\mynorm{\boldsymbol{F}\mybracket{k}}_{q \to p}}.
+%&\leq \frac{1}{1- M \myparanthese{\myPhi} d_{max}^{2 - \frac1q} \myparanthese{d_{max} - 1}^\frac12}.
+\end{aligned}
+\end{equation}
+
+%or consequently $\Vert (\boldsymbol{I}_{d_k} \spl \boldsymbol{F}[k])^{-1} \Vert_{q \to p}$, $\forall (q , p) \ssin \mathbb{R}^2_{\sg 0}$.
+%Now we can utilise the Property \ref{lm:Horn}, i.e., $\Vert (\boldsymbol{I}_{d_k} \spl \boldsymbol{F}[k])^{-1} \Vert_{q \to p} \seq \Vert \sum_{i \seq 0}^{\infty} (-\boldsymbol{F}[k])i \Vert_{q \to p} \seq \Vert \sum_{i \seq 0}^{\infty} (\boldsymbol{F}[k])i \Vert_{q \to p}$.
+Now we investigate the veracity of the assumption $\Vert\boldsymbol{F}[k] \Vert_{q \to p} \sless 1$.
+Since each off-diagonal entry of $\boldsymbol{F}[k]$ is the pairwise correlation between the columns of the $k^{th}$ block and the on-diagonal values are all zero, it can be upper bounded by $M\myparanthese{\myPhi} \, \myparanthese{\boldsymbol{1}_{d_k} \sm \boldsymbol{I}_{d_k}}$, so it is true for their operator-norms, because using Property \ref{prp:OperatorProperties} ($\ell_{q {\to} p}$ operator-norm properties) for comparison of $\ell_{q {\to} p}$ operator-norm of two matrices $\forall (q , p) \ssin \mathbb{R}^2_{\sg 0}$ (the forth property of the part Bounds), we have:
+\begin{gather*}
+\begin{aligned}
+\forall k, q \geq p \geq 1, \qquad
+\mynorm{\boldsymbol{F} \mybracket{k}}_{q \to p} &\leq 
+\mynorm{\mynorm{\boldsymbol{F} \mybracket{k}}_{1 \to \infty} \, \myparanthese{\boldsymbol{1}_{d_k} - \boldsymbol{I}_{d_k}}}_{q \to p} \\
+&= \mynorm{\boldsymbol{F} \mybracket{k}}_{1 \to \infty} \mynorm{\myparanthese{\boldsymbol{1}_{d_k} - \boldsymbol{I}_{d_k}}}_{q \to p} \\
+&\leq M\myparanthese{\myPhi} \mynorm{\myparanthese{\boldsymbol{1}_{d_k} - \boldsymbol{I}_{d_k}}}_{q \to p}.
+\end{aligned}
+\end{gather*}
+The $\ell_{1 {\to} \infty}$ operator-norm of a matrix computes the maximum absolute entry of the matrix (table \ref{table:OperatorNorm}). 
+The above second line uses the homogeneity property of $\ell_{q {\to} p}$ operator-norm defined in Property \ref{prp:OperatorProperties} ($\ell_{q {\to} p}$ operator-norm properties) $\forall q \sgeq 0$ and $\forall p \sg 0$.
+The above last line comes from the fact that $\forall k$, the maximum off-diagonal absolute value of multiplication of block $k$ to itself is less than or equal to $M(\myPhi)$, because the off-diagonal values of $\boldsymbol{F}[k]$ are a subset of off-diagonal values of the Gram matrix $\boldsymbol{G}(\myPhi) {\myeq} \myPhi^T \myPhi$, which the $M(\myPhi)$ is derived from, i.e., $M(\myPhi) {\myeq}  \max_{k,k' \neq k} \vert \boldsymbol{G}_{k,k'}(\myPhi) \vert \seq \max_{k,k' \neq k} \vert \boldsymbol{\varphi}^T_k \boldsymbol{\varphi}^{ }_{k'} \vert$, hence $\Vert \boldsymbol{F}[k] \Vert_{1 \to \infty} \sleq M(\myPhi)$.
+
+Then, using the upper-bound of the third set of bounds in Property \ref{prp:OperatorProperties} ($\ell_{q {\to} p}$ operator-norm properties), we will have the following second line.
+By computing the Frobenius norm in the second line, the third line is obtained.
+Considering the obtained constraint on $q$ and $p$, i.e., $q \sgeq p \sgeq 1$, we choose $q' \seq p' \seq 1$ in the following third line, because both $q$ and $p$ are lower-bounded by one.
+%, $\forall k$ and $\forall (q , p , q' , p') \ssin \mathbb{R}^4_{\sg 0}$ we get:
+%in which by substituting $q' \seq p' \seq 1$ (because $q$ and $p$ are thresholded by 1), and Frobenius norm the following third line is achieved.
+%Finally, considering that $q \sgeq p \sgeq 1$, the following last line of inequalities will be obtained:
+\begin{gather*}
+\begin{aligned}
+\mynorm{\boldsymbol{F} \mybracket{k}}_{q \to p} &\leq 
+M\myparanthese{\myPhi} \mynorm{\myparanthese{\boldsymbol{1}_{d_k} - \boldsymbol{I}_{d_k}}}_{q \to p} \\
+&\leq M\myparanthese{\myPhi} \, \max \mybrace{1 , d_k^{\frac1p - \frac{1}{p'}}} \, \max \mybrace{1 , d_k^{\frac{1}{q'} - \frac1q}} \, \max \mybrace{1 , d_k^{\frac{1}{p'} -\frac12}} \, \max \mybrace{1 , d_k^{\frac{1}{2} - \frac{1}{q'}}} \mynorm{\myparanthese{\boldsymbol{1}_{d_k} - \boldsymbol{I}_{d_k}}}_F \\
+&= \myparanthese{d_k^2 - d_k}^\frac12 M\myparanthese{\myPhi} \, \max \mybrace{1 , d_k^{\frac1p - \frac{1}{p'}}} \, \max \mybrace{1 , d_k^{\frac{1}{q'} - \frac1q}} \, \max \mybrace{1 , d_k^{\frac{1}{p'} -\frac12}} \, \max \mybrace{1 , d_k^{\frac{1}{2} - \frac{1}{q'}}} \\
+%&= M\myparanthese{\myPhi} d_k^{1 - \frac1q} \, d_k^{\frac12} \, \myparanthese{d_k^2 - d_k}^\frac12 \\
+&= \myparanthese{d_k^2 - d_k}^\frac12 \, d_k^{1 - \frac1q} \, d_k^{\frac12} \, M\myparanthese{\myPhi}\\
+&= d_k^{2 - \frac1q} \myparanthese{d_k - 1}^\frac12 M\myparanthese{\myPhi}.
+\end{aligned}
+\end{gather*}
+% and we have $\Vert M(\myPhi) (\boldsymbol{1}_{d_k} \sm \boldsymbol{I}_{d_k}) \Vert_{q \to p} \sleq (d_{max} \sm 1) M(\myPhi)$. 
+Therefore, for all $k$ we have $\Vert\boldsymbol{F}[k] \Vert_{q \to p} \sleq d_{max}^{2 - 1/q} (d_{max} \sm 1)^{1/2} M(\myPhi)$.
+On the other hand, in the Property \ref{prp:BMIC-MIC}, it is assumed that $d_{max}^{2 - 1/q} (d_{max} \sm 1)^{1/2} M(\myPhi) \sless 1$, so the required condition to use the Property \ref{lm:Horn} in (\ref{eq:UB-invPhik}), i.e., $\Vert\boldsymbol{F}[k] \Vert_{q \to p} \sless 1$, 
+%Lemma \ref{lm:Horn} 
+is satisfied.
+Substituting the obtained upper-bound of $\Vert\boldsymbol{F}[k] \Vert_{q \to p}$ in (\ref{eq:UB-invPhik}), we get:
+
+\iffalse
+\begin{property}
+\label{lm:Horn} 
+For $q \sgeq p$, if $\Vert\boldsymbol{A} \Vert_{q \to p} \sless 1$, then \cite{HornR.A.2012}
+\begin{gather*}
+\myparanthese{\boldsymbol{I} + \boldsymbol{A}}^{-1} = \displaystyle\sum_{i=0}^\infty \myparanthese{-\boldsymbol{A}}^i.
+\end{gather*}
+\end{property}
+\begin{proof}
+It follows from Corollary 5.6.16 of \cite{HornR.A.2012}. 
+We imposed the constraint $q \sgeq p$, to make the operator-norm a multiplicative norm according to Property \ref{prp:OperatorProperties}.
+\end{proof}
+
+Therefore, using the Property \ref{lm:Horn}, and triangle inequality we obtain the following first three lines.
+Then, utilising the sum of an infinite geometric series, i.e., $\sum_{i \seq 0}^{\infty} r ^i \seq 1 /(1 - r)$, where $|r| \sless 1$, the following forth line is obtained, because $\Vert\boldsymbol{F}[k] \Vert_{q \to p} \sless 1$.
+Finally, the upper bound for $\Vert \boldsymbol{F}[k] \Vert_{q \to p}$, determines the following last upper-bound:
+\fi
+\begin{equation*}
+\label{eq:UB-invPhik2} 
+\begin{aligned}
+\forall k, q \geq p \geq 1, \qquad
+\mynorm{\myparanthese{\myPhi^T \mybracket{k} \myPhi \mybracket{k}}^{-1}}_{q \to p} &\leq 
+%\mynorm{\myparanthese{\boldsymbol{I}_{d_k} + \boldsymbol{F}\mybracket{k}}^{-1}}_{q \to p} \\
+%&= \mynorm{\displaystyle\sum_{i=0}^\infty \myparanthese{-\boldsymbol{F}\mybracket{k}}^i}_{q \to p} \\
+%&\leq \displaystyle\sum_{i=0}^\infty \mynorm{\boldsymbol{F}\mybracket{k}}_{q \to p}^i \\
+\frac{1}{1-\mynorm{\boldsymbol{F}\mybracket{k}}_{q \to p}} \\
+&\leq \frac{1}{1- d_k^{2 - \frac1q} \myparanthese{d_k - 1}^\frac12 M \myparanthese{\myPhi} }.
+\end{aligned}
+\end{equation*}
+On the other hand, the previously obtained main equation (\ref{eq:temp1}) for new constraints $q \sgeq p \sgeq 1$ ($\max \{1 , d_k^{1/q \sm 1/p} \} \seq 1$) and $q' \seq p' \seq 1$ becomes:
+\begin{gather}
+\begin{aligned}
+\label{eq:main-eq2} 
+M_{q,p}\myparanthese{\myPhi} &\leq 
+M\myparanthese{\myPhi} \displaystyle\max_{k,k' \neq k} &&\frac{d_{k}^{\frac12 - \frac1p} \, d_{k'}^{\frac1q + \frac12}}{d_{max}} \mynorm{\myparanthese{\myPhi^T \mybracket{k} \myPhi \mybracket{k}}^{-1}}_{q \to p} \times \\
+&  &&\max \mybrace{1 , d_k^{\frac1p - \frac{1}{p'}}} \, \max \mybrace{1 , d_{k'}^{\frac{1}{q'} - \frac1q}} \, \max \mybrace{1 , d_k^{\frac{1}{p'} -\frac12}} \, \max \mybrace{1 , d_{k'}^{\frac{1}{2} - \frac{1}{q'}}} \, \max \mybrace{1 , d_k^{\frac1q - \frac1p}} \\
+&=
+M\myparanthese{\myPhi} \displaystyle\max_{k,k' \neq k} &&\frac{d_{k}^{\frac12 - \frac1p} \, d_{k'}^{\frac1q + \frac12}}{d_{max}} \mynorm{\myparanthese{\myPhi^T \mybracket{k} \myPhi \mybracket{k}}^{-1}}_{q \to p} \times \\
+& &&\max \mybrace{1 , d_k^{\frac1p - 1}} \, \max \mybrace{1 , d_{k'}^{1 - \frac1q}} \, \max \mybrace{1 , d_k^{\frac12}} \, \max \mybrace{1 , d_{k'}^{-\frac12}} \\
+&=
+M\myparanthese{\myPhi} \displaystyle\max_{k,k' \neq k} &&\frac{d_{k}^{1 - \frac1p} \, d_{k'}^{\frac32}}{d_{max}} \mynorm{\myparanthese{\myPhi^T \mybracket{k} \myPhi \mybracket{k}}^{-1}}_{q \to p}.
+\end{aligned}
+\end{gather}
+Substituting the upper-bound of $\Vert (\myPhi^T[k] \myPhi[k])^{-1} \Vert_{q \to p}$ obtained in equation (\ref{eq:UB-invPhik2}) into the updated main equation (\ref{eq:main-eq2}), we get:
+%Combining with (\ref{eq:temp1}):
+\begin{gather*} 
+\begin{aligned}
+q \geq p \geq 1, \qquad
+M_{q,p}\myparanthese{\myPhi} &\leq 
+\frac{M\myparanthese{\myPhi}}{d_{max}} \displaystyle\max_{k,k' \neq k} \frac{d_{k}^{1 - \frac1p} \, d_{k'}^{\frac32}}{1 - d_k^{2 - \frac1q} \myparanthese{d_k - 1}^\frac12 M \myparanthese{\myPhi}} \\
+&\leq \frac{M\myparanthese{\myPhi}}{d_{max}} \displaystyle\max_{k} d_{k}^{1 - \frac1p} \, \displaystyle\max_{k' \neq k} d_{k'}^{\frac32} \displaystyle\max_{k} \frac{1}{1 - d_k^{2 - \frac1q} \myparanthese{d_k - 1}^\frac12 M \myparanthese{\myPhi}} \\
+&= \frac{d_{max}^{\frac32 - \frac1p} \, M\myparanthese{\myPhi}}{1- d_{max}^{2 - \frac1q} \myparanthese{d_{max} - 1}^\frac12 M \myparanthese{\myPhi}}.
+\end{aligned}
+\end{gather*}
+\myhl{2) Starting from the definition of coherence in Property {\ref{prp:IntraBlkO}} (block-MCC$_{q,p}$ for intra-block orthonormality) we have the following first line for $\forall (q , p) \ssin \mathbb{R}^2_{\sg 0}$.
+Then considering the upper-bound of $\Vert \myPhi^T [k] \myPhi [k'] \Vert_{q {\to} p}$ for any $k$ and $k' {\neq} k$, obtained in ({\ref{eq:UB-kk'}}), 
+%can be upper-bounded by $M(\myPhi) \, \boldsymbol{1}_{d_k \stimes d_{k'}}$, hence its $\ell_{q {\to} p}$ operator-norm (the following second line), and using the upper-bound of the third set of bounds in Property \ref{prp:OperatorProperties}, 
+we will have the following second line $\forall (q , p , q' , p') \ssin \mathbb{R}^4_{\sg 0}$:}
+%, in which by substituting $q' \seq p' \seq 1$, and Frobenius norm the following forth line is achieved.
+\begin{gather*}
+\label{eq:prp-BMIC-MIC}
+\mycolor{\begin{aligned}
+M_{q,p}\myparanthese{\myPhi} &= \max_{k,k' \neq k} \frac{d_{k}^{-\frac1p} \, d_{k'}^{\frac1q}}{d_{max}} \mynorm{\myPhi^T \mybracket{k} \myPhi \mybracket{k'}}_{q \to p} \\
+%&\leq \max_{k,k' \neq k} \frac{d_{k}^{-\frac1p} \, d_{k'}^{\frac1q}}{d_{max}} M\myparanthese{\myPhi} \mynorm{\boldsymbol{1}_{d_k \stimes d_{k'}}}_{q \to p} \\
+&\leq \frac{M\myparanthese{\myPhi}}{d_{max}} \, \max_{k,k' \neq k} d_{k}^{\frac12 - \frac1p} \, d_{k'}^{\frac1q + \frac12} \, \max \mybrace{1 , d_k^{\frac1p - \frac{1}{p'}}} \, \max \mybrace{1 , d_{k'}^{\frac{1}{q'} - \frac1q}} \, \max \mybrace{1 , d_k^{\frac{1}{p'} -\frac12}} \, \max \mybrace{1 , d_{k'}^{\frac{1}{2} - \frac{1}{q'}}}.  \\
+%&= M\myparanthese{\myPhi} \max_{k,k' \neq k} \frac{d_{k}^{-\frac1p} \, d_{k'}^{\frac1q}}{d_{max}} \max \mybrace{1 , d_k^{\frac1p - 1}} \max \mybrace{1 , d_{k'}^{1 - \frac1q}} \max \mybrace{1 , d_k^{1 -\frac12}} \max \mybrace{1 , d_{k'}^{\frac{1}{2} - 1}} \myparanthese{d_k \, d_{k'}}^{\frac12} \\
+%&= \frac{M\myparanthese{\myPhi}}{d_{max}} \max_{k,k' \neq k} d_{k}^{1 - \frac1p} \, d_{k'}^{\frac1q + \frac12} \, \max \mybrace{1 , d_{k'}^{1 - \frac1q}} \\
+%&= \begin{cases}
+%\frac{M\myparanthese{\myPhi}}{d_{max}} \displaystyle\max_{k,k' \neq k} d_{k}^{1 - \frac1p} \, d_{k'}^{\frac32}, & \qquad \text{for \ }q \geq 1\\
+%\frac{M\myparanthese{\myPhi}}{d_{max}} \displaystyle\max_{k,k' \neq k} d_{k}^{1 - \frac1p} \, d_{k'}^{\frac1q + \frac12}, & \qquad \text{for \ }q < 1\\
+%\end{cases} \\
+%&\leq \begin{cases}
+%d_{max}^{\frac32 - \frac1p} M\myparanthese{\myPhi}, & \qquad \text{for \ }q \geq 1\\
+%d_{max}^{\frac1q - \frac1p + \frac12} M\myparanthese{\myPhi}, & \qquad \text{for \ }q < 1\\
+%\end{cases}.
+\end{aligned}}
+\end{gather*}
+\end{proof}

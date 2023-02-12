@@ -1,0 +1,17 @@
+In this experiment, assume that the block length $d$ is fixed.
+The goal is to investigate the sparsity level for two types of random dictionaries without and with intra-block orthonormality, and for the six pairs of $q$ and $p$ with tractable operator-norms.
+
+Finally, the sparsity levels for two types of random dictionaries each with six different pairs of $q$ and $p$ are compared to the conventional sparsity levels of Eldar et al. and Donoho and his co-workers.
+The result of the experiment is shown in figure \ref{fig:SL_d_Opt_Eldar_Donoho} for (a) $d \seq 2$ and (b) $d \seq 4$.
+The first six bars in figure \ref{fig:SL_d_Opt_Eldar_Donoho}(a) and (b) correspond to the proposed sparsity levels for random dictionaries without ($\mySLMath$, orange colour) and with ($SL(\myPhi_{ort})$, blue colour) intra-block orthonormality.
+%Remember that for $q \seq p$, the two cases are equal.
+Sparsity levels of Donoho et al. for the mentioned two types of dictionary are equal. 
+%For the last two bars in figure \ref{fig:SL_d_Opt_Eldar_Donoho}(a) and (b), which correspond to conventional sparsity levels, the notion of the most pessimistic and optimistic is meaningless, so one value is shown.
+
+As it can be seen in figure \ref{fig:SL_d_Opt_Eldar_Donoho}(a) and (b), all the proposed sparsity levels based on Block-MCC$_{q,p}$ for random dictionaries $\myPhi$ without intra-block orthonormality are higher than the conventional sparsity levels introduced by Eldar et al. and Donoho et al. (orange colour), whereas for random dictionaries $\myPhi_{ort}$ with intra-block orthonormality (blue colour), the highest value corresponds to Block-MCC$_{2,2}$, which is equal to the sparsity level of Eldar et al., as proved theoretically in Lemma \ref{lm:Eldar-BMIC} (page \pageref{lm:Eldar-BMIC}), and explained in Remark \ref{Rmrk:Eldar-BMIC-equality}.
+%there are three cases in comparison to Eldar's sparsity level.
+%For Block-MCC$_{1,1}$ and Block-MCC$_{\infty,\infty}$ the proposed sparsity level is lower than Eldar's, whereas for Block-MCC$_{1,2}$ and Block-MCC$_{2,\infty}$ the proposed sparsity level is higher than Eldar's.
+%As explained in Remark \ref{Rmrk:Eldar-BMIC-equality}, for Block-MCC$_{2,2}$ the proposed sparsity level is equal to Eldar's.
+At last, all the proposed sparsity levels for two types of dictionaries are higher than the conventional sparsity level of Donoho et al. as proved theoretically in Property \ref{prp:DontKnow1} (page \pageref{prp:DontKnow1}), and explained in Remark \ref{Rmrk:DontKnow1}.
+\input{sections/2-4-1-BERC-NumRes-DicOpNorm-Fig6}
+\FloatBarrier

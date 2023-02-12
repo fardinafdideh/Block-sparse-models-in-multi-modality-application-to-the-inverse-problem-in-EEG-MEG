@@ -1,0 +1,39 @@
+Eldar et al. extended the basic uncertainty principle defined in (\ref{eq:UP-basic}) on page \pageref{eq:UP-basic} to block-sparse domain defined in (\ref{eq:BUP-Eldar}) on page \pageref{eq:BUP-Eldar} \cite{Eldar2009b,Eldar2010b,Eldar2010}.
+Now we generalise the results of Eldar et al., which will be also considered as a generalisation of the basic uncertainty principle \cite{Donoho1989,Donoho2001,Elad2001,Elad2002a} and name it \emph{basic block-sparse uncertainty principle}.
+\begin{lemma}[Basic Block-UP\footnote{\emph{Block-sparse Uncertainty Principle}}]
+\label{lm:BBUP} 
+Supposing $\mybetao$ and $\mybetaTwo$ are two distinct block-structured representations of the non-zero signal $\boldsymbol{y}$ in two \myhl{orthonormal} $m \stimes m$ matrices $\myPhiOne$ and $\myPhiTwo$ \myhl{with similar block structure (same number of blocks and blocks' length vector $\boldsymbol{d}$),} respectively, i.e.,:
+\begin{equation*}
+\boldsymbol{y} = 
+\displaystyle\sum_{k=1}^K \myPhiOne \mybracket{k} \mybetao \mybracket{k} =
+\displaystyle\sum_{k=1}^K \myPhiTwo \mybracket{k} \mybetaTwo \mybracket{k},
+\end{equation*}
+then \myhl{$\forall (q , p) \ssin \mathbb{R}^2_{\sgeq 1}$,} and $\forall r \ssin \mathbb{R}_{\sgeq 0}$:
+\begin{gather*}
+\mynorm{\mybetao}_{r,0} + \mynorm{\mybetaTwo}_{r,0} 
+\geq\frac{2}{\mycolor{d_{min}^{-\frac12} d_{max}^{\frac32}} \, \overbar{M}_{q,\frac{p}{p-1}} \myparanthese{\myPhiOne , \myPhiTwo}},
+\end{gather*}
+where, $\overbar{M}_{q,p/(p \sm 1)} (\myPhiOne , \myPhiTwo)$ is defined based on the parameter changing of $p {\to} p/(p \sm 1)$ in $\overbar{M}_{q,p} (\myPhiOne , \myPhiTwo)$, which is called \emph{basic Block-MCC$_{q,p}$}.
+Basic Block-MCC$_{q,p}$ is derived from the special case of Property \ref{prp:IntraBlkO} (Block-MCC$_{q,p}$ for intra-block orthonormality, page \pageref{prp:IntraBlkO}), when the characterisation is extracted from two separated matrices instead of one matrix, and is defined as follows:
+\iffalse
+\begin{equation*}
+\overbar{M}_{q,\frac{p}{p-1}}\myparanthese{\myPhiOne , \myPhiTwo} = 
+\max_{k,k'} \frac{d_{k}^{-\frac{p-1}{p}} \, d_{k'}^{\frac1q}}{d_{max}}\mynorm{\myPhiOne^T \mybracket{k} \myPhiTwo^{ } \mybracket{k'}}_{q \to \frac{p}{p-1}}.
+\end{equation*}
+\fi
+\begin{equation*}
+\mycolor{\forall (q , p) \in \mathbb{R}^2_{>0}, \qquad
+\overbar{M}_{q,p}\myparanthese{\myPhiOne , \myPhiTwo} = 
+\max_{k,k'} \frac{d_{k}^{-\frac{1}{p}} \, d_{k'}^{\frac1q}}{d_{max}}\mynorm{\myPhiOne^T \mybracket{k} \myPhiTwo^{ } \mybracket{k'}}_{q \to p}.}
+\end{equation*}
+\end{lemma}
+The proof of Lemma \ref{lm:BBUP} is provided in Section \ref{prf:BBUP} (page \pageref{prf:BBUP}).
+
+{
+\label{cmmnt:2} 
+\myhl{From the notation point of view, notice that the basic Block-MCC$_{q,p}$ of two orthonormal matrices is equal to the Block-MCC$_{q,p}$ of the dictionary built from the concatenation of those previous orthonormal matrices, i.e., $\overbar{M}_{q,p/(p \sm 1)} (\myPhiOne , \myPhiTwo) \seq M_{q,p/(p \sm 1)} ([\myPhiOne , \myPhiTwo])$.}
+}
+
+%Notice that for orthonormal matrices $\myPhiOne$ and $\myPhiTwo$, we have $\overbar{M}_{q,p/(p \sm 1)} (\myPhiOne , \myPhiTwo) \seq M_{q,p/(p \sm 1)} ([\myPhiOne , \myPhiTwo])$.
+
+As expected, for $d_1 \seq \cdots \seq d_K$ equal to $1$, Lemma \ref{lm:BBUP} reduces to the basic uncertainty principle explained in (\ref{eq:UP-basic}), i.e., $(\Vert \mybetao \Vert_0 \spl \Vert \mybetaTwo \Vert_0) \sgeq 2/\overbar{M} (\myPhiOne,\myPhiTwo)$.

@@ -1,0 +1,15 @@
+As mentioned earlier, from a mathematical point of view, exploiting the block structure information of the representation leads to improved recovery conditions, i.e., conditions with higher sparsity levels, i.e., more non-zero coefficients.
+
+For investigating this claim, consider a block-sparse representation $\mybetaz$, which satisfies the condition of the Theorem \ref{th:BERC-BS} (Block-ERC based on $\myBSpkTxt$), i.e., $\Vert \mybetaz \Vert_{p,0} \sless \myBSpkMath/2$.
+The number of non-zero elements is at most $d_{max}$ times greater than the number of active blocks, i.e., $\forall p \sgeq 0$, $\Vert \mybetaz \Vert_{0} \sleq d_{max} \, \Vert \mybetaz \Vert_{p,0}$, where, equality occurs when all of the elements in each of the blocks are non-zero in an equally-sized blocks case. 
+Therefore, using Theorem \ref{th:BERC-BS} (Block-ERC based on $\myBSpkTxt$) we have:
+\begin{equation}
+\label{eq:DontKnow1}
+\mynorm{\mybetaz}_{0} < d_{max} \, \frac{\myBSpkMath}{2}.
+\end{equation}
+
+Now, if we treat the block-sparse representation $\mybetaz$ as a conventional sparse representation, i.e., without exploiting its block structure, the sufficient recovery condition would be $\Vert \mybetaz\Vert_0 \sless \mySpkMath/2$ as explained in (\ref{eq:ERC-S}) on page \pageref{eq:ERC-S}, and by comparing with (\ref{eq:DontKnow1}), it is clear that for showing the benefit of the assumption of the block structure on the recovery condition, the relation between $d_{max} \, \myBSpkMath$ and $\mySpkMath$ should be investigated.
+
+According to the relationship in Property \ref{prp:BS-S} ($\myBSpkTxt$ v.s. $\mySpkTxt$, page \pageref{prp:BS-S}), i.e., $\overbar{d} \, \myBSpkMath \sgeq \mySpkMath$, it is clear that the right-hand side of the inequality (\ref{eq:DontKnow1}) is greater than or equal to the right-hand side of the inequality (\ref{eq:ERC-S}), i.e., $\mySpkMath {/} 2$, because we have $d_{max} \sgeq \overbar{d}$. 
+
+Therefore, exploiting the block structure information of the representation and using the proposed characterisation of the dictionary, named $\myBSpkTxt$ (Definition \ref{def:Block Spark}, page \pageref{def:Block Spark}), improves the conventional $\mySpkTxt$-based ERC presented in (\ref{eq:ERC-S}) by increasing the sparsity level, hence, weakening the corresponding conditions.

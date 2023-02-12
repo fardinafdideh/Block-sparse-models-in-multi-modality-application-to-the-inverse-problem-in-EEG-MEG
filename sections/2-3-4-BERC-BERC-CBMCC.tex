@@ -1,0 +1,20 @@
+All the coherence characterisations such as conventional MCC (page \pageref{eq:MIC}) \cite{Donoho2001}, %\cite{Donoho2001,Elad2001,Elad2002a,Donoho2003,Gribonval2003a,Tropp2004,Fuchs2004a,Fuchs2005,Donoho2006a,Tropp2006,Gribonval2007}, 
+block-coherence of Eldar et al. (page \pageref{eq:Eldar-Block-coherence}) \cite{Eldar2010}, 
+%\cite{Eldar2009b,Eldar2010b,Eldar2010}, 
+mutual subspace coherence of Ganesh et al. (page \pageref{eq:MSubC}) \cite{Ganesh2009}, or our Block-MCC$_{q,p}$ (page \pageref{def:BMIC}) regardless of their definition in the block-wise or element-wise domain represent only the most extreme correlation between the atoms, blocks or subspaces of the dictionary and do not offer a comprehensive description of the dictionary.
+
+Based on the proposed Eldar’s cumulative coherence (Definition \ref{def:CIIC}, page \pageref{def:CIIC}) for equally-sized blocks of length $d$, we introduce the following condition named \emph{Block-ERC based on cumulative inter-block coherence constant}:
+\begin{tcolorbox}
+\begin{theorem}[Block-ERC based on Eldar's cumulative coherence]
+\label{th:BERC-CIIC}
+For any general dictionary $\myPhi$ with equally-sized blocks of length $d$, and for $(d \sm 1) M^{Eldar}_{Intra}(\myPhi) \spl d \, M^{Eldar}_{Inter}(\myPhi , k \sm 1) \sless 1$, if 
+\begin{gather*}
+M_{Inter}^{Eldar}\myparanthese{\myPhi , k} + M_{Inter}^{Eldar}\myparanthese{\myPhi , k-1} < \frac{1-\myparanthese{d-1}M_{Intra}^{Eldar}\myparanthese{\myPhi}}{d}, 
+\end{gather*}
+where, $M_{Inter}^{Eldar} (\myPhi , k) {\myeq} d^{-1} \max_{\vert \Lambda \vert =k} \max_{j \notin \Lambda} \sum_{i \in \Lambda} \Vert \myPhi^T [i] \myPhi [j] \Vert_{2 \to 2}$ (Eldar's cumulative coherence, Definition \ref{def:CIIC}, page \pageref{def:CIIC}), and $M^{Eldar}_{Intra} (\myPhi) {\myeq} \max_{\substack{i,j \neq i \\ k}} \vert \myphi_i ^T [k] \myphi_j [k] \vert$ (page \pageref{eq:Eldar-Block-coherence}), then block $k$-sparse representation vector $\mybetaz$ can be recovered correctly from block orthogonal matching pursuit and $\ell_2/\ell_1$-optimisation program algorithms.
+\end{theorem}
+\end{tcolorbox}
+The proof of Theorem \ref{th:BERC-CIIC} is provided in Section \ref{prf:BERC-CIIC} (page \pageref{prf:BERC-CIIC}).
+
+For $d$ equal to $1$, the Block-ERC based on cumulative inter-block coherence constant which is proposed in Theorem \ref{th:BERC-CIIC} is equivalent to its element-wise counterpart defined in (\ref{eq:ERC-CMIC}) on page \pageref{eq:ERC-CMIC}, i.e., the ERC based on cumulative MCC, i.e., $M (\myPhi , k) \spl M (\myPhi , k \sm 1) \sless 1$. 
+The last proposed Block-ERC is the only algorithm-dependent condition, which the algorithms are explained in \cite{Eldar2009b}.

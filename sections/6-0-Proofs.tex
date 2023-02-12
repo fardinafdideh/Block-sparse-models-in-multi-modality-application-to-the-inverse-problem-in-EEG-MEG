@@ -1,0 +1,245 @@
+\chapter{Proofs}
+\label{chap:Appendices-Proofs}
+%------------------------------------------------------
+%\section{Appendices}
+%------------------------------------------------------
+\section{Proof of Property \ref{prp:VectorDivisionBound} (Bounds of division of two vector norms, page \pageref{prp:VectorDivisionBound})}
+\label{prf:VectorDivisionBound}
+\input{sections/6-1-Proofs-Pro2BoundsNormsDiv}
+%------------------------------------------------------
+\newpage
+\section{Proof of Property \ref{prp:OperatorProperties} ($\ell_{q {\to} p}$ operator-norm properties, page \pageref{prp:OperatorProperties})}
+\label{prf:OperatorProperties}
+\input{sections/6-2-Proofs-Pro4OpNormsProp}
+\newpage
+%------------------------------------------------------
+\section{Proof of Property \ref{prp:BMCC-relationships} (Block-MCC$_{q,p}$ inequalities, page \pageref{prp:BMCC-relationships})}
+\label{prf:BMCC-relationships}
+\input{sections/6-3-Proofs-Pro5BMCCIneq}
+%------------------------------------------------------
+\newpage
+\section{Proof of Property \ref{prp:BMIC-orth-bound} (Block-MCC$_{q,p}$ bounds with intra-block orthonormality I, page \pageref{prp:BMIC-orth-bound})}
+\label{prf:BMIC-bounds}
+\input{sections/6-4-Proofs-Pro7BMCCOrthoBound}
+\newpage
+%------------------------------------------------------
+\section{Proof of Property \ref{prp:BMIC-MIC} (Block-MCC$_{q,p}$ bounds, page \pageref{prp:BMIC-MIC})}
+\label{prf:BMIC-MIC} 
+\input{sections/6-5-Proofs-Pro8BMCCBound}
+%------------------------------------------------------
+\newpage
+\section{Proof of Lemma \ref{lm:BUP-BS} (Block-UP based on Block-Spark, page \pageref{lm:BUP-BS})} % $\boldsymbol{\myBSpkTxt}$
+\label{sec:BUP-BS} 
+\input{sections/6-6-Proofs-Lem1BUPBSpark}
+\newpage
+%------------------------------------------------------
+\section{Proof of Theorem \ref{th:BNSP} (Block-NSP, page \pageref{th:BNSP})}
+\label{prf:BNSP} 
+\input{sections/6-7-Proofs-Theo2BNSP}
+\newpage
+%------------------------------------------------------
+\section{Proof of Lemma \ref{lm:BBUP} (Basic Block-UP, page \pageref{lm:BBUP})}
+\label{prf:BBUP} 
+\input{sections/6-8-Proofs-Lem2BBUP}
+\newpage
+%------------------------------------------------------
+\section{Proof of Property \ref{prp:BMIC-LB} (Basic Block-MCC$_{2,2}$ lower-bound, page \pageref{prp:BMIC-LB})}
+\label{prf:BMIC-LB} 
+\input{sections/6-9-Proofs-Pro17BBMCCBound}
+\newpage
+%------------------------------------------------------
+%\iffalse
+%\section{Proof of Lemma \ref{lm:Block Spark Inequality} (Block-Spark tractable lower-bound)} % $\boldsymbol{\myBSpkTxt}$
+%\label{prf:Block Spark Inequality} 
+%\begin{proof}
+%Because $\boldsymbol{x} \ssin \myKerMath$, we have $\sum_{k'} \myPhi[k']\boldsymbol{x}[k'] \seq \boldsymbol{0}$. 
+%Then for all $k$, $-\sum_{k' \neq k} \myPhi[k']\boldsymbol{x}[k'] \seq \myPhi[k]\boldsymbol{x}[k]$. 
+%Therefore, $-\sum_{k' \neq k} \myPhi^\dagger[k] \myPhi[k']\boldsymbol{x}[k'] \seq\boldsymbol{x}[k]$.
+%Applying $\Vert \cdot \Vert_{p}$ to both sides and using the triangular inequality for $p \sgeq 1$, $ \sum{\Vert \cdot \Vert_p} \sgeq \Vert \sum{\cdot} \Vert_p$, we have $\sum_{k' \neq k} \Vert \myPhi^\dagger[k]\myPhi[k']\boldsymbol{x}[k'] \Vert_{p} \sgeq \Vert \boldsymbol{x}[k] \Vert_{p}$. 
+%It follows from Definition \ref{def:BMIC}, that $d_{max} M_{q,p}(\myPhi) \sum_{k' \neq k} \Vert\boldsymbol{x}[k'] \Vert_{q} / d^{1/q}_{k'} \sgeq \Vert \boldsymbol{x}[k] \Vert_{p} / d^{1/p}_k$.
+%Adding $d_{max} M_{q,p}(\myPhi) \Vert \boldsymbol{x}[k] \Vert_{q} / d^{1/q}_{k}$ to both sides, we have:
+%\begin{gather*}
+%%\label{eq:DontKnow4} 
+%\begin{aligned}
+%d_{max} M_{q,p}\myparanthese{\myPhi} \displaystyle\sum_{k'} \frac{\mynorm{\boldsymbol{x}\mybracket{k'}}_{q}}{d^{\frac1q}_{k'}} \geq 
+% d_{max} M_{q,p}\myparanthese{\myPhi} \frac{\mynorm{\boldsymbol{x}\mybracket{k}}_q}{d^{\frac1q}_{k}} 
+%+ \frac{\mynorm{\boldsymbol{x}\mybracket{k}}_p}{d^{\frac1p}_{k}}.
+%\end{aligned}
+%\end{gather*}
+%Summing over blocks $k \ssin S_b(\mybeta)$, and using the characterisation $Q_{\boldsymbol{w};p_1,p_2}(S_b(\mybeta),\myPhi)$ defined in Theorem \ref{th:BNSP}, 
+%%instead of all non-zero blocks of $\boldsymbol{x}$
+%we get:
+%\begin{gather}
+%\label{eq:DontKnow6} 
+%d_{max} M_{q,p}\myparanthese{\myPhi} \mynorm{\boldsymbol{x}}_{\boldsymbol{w};q,1} \mynorm{\mybeta}_{r,0}\geq 
+% d_{max} M_{q,p}\myparanthese{\myPhi} Q_{\boldsymbol{w};q,1} \mynorm{\boldsymbol{x}}_{\boldsymbol{w};q,1} + Q_{\boldsymbol{w};p,1} \mynorm{\boldsymbol{x}}_{\boldsymbol{w};p,1},
+%\end{gather}
+%where, $r \sgeq 0$, $p \sgeq 1$, and $q \sgeq 1$. 
+%In this step, for the sake of simplicity $Q_{\boldsymbol{w};p_1,p_2}(S_b(\mybeta),\myPhi)$ is represented by $Q_{\boldsymbol{w};p_1,p_2}$.
+%Then, by rearranging the above inequality, we have
+%\begin{gather*}
+%\begin{aligned}
+%Q_{\boldsymbol{w};p,1} &\leq d_{max} M_{q,p}\myparanthese{\myPhi} \mynorm{\boldsymbol{x}}_{\boldsymbol{w};q,1} \frac{\mynorm{\mybeta}_{r,0} - Q_{\boldsymbol{w};q,1}}{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};p,1}} \\
+%&< \frac12.
+%\end{aligned}
+%\end{gather*}
+%The above second inequality comes from the Block-NSP condition in Theorem \ref{th:BNSP}, which ensures that $\mybetaz$ is the unique solution to the $P_{\boldsymbol{w};p,1}$, where $S_b(\boldsymbol{\beta_0}) \ssubset S_b(\mybeta)$.
+%Then, by rearranging the above inequality, we have
+%\begin{gather}
+%\label{eq:condition_dk} 
+%\begin{aligned}
+%\mynorm{\mybeta}_{r,0} &<
+%Q_{\boldsymbol{w};q,1} +
+%\frac{\myparanthese{d_{max} M_{q,p}\myparanthese{\myPhi} \frac{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};q,1}}{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};p,1}}}^{-1}}{2} \\
+%&< 
+%\frac12 +
+%\frac{\myparanthese{d_{max} M_{q,p}\myparanthese{\myPhi} \frac{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};q,1}}{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};p,1}}}^{-1}}{2} 
+%= \frac{1 + \myparanthese{d_{max} M_{q,p}\myparanthese{\myPhi} \frac{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};q,1}}{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};p,1}}}^{-1}}{2}.
+%\end{aligned}
+%\end{gather}
+%Again, the above second inequality comes from the Block-NSP condition in Theorem \ref{th:BNSP}, which ensures that $\mybetaz$ is the unique solution to the $P_{\boldsymbol{w};q,1}$.
+%On the other hand, from Corollary \ref{crl:BERC-BNSP-BS-beta}, we have if $| S_b(\mybeta) | \sless \myBSpkMath/2$, then $\mybeta$ is the unique solution of $P_{p,0}$, where $| S_b(\mybeta) | \seq \Vert \mybeta \Vert_{r,0}$ as defined in definition \ref{Def:Block Support}. 
+%Therefore, in order to meet the condition of Corollary \ref{crl:BERC-BNSP-BS-beta}, we should have $\myBSpkMath \sgeq 1 \spl (d_{max} M_{q,p}(\myPhi) \mynorm{\boldsymbol{x}}_{\boldsymbol{w};q,1} / \mynorm{\boldsymbol{x}}_{\boldsymbol{w};p,1})^{-1}$.
+%
+%The proof for equally-sized blocks, i.e., $d_1 \seq \cdots \seq d_K \seq d$, is similar to the differently-sized blocks.
+%Starting from $\sum_{k' \neq k} \mynorm{\myPhi^\dagger[k]\myPhi[k']\boldsymbol{x}[k']}_{p} \sgeq \mynorm{\boldsymbol{x}[k]}_{p}$ and considering that for equally-sized blocks we have $M_{q,p}(\myPhi) \seq d^{1/q - 1/p - 1} \max_{k,k' \neq k} \Vert \myPhi^T \mybracket{k} \myPhi \mybracket{k'} \Vert_{q \to p}$ defined in Definition \ref{def:BMIC}, then we get $d^{1 + 1/p - 1/q} M_{q,p}(\myPhi) \sum_{k' \neq k} \Vert \boldsymbol{x}[k'] \Vert_{q} \sgeq \Vert \boldsymbol{x}[k] \Vert_{p}$.
+%Adding $d^{1 + 1/p - 1/q} M_{q,p}(\myPhi) \Vert \boldsymbol{x}[k] \Vert_{q}$ to both sides, we have:
+%\begin{gather*} 
+%%\label{eq:DontKnow4+} 
+%\begin{aligned}
+%d^{1 + \frac1p - \frac1q} M_{q,p}\myparanthese{\myPhi} \displaystyle\sum_{k'} \mynorm{\boldsymbol{x}\mybracket{k'}}_{q} \geq 
+%d^{1 + \frac1p - \frac1q} M_{q,p}\myparanthese{\myPhi} \mynorm{\boldsymbol{x}\mybracket{k}}_q +
+%\mynorm{\boldsymbol{x}\mybracket{k}}_p.
+%\end{aligned}
+%\end{gather*}
+%Summing over blocks $k \ssin S_b(\mybeta)$, and using the characterisation $Q_{\boldsymbol{w};p_1,p_2}$ defined in Theorem \ref{th:BNSP}, we obtain:
+%\begin{gather}
+%\label{eq:DontKnow7} 
+%\begin{aligned}
+%d^{1 + \frac1p - \frac1q} M_{q,p}\myparanthese{\myPhi} \mynorm{\boldsymbol{x}}_{q,1} \mynorm{\mybeta}_{r,0} \geq 
+%d^{1 + \frac1p - \frac1q} M_{q,p}\myparanthese{\myPhi} Q_{q,1} \mynorm{\boldsymbol{x}}_{q,1} 
+%+ Q_{p,1} \mynorm{\boldsymbol{x}}_{p,1},
+%\end{aligned}
+%\end{gather}
+%where, $r \sgeq 0$, $p \sgeq 1$, and $q \sgeq 1$. 
+%Then, by rearranging the above inequality, we have
+%\begin{gather*}
+%\begin{aligned}
+%Q_{p,1} &\leq d^{1 + \frac1p - \frac1q} M_{q,p}\myparanthese{\myPhi} \mynorm{\boldsymbol{x}}_{q,1} \frac{\mynorm{\mybeta}_{r,0} - Q_{q,1}}{\mynorm{\boldsymbol{x}}_{p,1}} \\
+%&< \frac12.
+%\end{aligned}
+%\end{gather*}
+%By the same reasoning as the above weighted case and rearranging the above inequality, we have
+%\begin{gather}
+%\label{eq:condition_d} 
+%\begin{aligned}
+%\mynorm{\mybeta}_{r,0} &<
+%Q_{q,1} +
+%\frac{\myparanthese{d^{1 + \frac1p - \frac1q} M_{q,p}\myparanthese{\myPhi} \frac{\mynorm{\boldsymbol{x}}_{q,1}}{\mynorm{\boldsymbol{x}}_{p,1}}}^{-1}}{2} \\
+%&< 
+%\frac12 +
+%\frac{\myparanthese{d^{1 + \frac1p - \frac1q} M_{q,p}\myparanthese{\myPhi} \frac{\mynorm{\boldsymbol{x}}_{q,1}}{\mynorm{\boldsymbol{x}}_{p,1}}}^{-1}}{2} 
+%= \frac{1 + \myparanthese{d^{1 + \frac1p - \frac1q} M_{q,p}\myparanthese{\myPhi} \frac{\mynorm{\boldsymbol{x}}_{q,1}}{\mynorm{\boldsymbol{x}}_{p,1}}}^{-1}}{2}.
+%\end{aligned}
+%\end{gather}
+%Using Corollary \ref{crl:BERC-BNSP-BS-beta}, and the same reasoning as the above weighted case, the proof is done.
+%\iffalse
+%Summing over non-zero blocks of $\boldsymbol{x}$, we obtain:
+%\begin{gather*}
+%\begin{aligned}
+%d_{max} M_{q,p}\myparanthese{\myPhi} \mynorm{\boldsymbol{x}}_{\boldsymbol{w};q,1} \mynorm{\boldsymbol{x}}_{\boldsymbol{w};r,0}\geq 
+% d_{max} M_{q,p}\myparanthese{\myPhi} \mynorm{\boldsymbol{x}}_{\boldsymbol{w};q,1} 
+%+ \mynorm{\boldsymbol{x}}_{\boldsymbol{w};p,1},
+%\end{aligned}
+%\end{gather*}
+%where, $r \sg 0$. 
+%Then,
+%\begin{equation*}
+%\mynorm{\boldsymbol{x}}_{\boldsymbol{w};r,0} \geq 
+%1+ d^{-1}_{max} M_{q,p}^{-1}\myparanthese{\myPhi}  \frac{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};p,1}}{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};q,1}},
+%\end{equation*}
+%which using Definition \ref{def:Block Spark} ($\myBSpkTxt$), the proof is completed. 
+%The proof for equally-sized blocks, i.e., $d_1 \seq \cdots \seq d_K \seq d$, is similar to the differently-sized blocks.
+%Starting from $\sum_{k' \neq k} \mynorm{\myPhi^\dagger[k]\myPhi[k']\boldsymbol{x}[k']}_{p} \sgeq \mynorm{\boldsymbol{x}[k]}_{p}$ and considering that for equally-sized blocks we have $M_{q,p}(\myPhi) \seq d^{1/q - 1/p - 1} \max_{k,k' \neq k} \Vert \myPhi^T \mybracket{k} \myPhi \mybracket{k'} \Vert_{q \to p}$ defined in Definition \ref{def:BMIC}, then we get $d^{1 + 1/p - 1/q} M_{q,p}(\myPhi) \sum_{k' \neq k} \Vert \boldsymbol{x}[k'] \Vert_{q} \sgeq \Vert \boldsymbol{x}[k] \Vert_{p}$.
+%Adding $d^{1 + 1/p - 1/q} M_{q,p}(\myPhi) \Vert \boldsymbol{x}[k] \Vert_{q}$ to both sides, we have:
+%\begin{gather} 
+%\label{eq:DontKnow4+} 
+%\begin{aligned}
+%d^{1 + 1/p - 1/q} M_{q,p}\myparanthese{\myPhi} \displaystyle\sum_{k'} \mynorm{\boldsymbol{x}\mybracket{k'}}_{q} \geq 
+%d^{1 + 1/p - 1/q} M_{q,p}\myparanthese{\myPhi} \mynorm{\boldsymbol{x}\mybracket{k}}_q +
+%\mynorm{\boldsymbol{x}\mybracket{k}}_p
+%\end{aligned}
+%\end{gather}
+%Summing over non-zero blocks of $\boldsymbol{x}$, we obtain:
+%\begin{gather*}
+%\begin{aligned}
+%d^{1 + 1/p - 1/q} M_{q,p}\myparanthese{\myPhi} \mynorm{\boldsymbol{x}}_{q,1} \mynorm{\boldsymbol{x}}_{r,0} \geq 
+%d^{1 + 1/p - 1/q} M_{q,p}\myparanthese{\myPhi} \mynorm{\boldsymbol{x}}_{q,1} 
+%+ \mynorm{\boldsymbol{x}}_{p,1},
+%\end{aligned}
+%\end{gather*}
+%where, $r \sg 0$. 
+%Then,
+%\begin{equation*}
+%\mynorm{\boldsymbol{x}}_{r,0} \geq 
+%1+ d^{1/q - 1/p - 1} M_{q,p}^{-1}\myparanthese{\myPhi}  \frac{\mynorm{\boldsymbol{x}}_{p,1}}{\mynorm{\boldsymbol{x}}_{q,1}},
+%\end{equation*}
+%which using Definition \ref{def:Block Spark} ($\myBSpkTxt$), the proof is completed.
+%\fi
+%\end{proof}
+%\fi
+%\newpage
+%------------------------------------------------------
+\section{Proof of Theorem \ref{th:BERC-BMIC} (Block-ERC based on Block-MCC$_{q,p}$, page \pageref{th:BERC-BMIC})}
+\label{prf:BERC-BMIC} % $\boldsymbol{\mySLTxt}$ $\boldsymbol{\myBSLTxt}$
+\input{sections/6-10-Proofs-Theo3BERCBMCC}
+\newpage
+%------------------------------------------------------
+\section{Proof of Property \ref{prp:BSLqp-relationships} (Block-SL$_{q,p}$ inequalities, page \pageref{prp:BSLqp-relationships})}
+\label{prf:BSLqp-relationships} 
+\input{sections/6-11-Proofs-Pro18BSLIneq}
+\newpage
+%------------------------------------------------------
+\section{Proof of Property \ref{prp:DontKnow1} (SL v.s. Block-SL$_{q,p}$, page \pageref{prp:DontKnow1})}
+\label{prf:DontKnow1} % $\boldsymbol{\mySLTxt}$ $\boldsymbol{\myBSLTxt}$
+\input{sections/6-12-Proofs-Pro19BSLVsSL}
+\newpage
+%------------------------------------------------------
+\section{Proof of Lemma \ref{lm:Eldar-BMIC} (Eldar et al.\textquotesingle s v.s. proposed Block-SL$_{q,p}$, page \pageref{lm:Eldar-BMIC})} % $\boldsymbol{\myBSLTxt}$
+\label{prf:Eldar-BMIC} 
+\input{sections/6-13-Proofs-Lem3BSLVsEldar}
+\newpage
+%------------------------------------------------------
+%\iffalse
+%\section{Proof of Theorem \ref{th:BERC-BMIC-Q} (Block-ERC based on Block-NSP)}
+%\label{prf:BERC-BMIC-Q} 
+%\begin{proof}%[BERC-BMIC-Q]
+%The proof for differently and equally-sized cases is already done in (\ref{eq:condition_dk}) and (\ref{eq:condition_d}), respectively.
+%\iffalse
+%Continuing from (\ref{eq:DontKnow4}) in the proof of Lemma \ref{lm:Block Spark Inequality} and summing over blocks $k \ssin S_b(\mybeta)$, 
+%%instead of all non-zero blocks of $\boldsymbol{x}$
+%we get:
+%\begin{gather}
+%\label{eq:DontKnow5}
+%d_{max} M_{q,p}\myparanthese{\myPhi} \mynorm{\boldsymbol{x}}_{\boldsymbol{w};q,1} \mynorm{\mybeta}_{\boldsymbol{w};r,0}\geq 
+% d_{max} M_{q,p}\myparanthese{\myPhi} Q_{\boldsymbol{w};q,1} \mynorm{\boldsymbol{x}}_{\boldsymbol{w};q,1} + Q_{\boldsymbol{w};p,1} \mynorm{\boldsymbol{x}}_{\boldsymbol{w};p,1},
+%\end{gather}
+%where, $r \sg 0$. 
+%In this phase, for sake of simplicity $Q_{\boldsymbol{w};p_1,p_2}(S_b(\mybeta),\myPhi)$ is represented by $Q_{\boldsymbol{w};p_1,p_2}$.
+%Rearranging (\ref{eq:DontKnow5}), we have
+%\begin{gather*}
+%\begin{aligned}
+%Q_{\boldsymbol{w};p,1} &\leq d_{max} M_{q,p}\myparanthese{\myPhi} \mynorm{\boldsymbol{x}}_{\boldsymbol{w};q,1} \frac{\mynorm{\mybeta}_{\boldsymbol{w};r,0} - Q_{\boldsymbol{w};q,1}}{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};p,1}} \\
+%&< \frac12.
+%\end{aligned}
+%\end{gather*}
+%The above last inequality comes from the Block-NSP condition in Theorem \ref{th:BNSP} and the proof is done.
+%The proof for equally-sized blocks is straightforward.
+%\fi
+%\end{proof}
+%\fi
+%\newpage
+%------------------------------------------------------
+\section{Proof of Theorem \ref{th:BERC-CIIC} (Block-ERC based on Eldar's cumulative coherence, page \pageref{th:BERC-CIIC})}
+\label{prf:BERC-CIIC}
+\input{sections/6-14-Proofs-Theo4BERCCumEldar}

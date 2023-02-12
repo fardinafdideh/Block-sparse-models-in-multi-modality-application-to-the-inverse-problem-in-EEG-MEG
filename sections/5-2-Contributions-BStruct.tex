@@ -1,0 +1,34 @@
+\addcontentsline{toc}{section}{\protect\numberline{}Block-structured problem}
+\begin{tcolorbox}
+\begin{challenge}
+In classical assumption, the recovery conditions are generated from the columns of coefficient matrix, but clustered coefficient matrix consists of some differently-sized blocks, and not necessarily columns.
+Therefore, the initial assumption of classical recovery conditions does no longer hold true. 
+How can appropriate recovery conditions be developed for block-structured problems? 
+\end{challenge}
+\end{tcolorbox}
+
+In Chapter \ref{sec:BERC}, we defined a general framework to cover all types of atomic entity including columns, and equally/differently-sized blocks of columns, in order to propose general theoretical exact recovery conditions.
+The proposed theoretical recovery conditions are based on \emph{block-sparsity} constraint, which ensure the uniqueness of the block-sparse solution of corresponding weighted (pseudo-)mixed-norm optimisation problem in an underdetermined system of linear equations.
+%In Chapter \ref{sec:BERC}, the sufficient conditions for unique recovery of block-sparse recovery of an arbitrary signal $\boldsymbol{y}$ in a general arbitrary dictionary $\myPhi$ using a general weighted mixed norm $P_{\overbar{p_1},p_2}$ (and also $P_{p_1,p_2}$ in equally-sized blocks) optimisation problems, are proposed. 
+The mentioned generality of the framework is in terms of the properties of the underdetermined system of linear equations, extracted characterisations, optimisation problems, and ultimately the recovery conditions.
+%In order to propose the recovery conditions, the characterisations and properties were defined in their general case.
+The mentioned theoretical exact recovery conditions are categorized in four different groups based on the utilised characterisations and properties, i.e., conditions based on (1) Block-Spark, (2) block null space property, (3) block mutual coherence constant, and (4) cumulative coherence constant.
+
+On the other hand, the proposed framework is consistent with the base findings, since all the materials in the proposed infrastructure are a generalisation of the existing references 
+Indeed, we investigated the theoretical relationship between the proposed infrastructure and the classical one, and showed that all the new materials reduce to the conventional ones in specific cases.
+%On the other hand, since all the proposed materials are a generalisation of the existing references, they all reduce to the conventional ones in specific cases, i.e. the proposed framework is consistent with the base findings.
+We redemonstrated the benefit of block-sparsity assumption compared to conventional sparsity in the improvement of the recovery conditions.
+In addition, we theoretically proved the supremacy of the theoretical exact recovery conditions defined in the proposed general infrastructure over existing conditions, which are assuming the same block-sparsity constraint.
+
+%over existing conditions in block-sparsity made by the proposed conditions.
+As perspective in this research direction, we could mention to the following subjects:
+%the generalisation of the proposed exact recovery conditions to a more realistic stable recovery conditions.
+%In addition, in the conditions group of cumulative coherence constant, we are studying on introducing another block-sparse exact recovery condition based on cumulative Block-MCC$_{q,p}$, defined in Definition \ref{def:CBMIC}.
+%Future research will focus on:
+\begin{itemize}
+\item Introducing block-sparse recovery conditions based on the proposed cumulative Block-MCC$_{q,p}$ defined in Definition \ref{def:CBMIC}.
+\item Generalising the conventional dictionary characterisation of $\mu$ defined in \cite{Donoho2003}, to establish block-sparse recovery conditions.
+\item  Transforming all the previously mentioned block-sparse \emph{exact} recovery conditions to block-sparse \emph{stable} recovery conditions.
+In stable or robust recovery conditions we have, $\Vert \boldsymbol{y} \sm \myPhi \hat{\mybeta} \Vert_{2} \sless e$, where, $e$ is a bounded noise.
+\item Study on block-sparse optimisation algorithms, and the relationship between the \emph{theoretical} and \emph{algorithmic} block-sparse recovery conditions.
+\end{itemize}

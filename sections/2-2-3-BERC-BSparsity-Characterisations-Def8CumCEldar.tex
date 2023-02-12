@@ -1,0 +1,15 @@
+According to the inter-block coherence defined by Eldar et al. in (\ref{eq:Eldar-Block-coherence}) page \pageref{eq:Eldar-Block-coherence}, i.e., $M^{Eldar}_{Inter}(\myPhi) {\myeq} \max_{k,k' \neq k} \Vert\myPhi ^T [k] \myPhi [k']\Vert_{2 \to 2}/d$,  \cite{Eldar2009b,Eldar2010b,Eldar2010}, and the concept of cumulative coherence introduced by Tropp \cite{Tropp2004} (page \pageref{txt:CMCC-properties}), we extend the inter-block coherence and introduce the following definition:
+\begin{Mydefinition}[Eldar's cumulative coherence]
+\label{def:CIIC}
+\leftbar
+The cumulative inter-block coherence constant of a general dictionary $\myPhi$ is defined for all integers $1 \sleq k \sleq K \sm 1$ as:
+\begin{equation*}
+M_{Inter}^{Eldar}\myparanthese{\myPhi , k} \myeq
+\max_{\myabs{\Lambda}=k} \max_{j \notin \Lambda} \sum_{i \in \Lambda} \frac{1}{d} \mynorm{\myPhi^T\mybracket{i} \myPhi\mybracket{j}}_{2 \to 2},
+\end{equation*}
+where, $\Lambda \ssubset \{1, \cdots, K\}$ is of $\myCardTxt$ $k$ and $d_1 \seq \cdots \seq d_K \seq d$.
+%$d$ is the size of all equally-sized blocks.% and $d \sgeq 1$ is the block length.
+\endleftbar
+\end{Mydefinition}
+
+As expected, for $d \seq 1$, cumulative inter-block coherence constant in Definition \ref{def:CIIC} is equivalent to the conventional cumulative MCC defined in (\ref{eq:CMIC}) presented on page \pageref{eq:CMIC}.

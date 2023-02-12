@@ -1,0 +1,31 @@
+\begin{Mydefinition}[Constrained $\ell_{p_1,p_2}^{\boldsymbol{w}}$ weighted (pseudo-)mixed-norm optimisation problem]
+\leftbar
+\begin{equation*}
+\label{eq:Opt-Lp1barp2}
+P_{\myparanthese{\boldsymbol{w};p_1,p_2},q,\varepsilon} \myparanthese{\boldsymbol{a},\boldsymbol{b}}: \min_{\boldsymbol{a}} \mynorm{\boldsymbol{a}}_{\boldsymbol{w};p_1,p_2} \quad s.t. \quad \mynorm{\boldsymbol{b}}_q \leq \varepsilon,
+\end{equation*}
+\endleftbar
+\end{Mydefinition}
+%where 
+%$\ell_{p_1,p_2}$ mixed norm of $\mybeta$ is defined in table \ref{table:MixedNorm}, and 
+$\ell_{p_1,p_2}^{\boldsymbol{w}}$ \emph{weighted (pseudo-)mixed-norm} of a vector $\boldsymbol{a}$, i.e., $\Vert \boldsymbol{a} \Vert_{\boldsymbol{w};p_1,p_2}$, is defined by following definition:
+\begin{Mydefinition}[\myhl{Weighted (pseudo-)mixed-norm}]
+\label{def:Weighted mixed norm} 
+\leftbar
+The $\ell_{p_1,p_2}^{\boldsymbol{w}}$ weighted (pseudo-)mixed-norm of a block-structured vector $\boldsymbol{a} \seq [\boldsymbol{a}^T[1], \cdots, \boldsymbol{a}^T[k], \cdots, \boldsymbol{a}^T[K]]^T$, where, $\boldsymbol{a} [k] \seq [a_1[k], \cdots, a_{{d_k}} [k]]^T$, is defined as:
+\begin{equation*}
+\mynorm{\boldsymbol{a}}_{\boldsymbol{w};p_1,p_2} \myeq 
+\begin{cases}
+    \mycolor{\displaystyle\sum_{k}^{} I \myparanthese{w_k \mynorm{\boldsymbol{a} \mybracket{k}}_{p_1}},} & \qquad \mycolor{\text{for \ }p_2= 0}\\
+    \myparanthese{\displaystyle\sum_{k}^{} w_k^{p_2} \mynorm{\boldsymbol{a} \mybracket{k}}_{p_1}^ {p_2}} ^ {\frac{1}{p_2}},  & \qquad  \text{for \ } 0 < p_2 < +\infty\\
+    \displaystyle\max_{k}{\mybrace{w_k \mynorm{\boldsymbol{a} \mybracket{k}}_{p_1}}}, & \qquad \text{for \ } p_2= \infty,
+  \end{cases}
+\end{equation*}
+where, $I(a)$ is the indicator function, i.e., $I(a) \myeq
+  \begin{cases}
+    1,  & \quad \text{if } \myabs{a} \sg 0\\
+    0,  & \quad \text{if } a \seq 0\\
+  \end{cases}$, and $\boldsymbol{w} \seq [w_1, \cdots, w_K ]$ is the weight vector. 
+%and the weighted norm $\Vert \boldsymbol{a}[k] \Vert_{\overbar{p}}$ is equal to $\Vert \boldsymbol{a}[k] \Vert_p /d_k^{1/p}$.
+\endleftbar
+\end{Mydefinition}

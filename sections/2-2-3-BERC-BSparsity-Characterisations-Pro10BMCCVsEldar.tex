@@ -1,0 +1,32 @@
+\begin{property}[Block-MCC$_{q,p}$ v.s. block-coherence of Eldar et al.]
+\label{prp:BMIC-MEldar} 
+For a dictionary with equally-sized blocks of length $d$ and intra-block orthonormality, $\forall (q , p) \ssin \mathbb{R}^2_{\sg 0}$ we have:
+\begin{gather*}
+\begin{aligned}
+&M_{q,p}(\myPhi) \geq d^{\frac1q - \frac1p} \min \mybrace{1 , d^{\frac1p - \frac{1}{2}}} \min \mybrace{1 , d^{\frac{1}{2} - \frac1q}} M^{Eldar}_{Inter}\myparanthese{\myPhi}, \\
+&M_{q,p}(\myPhi) \leq d^{\frac1q - \frac1p} \max \mybrace{1 , d^{\frac1p - \frac{1}{2}}} \max \mybrace{1 , d^{\frac{1}{2} - \frac1q}} M^{Eldar}_{Inter}\myparanthese{\myPhi},
+\end{aligned}
+\end{gather*}
+where, \myhl{$M^{Eldar}_{Inter} (\myPhi)$ is the block-coherence of Eldar et al., i.e., $M^{Eldar}_{Inter}(\myPhi) {\myeq} \max_{k,k' \neq k} \Vert\myPhi ^T [k] \myPhi [k']\Vert_{2 \to 2}/d$,} 
+%presented on page \pageref{eq:Eldar-Block-coherence} equation (\ref{eq:Eldar-Block-coherence}), 
+and $M_{q,p}(\myPhi)$ is the proposed Block-MCC$_{q,p}$, i.e., $M_{q,p}(\myPhi) {\myeq} d_{max}^{-1} \max_{k,k' \neq k} d_{k}^{-1/p} d_{k'}^{1/q} \Vert\myPhi^\dagger [k] \myPhi [k'] \Vert_{q \to p}$.
+%, defined on page \pageref{def:BMIC}, Definition \ref{def:BMIC}.
+Then, for $q \seq p \seq 2$, we have $M_{2,2}(\myPhi) \seq M^{Eldar}_{Inter}(\myPhi)$.
+%, both having the same upper-bound of one (table \ref{table:BMIC-orth-upper-bound}).
+\end{property}
+\begin{proof}
+From Property \ref{prp:IntraBlkO} (Block-MCC$_{q,p}$ for intra-block orthonormality; page \pageref{prp:IntraBlkO}) in a special setting of $d_1 \seq \cdots \seq d_K \seq d$, we have $\forall (q , p) \ssin \mathbb{R}^2_{\sg 0} : M_{q,p}(\myPhi) {\seq} d^{1/q \sm 1/p \sm 1} \max_{k,k' \neq k} \Vert \myPhi^T [k] \myPhi [k'] \Vert_{q \to p}$.
+\iffalse
+\begin{equation*}
+M_{q,p}(\myPhi) = d^{\frac1q - \frac1p -1} \max_{k,k' \neq k} \mynorm{\myPhi^T \mybracket{k} \myPhi \mybracket{k'}}_{q \to p}.
+\end{equation*}
+\fi
+Then, from Property \ref{prp:OperatorProperties} ($\ell_{q {\to} p}$ operator-norm properties; second set of bounds), we can determine the bounds of $\ell_{q {\to} p}$ operator-norm based on $\ell_{q' {\to} p'}$ operator-norm, i.e., $\forall \boldsymbol{A} \ssin \mathbb{R}^{m \stimes n}, \forall \myparanthese{q , p , q' , p'} \ssin \mathbb{R}^4_{>0} : \Vert \boldsymbol{A} \Vert_{q \to p} \sgeq (\sleq) \min (\max) \{1 , m^{1/p \sm 1/{p'}} \} \min (\max) \{1 , n^{1/{q'} \sm 1/q} \} \Vert \boldsymbol{A} \Vert_{q' \to p'}$, and by selecting $q' \seq p' \seq 2$, we have:
+\begin{gather*}
+\begin{aligned}
+&M_{q,p}(\myPhi) \geq d^{\frac1q - \frac1p -1} \min \mybrace{1 , d^{\frac1p - \frac{1}{2}}} \min \mybrace{1 , d^{\frac{1}{2} - \frac1q}} \max_{k,k' \neq k} \mynorm{\myPhi^T \mybracket{k} \myPhi \mybracket{k'}}_{2 \to 2}, \\
+&M_{q,p}(\myPhi) \leq d^{\frac1q - \frac1p -1} \max \mybrace{1 , d^{\frac1p - \frac{1}{2}}} \max \mybrace{1 , d^{\frac{1}{2} - \frac1q}} \max_{k,k' \neq k} \mynorm{\myPhi^T \mybracket{k} \myPhi \mybracket{k'}}_{2 \to 2}.
+\end{aligned}
+\end{gather*}
+Next, considering the definition $M^{Eldar}_{Inter}(\myPhi) {\myeq} \max_{k,k' \neq k} \Vert\myPhi ^T [k] \myPhi [k']\Vert_{2 \to 2}/d$ presented on page \pageref{eq:Eldar-Block-coherence} equation (\ref{eq:Eldar-Block-coherence}), the proof is done.
+\end{proof}

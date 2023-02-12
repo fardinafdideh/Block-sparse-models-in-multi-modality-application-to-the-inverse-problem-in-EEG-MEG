@@ -1,0 +1,233 @@
+\input{sections/2-3-3-BERC-BERC-BMCC-Lem2BBUP}
+
+In comparison of different uncertainty principles, it should be taken into account that a typical uncertainty principle I is weaker than uncertainty principle II, when minimal sum of $\ell_0$ pseudo-norm or $\ell_{r,0}$ pseudo-mixed-norm of two candidate solutions $\mybetao$ and $\mybetaTwo$ in I is higher than II.
+To see the effect of block-sparsity on the uncertainty principle, using $\Vert \mybetao \Vert_{0} \sleq d_{max} \, \Vert \mybetao \Vert_{r,0}$ and $\Vert \mybetaTwo \Vert_{0} \sleq d_{max} \, \Vert \mybetaTwo \Vert_{r,0}$, $\forall r \sgeq 0$, in (\ref{eq:UP-basic}), we get $(\Vert \mybetao \Vert_{r,0} \spl \Vert \mybetaTwo \Vert_{r,0}) \sgeq 2/(d_{max} \overbar{M} (\myPhiOne,\myPhiTwo))$.
+Then, comparing with Lemma \ref{lm:BBUP}, we need to demonstrate the relationship between $d_{max} \overbar{M}(\myPhiOne,\myPhiTwo)$ and $d_{min}^{-1/2} d_{max}^{3/2} \overbar{M}_{q,p/(p-1)} (\myPhiOne , \myPhiTwo)$.   
+%To this aim, first we investigate the general relationship between $\overbar{M}(\myPhiOne,\myPhiTwo)$ and $\overbar{M}_{q,p/(p-1)} (\myPhiOne , \myPhiTwo)$ in the following property:  
+\input{sections/2-3-3-BERC-BERC-BMCC-Pro15BBMCCVsBMCC}
+\input{sections/2-3-3-BERC-BERC-BMCC-Rmrk10}
+
+\input{sections/2-3-3-BERC-BERC-BMCC-Pro16BBMCCVsEldar}
+\input{sections/2-3-3-BERC-BERC-BMCC-Rmrk11}
+
+\input{sections/2-3-3-BERC-BERC-BMCC-Pro17BBMCCBound}
+\input{sections/2-3-3-BERC-BERC-BMCC-Rmrk12BIncoh}
+Returning back from basic two orthonormal bases $\myPhiOne$ and $\myPhiTwo$ to the dictionaries $\myPhi$, the corresponding relations based on Block-MCC$_{q,p}$ (Definition \ref{def:BMIC}, page \pageref{def:BMIC}) should be established.
+%and in order to shift the recovery conditions based on $\myBSpkTxt$ to Block-MCC$_{q,p}$, which is the aim of this section, first we need to find their relationship.
+Thanks to Block-MCC$_{q,p}$, we can overcome the issue of intractability of the $\myBSpkTxt$ (Definition \ref{def:Block Spark}, page \pageref{def:Block Spark}). 
+%\iffalse
+%First, by proposing the following Lemma, at the same time we investigate the  relationship between two proposed characterisations of $\myBSpkTxt$ and Block-MCC$_{q,p}$, and also we present a computationally reasonable approximation of the $\myBSpkTxt$:
+%\begin{lemma}[$\boldsymbol{\myBSpkTxt}$ tractable lower-bound]
+%\label{lm:Block Spark Inequality}
+%For any general dictionary $\myPhi$ with Block-MCC$_{q,p}$ $M_{q,p}(\myPhi)$, $\forall p \sgeq 1$, and $\forall q \sgeq 1$, we have:
+%\begin{equation*}
+%\label{eq:BS-BMIC}
+%\forall \boldsymbol{x} \in \myKerMath, \qquad \myBSpkMath \geq 
+%1+ \myparanthese{d_{max} M_{q,p}\myparanthese{\myPhi} \frac{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};q,1}}{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};p,1}}}^{-1},
+%\end{equation*}
+%whereas for equally-sized blocks, i.e., $d_1 \seq \cdots \seq d_K \seq d$, it reduces to:
+%\begin{equation*}
+%\label{eq:BS-BMIC}
+%\forall \boldsymbol{x} \in \myKerMath, \qquad \myBSpkMath \geq 
+%1+ \myparanthese{d^{1+\frac1p-\frac1q} M_{q,p}\myparanthese{\myPhi} \frac{\mynorm{\boldsymbol{x}}_{q,1}}{\mynorm{\boldsymbol{x}}_{p,1}}}^{-1}.
+%\end{equation*}
+%\end{lemma}
+%The proof of Lemma \ref{lm:Block Spark Inequality} is provided in Section \ref{prf:Block Spark Inequality}.
+%
+%For $d_1 \seq \cdots \seq d_K \seq 1$, Lemma \ref{lm:Block Spark Inequality} is equivalent to the conventional element-wise counterpart explained in (\ref{eq:S-M}), i.e., $\mySpkMath \sgeq 1 \spl M^{-1}(\myPhi)$.
+%\begin{remark}
+%Similar to the element-wise characterisations, the higher the lower bound of the $\myBSpkTxt$, the weaker, the recovery conditions that can be established.
+%\end{remark}
+%The proposed lower bound for the $\myBSpkTxt$ in Lemma \ref{lm:Block Spark Inequality} has two degrees of freedom of $p$ and $q$ which, according to the problem, can be regulated.
+%%In the following, to investigate its behaviour, three cases of $0 \sless q \sless p$, $q \seq p$, and $p \sless q$ are considered, where, in all cases we have $p \sgeq 1$ and $q \sgeq 1$.
+%According to the lower-bound of the fractions $\Vert \boldsymbol{x} \Vert_{\boldsymbol{w};p,1}/ \Vert\boldsymbol{x} \Vert_{\boldsymbol{w};q,1}$ and $\Vert \boldsymbol{x} \Vert_{p,1}/ \Vert\boldsymbol{x} \Vert_{q,1}$ in Lemma \ref{lm:Block Spark Inequality}, the most pessimistic bounds are resulted in the following corollary:
+%%To better determine the lower bound of the $\myBSpkMath$ in Lemma \ref{lm:Block Spark Inequality}, Lemma \ref{lm:FractionBound} can be used, which results in the following corollary:
+%\begin{corollary}
+%\label{crl:Block Spark Inequality} 
+%%For $0 \sless q \sless p$, 
+%The bound of inequality of Lemma \ref{lm:Block Spark Inequality} is obtained as follows:
+%%The inequality of Lemma \ref{lm:Block Spark Inequality} in the most pessimistic and optimistic cases can be rewritten as:
+%\begin{equation*}
+%\begin{aligned}
+%\myBSpkMath &\geq 
+%\min_{\boldsymbol{x} \in \myKerMath} 1+ \myparanthese{d_{max} M_{q,p}\myparanthese{\myPhi} \frac{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};q,1}}{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};p,1}}}^{-1} \\
+%&\geq \min_{\boldsymbol{x}} 1+ \myparanthese{d_{max} M_{q,p}\myparanthese{\myPhi} \frac{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};q,1}}{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};p,1}}}^{-1} \\
+%&= 1+ \myparanthese{d_{max} M_{q,p}\myparanthese{\myPhi} \max_k d_k^{\frac1p - \frac1q} \max \mybrace{1 , d_k^{\frac1q - \frac1p}}}^{-1}, \\
+%%\text{Optimistic} &: \quad \myBSpkMath \geq 
+%%1+ \myparanthese{d_{max} M_{q,p}\myparanthese{\myPhi} \min_k d_k^{\frac1p - \frac1q} \min \mybrace{1 , d_k^{\frac1q - \frac1p}}}^{-1}.
+%\end{aligned}
+%\end{equation*}
+%%whereas in its most optimistic case:
+%%\begin{equation*}
+%%\myBSpkMath \geq 
+%%1+ \myparanthese{d_{max}^{1+\frac1p-\frac1q} M_{q,p}\myparanthese{\myPhi}}^{-1}.
+%%\end{equation*}
+%%For $0 \sless q \seq p$, two cases are equivalent.
+%whereas for equally-sized blocks, i.e., $d_1 \seq \cdots \seq d_K \seq d$, we have:
+%%the most pessimistic and optimistic cases reduce to:
+%\begin{equation*}
+%\begin{aligned}
+%\myBSpkMath &\geq
+%\min_{\boldsymbol{x} \in \myKerMath} 1+ \myparanthese{d^{1+\frac1p-\frac1q} M_{q,p}\myparanthese{\myPhi} \frac{\mynorm{\boldsymbol{x}}_{q,1}}{\mynorm{\boldsymbol{x}}_{p,1}}}^{-1} \\
+%&\geq \min_{\boldsymbol{x}} 1+ \myparanthese{d^{1+\frac1p-\frac1q} M_{q,p}\myparanthese{\myPhi} \frac{\mynorm{\boldsymbol{x}}_{q,1}}{\mynorm{\boldsymbol{x}}_{p,1}}}^{-1} \\
+%&= 1+ \myparanthese{d^{1+\frac1p-\frac1q} M_{q,p}\myparanthese{\myPhi} \max \mybrace{1 , d^{\frac1q - \frac1p}}}^{-1}.
+%%\text{Pessimistic} &: \quad \myBSpkMath \geq 
+%%1+ \myparanthese{d^{1+\frac1p-\frac1q} M_{q,p}\myparanthese{\myPhi} \max \mybrace{1 , d^{\frac1q - \frac1p}}}^{-1}, \\
+%%\text{Optimistic} &: \quad \myBSpkMath \geq 
+%%1+ \myparanthese{d^{1+\frac1p-\frac1q} M_{q,p}\myparanthese{\myPhi} \min \mybrace{1 , d^{\frac1q - \frac1p}}}^{-1}.
+%\end{aligned}
+%\end{equation*}
+%\end{corollary}
+%\begin{proof}
+%The closed-form lower-bound is obtained using the lower-bound of the fractions $\Vert \boldsymbol{x} \Vert_{\boldsymbol{w};p,1}/ \Vert\boldsymbol{x} \Vert_{\boldsymbol{w};q,1}$ and $\Vert \boldsymbol{x} \Vert_{p,1}/ \Vert\boldsymbol{x} \Vert_{q,1}$ in Lemma \ref{lm:Block Spark Inequality}.
+%%The most pessimistic and optimistic cases are derived using the bounds of the fraction $\Vert \boldsymbol{x} \Vert_{\boldsymbol{w};p,1}/ \Vert\boldsymbol{x} \Vert_{\boldsymbol{w};q,1}$ in Lemma \ref{lm:Block Spark Inequality}.
+%%These bounds are provided in Lemma \ref{lm:FractionBound}.
+%The mentioned lower-bound of a division of two mixed-norms is provided in the following property:
+%\end{proof}
+%%\begin{remark}
+%%Notice that throughout this study for $q \seq p$, the pessimistic and optimistic cases are equivalent.
+%%\end{remark}
+%\begin{property}[Bounds of division of two mixed-norms]
+%\label{lm:FractionBound} %$0 \sless q \sless p$, 
+%For $\boldsymbol{x} \seq \mybracket{\boldsymbol{x}\mybracket{1},\ldots,\boldsymbol{x}\mybracket{K}}$ and $\forall k ,\, \boldsymbol{x}\mybracket{k} \ssin \mathbb{R}^{d_k}$, and for weighted mixed-norms we have: % \cite{Golub2013}
+%\begin{gather*}
+%\begin{aligned}
+%&\frac{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};p,1}}{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};q,1}} \geq
+%\min_k \, \min \mybrace{1 , d_k^{\frac1q - \frac1p}} = 
+%\begin{cases}
+%\begin{aligned}
+%  &1, \quad &&\text{if } q \leq p \\
+%  &d_{max}^{\frac1q - \frac1p}, \quad &&\text{if } q > p
+%\end{aligned}
+%\end{cases}, \\
+%&\frac{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};p,1}}{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};q,1}} \leq
+%\max_k \, \max \mybrace{1 , d_k^{\frac1q - \frac1p}} = 
+%\begin{cases}
+%\begin{aligned}
+%  &d_{max}^{\frac1q - \frac1p}, \quad &&\text{if } q \leq p \\
+%  &1, \quad &&\text{if } q > p
+%\end{aligned}
+%\end{cases}.
+%\end{aligned}
+%\end{gather*}
+%Similarly, for non-weighted mixed-norms we have: % \cite{Golub2013}
+%\begin{gather*}
+%\begin{aligned}
+%&\frac{\mynorm{\boldsymbol{x}}_{p,1}}{\mynorm{\boldsymbol{x}}_{q,1}} \geq
+%\min_k \, \min \mybrace{1 , d_k^{\frac1p - \frac1q}} = 
+%\begin{cases}
+%\begin{aligned}
+%  &d_{max}^{\frac1p - \frac1q}, \quad &&\text{if } q \leq p \\
+%  &1, \quad &&\text{if } q > p
+%\end{aligned}
+%\end{cases}, \\
+%&\frac{\mynorm{\boldsymbol{x}}_{p,1}}{\mynorm{\boldsymbol{x}}_{q,1}} \leq
+%\max_k \, \max \mybrace{1 , d_k^{\frac1p - \frac1q}} = 
+%\begin{cases}
+%\begin{aligned}
+%  &1, \quad &&\text{if } q \leq p \\
+%  &d_{max}^{\frac1p - \frac1q}, \quad &&\text{if } q > p
+%\end{aligned}
+%\end{cases}.
+%\end{aligned}
+%\end{gather*}
+%\end{property}
+%\begin{proof}
+%For any real fractions $a_1/b_1,\,\ldots,\,a_K/b_K$ with positive denominators, we have \cite{pahio2005}:
+%\begin{gather*}
+%\min\mybrace{\frac{a_1}{b_1},\,\ldots,\,\frac{a_K}{b_K}} \leq \frac{a_1+\ldots+a_K}{b_1+\ldots+b_K} \leq \max\mybrace{\frac{a_1}{b_1},\,\ldots,\,\frac{a_K}{b_K}},
+%\end{gather*}
+%where, equality happens if and only if all fractions $a_1/b_1,\,\ldots,\,a_K/b_K$ are equal.
+%Then, for any $k$, considering $a_k \seq \Vert \boldsymbol{x}[k] \Vert_p / d_k^{1/p}$ and $b_k \seq \Vert \boldsymbol{x}[k] \Vert_q / d_k^{1/q}$, we have $\Vert \boldsymbol{x} \Vert_{\boldsymbol{w};p,1} \seq \sum_k a_k$, $\Vert \boldsymbol{x} \Vert_{\boldsymbol{w};q,1} \seq \sum_k b_k$, and $a_k / b_k \seq d_k^{1/q-1/p} \Vert \boldsymbol{x}[k] \Vert_p {/} \Vert \boldsymbol{x}[k] \Vert_q$.
+%On the other hand, from Property \ref{prp:VectorDivisionBound}, we have $\forall \boldsymbol{c} \ssin \mathbb{R}^d, \min \{1 , d^{1/p - 1/q} \} \sleq \Vert \boldsymbol{c} \Vert_p / \Vert \boldsymbol{c} \Vert_q \sleq \max \{1 , d^{1/p - 1/q} \}$. 
+%%for $0 \sless q \sless p$, and $\boldsymbol{a} \ssin \mathbb{R}^{d}$ we have $1 \sleq \Vert\boldsymbol{a} \Vert_q {/} \Vert \boldsymbol{a} \Vert_p \sleq d^{1/q \sm 1/p}$ \cite{Golub2013}. 
+%%Then, similarly, we have $d^{1/p \sm 1/q} \sleq \Vert \boldsymbol{a} \Vert_p {/} \Vert \boldsymbol{a} \Vert_q \sleq 1$.
+%Consequently, $\min \{1 , d_k^{1/q - 1/p} \} \sleq a_k / b_k \sleq \max \{1 , d_k^{1/q - 1/p} \}$, which
+%proves the bounds.
+%Similarly, for any $k$, considering $a_k \seq \Vert \boldsymbol{x}[k] \Vert_p$ and $b_k \seq \Vert \boldsymbol{x}[k] \Vert_q$, the bounds for division of two non-weighted mixed-norms can be obtained.
+%\end{proof}
+%%The upper-bound explains the choice of $d_k^{-1/p} d_{k'}^{1/q}$ in Definition \ref{def:BMIC}.
+%%For $1 \sleq q \seq p$, the proof is straightforward.
+%%As described in the table \ref{table:OperatorNorm} on page \pageref{table:OperatorNorm}, for $0 \sless q \sleq p$ the operator-norm of the Block-MCC$_{q,p}$ is computationally feasible.
+%For the case $1 \sleq p \sless q$, minimum value of the fraction $\Vert \boldsymbol{x} \Vert_{\boldsymbol{w};p,1} / \Vert \boldsymbol{x} \Vert_{\boldsymbol{w};q,1}$ in Lemma \ref{lm:Block Spark Inequality} is achieved through $p \seq 1$, and $q\seq \infty$, which is $d_{max}^{-1}$ according to Property \ref{lm:FractionBound}, but as described in the table \ref{table:OperatorNorm} on page \pageref{table:OperatorNorm}, the corresponding operator-norm in Block-MCC$_{q,p}$ is not computationally feasible.
+%On the other hand, for the case $1 \sleq q \sleq p$, minimum value is achieved through $p \seq \infty$, and $q \seq 1$, which is $1$ according to Property \ref{lm:FractionBound}, whereas the corresponding operator-norm in Block-MCC$_{q,p}$ is computationally feasible.
+%
+%Now we can restate the block-sparse uncertainty principle based on $\myBSpkTxt$ proposed in Lemma \ref{lm:BUP-BS} in terms of the Block-MCC$_{q,p}$.
+%The required relationship between $\myBSpkTxt$ and Block-MCC$_{q,p}$ is investigated in Lemma \ref{lm:Block Spark Inequality}.
+%The following lemma introduces \emph{block-sparse uncertainty principle based on Block-MCC$_{q,p}$}:
+%\begin{lemma}[Block-UP\footnote{\emph{Block-sparse Uncertainty Principle}} based on Block-MCC$_{q,p}$]
+%\label{lm:BUP-BMIC}
+%For any general dictionary $\myPhi$ with Block-MCC$_{q,p}$ $M_{q,p}(\myPhi)$ and for any arbitrary non-zero signal $\boldsymbol{y}$ with two distinct representations $\mybetaz$ and $\mybetao$, the following inequalities hold true $\forall p \sgeq 1$, $\forall q \sgeq 1$, and $\forall r \sgeq 0$:
+%\begin{equation*}
+%\forall \boldsymbol{x} \ssin \myKerMath, \qquad \mynorm{\mybetaz}_{r,0}+\mynorm{\mybetao}_{r,0} \geq 
+%1+ \myparanthese{d_{max} M_{q,p}\myparanthese{\myPhi} \frac{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};q,1}}{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};p,1}}}^{-1},
+%\end{equation*}
+%whereas for equally-sized blocks, i.e., $d_1 \seq \cdots \seq d_K \seq d$, we have:
+%\begin{equation*}
+%\forall \boldsymbol{x} \ssin \myKerMath, \qquad \mynorm{\mybetaz}_{r,0}+\mynorm{\mybetao}_{r,0} \geq 
+%1+ \myparanthese{d^{1+\frac1p-\frac1q} M_{q,p}\myparanthese{\myPhi} \frac{\mynorm{\boldsymbol{x}}_{q,1}}{\mynorm{\boldsymbol{x}}_{p,1}}}^{-1}.
+%\end{equation*}
+%\end{lemma}
+%\begin{proof}
+%This follows from Lemma \ref{lm:BUP-BS} and Lemma \ref{lm:Block Spark Inequality}.
+%\end{proof}
+%For $d_1 \seq \cdots \seq d_K \seq 1$, Lemma \ref{lm:BUP-BMIC} converges to its conventional element-wise counterpart explained in (\ref{eq:S-M}), i.e., $\Vert \mybetaz \Vert_0 + \Vert \mybetao \Vert_0 \sgeq 1 \spl M^{-1}(\myPhi)$.
+%Again, according to the lower-bound of the fractions $\Vert \boldsymbol{x} \Vert_{\boldsymbol{w};p,1}/ \Vert\boldsymbol{x} \Vert_{\boldsymbol{w};q,1}$ and $\Vert \boldsymbol{x} \Vert_{p,1}/ \Vert\boldsymbol{x} \Vert_{q,1}$ we can restate Lemma \ref{lm:BUP-BMIC} as follows:
+%\begin{corollary}
+%\label{crl:BUP-BMIC}
+%%For $0 \sless q \sless p$, 
+%%The inequality of Lemma \ref{lm:BUP-BMIC} in the most pessimistic and optimistic cases can be rewritten as:
+%The bound of inequality of Lemma \ref{lm:BUP-BMIC} is obtained as follows:
+%\begin{equation*}
+%\begin{aligned}
+%\mynorm{\mybetaz}_{r,0} + \mynorm{\mybetao}_{r,0} &\geq 
+%\min_{\boldsymbol{x} \in \myKerMath} 1+ \myparanthese{d_{max} M_{q,p}\myparanthese{\myPhi} \frac{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};q,1}}{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};p,1}}}^{-1} \\
+%&\geq \min_{\boldsymbol{x}} 1+ \myparanthese{d_{max} M_{q,p}\myparanthese{\myPhi} \frac{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};q,1}}{\mynorm{\boldsymbol{x}}_{\boldsymbol{w};p,1}}}^{-1} \\
+%&= 1+ \myparanthese{d_{max} M_{q,p}\myparanthese{\myPhi} \max_k d_k^{\frac1p - \frac1q} \max \mybrace{1 , d_k^{\frac1q - \frac1p}}}^{-1}, \\
+%\end{aligned}
+%\end{equation*}
+%whereas for equally-sized blocks, i.e., $d_1 \seq \cdots \seq d_K \seq d$, we have:
+%\begin{equation*}
+%\begin{aligned}
+%\mynorm{\mybetaz}_{r,0}+\mynorm{\mybetao}_{r,0} &\geq
+%\min_{\boldsymbol{x} \in \myKerMath} 1+ \myparanthese{d^{1+\frac1p-\frac1q} M_{q,p}\myparanthese{\myPhi} \frac{\mynorm{\boldsymbol{x}}_{q,1}}{\mynorm{\boldsymbol{x}}_{p,1}}}^{-1} \\
+%&\geq \min_{\boldsymbol{x}} 1+ \myparanthese{d^{1+\frac1p-\frac1q} M_{q,p}\myparanthese{\myPhi} \frac{\mynorm{\boldsymbol{x}}_{q,1}}{\mynorm{\boldsymbol{x}}_{p,1}}}^{-1} \\
+%&= 1+ \myparanthese{d^{1+\frac1p-\frac1q} M_{q,p}\myparanthese{\myPhi} \max \mybrace{1 , d^{\frac1q - \frac1p}}}^{-1}.
+%\end{aligned}
+%\end{equation*}
+%\iffalse
+%\begin{equation*}
+%\begin{aligned}
+%\text{Pessimistic} &: \quad \mynorm{\mybetaz}_{r,0}+\mynorm{\mybetao}_{r,0} \geq 
+%1+ \myparanthese{d_{max} M_{q,p}\myparanthese{\myPhi} \max_k d_k^{\frac1p - \frac1q} \max \mybrace{1 , d_k^{\frac1q - \frac1p}}}^{-1}, \\
+%\text{Optimistic} &: \quad \mynorm{\mybetaz}_{r,0}+\mynorm{\mybetao}_{r,0} \geq 
+%1+ \myparanthese{d_{max} M_{q,p}\myparanthese{\myPhi} \min_k d_k^{\frac1p - \frac1q} \min \mybrace{1 , d_k^{\frac1q - \frac1p}}}^{-1}.
+%\end{aligned}
+%\end{equation*}
+%whereas for equally-sized blocks, i.e., $d_1 \seq \cdots \seq d_K \seq d$, the most pessimistic and optimistic cases reduce to:
+%\begin{equation*}
+%\begin{aligned}
+%\text{Pessimistic} &: \quad \mynorm{\mybetaz}_{r,0}+\mynorm{\mybetao}_{r,0} \geq
+%1+ \myparanthese{d^{1+\frac1p-\frac1q} M_{q,p}\myparanthese{\myPhi} \max \mybrace{1 , d^{\frac1q - \frac1p}}}^{-1}, \\
+%\text{Optimistic} &: \quad \mynorm{\mybetaz}_{r,0}+\mynorm{\mybetao}_{r,0} \geq 
+%1+ \myparanthese{d^{1+\frac1p-\frac1q} M_{q,p}\myparanthese{\myPhi} \min \mybrace{1 , d^{\frac1q - \frac1p}}}^{-1}.
+%\end{aligned}
+%\end{equation*}
+%\fi
+%\end{corollary}
+%\begin{proof}
+%This follows from Lemma \ref{lm:BUP-BS} and Corollary \ref{crl:Block Spark Inequality}.
+%\end{proof}
+%\fi
+Now, we introduce the following \emph{Block-ERC based on Block-MCC$_{q,p}$}:
+\newpage
+\input{sections/2-3-3-BERC-BERC-BMCC-Theo3BERCBMCC}
+
+\input{sections/2-3-3-BERC-BERC-BMCC-Pro18BSLIneq}
+
+\input{sections/2-3-3-BERC-BERC-BMCC-Pro19BSLVsSL}
+
+\input{sections/2-3-3-BERC-BERC-BMCC-Rmrk13}
+\input{sections/2-3-3-BERC-BERC-BMCC-Table9}
+\input{sections/2-3-3-BERC-BERC-BMCC-Rmrk14}
+\input{sections/2-3-3-BERC-BERC-BMCC-Lem3Rmrk15BSLVsEldar}

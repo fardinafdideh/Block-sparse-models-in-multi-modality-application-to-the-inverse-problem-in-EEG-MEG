@@ -1,0 +1,16 @@
+Consider the representation vector $\hat{\mybeta}$ can be viewed as a concatenation of $K$ individual blocks:
+\begin{equation*}
+\label{eq:Beta Structure-whole}
+\hat{\mybeta} = \mybracket{\hat{\mybeta}^T\mybracket{1}, \cdots, \hat{\mybeta}^T\mybracket{k}, \cdots, \hat{\mybeta}^T\mybracket{K}}^T,
+\end{equation*}
+where, the $k^{th}$ block of $\hat{\mybeta}$ can be represented as:
+\begin{equation*}
+\label{eq:Beta Structure-block}
+\hat{\mybeta}\mybracket{k} = \mybracket{\hat{\beta}_1\mybracket{k}, \cdots, \hat{\beta}_{d_k} \mybracket{k}}^T,
+\end{equation*}
+where, $\hat{\beta}_{d_k}[k] \seq [\hat{\beta}_i \, | \, i \seq \sum_{j \seq 1}^{k \sm 1} d_j \spl d_k]$, and the length of $k^{th}$ block is $d_k$, whereas the vector of the blocks' length is:
+\begin{equation*}
+\label{eq:d}
+\boldsymbol{d} = \mybracket{d_1, \cdots, d_K},
+\end{equation*}
+where, $\sum_{k=1}^K d_k \seq n$, i.e., the block structure is non-overlapped, and there is no constraining relationship between any $d_k$ and $m$.

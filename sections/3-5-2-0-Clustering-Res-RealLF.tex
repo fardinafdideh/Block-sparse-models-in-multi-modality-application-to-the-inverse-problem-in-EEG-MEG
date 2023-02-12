@@ -1,0 +1,21 @@
+In this experiment the hierarchical clustering is used because of its characteristic in estimation of the number of clusters, as described in section \ref{sec:hierarchical_cluster_estim}.
+In order to simulate or import real-world sensor, source and volume conduction head model required to generate the real lead-field we used an open source software package MATLAB-based toolbox named FieldTrip \cite{Oostenveld2011}.
+
+EEG lead-field is obtained using 32 standard electrodes and utilising three different volume conduction head models of three-layer concentric spheres, realistic three-layer with inflated cortical sheet obtained by boundary element
+methods and realistic three-layer with highly-folded cortical sheet obtained by SPM8 software \cite{SPM}.
+Realistic head models are obtained by imposing anatomical constraint, which is provided by MRI\footnote{\emph{Magnetic Resonance Imaging}}.
+
+Similarly, for MEG lead-field generating, 32 standard sensors closest to the previously selected 32 EEG standard electrodes are selected and single sphere, realistic single layer with inflated and highly-folded cortical sheets are used as volume conduction head models.
+The sensor model, three-compartment (brain, skull, and scalp) volume conduction head model (analytical and realistic), and source model (spherical and realistic) are shown in figure \ref{fig:Sensor_vol_Source}. 
+\input{sections/3-5-2-0-Clustering-Res-RealLF-Fig10}
+\FloatBarrier
+%------------------------------------------------------
+%\subsubsection{Sparsity level in a clustered blocks compared to the initial unclustered blocks}
+\paragraph{Block-ERC in clustered representation}
+\input{sections/3-5-2-1-Clustering-Res-RealLF-SL}
+%------------------------------------------------------
+\paragraph{EEG/MEG source space segmentation}
+\input{sections/3-5-2-2-Clustering-Res-RealLF-Seg}
+%------------------------------------------------------
+\paragraph{Comparison to the conventional lobes of the brain}
+\input{sections/3-5-2-3-Clustering-Res-RealLF-Lobes}

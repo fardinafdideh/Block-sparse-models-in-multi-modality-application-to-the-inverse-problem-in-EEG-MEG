@@ -1,0 +1,43 @@
+Recently, there has been a huge surge of interest in developing recovery conditions, which ensure the uniqueness or robustness of the block-sparse representation of the USLE.
+In addition, block-sparsity can be used in dictionary learning, where there is a joint block-sparse representation of signals \cite{Zelnik-Manor2012}.
+
+In addition to the aforementioned practical interest of the block-sparse representation, i.e., compatibility with some real world problems, from a mathematical point of view, assuming the block-wise structure for the representation leads to weakened recovery conditions \cite{Eldar2010,Ziaei2010,Ben-Haim2011}.
+%\cite{Eldar2009b,Eldar2010b,Eldar2010,Ziaei2010,Ben-Haim2011}.
+By weakened recovery conditions we mean that for the same number of non-zero elements in the representation, assuming the block structure guarantees the uniqueness of the representation with a higher sparsity level.
+
+Similarly, conditions for guaranteeing the uniqueness or faithful approximation of the solution with the models of (\ref{eq:Model_Noiseless}), i.e., $\boldsymbol{y} \seq \myPhi \mybetaz$, and (\ref{eq:Model_Noisy}), i.e., $\boldsymbol{y} \seq \myPhi \mybetaz \spl \boldsymbol{e}$, are called \emph{Block-sparse Exact Recovery Condition (Block-ERC)} and \emph{block-sparse stable recovery condition}.
+
+{
+\label{txt:BlockSL} 
+Sparsity level in the block-wise world is called \emph{Block-Sparsity Level (Block-SL)} or \emph{block-sparsity bound}, \myhl{which is represented by $\myBSLMath$.}
+As it can be easily derived, supposing equally-sized blocks of length $d$, i.e., $d_1 \seq \cdots \seq d_K \seq d$, to improve the conventional ERC and stable recovery conditions, the $d$ times block-sparsity level have to be greater than the sparsity level, i.e., $d \stimes \myBSLMath \sg \mySLMath$.%Block{-}SL
+}
+
+Such sparse representations whose non-zero entries appear in a few blocks are referred to as \emph{block-sparse} or \emph{block $k$-sparse representation} \cite{Eldar2009b,Stojnic2009a,Ben-Haim2011,Elhamifar2012b}
+%\cite{Eldar2009b,Eldar2009c,Eldar2009d,Stojnic2009a,Eldar2010b,Eldar2010,Ben-Haim2011,Elhamifar2011,Elhamifar2012b} 
+, which $k$ is the maximum number of active blocks.
+
+Similarly, for a block k-sparse representation, for all $p \sgeq 0$ we have $\Vert \mybetaz \Vert_{p,0} \sleq k \sless \myBSLMath$.
+From conventional element-wise sparsity point of view, for equally-sized blocks, block $k$-sparse representation is equivalent to \emph{kd-sparse} representation, i.e., $\Vert \mybetaz \Vert_{0} \sleq kd$.
+
+In this section, we review the following main block-sparse exact recovery conditions:
+%, which can be divided into the following four classes: Block-ERC based on (1) $\mySpkTxt$, (2) null space property, (3) mutual coherence constant, and (4) cumulative mutual coherence constant.
+\begin{itemize}
+\item Block-ERC based on $\mySpkTxt$,
+\item Block-ERC based on null space property,
+\item Block-ERC based on mutual coherence constant, and
+\item Block-ERC based on cumulative mutual coherence constant.
+\end{itemize}
+\newpage
+%------------------------------------------------------
+\paragraph{1) Block-ERC based on $\boldsymbol{\mySpkTxt}$}
+\input{sections/1-4-3-1-Background-BSparsity-BERC-Spark}
+%------------------------------------------------------
+\paragraph{2) Block-ERC based on null space property}
+\input{sections/1-4-3-2-Background-BSparsity-BERC-NSP}
+%------------------------------------------------------
+\paragraph{3) Block-ERC based on mutual coherence constant}
+\input{sections/1-4-3-3-Background-BSparsity-BERC-MCC}
+%------------------------------------------------------
+\paragraph{4) Block-ERC based on cumulative mutual coherence}
+\input{sections/1-4-3-4-Background-BSparsity-BERC-CMCC}

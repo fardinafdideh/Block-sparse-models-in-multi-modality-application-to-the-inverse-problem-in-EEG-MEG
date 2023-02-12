@@ -1,0 +1,13 @@
+Following corollary is a double proof for Theorem \ref{th:BERC-BS} (Block-ERC based on $\myBSpkTxt$, page \pageref{th:BERC-BS}) for $p \sgeq 1$ instead of $p \sgeq 0$.
+\begin{corollary}
+\label{crl:Double-proof-BERC-BS}
+For any general dictionary, $\forall p \sgeq 1$ if 
+\begin{equation*}
+\mynorm{\mybetaz}_{p,0} < \frac{\myBSpkMath}{2},
+\end{equation*}
+then $\mybetaz$ is the unique solution to the $P_{p,0}$ (or $P_{\boldsymbol{w};p,0}$) optimisation problem.
+%For equally-sized blocks, the corollary holds true for $P_{p,0}$, as well.
+\end{corollary}
+\begin{proof}
+From Theorem \ref{th:BNSP} (Block-NSP), we have $S_b(\mybetaz) \ssubset S_b(\mybeta)$, so $\Vert \mybetaz \Vert_{p,0} \seq \vert S_b(\mybetaz)\vert \sleq \vert S_b(\mybeta) \vert$ and using Corollary \ref{crl:BERC-BNSP-BS-beta} the proof is done. 
+\end{proof}

@@ -1,0 +1,27 @@
+In 
+%cerebroelectromagnetism
+bioelectromagnetism, the transmission of electromagnetic fields from a current dipole through the head tissues towards measurement sensors is called volume conduction head model, which contains the electrical conduction properties of the head.
+In frequencies below 1 kHz, the quasi-static approximation of Maxwell's equations can be used for modelling the volume conduction head model \cite{Plonsey1967}.
+%,Sarvas1987,Munck1991}.
+Therefore, the level of realism of the volume conduction head model determines the quality of EEG/MEG source analysis \cite{Haueisen2014}.
+%\cite{vandenBroek1998,Wolters2004,Haueisen2014}.
+
+The volume conduction head model can be modelled analytically, 
+%quasi-analytical, 
+or numerically.
+In other words, for the EEG/MEG, the head can be modelled analytically by a single sphere or three or even four concentric spheres corresponding to brain, cerebrospinal fluid, skull, and scalp \cite{Hosek1978}.
+% \cite{Frank1952,Geselowitz1967,Sarvas1987,Hosek1978,Huang1999}.
+%The attempts for solving quasi-analytically are \cite{deMunck1988,Munck1993,Nolte1999,Nolte2001}. 
+The boundary element methods and finite element methods have been developed to numerically model the head and to better represent the realistic shape of the head \cite{Yan1991,Akalin-Acar2004}.
+%\cite{Yan1991,Awada1997,Buchner1997,vandenBroek1998,Marin1998,Akalin-Acar2004,Wolters2006}.
+Although utilising numerically-modelled head models lead to increased accuracy in the source localization problem, it is computationally heavy.
+Therefore, based on the requirements of the problem a trade-off between computational burden and source localization accuracy should be taken into account.
+
+In figure \ref{fig:HeadModel}, the three-layer analytical and numerical volume conduction head models are shown.
+The three layers correspond to scalp, skull, and brain, respectively.
+The head model in figure \ref{fig:HeadModel}(a) is computed analytically, whereas the ones in (b) and (c) are computed numerically.
+The realistic brain layer in figure \ref{fig:HeadModel}(b) is an inflated cortical sheet, whereas in figure \ref{fig:HeadModel}(c) it is a highly-folded cortical sheet.
+
+Naturally, in order to build realistic head models we need to structural information of head, which is provided by MRI\footnote{\emph{Magnetic Resonance Imaging}}.
+\input{sections/1-2-4-Background-Multimodality-VolumeCond-Fig5}
+\FloatBarrier

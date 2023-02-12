@@ -1,0 +1,13 @@
+To investigate Block-ERC in clustered representation, we need to calculate $\myBSLqpTxt$\footnote{\emph{$(q,p)$-Block-Sparsity Level}}, which has inverse relationship with Block-MCC$_{q,p}$.
+Since blocks growing due to clustering can lead to a case where a big block covers whole space, we apply PCA\footnote{\emph{Principal Component Analysis}} to clustered blocks before computing Block-MCC$_{q,p}$.
+
+In order to compare the resulted $\myBSLqpTxt$ to conventional sparsity level, we need to state the number of blocks of columns in terms of the number of columns.
+In a dictionary with equally-sized blocks, i.e., $d_1 \seq \cdots \seq d_K \seq d$, the $\myBSLqpTxt$ can be simply converted to sparsity level through multiplying $\myBSLqpTxt$ by the length of each of the blocks, i.e., $d \stimes \myBSLqpMath$ or $\sum_{k \seq 1}^{\myBSLqpMath} d_k$.
+
+Next, we explain how to compute sparsity levels in a dictionary with differently-sized blocks.
+%Along with improving the existing block-sparse exact recovery conditions by increasing the corresponding sparsity level, one promising way is clustering the coherent blocks of a dictionary.
+%Next, we discuss the concept of clustering the blocks of the dictionary and how to compute the sparsity level from block-sparsity level in a dictionary with clustered blocks.
+%------------------------------------------------------
+\subsection{Sparsity levels in differently-sized block structure of a dictionary}
+\label{sec:SLs} 
+\input{sections/3-3-1-Clustering-BERCRep-SL}

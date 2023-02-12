@@ -1,0 +1,45 @@
+The coherence characterisation of MCC \cite{Donoho2001} 
+%\cite{Donoho2001,Elad2001,Elad2002a,Donoho2003,Gribonval2003a,Tropp2004,Fuchs2004a,Fuchs2005,Donoho2006a,Tropp2006,Gribonval2007}, 
+represents only the most extreme correlation between the atoms of the dictionary and does not offer a comprehensive description of the dictionary. 
+In order to extract more information and to better characterise the dictionary, researchers focused on cumulative coherence characterisations. 
+Although it is computationally more difficult than the conventional coherence characterisation, it leads to weakened recovery conditions; i.e., it provides sharper results for the equivalence of $P_0$ and $P_1$ optimisation problems. 
+
+The characterization $\mu_{1/2}(\boldsymbol{G})$ introduced by Donoho and Elad as a cumulative coherence characterisation is the smallest $m$ off-diagonal entries in a single row or column of the Gram matrix $\boldsymbol{G}$, which sums at least to $1/2$.
+Based on $\mu_{1/2}(\boldsymbol{G})$, if $\mynorm{\mybetaz}_0 \sless \mu_{1/2}(\boldsymbol{G})$, then $\mybetaz$ is the unique solution of the $P_1$ optimisation problem \cite{Donoho2003}.
+
+From algorithmic point of view, considering cumulative MCC defined in (\ref{eq:CMIC}), i.e., $M(\myPhi , k) {\myeq} 
+\max_{\myabs{\Lambda}=k} \max_{j \notin \Lambda}
+\sum_{i \in \Lambda} | \left\langle \boldsymbol{\varphi}_i , \boldsymbol{\varphi}_{j} \right\rangle |$, Tropp demonstrated that, if 
+\begin{equation}
+\label{eq:ERC-CMIC}
+M\myparanthese{\myPhi , k}+M\myparanthese{\myPhi , k-1} < 1, 
+\end{equation}
+then $k$-sparse representation vector $\mybetaz$ can be recovered correctly from orthogonal matching pursuit and basis pursuit algorithms, which is a sufficient condition \cite{Tropp2004}.
+
+The ERC based on cumulative MCC, i.e., (\ref{eq:ERC-CMIC}), is weaker than the ERC based on MCC, i.e., the inequality of (\ref{eq:ERC-M}).
+\myhl{Because 
+%for the $k$-sparse representation vector $\mybetaz$, i.e., $\Vert \mybetaz \Vert_0 \sleq k$, using 
+by rearranging ({\ref{eq:ERC-M}}) we have 
+%$k \sless (1 \spl M^{-1}(\myPhi)) / 2$, so 
+$2 \, k \, M(\myPhi) \sm M(\myPhi) \sless 1$}, which can be reformulated such as: $kM(\myPhi) \spl (k \sm 1)M(\myPhi) \sless 1$.
+Now we can compare the reformulated condition of (\ref{eq:ERC-M}), i.e., $kM(\myPhi) \spl (k \sm 1)M(\myPhi) \sless 1$, with condition (\ref{eq:ERC-CMIC}).
+%On the other hand, 
+Considering the $M(\myPhi , k) \sleq k \, M(\myPhi)$ and $M(\myPhi , k \sm 1) \sleq (k \sm 1) \, M(\myPhi)$ properties, we conclude that the left-hand side  of the just obtained reformulated inequality is greater than or equal to the left-hand side of the inequality in (\ref{eq:ERC-CMIC}), i.e., $M(\myPhi , k) \spl M(\myPhi , k \sm 1) \sleq kM(\myPhi) \spl (k \sm 1)M(\myPhi)$.
+Then, higher values of $k$ could meet the condition in (\ref{eq:ERC-CMIC}) compared to the reformulated inequality of (\ref{eq:ERC-M}).
+Hence, the condition based on cumulative MCC is weaker than the condition based on MCC.
+
+The results were improved more by a characterisation called union cumulative coherence: $M_U(\myPhi , k) {\myeq} \max_{\myabs{\Lambda}=k} \{\max_{j \notin \Lambda} \sum_{i \in \Lambda} | \left\langle \boldsymbol{\varphi}_i , \boldsymbol{\varphi}_{j} \right\rangle| \spl 
+\max_{l \in \Lambda} \sum_{i \in \Lambda \backslash \{ l \}} | \left\langle \boldsymbol{\varphi}_i , \boldsymbol{\varphi}_{l} \right\rangle|\}$ \cite{Dossal2005,Zhao2015a}.
+If $M_U(\myPhi , k) \sless 1$, then the $k$-sparse representation vector can be exactly recovered by the orthogonal matching pursuit algorithm.  
+%the necessary and sufficient condition for uniformly and exactly recovering all the $k$-sparse representation vectors using orthogonal matching pursuit 
+%in terms of his proposed union cumulative coherence 
+%defined on page \pageref{eq:M_U}, 
+%is $M_U(\myPhi , k) \sless 1$.
+%, where, $M_U(\myPhi , k) {\myeq} \max_{\myabs{\Lambda}=k} \{\max_{j \notin \Lambda} \sum_{i \in \Lambda} | \left\langle \boldsymbol{\varphi}_i , \boldsymbol{\varphi}_{j} \right\rangle| \spl \max_{l \in \Lambda} \sum_{i \in \Lambda \backslash \{ l \}} | \left\langle \boldsymbol{\varphi}_i , \boldsymbol{\varphi}_{l} \right\rangle|\}$ \cite{Zhao2015a}.
+The ERC using $M_U(\myPhi , k)$ is weaker than (\ref{eq:ERC-CMIC}), since $M_U(\myPhi , k) \sless M(\myPhi , k) \spl M(\myPhi , k \sm 1)$, and so higher values of $k$ can be selected in $M_U(\myPhi , k)$-based condition. 
+%He also proposes the stable recovery condition 
+%for stably recovering 
+There is also a stable recovery condition via orthogonal matching pursuit using the characterisation $M_U(\myPhi , k)$ \cite{Zhao2015a}.
+
+In another work, it is been demonstrated that if $M(\myPhi , k) \spl M(\myPhi , k \sm 1) \sless \min_{i \ssin T} \vert \beta_{0_i} \vert / \max_{i \ssin T} \vert\beta_{0_i} \vert$, where, $\vert T \vert \seq k$, then the $k$-sparse representation vector $\mybetaz$ can be recovered exactly via basic thresholding algorithm \cite{Foucart2013}. 
+Moreover, it has been shown that if $ 2M(\myPhi , k) \spl M(\myPhi , k \sm 1) \sless 1$ and $ M(\myPhi , 2k) \sless 1/2$, then the $k$-sparse representation is exactly recovered via hard thresholding pursuit and iterative hard thresholding algorithms, respectively \cite{Foucart2013}.

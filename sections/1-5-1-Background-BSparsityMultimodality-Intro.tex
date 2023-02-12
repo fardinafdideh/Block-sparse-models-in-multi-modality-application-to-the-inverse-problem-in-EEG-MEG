@@ -1,0 +1,24 @@
+In Section \ref{sec:Multimodality}, first the concept of multi-modality is discussed in general.
+Then, we showed that due to the fact that a brain neuronal activity have electric and magnetic properties, the brain imaging modality of EEG or MEG individually, cannot completely describe the electromagnetic behaviour of the brain neurons.
+On the other hand, EEG and MEG measure the electrical and magnetic activities of the same cerebral currents, respectively.
+Since they have complementary information, they can be an appropriate choice as brain imaging modalities in a multi-modality framework. 
+Therefore, we took the distributed EEG and MEG source reconstruction problem as a real-world example of multi-modality.
+
+However, the distributed EEG or/and MEG source reconstruction problems are vastly underdetermined, i.e., the number of EEG or/and MEG sensors is significantly less than the number of brain sources, \myhl{e.g., in a typical problem there could be 30 sensors against 3000 sources.}
+
+Hence, in order to recover a unique solution from the USLE of distributed EEG or/and MEG source reconstruction problems, appropriate constraint(s) need(s) to be applied on the corresponding optimisation problem .
+
+In Section \ref{sec:Block-sparsity}, we pointed out that, in certain USLE a block of coefficients need to be penalized and not necessarily a single coefficient.
+Hence, the notion of block-sparsity was extended from the conventional notion of sparsity, which was reviewed in Section \ref{sec:Sparsity}.
+
+As a real-world example, we again took the distributed EEG or/and MEG source reconstruction problem.
+Since each brain source, which is a dipole, can be represented as a block of size $d \seq 3$, and the source reconstruction problem is consistent with the constraint of block-sparsity.
+
+Although the two mentioned notions of multi-modality and block-sparse representation theory are fundamentally independent, they meet each other in our main real-world problem, i.e., distributed EEG and MEG source reconstruction problem.
+
+In order to recover a unique solution, in addition to imposing the block-sparsity constraint on the corresponding optimisation problem, the number of active blocks should be less than a threshold.
+The mentioned restricted number of active blocks is explained through recovery conditions, which are explained in Chapter \ref{sec:BERC}.
+
+Next, in Chapter \ref{sec:Clustering} by following a framework to merge the lead-field matrices of each source position, we show that at level of grouping \myhl{corresponding to maximum inter-group distance and minimum number of groups,} the system satisfies the existing conditions.
+ 
+Finally, in Chapter \ref{chptr:Multimodality}, we demonstrate the impact of EEG and MEG multi-modality and merging framework on brain source space segmentation.

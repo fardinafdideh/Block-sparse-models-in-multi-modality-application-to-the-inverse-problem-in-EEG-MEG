@@ -1,0 +1,104 @@
+\begin{proof}
+Under the assumption of $Q_{\boldsymbol{w};p_1,p_2}(S_b(\mybeta),\myPhi) \sless 1/2$ and $S_b(\mybetaz) \ssubset S_b(\mybeta)$, to show that $\mybetaz$ is the unique solution to the $P_{\boldsymbol{w};p_1,p_2}$ minimisation problem, we need to prove that:
+\begin{equation*}
+\forall \boldsymbol{x} \in \myKerMath, \qquad \mynorm{\mybetaz}_{\boldsymbol{w};p_1,p_2}^{p_2} <
+\mynorm{\mybetaz+\boldsymbol{x}}_{\boldsymbol{w};p_1,p_2}^{p_2},
+\end{equation*}
+where as defined in Definition \ref{def:Weighted mixed norm} (weighted (pseudo-)mixed-norm, page \pageref{def:Weighted mixed norm}), the $\ell_{p_1,p_2}^{\boldsymbol{w}}$ weighted (pseudo-)mixed-norm of a vector $\mybetaz$ is:
+ \begin{equation*}
+\mynorm{\mybetaz}_{\boldsymbol{w};p_1,p_2} \myeq 
+\begin{cases}
+    \displaystyle\sum_{k}^{} I \myparanthese{\frac{\mynorm{\mybetaz \mybracket{k}}_{p_1}}{d_k^{\frac{1}{p_1}}}}, & \qquad \text{for \ }p_2= 0\\
+    \myparanthese{\displaystyle\sum_{k}^{} \frac{\mynorm{\mybetaz \mybracket{k}}_{p_1}^ {p_2}}{d_k^{\frac{p_2}{p_1}}}} ^ {\frac{1}{p_2}},  & \qquad  \text{for \ } 0 < p_2 < +\infty\\
+    \displaystyle\max_{k}{\mybrace{\frac{\mynorm{\mybetaz \mybracket{k}}_{p_1}}{d_k^{\frac{1}{p_1}}}}}, & \qquad \text{for \ } p_2= \infty.
+  \end{cases}
+\end{equation*}
+Then, dividing the whole blocks to on-$\myBSuppTxt$ ($\ssin S_b(\mybeta)$) and off-$\myBSuppTxt$ (${\notin} S_b(\mybeta)$), we have
+\begin{gather*}
+\begin{aligned}
+ 0 < &\displaystyle\sum_{k \in S_b\myparanthese{\mybeta}} \myparanthese{\myabs{\frac{\displaystyle\sum_{j=1}^{d_k} \myabs{\beta_{0_j}\mybracket{k} + x_{j}\mybracket{k}} ^{p_1}}{d_k}} ^{\frac{p_2}{p_1}} - 
+\myabs{\frac{\displaystyle\sum_{j=1}^{d_k} \myabs{\beta_{0_j}\mybracket{k}} ^{p_1}}{d_k}} ^{\frac{p_2}{p_1}}} \\ 
+&+ \displaystyle\sum_{k \notin S_b\myparanthese{\mybeta}} \myabs{\frac{\displaystyle\sum_{j=1}^{d_k} \myabs{x_{j}\mybracket{k}} ^{p_1}}{d_k}} ^{\frac{p_2}{p_1}}.
+\end{aligned}
+\end{gather*}
+It can be rewritten in terms of the norm operator, so
+\begin{gather*}
+ 0<\displaystyle\sum_{k \in S_b\myparanthese{\mybeta}} w_k^{p_2} \myparanthese{\mynorm{\mybetaz\mybracket{k}+\boldsymbol{x}\mybracket{k}}_{p_1}^{p_2} - 
+\mynorm{\mybetaz\mybracket{k}}_{p_1}^{p_2}} + 
+\displaystyle\sum_{k \notin S_b\myparanthese{\mybeta}} w_k^{p_2} \mynorm{\boldsymbol{x}\mybracket{k}}_{p_1}^{p_2}.
+\end{gather*}
+where, in a block-structured vector $\boldsymbol{a} \seq [\boldsymbol{a}^T[1], \cdots,\boldsymbol{a}^T[K]]^T$ with length vector $\boldsymbol{d} \seq [d_1, \cdots, d_K ]$, $w_k$ in $w_k \Vert \boldsymbol{a}[k] \Vert_p$ is equal to $d_k^{-1/p}$.
+
+From quasi-triangle inequality for scalars, we generalised it to vector space and derived the corresponding triangle inequality $\mynorm{\boldsymbol{a} \spl \boldsymbol{b}}_{p_1}^{p_2} \sm \mynorm{\boldsymbol{a}}_{p_1}^{p_2} \sgeq \sm\mynorm{\boldsymbol{b}}_{p_1}^{p_2}$ for $0 \sleq p_2 \sleq 1 \sleq p_1$.
+% (Lemma \ref{lm:Quasi-triangle}). 
+Therefore, it is sufficient to prove:
+\begin{equation*}
+ 0 < \displaystyle\sum_{k \notin S_b\myparanthese{\mybeta}} w_k^{p_2} \mynorm{\boldsymbol{x}\mybracket{k}}_{p_1}^{p_2} - \displaystyle\sum_{k \in S_b\myparanthese{\mybeta}} w_k^{p_2} \mynorm{\boldsymbol{x}\mybracket{k}}_{p_1}^{p_2}.
+\end{equation*}
+Adding $2 \, \sum_{k \in S_b(\mybeta)} w_k^{p_2} \Vert \boldsymbol{x}[k] \Vert_{p_1}^{p_2}$ to both sides, we have
+\begin{gather*}
+\begin{aligned}
+2 \, \displaystyle\sum_{k \in S_b\myparanthese{\mybeta}} w_k^{p_2} \mynorm{\boldsymbol{x}\mybracket{k}}_{p_1}^{p_2} &< 
+\displaystyle\sum_{k \notin S_b\myparanthese{\mybeta}} w_k^{p_2} \mynorm{\boldsymbol{x}\mybracket{k}}_{p_1}^{p_2} + \displaystyle\sum_{k \in S_b\myparanthese{\mybeta}} w_k^{p_2} \mynorm{\boldsymbol{x}\mybracket{k}}_{p_1}^{p_2} \\
+&= \displaystyle\sum_{k} w_k^{p_2} \mynorm{\boldsymbol{x}\mybracket{k}}_{p_1}^{p_2},
+\end{aligned}
+\end{gather*}
+or equivalently,
+\begin{equation*}
+\frac{\displaystyle\sum_{k \in S_b\myparanthese{\mybeta}} w_k^{p_2} \mynorm{\boldsymbol{x}\mybracket{k}}_{p_1}^{p_2}}{\displaystyle\sum_{k} w_k^{p_2} \mynorm{\boldsymbol{x}\mybracket{k}}_{p_1}^{p_2}} < \frac12.
+\end{equation*}
+But the above left-hand side expression is exactly $Q_{\boldsymbol{w};p_1,p_2}(S_b(\mybeta),\myPhi)$ and the inequality is the initial assumption of the proof, i.e., $Q_{\boldsymbol{w};p_1,p_2}(S_b(\mybeta),\myPhi) \sless 1/2$.
+
+
+
+Similarly, for the case of equally-sized blocks, i.e., $d_1 \seq \cdots \seq d_K \seq d$, under the assumption of $Q_{p_1,p_2}(S_b(\mybeta),\myPhi) \sless 1/2$ and $S_b(\mybetaz) \ssubset S_b(\mybeta)$, to show that $\mybetaz$ is the unique solution to the $P_{p_1,p_2}$ minimisation problem, we need to prove that:
+\begin{equation*}
+\forall \boldsymbol{x} \in \myKerMath, \qquad \mynorm{\mybetaz}_{p_1,p_2}^{p_2} <
+\mynorm{\mybetaz+\boldsymbol{x}}_{p_1,p_2}^{p_2},
+\end{equation*}
+where as defined on page \pageref{eq:MixedNormDef}, the $\ell_{p_1,p_2}$ (pseudo-)mixed-norm of a vector $\mybetaz$ is:
+\begin{equation*}
+\mynorm{\mybetaz}_{p_1,p_2} \myeq 
+\begin{cases}
+    \displaystyle\sum_{k}^{} I \myparanthese{\mynorm{\mybetaz \mybracket{k}}_{p_1}}, & \qquad \text{for \ }p_2= 0\\
+    \myparanthese{\displaystyle\sum_{k}^{} \mynorm{\mybetaz \mybracket{k}}_{p_1}^ {p_2}} ^ {\frac{1}{p_2}},  & \qquad  \text{for \ } 0 < p_2 < +\infty\\
+    \displaystyle\max_{k}{\mybrace{\mynorm{\mybetaz \mybracket{k}}_{p_1}}}, & \qquad \text{for \ } p_2= \infty,
+  \end{cases}
+\end{equation*}
+Then, the above-mentioned inequality is equivalent to showing 
+\begin{equation*}
+\displaystyle\sum_{k=1}^{K} \myabs{\displaystyle\sum_{j=1}^{d_k} \myabs{\beta_{0_j}\mybracket{k}} ^{p_1}} ^{\frac{p_2}{p_1}} 
+< \displaystyle\sum_{k=1}^{K} \myabs{\displaystyle\sum_{j=1}^{d_k} \myabs{\beta_{0_j}\mybracket{k} + x_{j}\mybracket{k}} ^{p_1}} ^{\frac{p_2}{p_1}}.
+\end{equation*}
+Then, dividing the whole blocks to on-$\myBSuppTxt$ ($\ssin S_b(\mybeta)$) and off-$\myBSuppTxt$ (${\notin} S_b(\mybeta)$), we have
+\begin{gather*}
+\begin{aligned}
+ 0 < &\displaystyle\sum_{k \in S_b\myparanthese{\mybeta}} \myparanthese{\myabs{\displaystyle\sum_{j=1}^{d_k} \myabs{\beta_{0_j}\mybracket{k} + x_{j}\mybracket{k}} ^{p_1}} ^{\frac{p_2}{p_1}} - 
+\myabs{\displaystyle\sum_{j=1}^{d_k} \myabs{\beta_{0_j}\mybracket{k}} ^{p_1}} ^{\frac{p_2}{p_1}}} \\ 
+&+ \displaystyle\sum_{k \notin S_b\myparanthese{\mybeta}} \myabs{\displaystyle\sum_{j=1}^{d_k} \myabs{x_{j}\mybracket{k}} ^{p_1}} ^{\frac{p_2}{p_1}}.
+\end{aligned}
+\end{gather*}
+It can be rewritten in terms of the norm operator, so
+\begin{gather*}
+ 0<\displaystyle\sum_{k \in S_b\myparanthese{\mybeta}} \mynorm{\mybetaz\mybracket{k}+\boldsymbol{x}\mybracket{k}}_{p_1}^{p_2} - 
+\mynorm{\mybetaz\mybracket{k}}_{p_1}^{p_2} + 
+\displaystyle\sum_{k \notin S_b\myparanthese{\mybeta}} \mynorm{\boldsymbol{x}\mybracket{k}}_{p_1}^{p_2}.
+\end{gather*}
+Utilising $\mynorm{\boldsymbol{a} \spl \boldsymbol{b}}_{p_1}^{p_2} \sm \mynorm{\boldsymbol{a}}_{p_1}^{p_2} \sgeq \sm\mynorm{\boldsymbol{b}}_{p_1}^{p_2}$ for $0 \sleq p_2 \sleq 1 \sleq p_1$, it is sufficient to prove:
+\begin{equation*}
+ 0 < \displaystyle\sum_{k \notin S_b\myparanthese{\mybeta}} \mynorm{\boldsymbol{x}\mybracket{k}}_{p_1}^{p_2} - \displaystyle\sum_{k \in S_b\myparanthese{\mybeta}} \mynorm{\boldsymbol{x}\mybracket{k}}_{p_1}^{p_2}.
+\end{equation*}
+Adding $2 \, \sum_{k \in S_b(\mybeta)} \Vert \boldsymbol{x}[k] \Vert_{p_1}^{p_2}$ to both sides, we have
+\begin{gather*}
+\begin{aligned}
+2 \, \displaystyle\sum_{k \in S_b\myparanthese{\mybeta}} \mynorm{\boldsymbol{x}\mybracket{k}}_{p_1}^{p_2} &< 
+\displaystyle\sum_{k \notin S_b\myparanthese{\mybeta}} \mynorm{\boldsymbol{x}\mybracket{k}}_{p_1}^{p_2} + \displaystyle\sum_{k \in S_b\myparanthese{\mybeta}} \mynorm{\boldsymbol{x}\mybracket{k}}_{p_1}^{p_2} \\
+&= \displaystyle\sum_{k} \mynorm{\boldsymbol{x}\mybracket{k}}_{p_1}^{p_2},
+\end{aligned}
+\end{gather*}
+or equivalently,
+\begin{equation*}
+\frac{\displaystyle\sum_{k \in S_b\myparanthese{\mybeta}} \mynorm{\boldsymbol{x}\mybracket{k}}_{p_1}^{p_2}}{\displaystyle\sum_{k} \mynorm{\boldsymbol{x}\mybracket{k}}_{p_1}^{p_2}} < \frac12.
+\end{equation*}
+But the above left-hand side expression is exactly $Q_{p_1,p_2}(S_b(\mybeta),\myPhi)$ and the inequality is the initial assumption of the proof, i.e., $Q_{p_1,p_2}(S_b(\mybeta),\myPhi) \sless 1/2$.
+\end{proof}

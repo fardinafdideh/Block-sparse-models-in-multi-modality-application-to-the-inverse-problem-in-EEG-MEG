@@ -1,0 +1,43 @@
+To compare the proposed basic block-sparse uncertainty principle in Lemma \ref{lm:BBUP} (Basic Block-UP, page \pageref{lm:BBUP}, with $d_{min} \seq d_{max} \seq d$) with the block-sparse uncertainty principle proposed by Eldar et al. in (\ref{eq:BUP-Eldar}) on page \pageref{eq:BUP-Eldar}, i.e., $\Vert \mybetao \Vert_{2,0} \spl \Vert\mybetaTwo \Vert_{2,0} 
+\sgeq 2/(d \, \overbar{M}^{Eldar}_{Inter} (\myPhi_{\boldsymbol{1}},\myPhi_{\boldsymbol{2}}))$, where $\overbar{M}^{Eldar}_{Inter}(\myPhi_{\boldsymbol{1}},\myPhi_{\boldsymbol{2}}) \seq \max_{k,k'} \Vert \myPhi_{\boldsymbol{1}}^T [k] \myPhi_{\boldsymbol{2}} [k'] \Vert_{2 \to 2} / d$, we need to investigate the relationship between $\overbar{M}_{q,p/(p \sm 1)} (\myPhiOne , \myPhiTwo)$ and $\overbar{M}^{Eldar}_{Inter}(\myPhiOne,\myPhiTwo)$.
+\begin{property}[Basic Block-MCC$_{q,p}$ v.s. basic block-coherence of Eldar et al.]
+\label{prp:DontKnow3}
+Supposing $\myPhiOne$ and $\myPhiTwo$ are two orthonormal matrices with equally-sized blocks of length $d$, $\forall (q , p) \ssin \mathbb{R}^2_{\sg 0}$ we have:
+\begin{gather*}
+\begin{aligned}
+&\frac{\overbar{M}_{q,\frac{p}{p-1}}\myparanthese{\myPhiOne , \myPhiTwo}}{\overbar{M}^{Eldar}_{Inter}\myparanthese{\myPhiOne , \myPhiTwo}} \geq 
+d^{\frac1q + \frac1p - 1} \min \mybrace{1 , d^{\frac{1}{2} -\frac1p}} \min \mybrace{1 , d^{\frac{1}{2} - \frac1q}}, \\
+&\frac{\overbar{M}_{q,\frac{p}{p-1}}\myparanthese{\myPhiOne , \myPhiTwo}}{\overbar{M}^{Eldar}_{Inter}\myparanthese{\myPhiOne , \myPhiTwo}} \leq 
+d^{\frac1q + \frac1p - 1} \max \mybrace{1 , d^{\frac{1}{2} -\frac1p}} \max \mybrace{1 , d^{\frac{1}{2} - \frac1q}}.
+\end{aligned}
+\end{gather*}
+Then, for $q \seq p \seq 2$ the lower- and upper-bound are both equal to one, then $\overbar{M}_{2,2}(\myPhiOne,\myPhiTwo) \seq \overbar{M}^{Eldar}_{Inter}(\myPhiOne,\myPhiTwo)$.
+The above bounds for different values of $q$ and $p$ are shown in table \ref{table:BasicBMCC-BasicEldar}.
+\begin{table}[bp]
+%\begin{adjustbox}{width=0.5\textwidth} % ,totalheight=\textheight,.5
+\centering
+%\tiny
+\begin{tabular}{ccccc}
+\toprule
+%\cline{2-4}
+\multicolumn{1}{c}{} &\multicolumn{1}{c}{${0 < q\, \& \, p \leq 2}$} & \multicolumn{1}{c}{${q\, \& \, p \geq 2}$}  & \multicolumn{1}{c}{${0 < q \leq 2\, \& \, p \geq 2}$} & \multicolumn{1}{c}{${q \geq 2\, \& \, 0 < p \leq 2}$} \\ \midrule %\hline
+\multicolumn{1}{r}{${\frac{\overbar{M}_{q,\frac{p}{p-1}}\myparanthese{\myPhiOne , \myPhiTwo}}{\overbar{M}^{Eldar}_{Inter}\myparanthese{\myPhiOne , \myPhiTwo}} \geq}$} &\multicolumn{1}{c}{$1$} & \multicolumn{1}{c}{$d^{\frac1q + \frac1p -1}$} & \multicolumn{1}{c}{$d^{\frac1p - \frac12}$} &\multicolumn{1}{c}{$d^{\frac1q - \frac12}$}    \\
+\multicolumn{1}{r}{${\frac{\overbar{M}_{q,\frac{p}{p-1}}\myparanthese{\myPhiOne , \myPhiTwo}}{\overbar{M}^{Eldar}_{Inter}\myparanthese{\myPhiOne , \myPhiTwo}} \leq}$} &\multicolumn{1}{c}{$d^{\frac1q + \frac1p -1}$} & \multicolumn{1}{c}{$1$} & \multicolumn{1}{c}{$d^{\frac1q - \frac12}$} &\multicolumn{1}{c}{$d^{\frac1p - \frac12}$}    \\ 
+\bottomrule %\hline
+\end{tabular}
+%\end{adjustbox}
+\caption{Bounds of $\overbar{M}_{q,p/(p \sm 1)} (\myPhiOne , \myPhiTwo) / \overbar{M}^{Eldar}_{Inter}(\myPhiOne,\myPhiTwo)$ for different values of $q$ and $p$.}
+\label{table:BasicBMCC-BasicEldar}
+\end{table}
+\end{property}
+\begin{proof}
+It follows from Property \ref{prp:BMIC-MEldar} (Block-MCC$_{q,p}$ v.s. block-coherence of Eldar et al., page \pageref{prp:BMIC-MEldar}) in a special case of two orthonormal matrices $\forall (q , p) \ssin \mathbb{R}^2_{\sg 0}$:
+\begin{gather*}
+\begin{aligned}
+&\overbar{M}_{q,p}\myparanthese{\myPhiOne , \myPhiTwo} \geq d^{\frac1q - \frac1p} \min \mybrace{1 , d^{\frac1p - \frac{1}{2}}} \min \mybrace{1 , d^{\frac{1}{2} - \frac1q}} \overbar{M}^{Eldar}_{Inter}\myparanthese{\myPhiOne , \myPhiTwo}, \\
+&\overbar{M}_{q,p}\myparanthese{\myPhiOne , \myPhiTwo} \leq d^{\frac1q - \frac1p} \max \mybrace{1 , d^{\frac1p - \frac{1}{2}}} \max \mybrace{1 , d^{\frac{1}{2} - \frac1q}} \overbar{M}^{Eldar}_{Inter}\myparanthese{\myPhiOne , \myPhiTwo}.
+\end{aligned}
+\end{gather*}
+
+Then, by parameter changing of $p {\to} p/(p \sm 1)$, the proof is done.
+\end{proof}

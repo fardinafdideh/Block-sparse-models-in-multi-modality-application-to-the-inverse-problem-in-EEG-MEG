@@ -1,0 +1,30 @@
+The smallest number of columns of dictionary $\myPhi$ that are linearly dependent is called \emph{Spark}.
+
+$\mySpkTxt$ has a very important role in guaranteeing the uniqueness of the sparse representation. 
+This importance has been already demonstrated by Gorodnitsky and Rao \cite{Gorodnitsky1997}.
+
+The $\mySpkTxt$ of a dictionary $\myPhi$ is defined mathematically as \cite{Gribonval2003a,Donoho2003,Donoho2003a,Bruckstein2009}:
+\begin{equation}
+\label{eq:Conventional Spark}
+\mySpk\myparanthese{\myPhi} \myeq \min_{\boldsymbol{x} \in \myKerMath \backslash\left\{\boldsymbol{0}\right\}} \mynorm{\boldsymbol{x}}_{0}.
+\end{equation}
+
+By the definition of the $\mySpk(\myPhi)$, any vector $\boldsymbol{x}$ in the null space of the dictionary, i.e., 
+%$\sum_{k=1}^{n} x_k\boldsymbol{\varphi}_k  \seq \boldsymbol{0}$, 
+$\myPhi \boldsymbol{x}\seq \boldsymbol{0}$, must satisfy $\Vert\boldsymbol{x} \Vert_{0} \sgeq \mySpk(\myPhi)$. 
+
+As it can be seen, $\mySpkTxt$ characterises the null space of a dictionary using the $\ell_0$ pseudo-norm. 
+
+Despite of the superficial similarity between $\myRnkTxt$ and $\mySpkTxt$, they are entirely different in concept and computational complexity. 
+
+The $\myRnkTxt$ of a dictionary is defined as the largest number of the columns of $\myPhi$ which are linearly independent, and its computation is sequential (easy to compute), whereas $\mySpkTxt$ is the size of the smallest number of linearly dependent columns of $\myPhi$, and its computation is of combinatorial search with exponential complexity. 
+
+\input{sections/1-3-2-3-Background-Sparsity-RepTheory-Characterisations-SparkBounds}
+
+For a dictionary with linearly dependent columns, at least two columns are linearly dependent, i.e., $2 \sleq \mySpk(\myPhi)$, and for many randomly generated dictionaries, $\mySpk(\myPhi)$ is equal to $\myRnkMath \spl 1$. 
+
+On the other hand, we have $\myRnkMath \sleq \min\{m,n\}$, and since the problem is underdetermined, i.e., $m \sless n$, $\min\{m,n\}$ is $m$ and also $\min\{m+1,n\} \seq m \spl 1$.
+
+As it can be seen in (\ref{eq:Conventional Spark}), the dictionary characterization $\mySpk(\myPhi)$ is obtained by minimisation of the intractable non-convex $\ell_0$ pseudo-norm, which is not easy to compute.
+More precisely, given a matrix $\myPhi$, computing $\mySpk(\myPhi)$ is NP-hard\footnote{\emph{Non-deterministic Polynomial-hard}}.
+The computational complexity of $\mySpk(\myPhi)$ is investigated in \cite{Tillmann2013}.

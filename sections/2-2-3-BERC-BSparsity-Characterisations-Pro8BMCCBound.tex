@@ -1,0 +1,27 @@
+Property \ref{prp:BMIC-MIC} investigates the bounds of Block-MCC$_{q,p}$ in terms of the conventional MCC (page \pageref{eq:MIC}).
+\begin{property}[Block-MCC$_{q,p}$ bounds]
+\label{prp:BMIC-MIC} 
+%$\forall q \sgeq 0$ and $\forall p \sgeq 1$, 
+Block-MCC$_{q,p}$ is bounded based on the conventional MCC, i.e., $M(\myPhi) {\myeq} \max_{k,k' \neq k} | \left\langle \boldsymbol{\varphi}_k , \boldsymbol{\varphi}_{k'} \right\rangle|$.\\
+1) Suppose for a dictionary \myhl{with full column rank blocks,} we have $M(\myPhi) \sless d_{max}^{1/q \sm 2} (d_{max} - 1)^{-1/2}$ and $q \sgeq p \sgeq 1$, then:
+%1) For a general dictionary $\myPhi$, suppose $M(\myPhi) < 1/(d-1)$. 
+%Then the BMIC$_{q,p}$ is bounded based on the MIC:
+\begin{equation*}
+0 \leq M_{q,p}\myparanthese{\myPhi} \leq \frac{d_{max}^{\frac32 - \frac1p} \, M\myparanthese{\myPhi}}{1- d_{max}^{2 - \frac1q} \myparanthese{d_{max} - 1}^\frac12 \, M \myparanthese{\myPhi}}.
+\end{equation*}
+2) For a dictionary with intra-block orthonormality, $\forall (q , p , q' , p') \ssin \mathbb{R}^4_{\sg 0}$ we have:
+\begin{gather*}
+\begin{aligned}
+0 \leq M_{q,p}\myparanthese{\myPhi} \leq 
+\frac{M\myparanthese{\myPhi}}{d_{max}} \, \max_{k,k' \neq k} d_{k}^{\frac12 - \frac1p} \, d_{k'}^{\frac1q + \frac12} \, &\max \mybrace{1 , d_k^{\frac1p - \frac{1}{p'}}} \, \max \mybrace{1 , d_{k'}^{\frac{1}{q'} - \frac1q}} \times \\
+&\max \mybrace{1 , d_k^{\frac{1}{p'} -\frac12}} \, \max \mybrace{1 , d_{k'}^{\frac{1}{2} - \frac{1}{q'}}}.
+%\begin{cases}
+%d_{max}^{\frac32 - \frac1p} \, M\myparanthese{\myPhi}, & \qquad \text{for \ }q \geq 1\\
+%d_{max}^{\frac1q - \frac1p + \frac12} \, M\myparanthese{\myPhi}, & \qquad \text{for \ }q < 1\\
+%\end{cases}.
+\end{aligned}
+\end{gather*}
+\end{property}
+%\newpage
+The proof of Property \ref{prp:BMIC-MIC} is provided in Section \ref{prf:BMIC-MIC} (page \pageref{prf:BMIC-MIC}).
+%Therefore, based on second part of Property \ref{prp:BMIC-MIC}, for $q \sgeq p$ if $d_{min}^{-1/p} \, d_{max}^{1/q} \sleq 1$, and for $p/2 \sless q \sless p$ if $d_{min}^{1/q - 2/p} \, d_{max}^{1/q} \sleq 1$, we have $M_{q,p}(\myPhi) \sleq M(\myPhi)$.

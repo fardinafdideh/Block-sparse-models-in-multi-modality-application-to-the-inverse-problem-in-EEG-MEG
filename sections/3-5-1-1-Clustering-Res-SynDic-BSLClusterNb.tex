@@ -1,0 +1,22 @@
+%\subsubsection{Effect of clustering the coherent blocks of a dictionary on Block-ERC based on Block-MCC$_{q,p}$}
+\label{sec:clusteringOFcoherent_BERC-BMIC} 
+%In general the recovery conditions can be improved or weakened through increasing the required number of non-zero entities as a threshold which ensures the uniqueness of the solution to an optimisation problem.
+%In Corollary \ref{crl:BERC-BMIC} of Section \ref{sec:BERC_BNSP}, the mentioned threshold or $\myBSLTxt$ is expressed as the number of blocks (not the number of elements) in two cases of optimistic and pessimistic.
+%In Section \ref{sec:Sparsity level for clustered blocks of a dictionary}, we explained how different sparsity levels can be calculated from $\myBSLTxt$, 
+% of a Block-ERC, which upper-bounds the maximum number of active blocks of representation vector $\mybeta$ ensuring the uniqueness of the solution to an optimisation problem. 
+%which upper-bounds the maximum number of active blocks in a Block-ERC.
+
+In this experiment, 
+%$\myBSLTxt$ resulted from a Block-ERC based on Block-MCC$_{q,p}$ is going to be investigated in clustered representation.
+%To this purpose, 
+the agglomerative hierarchical clustering algorithm is applied on the blocks of a random dictionary with certain number of clusters, whereas the Block-MCC$_{2,2}$ and complete method are used to measure the inter-blocks coherence and inter-clusters distance, respectively.
+The mentioned certain number of clusters is once set to four and once set to eight.
+
+As it can be seen in figure \ref{fig:SL_Hierarchical}, by applying hierarchical clustering on the blocks of the dictionary, i.e., by decreasing the number of clusters, there exists at least one clustering level in which the relative $\myBSLTxt_{2,2}$ in the most pessimistic case, i.e., $\myBSL_{2,2}(\myPhi)[\%]$, increases in comparison to when the clustering is not applied on the dictionary, i.e., the rightmost part of each diagram corresponding to 40 clusters.
+Therefore, clustering coherent blocks of the dictionary improves the Block-ERC through increasing the $\myBSLTxt_{2,2}$.
+
+In addition, for $\varepsilon_{inter} \sg 1$ and $\varepsilon_{intra} \sless 0.1$, the $\myBSL_{2,2}(\myPhi)[\%]$ has a peak in a clustering level equal to the number of the clusters in the simulated dictionary.
+In fact, in figure \ref{fig:SL_Hierarchical} when there is four clusters in the simulated dictionary (blue curve, square markers), the maximum is at the fourth clustering level and also the consistent results are obtained for eight clusters in the dictionary (red curve, circle markers).
+For the clustering level lower than the optimal level, the space is under-sampled and there would be a block spanning the whole space, whereas for the clustering level higher than the optimal level, the space is over-sampled and the over-partitioning leads to high coherence measure.
+\input{sections/3-5-1-1-Clustering-Res-SynDic-BSLClusterNb-Fig8}
+\FloatBarrier
