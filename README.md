@@ -1,4 +1,6 @@
 # Block-sparse models in multi-modality: application to the inverse problem in EEG/MEG
+Many natural phenomena are too complex to be fully recognised by only a single measurement instrument or mono-modality. Therefore, the research domain of multi-modality has emerged to better identify the rich characteristics of the natural multi-property phenomenon, through jointly analysing the data collected from mono-modalities, which are somehow complementary. In our study, the multi-property phenomenon of interest is the human brain activity and we are interested in better localising it by means of its electromagnetic properties which are measurable non-invasively. In neurophysiology, a common way to measure the electric and magnetic properties of the brain activity is ElectroEncephaloGraphy (EEG), and MagnetoEncephaloGraphy (MEG), respectively. Our real-world application, i.e., EEG/MEG source reconstruction problem, is a fundamental problem in neuroscience ranging from cognitive science to neuropathology to surgical planning. Considering that the EEG/MEG source reconstruction problem can be reformulated as an underdetermined system of linear equations, the solution (estimated brain source activity) should be sufficiently sparse in order to be recovered uniquely. The amount of sparsity is determined by the so-called recovery conditions. However, in high-dimensional problems, the conventional recovery conditions are extremely strict. By regrouping the coherent columns of a dictionary, the more incoherent structure could be achieved. This strategy was proposed as a block structure identification framework, which results in the automatic segmentation of the brain source space, without using any information about the brain sources activity and EEG/MEG signals. Despite the resulted less coherent block-structured dictionary, the conventional recovery condition is no longer capable of computing the coherence characterisation. To address the mentioned challenge, the general framework of block-sparse exact recovery conditions including three theoretical and one algorithmic-dependent conditions was proposed. Finally, we investigated the EEG and MEG multi-modality and demonstrated that by combining the two modalities, more refined brain regions appeared.
+
 ![Slide1](/ppt/Slide1.PNG)
 ![Slide2](/ppt/Slide2.PNG)
 ![Slide3](/ppt/Slide3.PNG)
@@ -44,6 +46,5 @@
 ![Slide43](/ppt/Slide43.PNG)
 
 # How to cite
-Fardin Afdideh. Block-sparse models in multi-modality: application to the inverse model in
-EEG/MEG. Signal and Image Processing. Université Grenoble Alpes, 2018. English. NNT :
-2018GREAT074. tel-02024666
+* F. Afdideh, R. Phlypo, C. Jutten, “Recovery guarantees for mixed norm lp1, p2 block sparse representations,” 24th European Signal Processing Conference (EUSIPCO), pp. 378-382, Sep. 2016.
+* F. Afdideh. Block-sparse models in multi-modality: application to the inverse model in EEG/MEG. Signal and Image Processing. Université Grenoble Alpes, 2018. English. NNT : 2018GREAT074. tel-02024666
