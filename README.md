@@ -8,6 +8,7 @@ Many natural phenomena are too complex to be fully recognised by only a single m
 ![Slide5](/ppt/Slide5.PNG)
 ![Slide6](/ppt/Slide6.PNG)
 ![Slide7](/ppt/Slide7.PNG)
+![SlideLF](/ppt/LF.gif)
 ![Slide8](/ppt/Slide8.PNG)
 ![Slide9](/ppt/Slide9.PNG)
 ![Slide10](/ppt/Slide10.PNG)
