@@ -67,4 +67,4 @@ The following last three slides explain the algorithms used for the numerical si
 * F. Afdideh. Block-sparse models in multi-modality: application to the inverse model in EEG/MEG. Signal and Image Processing. Université Grenoble Alpes, 2018. English. NNT : 2018GREAT074. tel-02024666
 * F. Afdideh, R. Phlypo, C. Jutten, “Exact Recovery Conditions for Optimally Block-sparse Representation in General Dictionaries via General $\ell^w_{p_1,p_2}$ Weighted (Pseudo-)Mixed-norm Minimization,” to be published.
 * F. Afdideh, R. Phlypo, C. Jutten, “An Overview of Exact and Stable Recovery Conditions for Optimally Sparse and Block-sparse Representation,” to be published.
-* F. Afdideh, R. Phlypo, C. Jutten, “Brain Source Space Parcellation using Block-sparse Metric and Hiererchical Clustering,” to be published.
+* F. Afdideh, R. Phlypo, C. Jutten, “Brain Source Space Parcellation using Block-sparse Metric and Hierarchical Clustering,” to be published.
