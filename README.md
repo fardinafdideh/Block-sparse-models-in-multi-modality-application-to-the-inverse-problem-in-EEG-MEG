@@ -8,6 +8,9 @@
 
 **Mots clés :** $({q,p})$-constante cohérence mutuelle par bloc, propriété null space par bloc, bloc-spark, conditions de reconstruction exacte par bloc-parcimonieux, Principe d'incertitude par bloc-parcimonieux, bloc-parcimonieux, identification de la structure de bloc, segmentation spatiale de l’activité cérébrale, $({q,p})$-constante cohérence mutuelle cumulée par bloc, multimodalité en EEG et MEG.
 
+## Theoretical and Algorithmic Block-sparsity Level: Toolbox for Numerical Simulations
+The following last three slides explain the algorithms used for the numerical simulations.
+![](/ppt/BlockSparsityNumericalSimulation.gif)
 
 ![Slide1](/ppt/Slide1.PNG)
 ![Slide2](/ppt/Slide2.PNG)
@@ -52,8 +55,16 @@
 ![Slide40](/ppt/Slide40.PNG)
 ![Slide41](/ppt/Slide41.PNG)
 ![Slide42](/ppt/Slide42.PNG)
-![Slide43](/ppt/Slide43.PNG)
+![](/ppt/Slide43.PNG)
+
+## Algoritms used in the Numerical Simulations Toolbox 
+![](/ppt/Diapositive1.PNG)
+![](/ppt/Diapositive2.PNG)
+![](/ppt/Diapositive3.PNG)
 
 # How to cite
-* F. Afdideh, R. Phlypo, C. Jutten, “Recovery guarantees for mixed norm lp1, p2 block sparse representations,” 24th European Signal Processing Conference (EUSIPCO), pp. 378-382, Sep. 2016.
+* F. Afdideh, R. Phlypo, C. Jutten, “Recovery guarantees for mixed norm $\ell_{p_1,p_2}$ block sparse representations,” 24th European Signal Processing Conference (EUSIPCO), pp. 378-382, Sep. 2016.
 * F. Afdideh. Block-sparse models in multi-modality: application to the inverse model in EEG/MEG. Signal and Image Processing. Université Grenoble Alpes, 2018. English. NNT : 2018GREAT074. tel-02024666
+* F. Afdideh, R. Phlypo, C. Jutten, “Exact Recovery Conditions for Optimally Block-sparse Representation in General Dictionaries via General $\ell^w_{p_1,p_2}$ Weighted (Pseudo-)Mixed-norm Minimization,” to be published.
+* F. Afdideh, R. Phlypo, C. Jutten, “An Overview of Exact and Stable Recovery Conditions for Optimally Sparse and Block-sparse Representation,” to be published.
+* F. Afdideh, R. Phlypo, C. Jutten, “Brain Source Space Parcellation using Block-sparse Metric and Hiererchical Clustering,” to be published.
