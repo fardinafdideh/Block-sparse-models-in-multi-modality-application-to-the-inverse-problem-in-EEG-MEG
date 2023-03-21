@@ -8,7 +8,7 @@
 
 **Mots clés :** $({q,p})$-constante cohérence mutuelle par bloc, propriété null space par bloc, bloc-spark, conditions de reconstruction exacte par bloc-parcimonieux, Principe d'incertitude par bloc-parcimonieux, bloc-parcimonieux, identification de la structure de bloc, segmentation spatiale de l’activité cérébrale, $({q,p})$-constante cohérence mutuelle cumulée par bloc, multimodalité en EEG et MEG.
 
-## Theoretical and Algorithmic Block-sparsity Level: MATLAB-based Toolbox for Numerical Simulations
+## Theoretical and Algorithmic Block-sparsity Level: MATLAB-based Toolbox Developed for Numerical Simulations
 The following last three slides explain the algorithms used for the numerical simulations.
 ![](/ppt/BlockSparsityNumericalSimulation.gif)
 
