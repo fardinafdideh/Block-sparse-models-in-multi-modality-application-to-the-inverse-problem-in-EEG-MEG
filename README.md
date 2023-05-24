@@ -12,6 +12,26 @@
 The following last three slides explain the algorithms used for the numerical simulations.
 ![](/ppt/BlockSparsityNumericalSimulation.gif)
 
+## Electric, Magnetic, and ElectroMagnetic Properties of a Probe Dipole (Planar Simulation)
+* Angle and Amplitude of a Probe Dipole in a 2D Plane (Source Space) in Order Have the Same ElectroMagnetic Effects Captured by Two Sensors on the Same Plane.
+![](/ppt/twoDimSourceTwoSensor-SameSurface.png)
+
+## Electric, and Magnetic Effects of a Probe Dipole (Planar Simulation)
+* Electric Potential and Magnetic Field of a Probe Dipole (Fixed Amplitude, Varying Angle) Captured by Two Sensors on the Same Plane.
+![](/ppt/ElectroMagneticDipole.png)
+![](/ppt/ElectroMagneticDipole.gif)
+
+## Single Dipole Reconstruction (Planar Simulation)
+* Single Dipole (Fixed Amplitude and Angle) Reconstruction using Three Electric and Magnetic Sensors Located in Varying Locations When the Source and Sensor Spaces are Planar.
+![](/ppt/twoDimSourceSensor-twoSurfaces.png)
+![](/ppt/twoDimSourceSensor-twoSurfaces.gif)
+
+* Single Dipole (Fixed Amplitude, Varying Angle) Reconstruction (Different Methods) using Two Electric, Magnetic, and ElectroMagnetic Sensors.
+![](/ppt/ElectroMagneticSourceReconstruction.gif)
+
+## Geometrical Interpretation of the Proposed Dictionary Characteristic using a Toy Example
+![](/ppt/BMCC-geometrical.png)
+
 ## Block-sparse Models in Multi-modality: Application to the Inverse Problem in EEG/MEG
 ![Slide1](/ppt/Slide1.PNG)
 ![Slide2](/ppt/Slide2.PNG)
