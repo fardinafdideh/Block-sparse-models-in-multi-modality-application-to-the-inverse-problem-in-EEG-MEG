@@ -13,7 +13,7 @@ The following last three slides explain the algorithms used for the numerical si
 ![](/ppt/BlockSparsityNumericalSimulation.gif)
 
 ## LeadField-based Brain Parcellation using Block-MCC
-For further details, please visit [here](!https://github.com/fardinafdideh/LeadField-based-Brain-Parcellation/tree/main).
+For further details, please visit [here](https://github.com/fardinafdideh/LeadField-based-Brain-Parcellation/tree/main).
 ![](/ppt/average-2,2.gif)
 
 ## Electric, Magnetic, and ElectroMagnetic Properties of a Probe Dipole (Planar Simulation)
