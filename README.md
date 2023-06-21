@@ -12,6 +12,10 @@
 The following last three slides explain the algorithms used for the numerical simulations.
 ![](/ppt/BlockSparsityNumericalSimulation.gif)
 
+## LeadField-based Brain Parcellation using Block-MCC
+For further details, please visit [here](!https://github.com/fardinafdideh/LeadField-based-Brain-Parcellation/tree/main).
+![](/ppt/average-2,2.gif)
+
 ## Electric, Magnetic, and ElectroMagnetic Properties of a Probe Dipole (Planar Simulation)
 * Angle and Amplitude of a Probe Dipole in a 2D Plane (Source Space) in Order Have the Same ElectroMagnetic Effects Captured by Two Sensors on the Same Plane.
 ![](/ppt/twoDimSourceTwoSensor-SameSurface.png)
