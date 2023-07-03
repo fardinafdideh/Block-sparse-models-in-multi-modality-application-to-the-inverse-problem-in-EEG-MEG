@@ -88,8 +88,8 @@ For further details, please visit [here](https://github.com/fardinafdideh/LeadFi
 ![](/ppt/Diapositive3.PNG)
 
 # How to cite
-* F. Afdideh, R. Phlypo, C. Jutten, “Recovery guarantees for mixed norm $\ell_{p_1,p_2}$ block sparse representations,” 24th European Signal Processing Conference (EUSIPCO), pp. 378-382, Sep. 2016.
-* F. Afdideh. Block-sparse models in multi-modality: application to the inverse model in EEG/MEG. Signal and Image Processing. Université Grenoble Alpes, 2018. English. NNT : 2018GREAT074. tel-02024666
-* F. Afdideh, R. Phlypo, C. Jutten, “Exact Recovery Conditions for Optimally Block-sparse Representation in General Dictionaries via General $\ell^w_{p_1,p_2}$ Weighted (Pseudo-)Mixed-norm Minimization,” in preparation.
-* F. Afdideh, R. Phlypo, C. Jutten, “An Overview of Exact and Stable Recovery Conditions for Optimally Sparse and Block-sparse Representation,” in preparation.
-* F. Afdideh, R. Phlypo, C. Jutten, “LeadField-based Brain Source Space Parcellation using a Block-sparse Metric and Hierarchical Clustering,” in preparation.
+* **F. Afdideh**, R. Phlypo, C. Jutten, “Recovery guarantees for mixed norm $\ell_{p_1,p_2}$ block sparse representations,” 24th European Signal Processing Conference ([EUSIPCO](https://ieeexplore.ieee.org/document/7760274)), pp. 378-382, Sep. 2016.
+* **F. Afdideh**. Block-sparse models in multi-modality: application to the inverse model in EEG/MEG. Signal and Image Processing. [Université Grenoble Alpes](https://theses.hal.science/tel-02024666), 2018. English. NNT : 2018GREAT074. tel-02024666
+* **F. Afdideh**, R. Phlypo, C. Jutten, “Exact Recovery Conditions for Optimally Block-sparse Representation in General Dictionaries via General $\ell^w_{p_1,p_2}$ Weighted (Pseudo-)Mixed-norm Minimization,” [in preparation](https://github.com/fardinafdideh/Exact-Recovery-Conditions-for-Optimally-Block-sparse-Representation-in-General-Dictionaries-).
+* **F. Afdideh**, R. Phlypo, C. Jutten, “An Overview of Exact and Stable Recovery Conditions for Optimally Sparse and Block-sparse Representation,” [in preparation](https://github.com/fardinafdideh/Exact-Recovery-Conditions-for-Optimally-Block-sparse-Representation-in-General-Dictionaries-).
+* **F. Afdideh**, R. Phlypo, C. Jutten, “LeadField-based Brain Source Space Parcellation using a Block-sparse Metric and Hierarchical Clustering,” [in preparation](https://github.com/fardinafdideh/LeadField-based-Brain-Parcellation/tree/main).
