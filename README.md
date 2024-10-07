@@ -19,6 +19,9 @@
 ## Grenoble Images Speech Signal and Control Laboratory (GIPSA-lab)
 ![](/ppt/PosterGipsa.PNG)
 
+## Weighted Block-sparse Exact Recovery Conditions (WBERC): A General Framework
+For further details, please visit [here](https://github.com/fardinafdideh/WBERC)
+
 ## Theoretical and Algorithmic Block-sparsity Level: MATLAB-based Toolbox Developed for Numerical Simulations
 The following last three slides explain the algorithms used for the numerical simulations.
 ![](/ppt/BlockSparsityNumericalSimulation.gif)
